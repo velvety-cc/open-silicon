@@ -9,5 +9,5 @@ export function BrandWordmark({ className = "" }: { className?: string }) {
 }
 
 export default function Brand() {
-  return <a className="brand" href="#top" aria-label="Open Silicon home"><BrandWordmark /></a>;
+  return <a className="brand" href="/#top" aria-label="Open Silicon home"><BrandWordmark /></a>;
 }

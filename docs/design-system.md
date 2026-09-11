@@ -54,3 +54,7 @@ Use black primary text, deep gray supporting text, light neutral borders, and `#
 Use shadcn NavigationMenu on desktop, Sheet for mobile navigation, Dialog for investment previews, Input and Label for fields, Progress for allocation, Badge for status, Card for product surfaces, and Table for offerings. Custom brand, image, video, and page-section components compose these primitives and semantic HTML.
 
 Keep focus visible. Sheets and dialogs trap focus, close with Escape, and return focus to their trigger. Preserve reduced-motion behavior and video-to-still loading. Check 320px, 393px, tablet/laptop, and wide desktop layouts, plus keyboard navigation, selection, input errors, and anchors before changing shared tokens.
+
+## GPU financing page
+
+`/gpu-financing` composes the shared tokens using Tailwind utilities. It uses shadcn Accordion for FAQs, Select and Textarea alongside existing Input/Label/Button/Card primitives, and React Hook Form for validation and state. Existing unlayered heading and paragraph margin resets require important Tailwind spacing utilities on those elements. No page-specific CSS file is added.

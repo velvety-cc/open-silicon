@@ -7,10 +7,10 @@ import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetDescription, SheetC
 
 import { useEffect, useRef, useState } from "react";
 
-export default function Header() {
+export default function Header({ financing = false }: { financing?: boolean }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [lightSurface, setLightSurface] = useState(false);
+  const [lightSurface, setLightSurface] = useState(financing);
   const header = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function Header() {
       window.removeEventListener("scroll", scheduleUpdate);
       window.removeEventListener("resize", scheduleUpdate);
     };
-  }, []);
+  }, [financing]);
 
   useEffect(() => {
     const desktop = window.matchMedia("(min-width: 1024px)");
@@ -44,9 +44,9 @@ export default function Header() {
   }, []);
 
   const links = [
-    { href: "#protocol", label: "For investors" },
-    { href: "#access", label: "For operators" },
-    { href: "#protocol", label: "How it works" },
+    { href: "/#protocol", label: "For investors" },
+    { href: "/gpu-financing", label: "GPU Financing" },
+    { href: financing ? "#process" : "/#protocol", label: "How it works" },
   ];
 
   return (
@@ -58,14 +58,14 @@ export default function Header() {
             <NavigationMenuList>
               {links.map(({ href, label }) => (
                 <NavigationMenuItem key={label}>
-                  <NavigationMenuLink asChild><a href={href}>{label}</a></NavigationMenuLink>
+                  <NavigationMenuLink asChild><a href={href} aria-current={financing && href === "/gpu-financing" ? "page" : undefined}>{label}</a></NavigationMenuLink>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
           </NavigationMenu>
           <div className="header-actions">
             <Button variant="inverse" size="nav" className="header-login" type="button">Login</Button>
-            <Button asChild variant="outline" size="nav" className="header-contact"><a href="#access">Get in touch</a></Button>
+            <Button asChild variant="outline" size="nav" className="header-contact"><a href={financing ? "#project" : "#access"}>Get in touch</a></Button>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="menu-button" aria-label="Open navigation">
                 <span /><span />
@@ -80,7 +80,7 @@ export default function Header() {
         <Brand />
         <nav aria-label="Mobile navigation">
           {links.map(({ href, label }) => (
-            <SheetClose asChild key={label}><Button asChild variant="link"><a href={href}>{label}</a></Button></SheetClose>
+            <SheetClose asChild key={label}><Button asChild variant="link"><a href={href} aria-current={financing && href === "/gpu-financing" ? "page" : undefined}>{label}</a></Button></SheetClose>
           ))}
         </nav>
       </SheetContent>
