@@ -65,7 +65,9 @@ export default function Header({ financing = false }: { financing?: boolean }) {
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <header ref={header} className={`site-header transition-[background-color,color]! duration-300! ease-out! motion-reduce:transition-none!${scrolled ? " is-scrolled" : ""}${lightSurface || activeMenu ? " is-light" : ""}`}>
+      <header ref={header} className={`site-header transition-colors duration-300 ease-out motion-reduce:transition-none${scrolled ? " is-scrolled" : ""}${lightSurface || activeMenu ? " is-light" : ""}`}>
+        <div aria-hidden="true" data-header-glass data-visible={scrolled && !lightSurface} className="pointer-events-none absolute inset-0 bg-neutral-950 opacity-0 backdrop-blur-[50px] transition-opacity duration-300 supports-[backdrop-filter:blur(1px)]:bg-black/10 data-[visible=true]:opacity-100 motion-reduce:transition-none" />
+        <div aria-hidden="true" data-header-surface data-visible={lightSurface || Boolean(activeMenu)} className="pointer-events-none absolute inset-0 bg-white opacity-0 transition-opacity duration-300 ease-out data-[visible=true]:opacity-100 motion-reduce:transition-none" />
         <div className="header-inner">
           <Brand />
           <NavigationMenu className="nav-shell" value={activeMenu} onValueChange={setActiveMenu} viewport={false} aria-label="Primary navigation">
