@@ -65,15 +65,15 @@ export default function Header({ financing = false }: { financing?: boolean }) {
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <header ref={header} className={`site-header${scrolled ? " is-scrolled" : ""}${lightSurface || activeMenu ? " is-light" : ""}`}>
+      <header ref={header} className={`site-header transition-[background-color,color]! duration-300! ease-out! motion-reduce:transition-none!${scrolled ? " is-scrolled" : ""}${lightSurface || activeMenu ? " is-light" : ""}`}>
         <div className="header-inner">
           <Brand />
           <NavigationMenu className="nav-shell" value={activeMenu} onValueChange={setActiveMenu} viewport={false} aria-label="Primary navigation">
             <NavigationMenuList>
               <NavigationMenuItem value="products">
                 <NavigationMenuTrigger className="h-11 bg-transparent px-3.5 font-normal text-[color:var(--ink)] hover:bg-black/5 hover:text-[color:var(--ink)] focus:bg-black/5 focus:text-[color:var(--ink)] data-[state=open]:bg-black/5 data-[state=open]:text-[color:var(--ink)] data-[state=open]:hover:bg-black/5 data-[state=open]:focus:bg-black/5">Products</NavigationMenuTrigger>
-                <NavigationMenuContent className="fixed! top-[var(--header-height,80px)]! left-0! z-50 mt-0! w-full! rounded-none! border-0! border-b! border-neutral-200! bg-white! p-0! shadow-none! duration-150! [--ink:#000] data-[state=open]:zoom-in-100! data-[state=closed]:zoom-out-100! motion-reduce:animate-none!">
-                  <div className="grid grid-cols-[repeat(2,minmax(0,240px))] justify-center gap-12 px-[var(--shell-gutter)] pt-6 pb-10">
+                <NavigationMenuContent className="group/products fixed! top-[var(--header-height,80px)]! left-0! z-50 mt-0! w-full! rounded-none! border-0! border-b! border-neutral-200! bg-white! p-0! shadow-none! [--ink:#000] data-[state=open]:animate-products-open! data-[state=closed]:animate-products-close! motion-reduce:data-[state=open]:animate-none! motion-reduce:data-[state=closed]:animate-none!">
+                  <div className="grid grid-cols-[repeat(2,minmax(0,240px))] justify-center gap-12 px-[var(--shell-gutter)] pt-6 pb-10 group-data-[state=open]/products:animate-products-content motion-reduce:animate-none!">
                     {productGroups.map((group) => <div key={group.label}>
                       <p className="mb-3! text-sm font-normal text-neutral-500">{group.label}</p>
                       <ul className="m-0 list-none space-y-1 p-0">
@@ -105,7 +105,7 @@ export default function Header({ financing = false }: { financing?: boolean }) {
           </div>
         </div>
       </header>
-      {activeMenu && <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-40 bg-white/65 backdrop-blur-[1px] motion-reduce:backdrop-blur-none" />}
+      <div aria-hidden="true" data-products-backdrop data-open={Boolean(activeMenu)} className="pointer-events-none fixed inset-0 z-40 bg-white/25 opacity-0 transition-opacity duration-200 ease-out data-[open=true]:opacity-100 data-[open=true]:duration-300 motion-reduce:transition-none" />
       <SheetContent side="top" className="mobile-navigation">
         <SheetTitle className="sr-only">Navigation</SheetTitle>
         <SheetDescription className="sr-only">Explore Open Silicon</SheetDescription>
