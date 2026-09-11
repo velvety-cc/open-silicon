@@ -4,11 +4,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FinancingForm from "@/components/FinancingForm";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
   title: "GPU Financing — Open Silicon",
-  description: "Explore financing for GPU purchases, infrastructure expansion, and existing compute assets. Tell Open Silicon about your project.",
+  description: "Direct financing and AIDC introductions for inference providers and model labs. Customer connections for data center operators.",
 };
 
 const scenarios = [
@@ -17,13 +18,15 @@ const scenarios = [
   { number: "03", title: "Put your assets to work", description: "Already operating a fleet? Discuss financing against your existing hardware and contracted revenue.", detail: "Existing asset financing" },
 ];
 const steps = [
-  { title: "Share your project", description: "Tell us about your fleet, financing needs, and timeline." },
-  { title: "Explore the fit", description: "We review the assets, deployment plan, and revenue profile with you." },
-  { title: "Define the terms", description: "Complete diligence and agree on a structure for your project." },
-  { title: "Move into deployment", description: "Funding follows the agreed documentation and project milestones." },
+  { title: "Share your project", description: "Share the GPU capacity you need or offer, your financing needs, and your timeline." },
+  { title: "Explore the fit", description: "We explore provider or customer introductions and review financing fit where needed." },
+  { title: "Define the terms", description: "Align capacity and commercial requirements. For financing, complete diligence and agree on terms." },
+  { title: "Move into deployment", description: "Coordinate the deployment with your counterparty. Financing follows agreed project milestones." },
 ];
 const faqs = [
-  { question: "Who is this for?", answer: "Neoclouds, data center operators, and other businesses building or operating GPU infrastructure. Share your project so we can assess whether it fits our financing approach." },
+  { question: "Who is this for?", answer: "Inference providers and model labs seeking dedicated GPU capacity, and AI data center (AIDC) operators looking for customers or financing. Share your requirements or available capacity so we can explore the right fit." },
+  { question: "Can you help with a multi-year GPU lease?", answer: "We can discuss direct financing alongside introductions to AIDC operators for dedicated, multi-year GPU deployments. Tell us the GPU model, quantity, preferred location, and lease duration you need. Financing and provider arrangements are assessed for each project." },
+  { question: "Can you help an AIDC find customers?", answer: "Yes. We connect AIDC operators with inference providers and model labs seeking GPU capacity. Share your hardware, available capacity, site location, and deployment readiness so we can explore suitable customer introductions." },
   { question: "Can I discuss both new and existing equipment?", answer: "Yes. Tell us whether you are purchasing hardware, expanding a deployment, or exploring financing for an existing fleet. The available structure depends on the equipment, ownership, contracts, and project review." },
   { question: "What should I prepare?", answer: "Start with your GPU model and quantity, project location, approximate financing need, and deployment timeline. Supplier quotes, hardware inventories, and compute tenant contracts can help with the subsequent review. You do not need to upload documents to make an initial enquiry." },
   { question: "What determines the financing terms?", answer: "Terms depend on the hardware and its value, project stage, compute tenant and revenue contracts, location, and the outcome of credit diligence. Rates, facility size, and repayment terms are discussed for each project." },
@@ -41,7 +44,7 @@ export default function GPUFinancing() {
           <div className="financing-hero-copy">
             <p className="mb-6! text-[length:var(--type-label)] font-medium">GPU Financing</p>
             <h1 id="financing-title" className="mt-0! text-[length:var(--type-display)]! leading-[var(--leading-heading)]! tracking-[var(--tracking-heading)]! max-[760px]:text-[length:var(--type-hero)]! max-[380px]:text-[length:var(--type-display)]!">Capital for what<br />you’re building.</h1>
-            <p className="mt-6! max-w-[460px] text-[length:var(--type-emphasis)] text-[#595959]">From your next GPU purchase to your next phase of growth. Financing built around the machines, contracts, and infrastructure behind your business.</p>
+            <p className="mt-6! max-w-[460px] text-[length:var(--type-emphasis)] text-[#595959]">From dedicated GPU capacity to your next phase of growth. Direct financing and connections between compute teams and the data centers that power them.</p>
             <div className="mt-8! flex flex-wrap items-center gap-6 max-[380px]:gap-4">
               <Button asChild size="lg"><a href="#project">Discuss your project</a></Button>
               <Button asChild variant="link"><a href="#process">How it works</a></Button>
@@ -51,6 +54,45 @@ export default function GPUFinancing() {
             <Image className="block h-[540px] w-full object-contain max-[1100px]:h-[480px] max-[760px]:h-[400px]" src="/compute-rack.webp" alt="Graphite GPU server rack with stacked compute hardware" width={1024} height={1536} sizes="(max-width: 760px) 80vw, 440px" preload quality={90} />
             <figcaption className="mt-4! text-[length:var(--type-label)] text-[#595959]">Real infrastructure. Room to grow.</figcaption>
           </figure>
+        </section>
+
+        <section id="who-we-help" className="container section-space border-t border-[var(--line)]" aria-labelledby="audiences-title">
+          <div className="mb-12! flex items-end justify-between gap-12 max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-6">
+            <h2 id="audiences-title">Built for both sides<br />of compute.</h2>
+            <p className="max-w-[360px] text-[#595959]">Capital, capacity, and the right connections.<br />Start with what your business needs.</p>
+          </div>
+          <div className="grid grid-cols-2 gap-6 max-[760px]:grid-cols-1">
+            <Card className="gap-0 border-transparent bg-[var(--accent-soft)] py-0 shadow-none">
+              <CardHeader className="gap-0 px-8 pt-8 max-[420px]:px-6 max-[420px]:pt-6">
+                <p className="mb-8! text-[length:var(--type-label)] font-medium">For inference providers & model labs</p>
+                <CardTitle className="text-[length:var(--type-heading)] font-normal leading-tight tracking-[var(--tracking-heading)]">The GPUs you need.<br />A plan for the years ahead.</CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-1 flex-col items-start px-8 pt-6 pb-8 max-[420px]:px-6 max-[420px]:pb-6">
+                <p className="mb-8! max-w-[460px] text-[#595959]">Secure dedicated GPU capacity for multi-year deployments. Bring together direct financing and an AIDC operator that fits your workload.</p>
+                <dl className="m-0 mb-8! w-full border-t border-black/10">
+                  <div className="border-b border-black/10 py-4"><dt className="mb-1! font-medium">Direct financing</dt><dd className="m-0 text-[length:var(--type-label)] text-[#595959]">Structure capital around your GPU requirements and deployment plan.</dd></div>
+                  <div className="border-b border-black/10 py-4"><dt className="mb-1! font-medium">AIDC introductions</dt><dd className="m-0 text-[length:var(--type-label)] text-[#595959]">Connect with operators based on hardware, location, and availability.</dd></div>
+                  <div className="py-4"><dt className="mb-1! font-medium">Long-term capacity</dt><dd className="m-0 text-[length:var(--type-label)] text-[#595959]">Plan a dedicated GPU lease around the duration your team needs.</dd></div>
+                </dl>
+                <Button asChild size="lg" className="mt-auto max-w-full"><a href="#project">Find GPU capacity</a></Button>
+              </CardContent>
+            </Card>
+            <Card className="gap-0 border-[var(--line)] py-0 shadow-none">
+              <CardHeader className="gap-0 px-8 pt-8 max-[420px]:px-6 max-[420px]:pt-6">
+                <p className="mb-8! text-[length:var(--type-label)] font-medium">For AIDC operators</p>
+                <CardTitle className="text-[length:var(--type-heading)] font-normal leading-tight tracking-[var(--tracking-heading)]">You bring the capacity.<br />We connect the demand.</CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-1 flex-col items-start px-8 pt-6 pb-8 max-[420px]:px-6 max-[420px]:pb-6">
+                <p className="mb-8! max-w-[460px] text-[#595959]">Connect your infrastructure with inference providers and model labs looking for dedicated GPU capacity and long-term deployments.</p>
+                <dl className="m-0 mb-8! w-full border-t border-[var(--line)]">
+                  <div className="border-b border-[var(--line)] py-4"><dt className="mb-1! font-medium">Customer introductions</dt><dd className="m-0 text-[length:var(--type-label)] text-[#595959]">Meet compute teams whose requirements fit your available capacity.</dd></div>
+                  <div className="border-b border-[var(--line)] py-4"><dt className="mb-1! font-medium">Deployment alignment</dt><dd className="m-0 text-[length:var(--type-label)] text-[#595959]">Match GPU configurations, site readiness, and customer timelines.</dd></div>
+                  <div className="py-4"><dt className="mb-1! font-medium">Room to grow</dt><dd className="m-0 text-[length:var(--type-label)] text-[#595959]">Discuss financing when new customer demand calls for more capacity.</dd></div>
+                </dl>
+                <Button asChild size="lg" variant="outline" className="mt-auto max-w-full"><a href="#project">Connect with customers</a></Button>
+              </CardContent>
+            </Card>
+          </div>
         </section>
 
         <section className="container section-space border-t border-[var(--line)]" aria-labelledby="scenarios-title">

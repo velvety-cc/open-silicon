@@ -1,4 +1,4 @@
-export const financingPurposes = ["New GPU purchase", "Cluster expansion", "Existing asset financing", "Not sure yet"];
+export const financingPurposes = ["New GPU purchase", "Cluster expansion", "Existing asset financing", "Multi-year GPU leasing", "AIDC customer introductions", "Not sure yet"];
 export const financingAmounts = ["Under $5M", "$5M–$25M", "$25M–$100M", "$100M+", "Not sure yet"];
 export type FinancingEnquiry = { name: string; company: string; email: string; purpose: string; amount: string; hardware: string; location: string; details: string; website: string };
 export const enquiryDefaults: FinancingEnquiry = { name: "", company: "", email: "", purpose: "", amount: "", hardware: "", location: "", details: "", website: "" };

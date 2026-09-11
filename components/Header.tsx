@@ -46,7 +46,7 @@ export default function Header({ financing = false }: { financing?: boolean }) {
   const links = [
     { href: "/#protocol", label: "For investors" },
     { href: "/gpu-financing", label: "GPU Financing" },
-    { href: financing ? "#process" : "/#protocol", label: "How it works" },
+    { href: "/#compute-title", label: "About" },
   ];
 
   return (
