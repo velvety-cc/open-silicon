@@ -1,5 +1,7 @@
 "use client";
 
+import Arrow from "@/components/Arrow";
+
 import { useEffect, useRef, useState } from "react";
 
 export function Brand() {
@@ -79,7 +81,7 @@ export default function Header() {
           <a href="#protocol" onClick={() => setOpen(false)}>How it works</a>
         </nav>
         <div className="header-actions">
-          <a className="header-cta" href="#access" onClick={() => setOpen(false)}>Get in touch <span aria-hidden="true">↗</span></a>
+          <a className="header-cta" href="#access" onClick={() => setOpen(false)}>Get in touch <Arrow /></a>
           <button
             ref={toggle}
             className={`menu-button${open ? " is-open" : ""}`}

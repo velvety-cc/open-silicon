@@ -1,9 +1,10 @@
+import Arrow from "@/components/Arrow";
 import Image from "next/image";
 import LoanMarketplace from "@/components/LoanMarketplace";
 import HeroVideo from "@/components/HeroVideo";
 import Header, { Brand } from "@/components/Header";
 
-const Arrow = () => <span className="arrow" aria-hidden="true">↗</span>;
+
 const opportunities = [
   { id: "CC-001", name: "H200 Cluster I", location: "North America", size: "$32.0M", apr: "10.2%", term: "24 months", status: "Open" },
   { id: "CC-002", name: "B200 Pod II", location: "Nordics", size: "$48.5M", apr: "9.6%", term: "30 months", status: "Closing" },
