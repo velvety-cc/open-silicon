@@ -39,3 +39,5 @@ User-requested NVIDIA and Kimi marks in white. Vector path geometry is preserved
 ## Open Silicon symbol
 
 Vector reconstruction of the user-supplied `ChatGPT Image Sep 10, 2026, 09_50_06 PM.png`: circular silhouette, rounded square counter, and an open diagonal cut. `public/logos/open-silicon-symbol.svg` is the standalone transparent SVG. `components/Brand.tsx` shares the mark across page lockups using `currentColor`. `app/icon.svg` adapts to light/dark browser themes; `app/favicon.ico` contains 16/32/48px fallbacks, and `app/apple-icon.png` is a padded 180px white-background home-screen icon. Raster icons are rendered from the vector, not traced from the supplied bitmap.
+
+Symbol refinement: the active path now follows the largest white symbol in the supplied reference directly, using a luminance contour and smoothed quadratic curves. Uniform scale preserves the square counter, its vertical placement, the diagonal aperture, and the slightly noncircular reference silhouette. At the reference resolution, the thresholded silhouette overlap (intersection over union) is 99.81%; the remaining difference is edge smoothing. All icon variants use this same outline.
