@@ -2,7 +2,8 @@ import Arrow from "@/components/Arrow";
 import Image from "next/image";
 import LoanMarketplace from "@/components/LoanMarketplace";
 import HeroVideo from "@/components/HeroVideo";
-import Header, { Brand } from "@/components/Header";
+import Header from "@/components/Header";
+import Brand, { BrandWordmark } from "@/components/Brand";
 
 
 const opportunities = [
@@ -42,7 +43,7 @@ export default function Home() {
         <section data-header-theme="light" className="compute-showcase" aria-labelledby="compute-title">
           <div className="container">
             <div className="compute-heading">
-              <p className="compute-wordmark">open silicon</p>
+              <p className="compute-wordmark"><BrandWordmark /></p>
               <h2 id="compute-title">Capital. Compute. Possibility.</h2>
               <a className="button compute-cta" href="#protocol">Explore offerings <Arrow /></a>
             </div>

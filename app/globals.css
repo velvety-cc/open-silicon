@@ -77,6 +77,10 @@ h3 { font-size: 23px; letter-spacing: -.035em; line-height: 1.25; }
   position: relative;
 }
 .brand { display: inline-flex; align-items: center; width: max-content; flex-shrink: 0; }
+.brand-lockup { display: inline-flex; align-items: center; gap: .32em; white-space: nowrap; }
+/* Align the visible letterforms with the symbol, accounting for Geist’s baseline. */
+.brand-name { display: block; line-height: 1; transform: translateY(-.035em); }
+.brand-symbol { display: block; width: 1.1em; height: 1.1em; flex: 0 0 auto; }
 .brand > span { font-size: 29px; font-weight: 500; letter-spacing: -.06em; line-height: 1; }
 .nav-shell { display: flex; align-items: center; gap: 4px; font-size: 14px; color: var(--ink); }
 .nav-shell a { padding: 12px 14px; border-radius: 4px; transition: background 160ms ease; }
@@ -473,6 +477,11 @@ a:hover .arrow { transform: translate(2px, -2px); }
   .header-cta { font-size: 12px; padding-inline: 14px; gap: 8px; }
   .header-cta > .arrow { display: none; }
   .header-actions { gap: 4px; }
+}
+
+@media (max-width: 360px) {
+  .site-header .brand > span { font-size: 20px; }
+  .header-cta { padding-inline: 10px; }
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {

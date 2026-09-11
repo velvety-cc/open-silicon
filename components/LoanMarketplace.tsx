@@ -1,5 +1,6 @@
 "use client";
 
+import { BrandWordmark } from "@/components/Brand";
 import Arrow from "@/components/Arrow";
 
 import { useRef, useState } from "react";
@@ -27,7 +28,7 @@ export default function LoanMarketplace() {
 
   return (
     <div className="loan-app">
-      <div className="loan-app-header"><span className="loan-app-brand">open silicon</span><span className="loan-demo-badge">Product preview</span></div>
+      <div className="loan-app-header"><BrandWordmark className="loan-app-brand" /><span className="loan-demo-badge">Product preview</span></div>
       <div className="loan-app-toolbar"><div><span className="loan-eyebrow">THE MARKETPLACE</span><h3>Find your next allocation.</h3></div><span className="loan-count">03 offerings</span></div>
       <div className="loan-app-body">
         <div className="loan-list" role="group" aria-label="Choose an illustrative loan offering">
