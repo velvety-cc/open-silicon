@@ -23,7 +23,7 @@ export default function Home() {
             <h1 id="hero-title">Open capital for the<br /><span>intelligence economy.</span></h1>
             <p className="hero-description">Connecting global liquidity to the machines that move us forward. Secured credit for the next generation of AI infrastructure.</p>
             <div className="hero-actions">
-              <a className="button button-dark" href="#protocol">Explore capital <Arrow /></a>
+              <a className="button button-dark" href="#protocol">View current offerings <Arrow /></a>
               <a className="text-link" href="#access">Finance infrastructure <span aria-hidden="true">→</span></a>
             </div>
             <div className="hero-partners" aria-label="Partners">
@@ -62,7 +62,7 @@ export default function Home() {
                 <p>Flexible terms.<br />{" "}Room to build what comes next.</p>
               </div>
               <div className="compute-stat compute-stat-assets">
-                <h3 className="compute-feature">Real asset<br />backed.</h3>
+                <h3 className="compute-feature">Real asset<br />backed</h3>
                 <p className="compute-label">Fully compliant and verifiable</p>
               </div>
               <div className="compute-stat compute-stat-size">
