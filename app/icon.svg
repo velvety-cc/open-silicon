@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#533afe"/>
-  <text x="32" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="400" letter-spacing="-3" fill="#fff">os</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><style>path{fill:#000}@media(prefers-color-scheme:dark){path{fill:#fff}}</style><path d="M78.7 13.9A46 46 0 1 0 84.5 19.6L68 38V66Q68 70 64 70H36Q32 70 32 66V38Q32 34 36 34H61Z"/></svg>

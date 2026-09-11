@@ -1,16 +1,9 @@
 "use client";
 
+import Brand from "@/components/Brand";
 import Arrow from "@/components/Arrow";
 
 import { useEffect, useRef, useState } from "react";
-
-export function Brand() {
-  return (
-    <a className="brand" href="#top" aria-label="Open Silicon home">
-      <span>open silicon</span>
-    </a>
-  );
-}
 
 export default function Header() {
   const [open, setOpen] = useState(false);

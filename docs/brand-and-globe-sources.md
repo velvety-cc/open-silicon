@@ -35,3 +35,7 @@ Generation paths:
 User-requested NVIDIA and Kimi marks in white. Vector path geometry is preserved from official assets; fill is monochrome white for the dark hero.
 - NVIDIA: `n24-nvidia-logo` symbol from https://www.nvidia.com/en-us/data-center/dgx-b200/.
 - Kimi: navigation wordmark SVG from https://www.kimi.com/en/resources/kimi-brand.
+
+## Open Silicon symbol
+
+Vector reconstruction of the user-supplied `ChatGPT Image Sep 10, 2026, 09_50_06 PM.png`: circular silhouette, rounded square counter, and an open diagonal cut. `public/logos/open-silicon-symbol.svg` is the standalone transparent SVG. `components/Brand.tsx` shares the mark across page lockups using `currentColor`. `app/icon.svg` adapts to light/dark browser themes; `app/favicon.ico` contains 16/32/48px fallbacks, and `app/apple-icon.png` is a padded 180px white-background home-screen icon. Raster icons are rendered from the vector, not traced from the supplied bitmap.
