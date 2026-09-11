@@ -23,7 +23,7 @@ export default function Home() {
             <h1 id="hero-title">Open capital for the<br /><span>intelligence economy.</span></h1>
             <p className="hero-description">Connecting global liquidity to the machines that move us forward. Secured credit for the next generation of AI infrastructure.</p>
             <div className="hero-actions">
-              <a className="button button-dark" href="#protocol">View current offerings <Arrow /></a>
+              <a className="button button-dark" href="#protocol">View current offerings</a>
               <a className="text-link" href="#access">Finance infrastructure <span aria-hidden="true">→</span></a>
             </div>
             <div className="hero-partners" aria-label="Partners">
