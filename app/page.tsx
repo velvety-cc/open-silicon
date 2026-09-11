@@ -11,9 +11,9 @@ import Brand, { BrandWordmark } from "@/components/Brand";
 
 
 const opportunities = [
-  { id: "CC-001", name: "H200 Cluster I", location: "North America", tenant: "Anthropic", size: "$32.0M", apr: "10.2%", term: "24 months", status: "Open" },
-  { id: "CC-002", name: "B200 Pod II", location: "Nordics", tenant: "Mistral AI", size: "$48.5M", apr: "9.6%", term: "30 months", status: "Closing" },
-  { id: "CC-003", name: "H100 Campus III", location: "APAC", tenant: "AI inference provider", size: "$18.0M", apr: "11.1%", term: "18 months", status: "Funded" },
+  { id: "OS-001", name: "H200 Cluster I", location: "North America", tenant: "Anthropic", size: "$32.0M", apr: "10.2%", term: "24 months", status: "Open" },
+  { id: "OS-002", name: "B200 Pod II", location: "Nordics", tenant: "Mistral AI", size: "$48.5M", apr: "9.6%", term: "30 months", status: "Closing" },
+  { id: "OS-003", name: "H100 Campus III", location: "APAC", tenant: "AI inference provider", size: "$18.0M", apr: "11.1%", term: "18 months", status: "Funded" },
 ];
 
 export default function Home() {
