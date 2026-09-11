@@ -54,15 +54,16 @@ export default function Home() {
               <div className="compute-stat compute-stat-yield">
                 <p className="compute-value">7–12<span>%</span></p>
                 <h3>Target annual yield</h3>
-                <p>Senior secured credit.<br />Backed by productive compute.</p>
+                <p>Senior secured credit.<br />{" "}Backed by productive compute.</p>
               </div>
               <div className="compute-stat compute-stat-terms">
-                <h3 className="compute-feature">12–36 months</h3>
-                <p>Flexible terms.<br />Room to build what comes next.</p>
+                <p className="compute-value">12–36</p>
+                <h3>Months</h3>
+                <p>Flexible terms.<br />{" "}Room to build what comes next.</p>
               </div>
               <div className="compute-stat compute-stat-assets">
-                <h3 className="compute-feature">Real asset-backed.</h3>
-                <p>Compliant structures. Verifiable collateral.<br />Backed by real GPU hardware and receivables.</p>
+                <h3 className="compute-feature">Real asset<br />backed.</h3>
+                <p>Compliant structures. Verifiable collateral.<br />{" "}Backed by real GPU hardware and receivables.</p>
               </div>
               <div className="compute-stat compute-stat-size">
                 <p className="compute-value"><span>$</span>500<span>M</span></p>
@@ -75,7 +76,6 @@ export default function Home() {
 
         <section data-header-theme="light" className="marketplace-section" id="protocol" aria-labelledby="marketplace-title">
           <div className="container section-space">
-            <p className="section-label">The marketplace</p>
             <h2 id="marketplace-title">Own a piece of<br />what powers intelligence.</h2>
             <div className="marketplace-showcase">
               <LoanMarketplace />
@@ -91,7 +91,7 @@ export default function Home() {
         </section>
 
         <section data-header-theme="light" className="deals-section container section-space" id="opportunities">
-          <div className="section-heading"><div><p className="section-label">The asset layer</p><h2>Real infrastructure.<br /><span>A clearer view.</span></h2></div><p>Explore the shape of compute credit.<br />Illustrative opportunities, at a glance.</p></div>
+          <div className="section-heading"><div><h2>Real infrastructure.<br /><span>A clearer view.</span></h2></div><p>Explore the shape of compute credit.<br />Illustrative opportunities, at a glance.</p></div>
           <div className="deals-table-wrap" role="region" aria-label="Illustrative credit opportunities, scroll to see all columns" tabIndex={0}>
             <table className="deals-table">
               <caption className="sr-only">Illustrative opportunities. Availability and terms are subject to diligence.</caption>
