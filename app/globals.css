@@ -426,7 +426,6 @@ h2 { font-size: var(--type-section); }
 .loan-funding { margin-top: auto; }
 .loan-funding > div { display: flex; justify-content: space-between; font-size: var(--type-caption); }
 .loan-invest { margin-top: var(--space-6); width: 100%; }
-.loan-detail-note { text-align: center; margin-top: 12px; font-size: var(--type-caption); line-height: 1.5; }
 .loan-dialog { display: block; z-index: 70; width: min(460px, calc(100% - 32px)); max-height: calc(100svh - 48px); overflow-y: auto; color: #000; background: #fff; padding: 28px; border: 1px solid #ddd; border-radius: var(--radius-card); box-shadow: 0 24px 100px #0003; }
 .loan-dialog-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
 .loan-dialog-top > button { width: 36px; height: 36px; border: 0; border-radius: 50%; background: #f5f5f5; color: #000; font-size: var(--type-heading); }

@@ -61,7 +61,6 @@ export default function LoanMarketplace() {
           <dl className="loan-terms"><div><dt>Compute user</dt><dd><ComputeUser name={selected.user} /></dd></div><div><dt>Loan term</dt><dd>{selected.months} months</dd></div><div><dt>Interest payments</dt><dd>Monthly</dd></div><div><dt>Collateral</dt><dd>Hardware + receivables</dd></div><div><dt>Minimum investment</dt><dd>$1,000</dd></div></dl>
           <div className="loan-funding"><div><span>${selected.raised}M allocated</span><span>${selected.size}M</span></div><Progress value={selected.raised / selected.size * 100} className="loan-progress" aria-label="Illustrative facility allocation" /></div>
           <DialogTrigger asChild><Button type="button" className="loan-invest">Preview investment</Button></DialogTrigger>
-          <p className="loan-detail-note">Illustrative terms · No live investment</p>
         </Card>
       </CardContent>
       <DialogContent className="loan-dialog">
