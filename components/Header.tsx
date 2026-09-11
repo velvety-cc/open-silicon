@@ -11,9 +11,18 @@ import { useEffect, useRef, useState } from "react";
 export default function Header({ financing = false }: { financing?: boolean }) {
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("");
+  const [menuSurface, setMenuSurface] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [lightSurface, setLightSurface] = useState(financing);
   const header = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (activeMenu) return;
+    // Keep navigation colors on the white surface until the panel has retracted.
+    const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 180;
+    const timer = window.setTimeout(() => setMenuSurface(false), delay);
+    return () => window.clearTimeout(timer);
+  }, [activeMenu]);
 
   useEffect(() => {
     const hero = document.querySelector<HTMLElement>("main > .hero");
@@ -65,17 +74,17 @@ export default function Header({ financing = false }: { financing?: boolean }) {
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <header ref={header} className={`site-header transition-colors duration-300 ease-out motion-reduce:transition-none${scrolled ? " is-scrolled" : ""}${lightSurface || activeMenu ? " is-light" : ""}`}>
+      <header ref={header} className={`site-header transition-[--header-ink] duration-200 ease-out motion-reduce:transition-none${scrolled ? " is-scrolled" : ""}${lightSurface || menuSurface ? " is-light" : ""}`}>
         <div aria-hidden="true" data-header-glass data-visible={scrolled && !lightSurface} className="pointer-events-none absolute inset-0 bg-neutral-950 opacity-0 backdrop-blur-[50px] transition-opacity duration-300 supports-[backdrop-filter:blur(1px)]:bg-black/10 data-[visible=true]:opacity-100 motion-reduce:transition-none" />
-        <div aria-hidden="true" data-header-surface data-visible={lightSurface || Boolean(activeMenu)} className="pointer-events-none absolute inset-0 bg-white opacity-0 transition-opacity duration-300 ease-out data-[visible=true]:opacity-100 motion-reduce:transition-none" />
+        <div aria-hidden="true" data-header-surface data-visible={lightSurface || menuSurface} className="pointer-events-none absolute inset-0 bg-white opacity-0 transition-opacity duration-200 ease-out data-[visible=true]:opacity-100 motion-reduce:transition-none" />
         <div className="header-inner">
           <Brand />
-          <NavigationMenu className="nav-shell" value={activeMenu} onValueChange={setActiveMenu} viewport={false} aria-label="Primary navigation">
+          <NavigationMenu className="nav-shell" value={activeMenu} onValueChange={(value) => { setActiveMenu(value); if (value) setMenuSurface(true); }} viewport={false} aria-label="Primary navigation">
             <NavigationMenuList>
               <NavigationMenuItem value="products">
-                <NavigationMenuTrigger className="h-11 bg-transparent px-3.5 font-normal text-[color:var(--ink)] hover:bg-black/5 hover:text-[color:var(--ink)] focus:bg-black/5 focus:text-[color:var(--ink)] data-[state=open]:bg-black/5 data-[state=open]:text-[color:var(--ink)] data-[state=open]:hover:bg-black/5 data-[state=open]:focus:bg-black/5">Products</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="h-11 bg-transparent px-3.5 font-normal text-[color:var(--ink)] transition-[background-color,box-shadow] hover:bg-black/5 hover:text-[color:var(--ink)] focus:bg-black/5 focus:text-[color:var(--ink)] data-[state=open]:bg-black/5 data-[state=open]:text-[color:var(--ink)] data-[state=open]:hover:bg-black/5 data-[state=open]:focus:bg-black/5">Products</NavigationMenuTrigger>
                 <NavigationMenuContent className="group/products fixed! top-[var(--header-height,80px)]! left-0! z-50 mt-0! w-full! rounded-none! border-0! border-b! border-neutral-200! bg-white! p-0! shadow-none! [--ink:#000] data-[state=open]:animate-products-open! data-[state=closed]:animate-products-close! motion-reduce:data-[state=open]:animate-none! motion-reduce:data-[state=closed]:animate-none!">
-                  <div className="grid grid-cols-[repeat(2,minmax(0,240px))] justify-center gap-12 px-[var(--shell-gutter)] pt-6 pb-10 group-data-[state=open]/products:animate-products-content motion-reduce:animate-none!">
+                  <div className="grid grid-cols-[repeat(2,minmax(0,240px))] justify-center gap-12 px-[var(--shell-gutter)] pt-6 pb-10 group-data-[state=open]/products:animate-products-content group-data-[state=closed]/products:animate-products-content-close motion-reduce:animate-none!">
                     {productGroups.map((group) => <div key={group.label}>
                       <p className="mb-3! text-sm font-normal text-neutral-500">{group.label}</p>
                       <ul className="m-0 list-none space-y-1 p-0">
@@ -97,8 +106,8 @@ export default function Header({ financing = false }: { financing?: boolean }) {
             </NavigationMenuList>
           </NavigationMenu>
           <div className="header-actions">
-            <Button variant="inverse" size="nav" className="header-login" type="button">Login</Button>
-            <Button asChild variant="outline" size="nav" className="header-contact"><a href={financing ? "#project" : "#access"}>Get in touch</a></Button>
+            <Button variant="inverse" size="nav" className="header-login transition-colors! duration-200! ease-out! motion-reduce:transition-none!" type="button">Login</Button>
+            <Button asChild variant="outline" size="nav" className="header-contact transition-[background-color,border-color]! duration-200! ease-out! motion-reduce:transition-none!"><a href={financing ? "#project" : "#access"}>Get in touch</a></Button>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="menu-button" aria-label="Open navigation">
                 <span /><span />

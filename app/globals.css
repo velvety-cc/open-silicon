@@ -26,15 +26,21 @@ h3 { font-size: var(--type-heading); letter-spacing: var(--tracking-heading); li
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .skip-link { position: fixed; top: 12px; left: 20px; transform: translateY(-180%); background: var(--accent-soft); color: var(--ink); z-index: 100; padding: 14px 20px; border-radius: 4px; }
 .skip-link:focus { transform: translateY(0); }
+@property --header-ink {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #fff;
+}
 .site-header {
-  --ink: #fff;
+  --header-ink: #fff;
+  --ink: var(--header-ink);
   position: fixed;
   inset: 0 0 auto;
   z-index: 50;
   color: var(--ink);
   background: transparent;
 }
-.site-header.is-light { --ink: #000; }
+.site-header.is-light { --header-ink: #000; }
 .header-inner {
   width: min(var(--shell-width), 100%);
   min-height: 80px;
