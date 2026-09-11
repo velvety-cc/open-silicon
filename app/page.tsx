@@ -63,7 +63,7 @@ export default function Home() {
               </div>
               <div className="compute-stat compute-stat-assets">
                 <h3 className="compute-feature">Real asset<br />backed.</h3>
-                <p>Fully compliant and verifiable.</p>
+                <p className="compute-label">Fully compliant and verifiable</p>
               </div>
               <div className="compute-stat compute-stat-size">
                 <p className="compute-value"><span>$</span>500<span>M</span></p>

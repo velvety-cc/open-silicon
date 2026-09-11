@@ -142,16 +142,17 @@ a:hover .arrow { transform: translate(2px, -2px); }
 .compute-stat-size { grid-column: 3; grid-row: 2; align-self: start; padding-top: 52px; }
 .compute-value { font-size: clamp(48px, 4.5vw, 64px); font-weight: 400; line-height: 1.08; letter-spacing: -.055em; white-space: nowrap; margin-bottom: 14px; }
 .compute-value span { font-size: .6em; letter-spacing: -.035em; }
-.compute-stat h3 { max-width: 250px; margin-inline: auto; font-size: 18px; font-weight: 400; letter-spacing: -.025em; line-height: 1.35; text-wrap: balance; }
+.compute-stat h3, .compute-stat .compute-label { max-width: 250px; margin-inline: auto; font-size: 18px; font-weight: 400; letter-spacing: -.025em; line-height: 1.35; text-wrap: balance; }
+.compute-stat .compute-label { margin-top: 14px; }
 .compute-stat h3.compute-feature { font-size: clamp(28px, 2.4vw, 34px); line-height: 1.05; letter-spacing: -.04em; }
-.compute-stat > p:last-child { max-width: 280px; margin-inline: auto; font-size: 14px; line-height: 1.6; letter-spacing: -.01em; margin-top: 12px; color: #555; text-wrap: pretty; }
+.compute-stat > p:last-child:not(.compute-label) { max-width: 280px; margin-inline: auto; font-size: 14px; line-height: 1.6; letter-spacing: -.01em; margin-top: 12px; color: #555; text-wrap: pretty; }
 .compute-note { max-width: 660px; margin: 32px auto 0; font-size: 11px; text-align: center; line-height: 1.7; }
 @media (min-width: 761px) and (max-width: 1100px) {
   .compute-showcase .container { width: calc(100% - 64px); }
   .compute-stage { grid-template-columns: 1fr 1.65fr 1fr; column-gap: 12px; }
-  .compute-stat > p:last-child { font-size: 13px; }
-  .compute-stat > p:last-child br { display: none; }
-  .compute-stat h3 { font-size: 16px; }
+  .compute-stat > p:last-child:not(.compute-label) { font-size: 13px; }
+  .compute-stat > p:last-child:not(.compute-label) br { display: none; }
+  .compute-stat h3, .compute-stat .compute-label { font-size: 16px; }
   .compute-value { font-size: 44px; }
 }
 @media (max-width: 760px) {
@@ -167,10 +168,10 @@ a:hover .arrow { transform: translate(2px, -2px); }
   .compute-stat-assets { grid-column: 1; grid-row: 3; }
   .compute-stat-size { grid-column: 2; grid-row: 3; }
   .compute-value { font-size: clamp(36px, 8vw, 48px); margin-bottom: 10px; }
-  .compute-stat h3 { font-size: 15px; }
+  .compute-stat h3, .compute-stat .compute-label { font-size: 15px; }
   .compute-stat h3.compute-feature { font-size: clamp(24px, 4.8vw, 28px); }
-  .compute-stat > p:last-child { font-size: 13px; margin-top: 10px; }
-  .compute-stat > p:last-child br { display: none; }
+  .compute-stat > p:last-child:not(.compute-label) { font-size: 13px; margin-top: 10px; }
+  .compute-stat > p:last-child:not(.compute-label) br { display: none; }
   .compute-note { margin-top: 48px; max-width: 350px; }
 }
 
