@@ -1,0 +1,109 @@
+/* Open Silicon: shared brand and interface roles. */
+:root {
+  --ink: #000;
+  --ink-soft: #555;
+  --paper: #fff;
+  --surface: #fafafa;
+  --line: #e5e5e5;
+  --accent: #533afe;
+  --accent-hover: #4428e6;
+  --accent-soft: #f0edff;
+  --blue: var(--accent);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--accent);
+  --primary-foreground: #fff;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #000;
+  --muted: #f5f5f5;
+  --muted-foreground: var(--ink-soft);
+  --accent-foreground: #fff;
+  --destructive: #b42318;
+  --border: var(--line);
+  --input: #ccc;
+  --ring: var(--accent);
+  --radius: 8px;
+  --radius-card: 12px;
+  --radius-pill: 999px;
+
+  --type-hero: clamp(48px, 6.2vw, 88px);
+  --type-display: clamp(40px, 4.5vw, 64px);
+  --type-section: clamp(36px, 3.4vw, 48px);
+  --type-metric: clamp(40px, 4.5vw, 64px);
+  --type-heading: 28px;
+  --type-emphasis: 18px;
+  --type-body: 16px;
+  --type-label: 14px;
+  --type-caption: 12px;
+  --type-button: 15px;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --leading-heading: 1.1;
+  --leading-body: 1.6;
+  --tracking-heading: -.045em;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --section-space: 112px;
+  --shell-width: 1440px;
+  --shell-gutter: clamp(24px, 4.5vw, 64px);
+  --button-height: 52px;
+  --button-compact-height: 44px;
+  --motion-fast: 160ms;
+}
+
+@media (max-width: 1023px) {
+  :root { --shell-gutter: 24px; }
+}
+@media (max-width: 760px) {
+  :root {
+    --type-hero: 48px;
+    --type-display: 40px;
+    --type-section: 36px;
+    --type-metric: 40px;
+    --type-heading: 24px;
+    --type-emphasis: 16px;
+    --section-space: 72px;
+  }
+}
+@media (max-width: 420px) {
+  :root { --shell-gutter: 16px; }
+}
+
+@theme inline {
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent-soft);
+  --color-accent-foreground: var(--ink);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: 4px;
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius-card);
+  --radius-xl: 16px;
+}
