@@ -3,7 +3,8 @@ import Image from "next/image";
 import LoanMarketplace from "@/components/LoanMarketplace";
 import HeroVideo from "@/components/HeroVideo";
 import Header from "@/components/Header";
-import Brand, { BrandWordmark } from "@/components/Brand";
+import Brand from "@/components/Brand";
+import ComputeShowcase from "@/components/ComputeShowcase";
 
 
 const opportunities = [
@@ -40,39 +41,7 @@ export default function Home() {
           </figure>
         </section>
 
-        <section data-header-theme="light" className="compute-showcase" aria-labelledby="compute-title">
-          <div className="container">
-            <div className="compute-heading">
-              <p className="compute-wordmark"><BrandWordmark /></p>
-              <h2 id="compute-title">Capital. Compute. Possibility.</h2>
-              <a className="button compute-cta" href="#protocol">View current offerings</a>
-            </div>
-            <div className="compute-stage">
-              <figure className="compute-product">
-                <Image src="/compute-rack.webp" alt="A graphite GPU server rack with stacked compute hardware" width={1024} height={1536} sizes="(max-width: 760px) 90vw, (max-width: 1100px) 44vw, 560px" quality={90} />
-              </figure>
-              <div className="compute-stat compute-stat-yield">
-                <p className="compute-value">7–12<span>%</span></p>
-                <h3>Target annual yield</h3>
-                <p>Senior secured credit.<br />Backed by productive compute.</p>
-              </div>
-              <div className="compute-stat compute-stat-size">
-                <p className="compute-value"><span>$</span>5–100<span>M</span></p>
-                <h3>Built for scale</h3>
-                <p>Purpose-built facilities for<br />infrastructure operators.</p>
-              </div>
-              <div className="compute-stat compute-stat-assets">
-                <h3 className="compute-feature">Real assets.</h3>
-                <p>GPU hardware and receivables.<br />A physical foundation for capital.</p>
-              </div>
-              <div className="compute-stat compute-stat-terms">
-                <h3 className="compute-feature">12–36 months</h3>
-                <p>Flexible terms.<br />Room to build what comes next.</p>
-              </div>
-            </div>
-            <p className="compute-note">Indicative credit parameters. Returns are not guaranteed. Financing is subject to eligibility and credit diligence.</p>
-          </div>
-        </section>
+        <ComputeShowcase />
 
         <section data-header-theme="light" className="marketplace-section" id="protocol" aria-labelledby="marketplace-title">
           <div className="container section-space">
