@@ -2,7 +2,7 @@
 
 import { BrandWordmark } from "@/components/Brand";
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -64,7 +64,6 @@ export default function LoanMarketplace() {
           <p className="loan-detail-note">Illustrative terms · No live investment</p>
         </Card>
       </CardContent>
-      <CardFooter className="loan-app-footer"><span>USD / USDC</span><span>Physical assets. Visible terms.</span></CardFooter>
       <DialogContent className="loan-dialog">
         <Badge variant="secondary" className="loan-demo-badge">Investment preview</Badge>
         <DialogTitle>{selected.name}</DialogTitle>

@@ -428,7 +428,6 @@ h2 { font-size: var(--type-section); }
 .loan-funding > div { display: flex; justify-content: space-between; font-size: var(--type-caption); }
 .loan-invest { margin-top: var(--space-6); width: 100%; }
 .loan-detail-note { text-align: center; margin-top: 12px; font-size: var(--type-caption); line-height: 1.5; }
-.loan-app-footer { padding: 15px 25px; border-top: 1px solid #eee; display: flex; justify-content: space-between; gap: 14px; font-size: var(--type-caption); }
 .loan-dialog { display: block; z-index: 70; width: min(460px, calc(100% - 32px)); max-height: calc(100svh - 48px); overflow-y: auto; color: #000; background: #fff; padding: 28px; border: 1px solid #ddd; border-radius: var(--radius-card); box-shadow: 0 24px 100px #0003; }
 .loan-dialog-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
 .loan-dialog-top > button { width: 36px; height: 36px; border: 0; border-radius: 50%; background: #f5f5f5; color: #000; font-size: var(--type-heading); }
@@ -464,7 +463,6 @@ h2 { font-size: var(--type-section); }
 .loan-detail h4 { margin-top: 22px; }
 .loan-rate { margin-block: 24px; }
 .loan-terms { font-size: var(--type-caption); }
-.loan-app-footer { padding-inline: 16px; }
 .marketplace-story { grid-template-columns: 1fr; gap: 22px; }
 .marketplace-features { margin-top: 8px; }
 

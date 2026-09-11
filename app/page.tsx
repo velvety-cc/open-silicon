@@ -94,7 +94,7 @@ export default function Home() {
         </section>
 
         <section data-header-theme="light" className="deals-section container section-space" id="opportunities">
-          <div className="section-heading"><div><h2>Real infrastructure.<br /><span>A clearer view.</span></h2></div><p>Explore the shape of compute credit.<br />Illustrative opportunities, at a glance.</p></div>
+          <div className="section-heading"><div><h2>Real infrastructure.<br /><span>A clearer view.</span></h2></div></div>
           <Table className="deals-table" containerProps={{ className: "deals-table-wrap", role: "region", "aria-label": "Illustrative credit opportunities, scroll to see all columns", tabIndex: 0 }}>
               <TableCaption className="sr-only">Illustrative opportunities. Availability and terms are subject to diligence.</TableCaption>
               <colgroup><col className="deal-col-asset" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-status" /><col className="deal-col-action" /></colgroup>
