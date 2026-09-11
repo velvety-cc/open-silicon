@@ -110,7 +110,6 @@ export default function Home() {
                 </TableRow>
               ))}</TableBody>
           </Table>
-          <p className="small-note">Illustrative examples for design purposes. Not an offer or a representation of available investments.</p>
         </section>
 
         <section data-header-theme="dark" className="closing closing-image" id="access" aria-labelledby="closing-title">
