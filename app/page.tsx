@@ -1,277 +1,125 @@
 import Image from "next/image";
-import Header from "@/components/Header";
-import YieldModel from "@/components/YieldModel";
+import LoanMarketplace from "@/components/LoanMarketplace";
+import HeroVideo from "@/components/HeroVideo";
+import Header, { Brand } from "@/components/Header";
 
-const Arrow = () => <span aria-hidden="true">↗</span>;
-
-const CubeIcon = ({ variant = 0 }: { variant?: number }) => (
-  <svg className="line-icon" viewBox="0 0 48 48" aria-hidden="true">
-    {variant === 0 && (
-      <>
-        <path d="m24 5 17 10v19L24 44 7 34V15L24 5Z" />
-        <path d="m7 15 17 10 17-10M24 25v19" />
-      </>
-    )}
-    {variant === 1 && (
-      <>
-        <rect x="5" y="9" width="38" height="30" rx="2" />
-        <path d="M12 17h24M12 24h24M12 31h13M32 31h4" />
-      </>
-    )}
-    {variant === 2 && (
-      <>
-        <circle cx="24" cy="24" r="18" />
-        <path d="M24 6v36M6 24h36M11 13c8 5 18 5 26 0M11 35c8-5 18-5 26 0" />
-      </>
-    )}
-  </svg>
-);
+const Arrow = () => <span className="arrow" aria-hidden="true">↗</span>;
+const opportunities = [
+  { id: "CC-001", name: "H200 Cluster I", location: "North America", size: "$32.0M", apr: "10.2%", term: "24 months", status: "Open" },
+  { id: "CC-002", name: "B200 Pod II", location: "Nordics", size: "$48.5M", apr: "9.6%", term: "30 months", status: "Closing" },
+  { id: "CC-003", name: "H100 Campus III", location: "APAC", size: "$18.0M", apr: "11.1%", term: "18 months", status: "Funded" },
+];
 
 export default function Home() {
   return (
-    <>
-      <div className="announcement">
-        <span className="announcement-pip" />
-        Private credit for the intelligence economy
-        <a href="#protocol">Read the thesis <span>→</span></a>
-      </div>
-
-      <main id="top">
-        <section className="hero shell">
-          <Image
-            className="hero-image"
-            src="/hero-aidc.png"
-            alt="A glass AI data center glowing at dusk"
-            fill
-            loading="eager"
-            fetchPriority="high"
-            sizes="100vw"
-          />
-          <div className="hero-wash" />
-          <Header />
-
+    <div id="top">
+      <a className="skip-link" href="#main">Skip to content</a>
+      <Header />
+      <main id="main">
+        <section data-header-theme="dark" className="hero hero-immersive" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="eyebrow light"><span /> Onchain credit for AI infrastructure</p>
-            <h1>Capital for<br />machines that <em>think.</em></h1>
-            <p className="hero-description">
-              We turn global crypto liquidity into secured credit for AI data centers—financing the GPUs, power and capacity behind frontier intelligence.
-            </p>
+            <h1 id="hero-title">Open capital for the<br /><span>intelligence economy.</span></h1>
+            <p className="hero-description">Connecting global liquidity to the machines that move us forward. Secured credit for the next generation of AI infrastructure.</p>
             <div className="hero-actions">
-              <a className="primary-button" href="#capital">Supply capital <Arrow /></a>
-              <a className="text-button light" href="#operators">Finance infrastructure <span>→</span></a>
+              <a className="button button-dark" href="#protocol">Explore capital <Arrow /></a>
+              <a className="text-link" href="#access">Finance infrastructure <span aria-hidden="true">→</span></a>
             </div>
-          </div>
-
-          <div className="hero-index" aria-label="Key product facts">
-            <div>
-              <span>Target yield</span>
-              <strong>7–12<sup>%</sup></strong>
-              <small>Senior secured pools</small>
-            </div>
-            <div>
-              <span>Credit pipeline</span>
-              <strong>$250<sup>M+</sup></strong>
-              <small>Qualified AIDC demand</small>
-            </div>
-            <div>
-              <span>Collateral</span>
-              <strong>GPU</strong>
-              <small>Hardware + receivables</small>
-            </div>
-            <a href="#protocol" className="hero-project-link">
-              Explore the protocol
-              <span className="round-arrow"><Arrow /></span>
-            </a>
-          </div>
-        </section>
-
-        <section className="partner-strip" id="network" aria-label="Ecosystem partners">
-          <p>Powering an open compute ecosystem with</p>
-          <div className="partner-logos">
-            <span className="wordmark nvidia"><i />NVIDIA</span>
-            <span className="wordmark kimi">Kimi</span>
-            <span className="wordmark deepseek">deepseek</span>
-            <span className="wordmark nebius">NEBIUS</span>
-            <span className="wordmark coreweave">COREWEAVE</span>
-          </div>
-        </section>
-
-        <section className="manifesto section-pad">
-          <div className="section-label"><span>01</span> The opportunity</div>
-          <div className="manifesto-grid">
-            <h2>The market has capital.<br />AI needs <em>capacity.</em></h2>
-            <div className="manifesto-copy">
-              <p>
-                AI infrastructure is scaling faster than traditional credit can move. Circuit creates a direct, transparent route from digital capital to productive compute assets.
-              </p>
-              <a className="inline-link" href="#protocol">Why compute credit <Arrow /></a>
-            </div>
-          </div>
-          <div className="ticker" aria-hidden="true">
-            <div>
-              <span>CRYPTO LIQUIDITY</span><b>✦</b><span>VERIFIED HARDWARE</span><b>✦</b><span>PRODUCTIVE COMPUTE</span><b>✦</b>
-              <span>CRYPTO LIQUIDITY</span><b>✦</b><span>VERIFIED HARDWARE</span><b>✦</b><span>PRODUCTIVE COMPUTE</span><b>✦</b>
-            </div>
-          </div>
-        </section>
-
-        <section className="protocol-section section-pad" id="protocol">
-          <div className="protocol-heading">
-            <div className="section-label light-label"><span>02</span> Capital architecture</div>
-            <h2>One rail. Three layers<br />of <em>conviction.</em></h2>
-            <p>Every loan moves through a transparent, institutional-grade credit process—from asset verification to onchain servicing.</p>
-          </div>
-
-          <div className="flow-grid">
-            <article className="flow-card">
-              <div className="flow-card-top"><span>01 / FUND</span><CubeIcon variant={2} /></div>
-              <div className="flow-orbit orbit-one"><i /><i /><i /></div>
-              <h3>Global capital enters</h3>
-              <p>Stablecoin liquidity is aggregated into risk-segmented, permissioned credit vaults.</p>
-              <span className="flow-tag">USDC · USDT · USD</span>
-            </article>
-
-            <article className="flow-card feature-card">
-              <div className="flow-card-top"><span>02 / VERIFY</span><CubeIcon variant={0} /></div>
-              <div className="collateral-visual">
-                <div className="gpu-slab"><span>NVIDIA</span><strong>H200</strong><small>141GB HBM3e</small></div>
-                <div className="scan-line" />
+            <div className="hero-partners" aria-label="Partners">
+              <p><span className="tiny-cross" aria-hidden="true">+</span> Partners</p>
+              <div className="hero-partner-logos">
+                <a href="https://www.nvidia.com/" aria-label="NVIDIA"><Image src="/logos/nvidia-white.svg" alt="NVIDIA" width={130} height={24} /></a>
+                <a href="https://www.kimi.com/" aria-label="Kimi"><Image src="/logos/kimi-white.svg" alt="Kimi" width={84} height={28} /></a>
               </div>
-              <h3>Assets are underwritten</h3>
-              <p>Hardware, off-take contracts, insurance and facility economics are continuously verified.</p>
-              <span className="flow-tag">1st-lien secured</span>
-            </article>
+            </div>
+          </div>
+          <figure className="hero-visual" aria-label="A data center takes shape from an empty foundation to illuminated server halls at dusk">
+            <HeroVideo />
 
-            <article className="flow-card">
-              <div className="flow-card-top"><span>03 / DEPLOY</span><CubeIcon variant={1} /></div>
-              <div className="flow-bars" aria-hidden="true">
-                <i style={{ height: "42%" }} /><i style={{ height: "70%" }} /><i style={{ height: "58%" }} /><i style={{ height: "88%" }} /><i style={{ height: "74%" }} /><i style={{ height: "100%" }} />
+          </figure>
+        </section>
+
+        <section data-header-theme="light" className="compute-showcase" aria-labelledby="compute-title">
+          <div className="container">
+            <div className="compute-heading">
+              <p className="compute-wordmark">open silicon</p>
+              <h2 id="compute-title">Capital. Compute. Possibility.</h2>
+              <a className="button compute-cta" href="#protocol">Explore offerings <Arrow /></a>
+            </div>
+            <div className="compute-stage">
+              <figure className="compute-product">
+                <Image src="/compute-rack.webp" alt="A graphite GPU server rack with stacked compute hardware" width={1024} height={1536} sizes="(max-width: 760px) 90vw, (max-width: 1100px) 44vw, 560px" quality={90} />
+              </figure>
+              <div className="compute-stat compute-stat-yield">
+                <p className="compute-value">7–12<span>%</span></p>
+                <h3>Target annual yield</h3>
+                <p>Senior secured credit.<br />Backed by productive compute.</p>
               </div>
-              <h3>Compute comes online</h3>
-              <p>Operators finance new capacity in weeks, repaying from contracted compute revenue.</p>
-              <span className="flow-tag">Measured in real time</span>
-            </article>
+              <div className="compute-stat compute-stat-size">
+                <p className="compute-value"><span>$</span>5–100<span>M</span></p>
+                <h3>Built for scale</h3>
+                <p>Purpose-built facilities for<br />infrastructure operators.</p>
+              </div>
+              <div className="compute-stat compute-stat-assets">
+                <h3 className="compute-feature">Real assets.</h3>
+                <p>GPU hardware and receivables.<br />A physical foundation for capital.</p>
+              </div>
+              <div className="compute-stat compute-stat-terms">
+                <h3 className="compute-feature">12–36 months</h3>
+                <p>Flexible terms.<br />Room to build what comes next.</p>
+              </div>
+            </div>
+            <p className="compute-note">Indicative credit parameters. Returns are not guaranteed. Financing is subject to eligibility and credit diligence.</p>
           </div>
         </section>
 
-        <section className="capital-section section-pad" id="capital">
-          <div className="capital-copy">
-            <div className="section-label"><span>03</span> For capital</div>
-            <h2>Yield with a<br /><em>machine beneath it.</em></h2>
-            <p>
-              Access short-duration private credit backed by income-producing GPU fleets. Choose the duration and risk profile that fits your mandate.
-            </p>
-            <ul className="check-list">
-              <li><span>✓</span> Bankruptcy-remote lending structures</li>
-              <li><span>✓</span> Independent collateral monitoring</li>
-              <li><span>✓</span> Transparent onchain cash flows</li>
-            </ul>
-          </div>
-          <YieldModel />
-        </section>
-
-        <section className="operator-section" id="operators">
-          <div className="operator-image" role="img" aria-label="Abstract visualization of data center capacity">
-            <div className="rack-grid">
-              {Array.from({ length: 24 }).map((_, index) => <i key={index} />)}
+        <section data-header-theme="light" className="marketplace-section" id="protocol" aria-labelledby="marketplace-title">
+          <div className="container section-space">
+            <p className="section-label">The marketplace</p>
+            <h2 id="marketplace-title">Own a piece of<br />what powers intelligence.</h2>
+            <div className="marketplace-showcase">
+              <LoanMarketplace />
+              <aside className="marketplace-story">
+                <h3>Real infrastructure.<br />A clear investment.</h3>
+                <p>Explore AIDC credit. See the machines, the compute users and the terms behind every allocation.</p>
+                <div className="marketplace-features"><span>Every offering, in focus</span><ul><li>Named compute users</li><li>Asset-backed loan structures</li><li>Defined rates and maturities</li><li>Monthly interest payments</li></ul></div>
+                <a className="text-link" href="#opportunities">Explore offerings <Arrow /></a>
+              </aside>
             </div>
-            <div className="capacity-orb">
-              <span>AVAILABLE CAPACITY</span>
-              <strong>64.8<small>MW</small></strong>
-              <i>LIVE</i>
-            </div>
-            <div className="operator-caption">
-              <span>01</span>
-              <p>Real assets.<br />Real workloads.</p>
-            </div>
-          </div>
-
-          <div className="operator-copy">
-            <div className="section-label light-label"><span>04</span> For operators</div>
-            <h2>Build at<br /><em>AI speed.</em></h2>
-            <p>Debt capital purpose-built for neoclouds and data center operators. Move from signed demand to energized clusters without waiting on legacy financing.</p>
-            <div className="operator-specs">
-              <div><span>Facility size</span><strong>$5M—$100M</strong></div>
-              <div><span>Terms</span><strong>12—36 months</strong></div>
-              <div><span>Time to term sheet</span><strong>7 days</strong></div>
-            </div>
-            <a className="primary-button accent" href="#access">Request financing <Arrow /></a>
+            <p className="marketplace-disclaimer">Product demonstration. All projects and terms are illustrative. Named compute users, including Anthropic and Mistral AI, represent hypothetical scenarios, not confirmed customers, borrowers or partners.</p>
           </div>
         </section>
 
-        <section className="deals-section section-pad">
-          <div className="deals-heading">
-            <div className="section-label"><span>05</span> Active opportunities</div>
-            <h2>Infrastructure,<br /><em>underwritten.</em></h2>
+        <section data-header-theme="light" className="deals-section container section-space" id="opportunities">
+          <div className="section-heading"><div><p className="section-label">The asset layer</p><h2>Real infrastructure.<br /><span>A clearer view.</span></h2></div><p>Explore the shape of compute credit.<br />Illustrative opportunities, at a glance.</p></div>
+          <div className="deals-table-wrap" role="region" aria-label="Illustrative credit opportunities, scroll to see all columns" tabIndex={0}>
+            <table className="deals-table">
+              <caption className="sr-only">Illustrative opportunities. Availability and terms are subject to diligence.</caption>
+              <colgroup><col className="deal-col-asset" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-status" /><col className="deal-col-action" /></colgroup>
+              <thead><tr><th scope="col">Asset / Region</th><th scope="col" className="numeric">Facility</th><th scope="col" className="numeric">Target APR</th><th scope="col" className="numeric">Term</th><th scope="col" className="status-cell">Status</th><th scope="col"><span className="sr-only">Enquire</span></th></tr></thead>
+              <tbody>{opportunities.map((deal) => (
+                <tr key={deal.id}>
+                  <th scope="row"><div className="deal-asset"><span className="asset-id">{deal.id}</span><span className="deal-asset-name"><strong>{deal.name}</strong><span className="asset-location">{deal.location}</span></span></div></th>
+                  <td className="numeric">{deal.size}</td>
+                  <td className="numeric apr-value">{deal.apr}</td>
+                  <td className="numeric">{deal.term}</td>
+                  <td className="status-cell"><span className={`deal-status deal-status--${deal.status.toLowerCase()}`}><i aria-hidden="true" />{deal.status}</span></td>
+                  <td><a className="deal-link" href={`mailto:credit@circuit.credit?subject=${encodeURIComponent(`Enquiry: ${deal.name}`)}`} aria-label={`Enquire about ${deal.name}`}><Arrow /></a></td>
+                </tr>
+              ))}</tbody>
+            </table>
           </div>
-
-          <div className="deal-list">
-            <article className="deal-row">
-              <div className="deal-id"><span>01</span><i className="status-dot" /> OPEN</div>
-              <div className="deal-title"><strong>H200 Cluster I</strong><span>North America</span></div>
-              <div className="deal-stat"><span>Facility</span><strong>$32.0M</strong></div>
-              <div className="deal-stat"><span>Target APR</span><strong>10.2%</strong></div>
-              <div className="deal-stat"><span>Term</span><strong>24M</strong></div>
-              <a href="#access" aria-label="View H200 Cluster I"><Arrow /></a>
-            </article>
-            <article className="deal-row">
-              <div className="deal-id"><span>02</span><i className="status-dot amber" /> CLOSING</div>
-              <div className="deal-title"><strong>B200 Pod II</strong><span>Nordics</span></div>
-              <div className="deal-stat"><span>Facility</span><strong>$48.5M</strong></div>
-              <div className="deal-stat"><span>Target APR</span><strong>9.6%</strong></div>
-              <div className="deal-stat"><span>Term</span><strong>30M</strong></div>
-              <a href="#access" aria-label="View B200 Pod II"><Arrow /></a>
-            </article>
-            <article className="deal-row muted-row">
-              <div className="deal-id"><span>03</span><i className="status-dot grey" /> FUNDED</div>
-              <div className="deal-title"><strong>H100 Campus III</strong><span>APAC</span></div>
-              <div className="deal-stat"><span>Facility</span><strong>$18.0M</strong></div>
-              <div className="deal-stat"><span>Target APR</span><strong>11.1%</strong></div>
-              <div className="deal-stat"><span>Term</span><strong>18M</strong></div>
-              <a href="#access" aria-label="View H100 Campus III"><Arrow /></a>
-            </article>
-          </div>
-          <p className="data-disclaimer">Illustrative opportunities shown for design purposes. Availability and terms are subject to diligence.</p>
+          <p className="small-note">Illustrative examples for design purposes. Not an offer or a representation of available investments.</p>
         </section>
 
-        <section className="risk-section section-pad">
-          <div className="section-label"><span>06</span> Designed for downside</div>
-          <div className="risk-intro">
-            <h2>Credit discipline,<br />written into the <em>rails.</em></h2>
-            <p>We pair traditional project-finance rigor with the speed and transparency of onchain settlement.</p>
+        <section data-header-theme="dark" className="closing closing-image" id="access" aria-labelledby="closing-title">
+          <Image className="closing-background" src="/closing-datacenter-v3.webp" alt="Warmly illuminated server racks behind the glass facade of a data center at dusk" fill sizes="100vw" quality={90} />
+          <div className="container closing-content">
+            <p className="section-label">Let’s build the next chapter</p>
+            <div className="closing-grid"><h2 id="closing-title">The future needs<br /><span>something real.</span></h2><div><p>Join the private launch for qualified capital partners and infrastructure operators.</p><a className="button button-dark" href="mailto:hello@circuit.credit?subject=Open%20Silicon%20private%20launch">Start a conversation <Arrow /></a></div></div>
           </div>
-          <div className="risk-grid">
-            <article><span>01</span><h3>Know the machine</h3><p>Serial-level inventory, live utilization and third-party valuations keep collateral visible.</p></article>
-            <article><span>02</span><h3>Know the revenue</h3><p>Repayment is sized against contracted workloads, counterparty quality and operating margins.</p></article>
-            <article><span>03</span><h3>Control the cash</h3><p>Programmatic waterfalls route operating revenue to lenders before residual distributions.</p></article>
-          </div>
-        </section>
-
-        <section className="closing shell" id="access">
-          <Image className="closing-image" src="/hero-aidc.png" alt="" fill sizes="100vw" />
-          <div className="closing-overlay" />
-          <div className="closing-content">
-            <p className="eyebrow light"><span /> The next data center starts here</p>
-            <h2>Put capital<br />to <em>work.</em></h2>
-            <p>Join the private launch for qualified capital partners and infrastructure operators.</p>
-            <div className="closing-actions">
-              <a className="primary-button" href="mailto:hello@circuit.credit">Request access <Arrow /></a>
-              <a className="text-button light" href="mailto:credit@circuit.credit">Talk to credit <span>→</span></a>
-            </div>
-          </div>
-          <div className="closing-coordinate">37.7749° N<br />122.4194° W</div>
         </section>
       </main>
-
-      <footer>
-        <div className="footer-brand">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 24 20 10h19L28 24 17 38H2L9 24Z" fill="currentColor" /><path d="m20 10 8 14-11 14" fill="none" stroke="#111513" strokeWidth="4" /></svg>
-          <strong>CIRCUIT</strong>
-        </div>
-        <div className="footer-links"><a href="#capital">Capital</a><a href="#operators">Operators</a><a href="#protocol">Protocol</a><a href="#network">Network</a></div>
-        <div className="footer-meta"><span>© 2026 Circuit Labs</span><span>Terms</span><span>Privacy</span></div>
-        <p className="footer-disclaimer">Circuit is a technology platform, not a bank. Digital assets and private credit involve risk, including possible loss of principal. Product availability is subject to jurisdiction and eligibility.</p>
-      </footer>
-    </>
+      <footer className="site-footer container"><div className="footer-top"><Brand /><p>Open capital for the intelligence economy.</p><a href="mailto:hello@circuit.credit">Contact the team <Arrow /></a></div><div className="footer-bottom"><span>© 2026 Open Silicon</span><nav aria-label="Footer navigation"><a href="#protocol">Investors</a><a href="#access">Operators</a><a href="#protocol">Protocol</a></nav><a href="#top">Back to top ↑</a></div><p className="footer-disclaimer">Open Silicon is a technology platform, not a bank. Digital assets and private credit involve risk, including possible loss of principal. Returns are not guaranteed. Product availability is subject to jurisdiction and eligibility.</p></footer>
+    </div>
   );
 }

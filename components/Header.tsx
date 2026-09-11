@@ -1,51 +1,98 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-function Brand() {
+export function Brand() {
   return (
-    <a className="brand" href="#top" aria-label="Circuit home">
-      <svg className="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M9 24 20 10h19L28 24 17 38H2L9 24Z" fill="currentColor" />
-        <path d="m20 10 8 14-11 14" fill="none" stroke="#111513" strokeWidth="4" />
-      </svg>
-      <span className="brand-type">CIRCUIT</span>
-      <span className="brand-descriptor">COMPUTE<br />CREDIT</span>
+    <a className="brand" href="#top" aria-label="Open Silicon home">
+      <span>open silicon</span>
     </a>
   );
 }
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [lightSurface, setLightSurface] = useState(false);
+  const toggle = useRef<HTMLButtonElement>(null);
+  const header = useRef<HTMLElement>(null);
 
-  const close = () => setOpen(false);
+  useEffect(() => {
+    const hero = document.querySelector<HTMLElement>("main > .hero");
+    let frame: number | null = null;
+    const updateSurface = () => {
+      frame = null;
+      const mobile = window.matchMedia("(max-width: 1023px)").matches;
+      setScrolled(window.scrollY >= (mobile ? 8 : 70));
+      const probe = (header.current?.getBoundingClientRect().bottom ?? 80) + 1;
+      setLightSurface(!hero || hero.getBoundingClientRect().bottom <= probe);
+    };
+    const scheduleUpdate = () => {
+      if (frame === null) frame = window.requestAnimationFrame(updateSurface);
+    };
+    updateSurface();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    return () => {
+      if (frame !== null) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const closeOutside = (event: PointerEvent) => {
+      if (event.target instanceof Node && !header.current?.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const closeOnDesktop = () => { if (desktop.matches) setOpen(false); };
+    document.addEventListener("pointerdown", closeOutside);
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => {
+      document.removeEventListener("pointerdown", closeOutside);
+      desktop.removeEventListener("change", closeOnDesktop);
+    };
+  }, [open]);
 
   return (
-    <header className="site-header">
-      <Brand />
-
-      <nav className={`nav-shell ${open ? "is-open" : ""}`} aria-label="Primary navigation">
-        <a href="#capital" onClick={close}>For capital</a>
-        <a href="#operators" onClick={close}>For operators</a>
-        <a href="#protocol" onClick={close}>Protocol</a>
-        <a href="#network" onClick={close}>Network</a>
-      </nav>
-
-      <a className="header-cta" href="#access">
-        Enter protocol
-        <span aria-hidden="true">↗</span>
-      </a>
-
-      <button
-        className={`menu-button ${open ? "is-open" : ""}`}
-        type="button"
-        aria-label={open ? "Close navigation" : "Open navigation"}
-        aria-expanded={open}
-        onClick={() => setOpen((value) => !value)}
-      >
-        <span />
-        <span />
-      </button>
+    <header
+      ref={header}
+      className={`site-header${scrolled ? " is-scrolled" : ""}${lightSurface ? " is-light" : ""}${open ? " menu-open" : ""}`}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && open) {
+          setOpen(false);
+          toggle.current?.focus();
+        }
+      }}
+    >
+      <div className="header-inner">
+        <Brand />
+        <nav id="primary-navigation" className={`nav-shell${open ? " is-open" : ""}`} aria-label="Primary navigation">
+          <a href="#protocol" onClick={() => setOpen(false)}>For investors</a>
+          <a href="#access" onClick={() => setOpen(false)}>For operators</a>
+          <a href="#protocol" onClick={() => setOpen(false)}>How it works</a>
+        </nav>
+        <div className="header-actions">
+          <a className="header-cta" href="#access" onClick={() => setOpen(false)}>Get in touch <span aria-hidden="true">↗</span></a>
+          <button
+            ref={toggle}
+            className={`menu-button${open ? " is-open" : ""}`}
+            type="button"
+            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-expanded={open}
+            aria-controls="primary-navigation"
+            onClick={() => setOpen(!open)}
+          >
+            <span /><span />
+          </button>
+        </div>
+      </div>
     </header>
   );
 }
