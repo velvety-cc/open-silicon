@@ -45,7 +45,7 @@ export default function Home() {
             <div className="compute-heading">
               <p className="compute-wordmark"><BrandWordmark /></p>
               <h2 id="compute-title">Capital. Compute. Possibility.</h2>
-              <a className="button compute-cta" href="#protocol">Explore offerings <Arrow /></a>
+              <a className="button compute-cta" href="#protocol">View current offerings</a>
             </div>
             <div className="compute-stage">
               <figure className="compute-product">
