@@ -19,7 +19,7 @@ Open Silicon uses locally owned shadcn/ui components with Radix behavior and Tai
 | Icon action | `Button size="icon"` | 44px | 20px SVG | Circle |
 | Text action | `Button variant="link"` | ≥44px | 14px / 500 | Text with hover underline |
 
-Use `asChild` with an anchor for navigation. Keep actions as native buttons. Marketing primary actions use purple; header Login switches between white and black with the header surface. Login intentionally has no destination yet. Secondary actions use outline or text variants. Primary CTAs have no arrows; diagonal arrows denote external contact/navigation links. Long labels reflow their containing layout rather than shrinking typography.
+Use `asChild` with an anchor for navigation. Keep actions as native buttons. Marketing primary actions use purple; header Login switches between white and black with the header surface. Login intentionally has no destination yet. Secondary actions use outline or text variants. Primary CTAs have no arrows; diagonal arrows denote external contact/navigation links and always use Radix `ArrowTopRightIcon` through `components/Arrow.tsx`. Long labels reflow their containing layout rather than shrinking typography.
 
 Offering selection uses the `card` button variant: it is an entire selectable card, not a compact action button. Preserve the selected border, `aria-pressed`, and visible keyboard focus.
 
