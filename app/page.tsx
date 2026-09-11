@@ -1,3 +1,6 @@
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell, TableCaption } from "@/components/ui/table";
 import Arrow from "@/components/Arrow";
 import Image from "next/image";
 import LoanMarketplace from "@/components/LoanMarketplace";
@@ -23,8 +26,8 @@ export default function Home() {
             <h1 id="hero-title">Open capital for the<br /><span>intelligence economy.</span></h1>
             <p className="hero-description">Connecting global liquidity to the machines that move us forward. Secured credit for the next generation of AI infrastructure.</p>
             <div className="hero-actions">
-              <a className="button button-dark" href="#protocol">View current offerings</a>
-              <a className="text-link" href="#access">Finance infrastructure <span aria-hidden="true">→</span></a>
+              <Button asChild size="lg"><a href="#protocol">View current offerings</a></Button>
+              <Button asChild variant="link"><a href="#access">Finance infrastructure</a></Button>
             </div>
             <div className="hero-partners" aria-label="Partners">
               <p><span className="tiny-cross" aria-hidden="true">+</span> Partners</p>
@@ -45,7 +48,7 @@ export default function Home() {
             <div className="compute-heading">
               <p className="compute-wordmark"><BrandWordmark /></p>
               <h2 id="compute-title">Capital. Compute. Possibility.</h2>
-              <a className="button compute-cta" href="#protocol">View current offerings</a>
+              <Button asChild size="lg" className="compute-cta"><a href="#protocol">View current offerings</a></Button>
             </div>
             <div className="compute-stage">
               <figure className="compute-product">
@@ -83,7 +86,7 @@ export default function Home() {
                 <h3>Real infrastructure.<br />A clear investment.</h3>
                 <p>Explore AIDC credit. See the machines, the compute users and the terms behind every allocation.</p>
                 <div className="marketplace-features"><span>Every offering, in focus</span><ul><li>Named compute users</li><li>Asset-backed loan structures</li><li>Defined rates and maturities</li><li>Monthly interest payments</li></ul></div>
-                <a className="text-link" href="#opportunities">Explore offerings <Arrow /></a>
+                <Button asChild variant="link"><a href="#opportunities">Explore offerings</a></Button>
               </aside>
             </div>
             <p className="marketplace-disclaimer">Product demonstration. All projects and terms are illustrative. Named compute users, including Anthropic and Mistral AI, represent hypothetical scenarios, not confirmed customers, borrowers or partners.</p>
@@ -92,23 +95,21 @@ export default function Home() {
 
         <section data-header-theme="light" className="deals-section container section-space" id="opportunities">
           <div className="section-heading"><div><h2>Real infrastructure.<br /><span>A clearer view.</span></h2></div><p>Explore the shape of compute credit.<br />Illustrative opportunities, at a glance.</p></div>
-          <div className="deals-table-wrap" role="region" aria-label="Illustrative credit opportunities, scroll to see all columns" tabIndex={0}>
-            <table className="deals-table">
-              <caption className="sr-only">Illustrative opportunities. Availability and terms are subject to diligence.</caption>
+          <Table className="deals-table" containerProps={{ className: "deals-table-wrap", role: "region", "aria-label": "Illustrative credit opportunities, scroll to see all columns", tabIndex: 0 }}>
+              <TableCaption className="sr-only">Illustrative opportunities. Availability and terms are subject to diligence.</TableCaption>
               <colgroup><col className="deal-col-asset" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-status" /><col className="deal-col-action" /></colgroup>
-              <thead><tr><th scope="col">Asset / Region</th><th scope="col" className="numeric">Facility</th><th scope="col" className="numeric">Target APR</th><th scope="col" className="numeric">Term</th><th scope="col" className="status-cell">Status</th><th scope="col"><span className="sr-only">Enquire</span></th></tr></thead>
-              <tbody>{opportunities.map((deal) => (
-                <tr key={deal.id}>
-                  <th scope="row"><div className="deal-asset"><span className="asset-id">{deal.id}</span><span className="deal-asset-name"><strong>{deal.name}</strong><span className="asset-location">{deal.location}</span></span></div></th>
-                  <td className="numeric">{deal.size}</td>
-                  <td className="numeric apr-value">{deal.apr}</td>
-                  <td className="numeric">{deal.term}</td>
-                  <td className="status-cell"><span className={`deal-status deal-status--${deal.status.toLowerCase()}`}><i aria-hidden="true" />{deal.status}</span></td>
-                  <td><a className="deal-link" href={`mailto:credit@circuit.credit?subject=${encodeURIComponent(`Enquiry: ${deal.name}`)}`} aria-label={`Enquire about ${deal.name}`}><Arrow /></a></td>
-                </tr>
-              ))}</tbody>
-            </table>
-          </div>
+              <TableHeader><TableRow><TableHead scope="col">Asset / Region</TableHead><TableHead scope="col" className="numeric">Facility</TableHead><TableHead scope="col" className="numeric">Target APR</TableHead><TableHead scope="col" className="numeric">Term</TableHead><TableHead scope="col" className="status-cell">Status</TableHead><TableHead scope="col"><span className="sr-only">Enquire</span></TableHead></TableRow></TableHeader>
+              <TableBody>{opportunities.map((deal) => (
+                <TableRow key={deal.id}>
+                  <TableHead scope="row"><div className="deal-asset"><span className="asset-id">{deal.id}</span><span className="deal-asset-name"><strong>{deal.name}</strong><span className="asset-location">{deal.location}</span></span></div></TableHead>
+                  <TableCell className="numeric">{deal.size}</TableCell>
+                  <TableCell className="numeric apr-value">{deal.apr}</TableCell>
+                  <TableCell className="numeric">{deal.term}</TableCell>
+                  <TableCell className="status-cell"><Badge variant="outline" className={`deal-status deal-status--${deal.status.toLowerCase()}`}><i aria-hidden="true" />{deal.status}</Badge></TableCell>
+                  <TableCell><Button asChild variant="outline" size="icon" className="deal-link"><a href={`mailto:credit@circuit.credit?subject=${encodeURIComponent(`Enquiry: ${deal.name}`)}`} aria-label={`Enquire about ${deal.name}`}><Arrow /></a></Button></TableCell>
+                </TableRow>
+              ))}</TableBody>
+          </Table>
           <p className="small-note">Illustrative examples for design purposes. Not an offer or a representation of available investments.</p>
         </section>
 
@@ -116,7 +117,7 @@ export default function Home() {
           <Image className="closing-background" src="/closing-datacenter-v3.webp" alt="Warmly illuminated server racks behind the glass facade of a data center at dusk" fill sizes="100vw" quality={90} />
           <div className="container closing-content">
             <p className="section-label">Let’s build the next chapter</p>
-            <div className="closing-grid"><h2 id="closing-title">The future needs<br /><span>something real.</span></h2><div><p>Join the private launch for qualified capital partners and infrastructure operators.</p><a className="button button-dark" href="mailto:hello@circuit.credit?subject=Open%20Silicon%20private%20launch">Start a conversation <Arrow /></a></div></div>
+            <div className="closing-grid"><h2 id="closing-title">The future needs<br /><span>something real.</span></h2><div><p>Join the private launch for qualified capital partners and infrastructure operators.</p><Button asChild size="lg"><a href="mailto:hello@circuit.credit?subject=Open%20Silicon%20private%20launch">Start a conversation</a></Button></div></div>
           </div>
         </section>
       </main>

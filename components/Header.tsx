@@ -1,6 +1,9 @@
 "use client";
 
 import Brand from "@/components/Brand";
+import { Button } from "@/components/ui/button";
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/components/ui/navigation-menu";
+import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetDescription, SheetClose } from "@/components/ui/sheet";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -8,7 +11,6 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [lightSurface, setLightSurface] = useState(false);
-  const toggle = useRef<HTMLButtonElement>(null);
   const header = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -35,59 +37,53 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (!open) return;
-    const closeOutside = (event: PointerEvent) => {
-      if (event.target instanceof Node && !header.current?.contains(event.target)) {
-        setOpen(false);
-      }
-    };
     const desktop = window.matchMedia("(min-width: 1024px)");
     const closeOnDesktop = () => { if (desktop.matches) setOpen(false); };
-    document.addEventListener("pointerdown", closeOutside);
     desktop.addEventListener("change", closeOnDesktop);
-    return () => {
-      document.removeEventListener("pointerdown", closeOutside);
-      desktop.removeEventListener("change", closeOnDesktop);
-    };
-  }, [open]);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
+
+  const links = [
+    { href: "#protocol", label: "For investors" },
+    { href: "#access", label: "For operators" },
+    { href: "#protocol", label: "How it works" },
+  ];
 
   return (
-    <header
-      ref={header}
-      className={`site-header${scrolled ? " is-scrolled" : ""}${lightSurface ? " is-light" : ""}${open ? " menu-open" : ""}`}
-      onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
-      }}
-      onKeyDown={(event) => {
-        if (event.key === "Escape" && open) {
-          setOpen(false);
-          toggle.current?.focus();
-        }
-      }}
-    >
-      <div className="header-inner">
-        <Brand />
-        <nav id="primary-navigation" className={`nav-shell${open ? " is-open" : ""}`} aria-label="Primary navigation">
-          <a href="#protocol" onClick={() => setOpen(false)}>For investors</a>
-          <a href="#access" onClick={() => setOpen(false)}>For operators</a>
-          <a href="#protocol" onClick={() => setOpen(false)}>How it works</a>
-        </nav>
-        <div className="header-actions">
-          <button className="header-cta header-login" type="button">Login</button>
-          <a className="header-cta header-contact" href="#access" onClick={() => setOpen(false)}>Get in touch</a>
-          <button
-            ref={toggle}
-            className={`menu-button${open ? " is-open" : ""}`}
-            type="button"
-            aria-label={open ? "Close navigation" : "Open navigation"}
-            aria-expanded={open}
-            aria-controls="primary-navigation"
-            onClick={() => setOpen(!open)}
-          >
-            <span /><span />
-          </button>
+    <Sheet open={open} onOpenChange={setOpen}>
+      <header ref={header} className={`site-header${scrolled ? " is-scrolled" : ""}${lightSurface ? " is-light" : ""}`}>
+        <div className="header-inner">
+          <Brand />
+          <NavigationMenu className="nav-shell" viewport={false} aria-label="Primary navigation">
+            <NavigationMenuList>
+              {links.map(({ href, label }) => (
+                <NavigationMenuItem key={label}>
+                  <NavigationMenuLink asChild><a href={href}>{label}</a></NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+          <div className="header-actions">
+            <Button variant="inverse" size="nav" className="header-login" type="button">Login</Button>
+            <Button asChild variant="outline" size="nav" className="header-contact"><a href="#access">Get in touch</a></Button>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="menu-button" aria-label="Open navigation">
+                <span /><span />
+              </Button>
+            </SheetTrigger>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <SheetContent side="top" className="mobile-navigation">
+        <SheetTitle className="sr-only">Navigation</SheetTitle>
+        <SheetDescription className="sr-only">Explore Open Silicon</SheetDescription>
+        <Brand />
+        <nav aria-label="Mobile navigation">
+          {links.map(({ href, label }) => (
+            <SheetClose asChild key={label}><Button asChild variant="link"><a href={href}>{label}</a></Button></SheetClose>
+          ))}
+        </nav>
+      </SheetContent>
+    </Sheet>
   );
 }

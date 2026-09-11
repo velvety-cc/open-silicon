@@ -1,9 +1,15 @@
 "use client";
 
 import { BrandWordmark } from "@/components/Brand";
-import Arrow from "@/components/Arrow";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Progress } from "@/components/ui/progress";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 const offerings = [
@@ -22,29 +28,28 @@ export default function LoanMarketplace() {
   const [selectedId, setSelectedId] = useState(offerings[0].id);
   const selected = offerings.find((loan) => loan.id === selectedId) ?? offerings[0];
   const [amount, setAmount] = useState("10000");
-  const dialog = useRef<HTMLDialogElement>(null);
   const investment = Number(amount);
   const validAmount = amount.trim() !== "" && Number.isFinite(investment) && investment >= 1000 && investment <= (selected.size - selected.raised) * 1000000;
 
   return (
-    <div className="loan-app">
-      <div className="loan-app-header"><BrandWordmark className="loan-app-brand" /><span className="loan-demo-badge">Product preview</span></div>
+    <Dialog><Card className="loan-app">
+      <CardHeader className="loan-app-header"><BrandWordmark className="loan-app-brand" /><Badge variant="secondary" className="loan-demo-badge">Product preview</Badge></CardHeader>
       <div className="loan-app-toolbar"><div><span className="loan-eyebrow">THE MARKETPLACE</span><h3>Find your next allocation.</h3></div><span className="loan-count">03 offerings</span></div>
-      <div className="loan-app-body">
+      <CardContent className="loan-app-body">
         <div className="loan-list" role="group" aria-label="Choose an illustrative loan offering">
           {offerings.map((loan) => (
-            <button type="button" className={`loan-option${selected.id === loan.id ? " is-selected" : ""}`} key={loan.id} aria-pressed={selected.id === loan.id} onClick={() => setSelectedId(loan.id)}>
+            <Button variant="card" size="card" type="button" className={`loan-option${selected.id === loan.id ? " is-selected" : ""}`} key={loan.id} aria-pressed={selected.id === loan.id} onClick={() => setSelectedId(loan.id)}>
               <span className="loan-card-heading">
                 <span className="loan-card-copy"><span className="loan-option-top">{loan.type}</span><strong>{loan.name}</strong><span className="loan-region">{loan.region}</span></span>
                 <Image className="loan-region-map" src={`/maps/${loan.regionMap}.svg`} width={480} height={300} alt={`Regional map of ${loan.region}, with the illustrative project location marked`} />
               </span>
               <span className="loan-option-metrics"><span><b>{loan.rate.toFixed(1)}%</b><small>Target APR</small></span><span><b>{loan.months} mo</b><small>Term</small></span><span><b>${loan.size}M</b><small>Facility</small></span></span>
               <span className="loan-end-user">Compute user <ComputeUser name={loan.user} /></span>
-            </button>
+            </Button>
           ))}
         </div>
-        <div className="loan-detail">
-          <div className="loan-detail-top"><span className="loan-eyebrow">{selected.id} / SENIOR SECURED</span><span className="loan-open">Open</span></div>
+        <Card className="loan-detail">
+          <div className="loan-detail-top"><span className="loan-eyebrow">{selected.id} / SENIOR SECURED</span><Badge variant="outline" className="loan-open">Open</Badge></div>
           <h4>{selected.name}</h4><p className="loan-detail-location">{selected.region}</p>
           <div className="loan-hardware-overview">
             <div className="loan-rate"><strong>{selected.rate.toFixed(1)}<span>%</span></strong><span>Target annual rate</span></div>
@@ -54,19 +59,21 @@ export default function LoanMarketplace() {
             </figure>
           </div>
           <dl className="loan-terms"><div><dt>Compute user</dt><dd><ComputeUser name={selected.user} /></dd></div><div><dt>Loan term</dt><dd>{selected.months} months</dd></div><div><dt>Interest payments</dt><dd>Monthly</dd></div><div><dt>Collateral</dt><dd>Hardware + receivables</dd></div><div><dt>Minimum investment</dt><dd>$1,000</dd></div></dl>
-          <div className="loan-funding"><div><span>${selected.raised}M allocated</span><span>${selected.size}M</span></div><progress value={selected.raised} max={selected.size} aria-label="Illustrative facility allocation" /></div>
-          <button type="button" className="button loan-invest" onClick={() => dialog.current?.showModal()}>Preview investment <Arrow /></button>
+          <div className="loan-funding"><div><span>${selected.raised}M allocated</span><span>${selected.size}M</span></div><Progress value={selected.raised / selected.size * 100} className="loan-progress" aria-label="Illustrative facility allocation" /></div>
+          <DialogTrigger asChild><Button type="button" className="loan-invest">Preview investment</Button></DialogTrigger>
           <p className="loan-detail-note">Illustrative terms · No live investment</p>
-        </div>
-      </div>
-      <div className="loan-app-footer"><span>USD / USDC</span><span>Physical assets. Visible terms.</span></div>
-      <dialog ref={dialog} className="loan-dialog" aria-labelledby="loan-preview-title" onClick={(event) => { if (event.target === event.currentTarget) dialog.current?.close(); }}>
-        <div className="loan-dialog-top"><span className="loan-demo-badge">Investment preview</span><button type="button" onClick={() => dialog.current?.close()} aria-label="Close investment preview">×</button></div>
-        <h3 id="loan-preview-title">{selected.name}</h3><p>{selected.hardware}</p>
-        <label htmlFor="preview-amount">Your allocation (USD)</label><input id="preview-amount" type="number" min="1000" max={(selected.size - selected.raised) * 1000000} step="any" value={amount} onChange={(event) => setAmount(event.target.value)} aria-describedby="preview-calculation" aria-invalid={!validAmount} />
+        </Card>
+      </CardContent>
+      <CardFooter className="loan-app-footer"><span>USD / USDC</span><span>Physical assets. Visible terms.</span></CardFooter>
+      <DialogContent className="loan-dialog">
+        <Badge variant="secondary" className="loan-demo-badge">Investment preview</Badge>
+        <DialogTitle>{selected.name}</DialogTitle>
+        <DialogDescription>{selected.hardware}</DialogDescription>
+        <Label htmlFor="preview-amount">Your allocation (USD)</Label>
+        <Input id="preview-amount" type="number" min="1000" max={(selected.size - selected.raised) * 1000000} step="any" value={amount} onChange={(event) => setAmount(event.target.value)} aria-describedby="preview-calculation" aria-invalid={!validAmount} />
         <div id="preview-calculation" className="loan-preview-calculation" aria-live="polite">{validAmount ? <><span>Illustrative monthly interest</span><strong>{dollars(investment * selected.rate / 100 / 12)}</strong><p>{selected.rate.toFixed(1)}% simple annual interest over {selected.months} months, before fees or losses. Principal is assumed repaid at maturity.</p></> : <p>Enter an amount between $1,000 and {dollars((selected.size - selected.raised) * 1000000)}.</p>}</div>
         <p className="loan-preview-disclaimer">Demo only. Projects, terms and compute-user relationships are hypothetical. This preview does not place an order.</p>
-      </dialog>
-    </div>
+      </DialogContent>
+    </Card></Dialog>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import Arrow from "@/components/Arrow";
+import { Button } from "@/components/ui/button";
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -84,7 +84,7 @@ export default function HeroVideo() {
         <Image ref={endingImageRef} className="hero-video-final" src="/hero-datacenter-final.webp" alt="" fill unoptimized loading="eager" fetchPriority="low" />
       </div>
       {phase === "playing" && (
-        <button className="hero-video-skip" type="button" onClick={() => finishRef.current()}>Skip intro <Arrow /></button>
+        <Button variant="outline" className="hero-video-skip" type="button" onClick={() => finishRef.current()}>Skip intro</Button>
       )}
     </>
   );
