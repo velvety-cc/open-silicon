@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell, TableCaption } from "@/components/ui/table";
 import Arrow from "@/components/Arrow";
+import ComputeTenant from "@/components/ComputeTenant";
 import Image from "next/image";
 import LoanMarketplace from "@/components/LoanMarketplace";
 import HeroVideo from "@/components/HeroVideo";
@@ -84,12 +85,12 @@ export default function Home() {
               <LoanMarketplace />
               <aside className="marketplace-story">
                 <h3>Real infrastructure.<br />A clear investment.</h3>
-                <p>Explore AIDC credit. See the machines, the compute users and the terms behind every allocation.</p>
-                <div className="marketplace-features"><span>Every offering, in focus</span><ul><li>Named compute users</li><li>Asset-backed loan structures</li><li>Defined rates and maturities</li><li>Monthly interest payments</li></ul></div>
+                <p>Explore AIDC credit. See the machines, the compute tenants and the terms behind every allocation.</p>
+                <div className="marketplace-features"><span>Every offering, in focus</span><ul><li>Named compute tenants</li><li>Asset-backed loan structures</li><li>Defined rates and maturities</li><li>Monthly interest payments</li></ul></div>
                 <Button asChild variant="link"><a href="#opportunities">Explore offerings</a></Button>
               </aside>
             </div>
-            <p className="marketplace-disclaimer">Product demonstration. All projects and terms are illustrative. Named compute users, including Anthropic and Mistral AI, represent hypothetical scenarios, not confirmed customers, borrowers or partners.</p>
+            <p className="marketplace-disclaimer">Product demonstration. All projects and terms are illustrative. Named compute tenants, including Anthropic and Mistral AI, represent hypothetical scenarios, not confirmed customers, borrowers or partners.</p>
           </div>
         </section>
 
@@ -98,11 +99,11 @@ export default function Home() {
           <Table className="deals-table" containerProps={{ className: "deals-table-wrap", role: "region", "aria-label": "Illustrative credit opportunities, scroll to see all columns", tabIndex: 0 }}>
               <TableCaption className="sr-only">Illustrative opportunities. Availability and terms are subject to diligence.</TableCaption>
               <colgroup><col className="deal-col-asset" /><col className="deal-col-tenant" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-status" /><col className="deal-col-action" /></colgroup>
-              <TableHeader><TableRow><TableHead scope="col">Asset / Region</TableHead><TableHead scope="col">Compute tenant</TableHead><TableHead scope="col" className="numeric">Facility</TableHead><TableHead scope="col" className="numeric">Target APR</TableHead><TableHead scope="col" className="numeric">Term</TableHead><TableHead scope="col" className="status-cell">Status</TableHead><TableHead scope="col"><span className="sr-only">Enquire</span></TableHead></TableRow></TableHeader>
+              <TableHeader><TableRow><TableHead scope="col">Asset / Region</TableHead><TableHead scope="col">Compute Tenant</TableHead><TableHead scope="col" className="numeric">Facility</TableHead><TableHead scope="col" className="numeric">Target APR</TableHead><TableHead scope="col" className="numeric">Term</TableHead><TableHead scope="col" className="status-cell">Status</TableHead><TableHead scope="col"><span className="sr-only">Enquire</span></TableHead></TableRow></TableHeader>
               <TableBody>{opportunities.map((deal) => (
                 <TableRow key={deal.id}>
                   <TableHead scope="row"><div className="deal-asset"><span className="asset-id">{deal.id}</span><span className="deal-asset-name"><strong>{deal.name}</strong><span className="asset-location">{deal.location}</span></span></div></TableHead>
-                  <TableCell className="tenant-cell">{deal.tenant}</TableCell>
+                  <TableCell className="tenant-cell"><ComputeTenant name={deal.tenant} /></TableCell>
                   <TableCell className="numeric">{deal.size}</TableCell>
                   <TableCell className="numeric apr-value">{deal.apr}</TableCell>
                   <TableCell className="numeric">{deal.term}</TableCell>

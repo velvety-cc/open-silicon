@@ -181,6 +181,8 @@ a:hover .arrow { transform: translate(2px, -2px); }
 .asset-location { display: block; font-size: var(--type-caption); line-height: 1.4; color: #000; }
 .deals-table .apr-value { font-weight: var(--weight-medium); }
 .deals-table .tenant-cell { white-space: normal; font-size: var(--type-body); line-height: 1.5; }
+.tenant-cell .compute-user-brand { justify-content: flex-start; gap: 10px; }
+.tenant-cell .compute-user-logo { height: 18px; }
 .deals-table .status-cell { padding-left: 24px; padding-right: 16px; }
 .deal-status { overflow: visible; border: 0; border-radius: 0; padding: 0; font-weight: var(--weight-regular); background: transparent; display: inline-flex; align-items: center; gap: 8px; min-height: 28px; font-size: var(--type-body); line-height: 1.5; }
 .deal-status i { display: block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }

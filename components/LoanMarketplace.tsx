@@ -1,6 +1,7 @@
 "use client";
 
 import { BrandWordmark } from "@/components/Brand";
+import ComputeTenant from "@/components/ComputeTenant";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -18,11 +19,6 @@ const offerings = [
   { id: "OS-003", name: "Inference Cluster III", region: "Oregon, US", user: "AI inference provider", regionMap: "oregon", gpu: "H100", hardwareImage: "dgx-h100-h200-studio", hardwareAlt: "NVIDIA DGX H100 rack-mount system illustration", hardware: "1,536 NVIDIA H100 GPUs", rate: 11.1, months: 18, size: 18, raised: 11, type: "GPU-backed credit" },
 ];
 const dollars = (value: number) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(value);
-
-function ComputeUser({ name }: { name: string }) {
-  const logo = name === "Anthropic" ? { src: "/logos/anthropic.svg", width: 35, height: 24 } : name === "Mistral AI" ? { src: "/logos/mistral.svg", width: 21, height: 15 } : null;
-  return <span className="compute-user-brand">{logo && <Image src={logo.src} width={logo.width} height={logo.height} alt="" className="compute-user-logo" />}<span>{name}</span></span>;
-}
 
 export default function LoanMarketplace() {
   const [selectedId, setSelectedId] = useState(offerings[0].id);
@@ -44,7 +40,7 @@ export default function LoanMarketplace() {
                 <Image className="loan-region-map" src={`/maps/${loan.regionMap}.svg`} width={480} height={300} alt={`Regional map of ${loan.region}, with the illustrative project location marked`} />
               </span>
               <span className="loan-option-metrics"><span><b>{loan.rate.toFixed(1)}%</b><small>Target APR</small></span><span><b>{loan.months} mo</b><small>Term</small></span><span><b>${loan.size}M</b><small>Facility</small></span></span>
-              <span className="loan-end-user">Compute user <ComputeUser name={loan.user} /></span>
+              <span className="loan-end-user">Compute Tenant <ComputeTenant name={loan.user} /></span>
             </Button>
           ))}
         </div>
@@ -58,7 +54,7 @@ export default function LoanMarketplace() {
               <figcaption>NVIDIA {selected.gpu}<span>System illustration</span></figcaption>
             </figure>
           </div>
-          <dl className="loan-terms"><div><dt>Compute user</dt><dd><ComputeUser name={selected.user} /></dd></div><div><dt>Loan term</dt><dd>{selected.months} months</dd></div><div><dt>Interest payments</dt><dd>Monthly</dd></div><div><dt>Collateral</dt><dd>Hardware + receivables</dd></div><div><dt>Minimum investment</dt><dd>$1,000</dd></div></dl>
+          <dl className="loan-terms"><div><dt>Compute Tenant</dt><dd><ComputeTenant name={selected.user} /></dd></div><div><dt>Loan term</dt><dd>{selected.months} months</dd></div><div><dt>Interest payments</dt><dd>Monthly</dd></div><div><dt>Collateral</dt><dd>Hardware + receivables</dd></div><div><dt>Minimum investment</dt><dd>$1,000</dd></div></dl>
           <div className="loan-funding"><div><span>${selected.raised}M allocated</span><span>${selected.size}M</span></div><Progress value={selected.raised / selected.size * 100} className="loan-progress" aria-label="Illustrative facility allocation" /></div>
           <DialogTrigger asChild><Button type="button" className="loan-invest">Preview investment</Button></DialogTrigger>
         </Card>
@@ -70,7 +66,7 @@ export default function LoanMarketplace() {
         <Label htmlFor="preview-amount">Your allocation (USD)</Label>
         <Input id="preview-amount" type="number" min="1000" max={(selected.size - selected.raised) * 1000000} step="any" value={amount} onChange={(event) => setAmount(event.target.value)} aria-describedby="preview-calculation" aria-invalid={!validAmount} />
         <div id="preview-calculation" className="loan-preview-calculation" aria-live="polite">{validAmount ? <><span>Illustrative monthly interest</span><strong>{dollars(investment * selected.rate / 100 / 12)}</strong><p>{selected.rate.toFixed(1)}% simple annual interest over {selected.months} months, before fees or losses. Principal is assumed repaid at maturity.</p></> : <p>Enter an amount between $1,000 and {dollars((selected.size - selected.raised) * 1000000)}.</p>}</div>
-        <p className="loan-preview-disclaimer">Demo only. Projects, terms and compute-user relationships are hypothetical. This preview does not place an order.</p>
+        <p className="loan-preview-disclaimer">Demo only. Projects, terms and compute-tenant relationships are hypothetical. This preview does not place an order.</p>
       </DialogContent>
     </Card></Dialog>
   );
