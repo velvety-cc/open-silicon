@@ -35,5 +35,3 @@ Prompt direction: cinematic extra-wide architectural photograph of a modern AI d
 Active closing image updated to `public/closing-datacenter-v2.webp`, from user-supplied `/Users/velvety/Downloads/ChatGPT Image Sep 10, 2026, 09_11_20 PM.png`. WebP quality 92, original framing and colors preserved. Replaces the generated closing image without changing layout.
 
 Active closing image: `public/closing-datacenter-v3.webp`, from user-supplied `/Users/velvety/Downloads/hf_20260911_041351_a9c1c31d-c945-4d7e-93e2-87d204cefe61.png`. Delivered as WebP quality 92, maximum width 3840, without upscaling or changing framing/colors. Existing section layout retained.
-
-Compute cluster scene: `public/compute-cluster-studio.webp` (1774×887, WebP 92, 154218 bytes), generated as one coherent white-studio product visualization. Original: `/Users/velvety/.codex/generated_images/01a08d60-085f-73f3-bc28-8a091fd56084/exec-ab044415-78c3-46e2-b232-a59706cf84d1.png`. The showcase uses a single image, changing crop/scale with scroll; this is a pre-rendered scene, not a live 3D camera. All four information groups remain visible below the scene.
