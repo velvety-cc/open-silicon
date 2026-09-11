@@ -56,18 +56,17 @@ export default function Home() {
                 <h3>Target annual yield</h3>
                 <p>Senior secured credit.<br />Backed by productive compute.</p>
               </div>
-              <div className="compute-stat compute-stat-size">
-                <p className="compute-value"><span>$</span>5–100<span>M</span></p>
-                <h3>Built for scale</h3>
-                <p>Purpose-built facilities for<br />infrastructure operators.</p>
-              </div>
-              <div className="compute-stat compute-stat-assets">
-                <h3 className="compute-feature">Real assets.</h3>
-                <p>GPU hardware and receivables.<br />A physical foundation for capital.</p>
-              </div>
               <div className="compute-stat compute-stat-terms">
                 <h3 className="compute-feature">12–36 months</h3>
                 <p>Flexible terms.<br />Room to build what comes next.</p>
+              </div>
+              <div className="compute-stat compute-stat-assets">
+                <h3 className="compute-feature">Real asset-backed.</h3>
+                <p>Compliant structures. Verifiable collateral.<br />Backed by real GPU hardware and receivables.</p>
+              </div>
+              <div className="compute-stat compute-stat-size">
+                <p className="compute-value"><span>$</span>500<span>M</span></p>
+                <h3>Current projects in the pipeline</h3>
               </div>
             </div>
             <p className="compute-note">Indicative credit parameters. Returns are not guaranteed. Financing is subject to eligibility and credit diligence.</p>
