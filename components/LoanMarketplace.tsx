@@ -34,7 +34,7 @@ export default function LoanMarketplace() {
   return (
     <Dialog><Card className="loan-app">
       <CardHeader className="loan-app-header"><BrandWordmark className="loan-app-brand" /><Badge variant="secondary" className="loan-demo-badge">Product preview</Badge></CardHeader>
-      <div className="loan-app-toolbar"><div><span className="loan-eyebrow">THE MARKETPLACE</span><h3>Find your next allocation.</h3></div><span className="loan-count">03 offerings</span></div>
+      <div className="loan-app-toolbar"><div><span className="loan-eyebrow">THE MARKETPLACE</span><h3>Find your next allocation.</h3></div></div>
       <CardContent className="loan-app-body">
         <div className="loan-list" role="group" aria-label="Choose an illustrative loan offering">
           {offerings.map((loan) => (
