@@ -79,11 +79,11 @@ h3 { font-size: var(--type-heading); letter-spacing: var(--tracking-heading); li
 .header-login { color: #000; background: #fff; }
 .header-login:hover { background: #edf0ed; }
 .header-contact { color: var(--ink); background: transparent; border-color: #ffffff70; }
-.header-contact:hover { background: #ffffff16; border-color: currentColor; }
+.header-contact:hover { color: var(--ink); background: rgb(255 255 255 / 12%); border-color: #ffffffb3; }
 .site-header.is-light .header-login { color: #fff; background: #000; }
 .site-header.is-light .header-login:hover { background: #252525; }
 .site-header.is-light .header-contact { border-color: #0003; }
-.site-header.is-light .header-contact:hover { background: #00000008; border-color: #000; }
+.site-header.is-light .header-contact:hover { color: var(--ink); background: rgb(0 0 0 / 4%); border-color: #0006; }
 .site-header :focus-visible { outline-color: currentColor; }
 .menu-button { display: none; }
 .hero { display: grid; grid-template-columns: 1.15fr 1fr; padding-block: 44px 52px; gap: 32px; min-height: 706px; }
@@ -160,11 +160,12 @@ a:hover .arrow { transform: translate(2px, -2px); }
 .section-heading > p { max-width: 310px; }
 .small-note { font-size: var(--type-caption); color: var(--ink); line-height: 1.7; }
 .deals-table-wrap { position: relative; margin-top: 48px; overflow-x: auto; border: 1px solid #e4e4e8; border-radius: 10px; background: #fff; }
-.deals-table { width: 100%; table-layout: fixed; border-collapse: collapse; min-width: 840px; }
-.deal-col-asset { width: 34%; }
-.deal-col-number { width: 14%; }
-.deal-col-status { width: 16%; }
-.deal-col-action { width: 8%; }
+.deals-table { width: 100%; table-layout: fixed; border-collapse: collapse; min-width: 1080px; }
+.deal-col-asset { width: 26%; }
+.deal-col-tenant { width: 16%; }
+.deal-col-number { width: 13%; }
+.deal-col-status { width: 12%; }
+.deal-col-action { width: 7%; }
 .deals-table th, .deals-table td { padding: 26px 24px; text-align: left; border-bottom: 1px solid #ececf0; vertical-align: middle; white-space: nowrap; }
 .deals-table thead th { padding-block: 17px; background: #fafafa; font-size: var(--type-caption); line-height: 1.5; font-weight: var(--weight-medium); }
 .deals-table tbody th { font-weight: var(--weight-regular); }
@@ -179,10 +180,11 @@ a:hover .arrow { transform: translate(2px, -2px); }
 .deal-asset-name strong { font-size: var(--type-body); line-height: 1.3; font-weight: var(--weight-medium); letter-spacing: -.025em; }
 .asset-location { display: block; font-size: var(--type-caption); line-height: 1.4; color: #000; }
 .deals-table .apr-value { font-weight: var(--weight-medium); }
-.deals-table .status-cell { padding-left: 32px; }
-.deal-status { border: 0; border-radius: 0; padding: 0; font-weight: var(--weight-regular); background: transparent; display: inline-flex; align-items: center; gap: 8px; min-height: 28px; font-size: var(--type-caption); line-height: 1.3; }
-.deal-status i { display: block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-.deal-status--closing i { background: #fff; box-shadow: 0 0 0 1.5px var(--accent); }
+.deals-table .tenant-cell { white-space: normal; font-size: var(--type-body); line-height: 1.5; }
+.deals-table .status-cell { padding-left: 24px; padding-right: 16px; }
+.deal-status { overflow: visible; border: 0; border-radius: 0; padding: 0; font-weight: var(--weight-regular); background: transparent; display: inline-flex; align-items: center; gap: 8px; min-height: 28px; font-size: var(--type-body); line-height: 1.5; }
+.deal-status i { display: block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.deal-status--closing i { background: transparent; border: 2px solid var(--accent); }
 .deal-status--funded i { background: #000; }
 .deals-table th:last-child, .deals-table td:last-child { padding-inline: 14px; text-align: right; }
 .deal-link { border: 1px solid #e1e1e6; border-radius: 50%; background: #fff; transition: background 160ms ease, border-color 160ms ease; }
@@ -274,7 +276,6 @@ h2 { font-size: var(--type-section); }
 .section-heading { flex-direction: column; align-items: flex-start; gap: 25px; }
 .section-heading > p { font-size: var(--type-body); }
 .deals-table-wrap { margin-top: 30px; }
-.deals-table { min-width: 800px; }
 .deals-table th, .deals-table td { padding: 24px 18px; }
 .deals-table thead th { padding-block: 16px; }
 .deals-table .status-cell { padding-left: 24px; }

@@ -10,9 +10,9 @@ import Brand, { BrandWordmark } from "@/components/Brand";
 
 
 const opportunities = [
-  { id: "CC-001", name: "H200 Cluster I", location: "North America", size: "$32.0M", apr: "10.2%", term: "24 months", status: "Open" },
-  { id: "CC-002", name: "B200 Pod II", location: "Nordics", size: "$48.5M", apr: "9.6%", term: "30 months", status: "Closing" },
-  { id: "CC-003", name: "H100 Campus III", location: "APAC", size: "$18.0M", apr: "11.1%", term: "18 months", status: "Funded" },
+  { id: "CC-001", name: "H200 Cluster I", location: "North America", tenant: "Anthropic", size: "$32.0M", apr: "10.2%", term: "24 months", status: "Open" },
+  { id: "CC-002", name: "B200 Pod II", location: "Nordics", tenant: "Mistral AI", size: "$48.5M", apr: "9.6%", term: "30 months", status: "Closing" },
+  { id: "CC-003", name: "H100 Campus III", location: "APAC", tenant: "AI inference provider", size: "$18.0M", apr: "11.1%", term: "18 months", status: "Funded" },
 ];
 
 export default function Home() {
@@ -97,11 +97,12 @@ export default function Home() {
           <div className="section-heading"><div><h2>Real infrastructure.<br /><span>A clearer view.</span></h2></div></div>
           <Table className="deals-table" containerProps={{ className: "deals-table-wrap", role: "region", "aria-label": "Illustrative credit opportunities, scroll to see all columns", tabIndex: 0 }}>
               <TableCaption className="sr-only">Illustrative opportunities. Availability and terms are subject to diligence.</TableCaption>
-              <colgroup><col className="deal-col-asset" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-status" /><col className="deal-col-action" /></colgroup>
-              <TableHeader><TableRow><TableHead scope="col">Asset / Region</TableHead><TableHead scope="col" className="numeric">Facility</TableHead><TableHead scope="col" className="numeric">Target APR</TableHead><TableHead scope="col" className="numeric">Term</TableHead><TableHead scope="col" className="status-cell">Status</TableHead><TableHead scope="col"><span className="sr-only">Enquire</span></TableHead></TableRow></TableHeader>
+              <colgroup><col className="deal-col-asset" /><col className="deal-col-tenant" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-status" /><col className="deal-col-action" /></colgroup>
+              <TableHeader><TableRow><TableHead scope="col">Asset / Region</TableHead><TableHead scope="col">Compute tenant</TableHead><TableHead scope="col" className="numeric">Facility</TableHead><TableHead scope="col" className="numeric">Target APR</TableHead><TableHead scope="col" className="numeric">Term</TableHead><TableHead scope="col" className="status-cell">Status</TableHead><TableHead scope="col"><span className="sr-only">Enquire</span></TableHead></TableRow></TableHeader>
               <TableBody>{opportunities.map((deal) => (
                 <TableRow key={deal.id}>
                   <TableHead scope="row"><div className="deal-asset"><span className="asset-id">{deal.id}</span><span className="deal-asset-name"><strong>{deal.name}</strong><span className="asset-location">{deal.location}</span></span></div></TableHead>
+                  <TableCell className="tenant-cell">{deal.tenant}</TableCell>
                   <TableCell className="numeric">{deal.size}</TableCell>
                   <TableCell className="numeric apr-value">{deal.apr}</TableCell>
                   <TableCell className="numeric">{deal.term}</TableCell>
