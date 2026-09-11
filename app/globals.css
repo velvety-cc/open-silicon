@@ -104,7 +104,7 @@ h1 > span { color: var(--ink); }
 .button-dark:hover { background: var(--accent-hover); box-shadow: 0 3px 9px #16244c12; }
 .button-paper { color: var(--ink); background: var(--paper); }
 .button-paper:hover { background: #e6e0ff; }
-.arrow { display: inline-block; transition: transform 160ms ease; }
+.arrow { display: inline-block; flex-shrink: 0; vertical-align: middle; transition: transform 160ms ease; }
 a:hover .arrow { transform: translate(2px, -2px); }
 .text-link { display: inline-flex; align-items: center; gap: 16px; font-size: 14px; font-weight: 500; min-height: 44px; }
 .text-link:hover { color: var(--ink); }
@@ -246,7 +246,7 @@ a:hover .arrow { transform: translate(2px, -2px); }
 .operator-specs dd { margin: 0; font-size: 33px; letter-spacing: -.045em; }
 .operator-specs dd span { font-size: 21px; color: var(--ink); }
 .small-note { font-size: 11px; color: var(--ink); line-height: 1.7; }
-.deals-table-wrap { margin-top: 48px; overflow-x: auto; border: 1px solid #e4e4e8; border-radius: 10px; background: #fff; }
+.deals-table-wrap { position: relative; margin-top: 48px; overflow-x: auto; border: 1px solid #e4e4e8; border-radius: 10px; background: #fff; }
 .deals-table { width: 100%; table-layout: fixed; border-collapse: collapse; min-width: 840px; }
 .deal-col-asset { width: 34%; }
 .deal-col-number { width: 14%; }
@@ -471,7 +471,7 @@ a:hover .arrow { transform: translate(2px, -2px); }
   .header-inner { padding-inline: var(--shell-gutter); gap: 8px; }
   .site-header .brand > span { font-size: 23px; }
   .header-cta { font-size: 12px; padding-inline: 14px; gap: 8px; }
-  .header-cta > span { display: none; }
+  .header-cta > .arrow { display: none; }
   .header-actions { gap: 4px; }
 }
 

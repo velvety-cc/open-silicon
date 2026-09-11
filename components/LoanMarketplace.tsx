@@ -1,5 +1,7 @@
 "use client";
 
+import Arrow from "@/components/Arrow";
+
 import { useRef, useState } from "react";
 import Image from "next/image";
 
@@ -52,7 +54,7 @@ export default function LoanMarketplace() {
           </div>
           <dl className="loan-terms"><div><dt>Compute user</dt><dd><ComputeUser name={selected.user} /></dd></div><div><dt>Loan term</dt><dd>{selected.months} months</dd></div><div><dt>Interest payments</dt><dd>Monthly</dd></div><div><dt>Collateral</dt><dd>Hardware + receivables</dd></div><div><dt>Minimum investment</dt><dd>$1,000</dd></div></dl>
           <div className="loan-funding"><div><span>${selected.raised}M allocated</span><span>${selected.size}M</span></div><progress value={selected.raised} max={selected.size} aria-label="Illustrative facility allocation" /></div>
-          <button type="button" className="button loan-invest" onClick={() => dialog.current?.showModal()}>Preview investment <span aria-hidden="true">↗</span></button>
+          <button type="button" className="button loan-invest" onClick={() => dialog.current?.showModal()}>Preview investment <Arrow /></button>
           <p className="loan-detail-note">Illustrative terms · No live investment</p>
         </div>
       </div>
