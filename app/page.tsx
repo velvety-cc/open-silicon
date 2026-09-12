@@ -7,7 +7,9 @@ import Image from "next/image";
 import LoanMarketplace from "@/components/LoanMarketplace";
 import HeroVideo from "@/components/HeroVideo";
 import Header from "@/components/Header";
-import Brand, { BrandWordmark } from "@/components/Brand";
+import Footer from "@/components/Footer";
+import Link from "next/link";
+import { BrandWordmark } from "@/components/Brand";
 
 
 const opportunities = [
@@ -28,7 +30,7 @@ export default function Home() {
             <p className="hero-description">Connecting global liquidity to the machines that move us forward. Secured credit for the next generation of AI infrastructure.</p>
             <div className="hero-actions">
               <Button asChild size="lg"><a href="#protocol">View current offerings</a></Button>
-              <Button asChild variant="link"><a href="#access">Finance infrastructure</a></Button>
+              <Button asChild variant="link"><Link href="/gpu-financing">Finance infrastructure</Link></Button>
             </div>
             <div className="hero-partners" aria-label="Partners">
               <p><span className="tiny-cross" aria-hidden="true">+</span> Partners</p>
@@ -122,47 +124,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="site-footer container">
-        <div className="footer-identity">
-          <Brand />
-          <p>Open capital for the<br />intelligence economy.</p>
-        </div>
-        <nav className="footer-navigation" aria-label="Footer navigation">
-          <div className="footer-group">
-            <h2>Platform</h2>
-            <ul>
-              <li><a href="#protocol">Marketplace</a></li>
-              <li><a href="#opportunities">Offerings</a></li>
-              <li><a href="#compute-title">Infrastructure</a></li>
-            </ul>
-          </div>
-          <div className="footer-group">
-            <h2>For partners</h2>
-            <ul>
-              <li><a href="#protocol">Investors</a></li>
-              <li><a href="#access">Operators</a></li>
-              <li><a href="mailto:credit@circuit.credit">Discuss financing <Arrow /></a></li>
-            </ul>
-          </div>
-          <div className="footer-group">
-            <h2>Connect</h2>
-            <ul>
-              <li><a href="mailto:hello@circuit.credit">Contact the team <Arrow /></a></li>
-              <li><a href="#access">Private launch</a></li>
-            </ul>
-          </div>
-        </nav>
-        <div className="footer-information">
-          <div className="footer-disclaimer">
-            <p>Open Silicon is a technology platform, not a bank. Digital assets and private credit involve risk, including possible loss of principal. Returns are not guaranteed.</p>
-            <p>Product availability is subject to jurisdiction and eligibility.</p>
-          </div>
-          <div className="footer-bottom">
-            <span>© 2026 Open Silicon</span>
-            <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
