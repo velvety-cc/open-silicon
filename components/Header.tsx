@@ -8,12 +8,12 @@ import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetDescription, SheetC
 
 import { useEffect, useRef, useState } from "react";
 
-export default function Header({ financing = false }: { financing?: boolean }) {
+export default function Header({ financing = false, darkHero = false }: { financing?: boolean; darkHero?: boolean }) {
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("");
   const [menuSurface, setMenuSurface] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [lightSurface, setLightSurface] = useState(financing);
+  const [lightSurface, setLightSurface] = useState(financing && !darkHero);
   const header = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function Header({ financing = false }: { financing?: boolean }) {
   }, [activeMenu]);
 
   useEffect(() => {
-    const hero = document.querySelector<HTMLElement>("main > .hero");
+    const hero = document.querySelector<HTMLElement>('main > .hero, main > [data-header-theme="dark"]');
     let frame: number | null = null;
     const updateSurface = () => {
       frame = null;
@@ -49,7 +49,7 @@ export default function Header({ financing = false }: { financing?: boolean }) {
       window.removeEventListener("scroll", scheduleUpdate);
       window.removeEventListener("resize", scheduleUpdate);
     };
-  }, [financing]);
+  }, [financing, darkHero]);
 
   useEffect(() => {
     const desktop = window.matchMedia("(min-width: 1024px)");
@@ -83,8 +83,8 @@ export default function Header({ financing = false }: { financing?: boolean }) {
             <NavigationMenuList>
               <NavigationMenuItem value="products">
                 <NavigationMenuTrigger className="h-11 bg-transparent px-3.5 font-normal text-[color:var(--ink)] transition-[background-color,box-shadow] hover:bg-black/5 hover:text-[color:var(--ink)] focus:bg-black/5 focus:text-[color:var(--ink)] data-[state=open]:bg-black/5 data-[state=open]:text-[color:var(--ink)] data-[state=open]:hover:bg-black/5 data-[state=open]:focus:bg-black/5">Products</NavigationMenuTrigger>
-                <NavigationMenuContent className="group/products fixed! top-[var(--header-height,80px)]! left-0! z-50 mt-0! w-full! rounded-none! border-0! border-b! border-neutral-200! bg-white! p-0! shadow-none! [--ink:#000] data-[state=open]:animate-products-open! data-[state=closed]:animate-products-close! motion-reduce:data-[state=open]:animate-none! motion-reduce:data-[state=closed]:animate-none!">
-                  <div className="grid grid-cols-[repeat(2,minmax(0,240px))] justify-center gap-12 px-[var(--shell-gutter)] pt-6 pb-10 group-data-[state=open]/products:animate-products-content group-data-[state=closed]/products:animate-products-content-close motion-reduce:animate-none!">
+                <NavigationMenuContent forceMount inert={!activeMenu} aria-hidden={!activeMenu} className="group/products fixed! top-[var(--header-height,80px)]! left-0! z-50 mt-0! w-full! rounded-none! border-0! border-b! border-neutral-200! bg-white! p-0! shadow-none! [--ink:#000] animate-none! invisible [clip-path:inset(0_0_100%)] transition-[clip-path,visibility]! duration-180! ease-[cubic-bezier(0.22,1,0.36,1)]! data-[state=open]:visible data-[state=open]:[clip-path:inset(0)] data-[state=open]:duration-320! motion-reduce:transition-none!">
+                  <div className="grid grid-cols-[repeat(2,minmax(0,240px))] justify-center gap-12 px-[var(--shell-gutter)] pt-6 pb-10 translate-y-[-6px] opacity-0 transition-[opacity,translate] duration-120 ease-out group-data-[state=open]/products:translate-y-0 group-data-[state=open]/products:opacity-100 group-data-[state=open]/products:delay-50 group-data-[state=open]/products:duration-280 motion-reduce:transition-none">
                     {productGroups.map((group) => <div key={group.label}>
                       <p className="mb-3! text-sm font-normal text-neutral-500">{group.label}</p>
                       <ul className="m-0 list-none space-y-1 p-0">

@@ -38,22 +38,20 @@ export default function GPUFinancing() {
   return (
     <div id="top" className="financing-page">
       <a className="skip-link" href="#main">Skip to content</a>
-      <Header financing />
+      <Header financing darkHero />
       <main id="main">
-        <section className="financing-hero container grid min-h-[790px] grid-cols-[1.2fr_1fr] items-center gap-16 pt-36 pb-16 max-[1100px]:min-h-[740px] max-[1100px]:gap-8 max-[760px]:min-h-0 max-[760px]:grid-cols-1 max-[760px]:gap-12 max-[760px]:pb-12 min-[1600px]:min-h-[850px]" aria-labelledby="financing-title">
-          <div className="financing-hero-copy">
+        <section data-header-theme="dark" className="financing-hero relative isolate flex min-h-[760px] items-center overflow-hidden bg-[#0b1422] text-white [--ink:#fff] max-[760px]:min-h-[720px] min-[1600px]:min-h-[850px]" aria-labelledby="financing-title">
+          <Image className="object-cover object-[60%_center] max-[760px]:object-[62%_center]" src="/gpu-financing-hero-v1.webp" alt="GPU server cabinets inside a glass-walled data center, lit by warm overhead lights" fill sizes="(max-width: 760px) 1280px, 100vw" preload quality={90} />
+          <div aria-hidden="true" className="absolute inset-0 bg-linear-to-r from-[#07101b]/75 via-[#07101b]/35 to-[#07101b]/5 max-[760px]:from-[#07101b]/85 max-[760px]:to-[#07101b]/35" />
+          <div className="financing-hero-copy container relative pt-40 pb-24 max-[760px]:pt-36 max-[760px]:pb-20">
             <p className="mb-6! text-[length:var(--type-label)] font-medium">GPU Financing</p>
             <h1 id="financing-title" className="mt-0! text-[length:var(--type-display)]! leading-[var(--leading-heading)]! tracking-[var(--tracking-heading)]! max-[760px]:text-[length:var(--type-hero)]! max-[380px]:text-[length:var(--type-display)]!">Capital for what<br />you’re building.</h1>
-            <p className="mt-6! max-w-[460px] text-[length:var(--type-emphasis)] text-[#595959]">From dedicated GPU capacity to your next phase of growth. Direct financing and connections between compute teams and the data centers that power them.</p>
+            <p className="mt-6! max-w-[460px] text-[length:var(--type-emphasis)] text-white/80">From dedicated GPU capacity to your next phase of growth. Direct financing and connections between compute teams and the data centers that power them.</p>
             <div className="mt-8! flex flex-wrap items-center gap-6 max-[380px]:gap-4">
               <Button asChild size="lg"><a href="#project">Discuss your project</a></Button>
               <Button asChild variant="link"><a href="#process">How it works</a></Button>
             </div>
           </div>
-          <figure className="financing-product w-full max-w-[440px] justify-self-center text-center max-[760px]:max-w-[340px]">
-            <Image className="block h-[540px] w-full object-contain max-[1100px]:h-[480px] max-[760px]:h-[400px]" src="/compute-rack.webp" alt="Graphite GPU server rack with stacked compute hardware" width={1024} height={1536} sizes="(max-width: 760px) 80vw, 440px" preload quality={90} />
-            <figcaption className="mt-4! text-[length:var(--type-label)] text-[#595959]">Real infrastructure. Room to grow.</figcaption>
-          </figure>
         </section>
 
         <section id="who-we-help" className="container section-space border-t border-[var(--line)]" aria-labelledby="audiences-title">

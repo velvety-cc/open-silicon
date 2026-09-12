@@ -1,28 +1,4 @@
 /* Shared styling for the locally owned shadcn primitives. */
-@theme {
-  --animate-products-open: products-open 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
-  --animate-products-close: products-close 180ms ease-out both;
-  --animate-products-content: products-content 280ms cubic-bezier(0.22, 1, 0.36, 1) 50ms both;
-  --animate-products-content-close: products-content-close 120ms ease-out both;
-
-  @keyframes products-open {
-    from { clip-path: inset(0 0 100%); }
-    to { clip-path: inset(0); }
-  }
-  @keyframes products-close {
-    from { clip-path: inset(0); }
-    to { clip-path: inset(0 0 100%); }
-  }
-  @keyframes products-content {
-    from { opacity: 0; transform: translateY(-6px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes products-content-close {
-    from { opacity: 1; }
-    to { opacity: 0; }
-  }
-}
-
 .ui-button {
   display: inline-flex;
   flex-shrink: 0;
