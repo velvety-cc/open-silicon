@@ -194,7 +194,7 @@ export const DECK_DATA = {
     },
     {
       "title": "Transaction and underwriting",
-      "description": "Lighthouse opportunity, repayment, eligibility and security",
+      "description": "Selected pipeline opportunity, repayment, eligibility and security",
       "start": "lighthouse",
       "end": "structure"
     },
@@ -545,7 +545,7 @@ export const DECK_DATA = {
       }
     ],
     "testTitle": "No-refinancing test",
-    "test": "The credit policy excludes reliance on a large maturity balloon. The lighthouse cash flow model must demonstrate compliance before funding.",
+    "test": "The credit policy excludes reliance on a large maturity balloon. The transaction cash flow model must demonstrate compliance before funding.",
     "reserve": "Reserve funding, size and release conditions: {{reserve}}.",
     "sourceLabels": [
       "Primary repayment",
@@ -983,7 +983,7 @@ export const DECK_DATA = {
     "gatesTitle": "Capital call terms to finalize"
   },
   "closing": {
-    "subtitle": "Lighthouse transaction and first-pool participation",
+    "subtitle": "Selected pipeline opportunity and first-pool participation",
     "actions": [
       {
         "title": "Request the data room",
@@ -1059,8 +1059,8 @@ export const DECK_DATA = {
     },
     {
       "id": "lighthouse",
-      "section": "Lighthouse opportunity",
-      "title": "Lighthouse transaction overview",
+      "section": "Selected pipeline opportunity",
+      "title": "Selected pipeline opportunity",
       "lede": "Operating assets, contract economics and requested financing.",
       "notes": "The transaction profile remains subject to verification of assets, contracts and collections. The loan amount and schedule follow the completed cash flow and collateral analysis."
     },
@@ -1139,7 +1139,7 @@ export const DECK_DATA = {
       "section": "Investment discussion",
       "title": "Investment discussion",
       "lede": "",
-      "notes": "The next discussion should focus on the lighthouse credit, the repayment model and the proposed participation terms. Supporting evidence is reviewed through the data room and transaction documents."
+      "notes": "The next discussion should focus on the selected pipeline opportunity, the repayment model and the proposed participation terms. Supporting evidence is reviewed through the data room and transaction documents."
     }
   ],
   "cashflowIllustration": {
@@ -1166,7 +1166,7 @@ export const DECK_DATA = {
     "couponLabel": "Annual coupon",
     "scheduleLabel": "Straight-line principal repayment",
     "balanceLabel": "Principal at maturity",
-    "note": "This payment schedule illustrates loan mechanics. It is not the lighthouse repayment forecast or a net LP return projection."
+    "note": "This payment schedule illustrates loan mechanics. It is not the transaction repayment forecast or a net LP return projection."
   },
   "operatorEconomics": {
     "tableTitle": "Illustrative H100 payback · Fixed cost basis",
@@ -1670,7 +1670,7 @@ export const DECK_DATA = {
         {
           "title": "Implication for credit sizing",
           "paragraphs": [
-            "A multi-year recovery period for the operator’s entire asset investment does not itself establish whether a smaller 6–12 month loan can amortize. Advance size must fit verified stressed collections after operating costs, interest and reserves, as well as the collateral cap. The illustrative payback table is not a lighthouse DSCR or debt-repayment forecast."
+            "A multi-year recovery period for the operator’s entire asset investment does not itself establish whether a smaller 6–12 month loan can amortize. Advance size must fit verified stressed collections after operating costs, interest and reserves, as well as the collateral cap. The illustrative payback table is not a transaction DSCR or debt-repayment forecast."
           ]
         }
       ],
@@ -1835,7 +1835,7 @@ export const DECK_DATA = {
         {
           "title": "Entry, repayment and take-out",
           "paragraphs": [
-            "A signed large off-take is not an entry condition. It may enable longer-term refinancing, but cash-supported amortization, a funded reserve and a no-refinancing scenario must substantiate the proposed exit. The policy against a large maturity balloon remains subject to verification in the lighthouse model.",
+            "A signed large off-take is not an entry condition. It may enable longer-term refinancing, but cash-supported amortization, a funded reserve and a no-refinancing scenario must substantiate the proposed exit. The policy against a large maturity balloon remains subject to verification in the transaction model.",
             "The {{couponRange}}% figure is the proposed loan coupon on outstanding principal before investor-level fees. It is not a guaranteed LP return. Loan size, reserve, covenants, minimum ticket and actual borrower economics still require confirmed transaction data."
           ]
         }
@@ -1947,7 +1947,7 @@ export const DECK_DATA = {
             "Interest accrues monthly on opening principal at the annual coupon divided by 12. Payments are rounded to cents.",
             "Before investor-level fees. Assumes scheduled payments with no default, prepayment, idle cash or reserve drag. Returned principal is not income.",
             "Illustrative straight-line repayment. Actual amortization depends on verified borrower cash flow and the final loan documents.",
-            "This payment schedule illustrates loan mechanics. It is not the lighthouse repayment forecast or a net LP return projection."
+            "This payment schedule illustrates loan mechanics. It is not the transaction repayment forecast or a net LP return projection."
           ]
         }
       ],

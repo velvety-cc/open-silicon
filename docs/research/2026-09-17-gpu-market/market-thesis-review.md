@@ -167,7 +167,7 @@ Silicon Data 的 GPU residual value 产品采用租赁远期、成本、利用�
 | 2 | Rental prices move in cycles | 本报告 H100 同期限区间主图；近期按需价格另图 | 借款人实际租价与指数的差异 |
 | 3 | Contract structure shapes financing access | 客户信用与合同确定性 × 资产运营状态；ticket 作为标注 | 已签合同、终止及扣减权、实际可获融资 |
 | 4 | Collected cash determines debt capacity | CFADS 到月度本息的桥接，贷款两个上限 | 真实基础及压力情景、净清算报价 |
-| 5 | Focus on a documented operating-asset financing need | Lighthouse 的用途、时限、竞品报价与选择理由 | 可审阅的真实交易材料与 LP 意向 |
+| 5 | Focus on a documented operating-asset financing need | 所选 pipeline 项目的用途、时限、竞品报价与选择理由 | 可审阅的真实交易材料与 LP 意向 |
 
 公开交易可以证明存在融资市场；不要用外部大交易代替 Open Silicon 自己的获客与回款记录。涉及租金强势时，把范围限定到型号、期限和观测期间。
 

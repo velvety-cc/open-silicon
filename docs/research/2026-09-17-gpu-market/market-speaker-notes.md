@@ -101,7 +101,7 @@ Nebius’s Q2 2026 shareholder letter reports expected payback on new deals impr
 
 ### Implication for credit sizing
 
-A multi-year recovery period for the operator’s entire asset investment does not itself establish whether a smaller 6–12 month loan can amortize. Advance size must fit verified stressed collections after operating costs, interest and reserves, as well as the collateral cap. The illustrative payback table is not a lighthouse DSCR or debt-repayment forecast.
+A multi-year recovery period for the operator’s entire asset investment does not itself establish whether a smaller 6–12 month loan can amortize. Advance size must fit verified stressed collections after operating costs, interest and reserves, as well as the collateral cap. The illustrative payback table is not a transaction DSCR or debt-repayment forecast.
 
 ### Sources
 
@@ -193,6 +193,6 @@ The allowable advance is the lower of collateral-supported capacity and cash-flo
 
 ### Entry, repayment and take-out
 
-A signed large off-take is not an entry condition. It may enable longer-term refinancing, but cash-supported amortization, a funded reserve and a no-refinancing scenario must substantiate the proposed exit. The policy against a large maturity balloon remains subject to verification in the lighthouse model.
+A signed large off-take is not an entry condition. It may enable longer-term refinancing, but cash-supported amortization, a funded reserve and a no-refinancing scenario must substantiate the proposed exit. The policy against a large maturity balloon remains subject to verification in the transaction model.
 
 The 13–16% figure is the proposed loan coupon on outstanding principal before investor-level fees. It is not a guaranteed LP return. Loan size, reserve, covenants, minimum ticket and actual borrower economics still require confirmed transaction data.

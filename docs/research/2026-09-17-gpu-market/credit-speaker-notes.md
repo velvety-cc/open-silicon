@@ -2,7 +2,7 @@
 
 Layout and proposed capital call mechanics · 18 September 2026
 
-## Lighthouse transaction overview
+## Selected pipeline opportunity
 
 The transaction profile remains subject to verification of assets, contracts and collections. The loan amount and schedule follow the completed cash flow and collateral analysis.
 
@@ -152,4 +152,4 @@ Before investor-level fees. Assumes scheduled payments with no default, prepayme
 
 Illustrative straight-line repayment. Actual amortization depends on verified borrower cash flow and the final loan documents.
 
-This payment schedule illustrates loan mechanics. It is not the lighthouse repayment forecast or a net LP return projection.
+This payment schedule illustrates loan mechanics. It is not the transaction repayment forecast or a net LP return projection.
