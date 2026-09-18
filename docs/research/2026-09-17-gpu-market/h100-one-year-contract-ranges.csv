@@ -1,0 +1,19 @@
+reported_period,period_start,period_end_exclusive,p25_usd_per_gpu_hour,p75_usd_per_gpu_hour,contract_term,typical_prepayment_percent,source_url,accessed_date
+1H 2023,2023-01-01,2023-07-01,2.7,3.4,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+2H 2023,2023-07-01,2024-01-01,2.65,3.3,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+1Q 2024,2024-01-01,2024-04-01,2.5,3.1,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+2Q 2024,2024-04-01,2024-07-01,2.2,2.5,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+3Q 2024,2024-07-01,2024-10-01,2.15,2.45,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+4Q 2024,2024-10-01,2025-01-01,1.9,2.1,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+1Q 2025,2025-01-01,2025-04-01,1.8,2.1,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+2Q 2025,2025-04-01,2025-07-01,1.8,2.1,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+Jul 2025,2025-07-01,2025-08-01,1.7,2.0,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+Aug 2025,2025-08-01,2025-09-01,1.5,2.0,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+Sep 2025,2025-09-01,2025-10-01,1.5,2.0,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+Oct 2025,2025-10-01,2025-11-01,1.45,1.95,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+Nov 2025,2025-11-01,2025-12-01,1.45,2.0,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+Dec 2025,2025-12-01,2026-01-01,1.45,2.0,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+Jan 2026,2026-01-01,2026-02-01,1.5,2.05,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+Feb 2026,2026-02-01,2026-03-01,1.8,2.35,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+Mar 2026,2026-03-01,2026-04-01,2.0,2.7,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17
+Apr 2026,2026-04-01,2026-05-01,2.1,2.7,1 year,25,https://gpu-index.semianalysis.com/,2026-09-17

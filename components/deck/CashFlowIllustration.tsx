@@ -42,6 +42,5 @@ export default function CashFlowIllustration() {
         <TableBody>{result.rows.map(row => <TableRow key={row.month}><TableHead scope="row">{row.month}</TableHead><TableCell>{money.format(row.principal / 100)}</TableCell><TableCell>{money.format(row.interest / 100)}</TableCell><TableCell>{money.format(row.closing / 100)}</TableCell></TableRow>)}</TableBody>
       </Table>
     </div>
-    <div className="deck-bottom-note"><p className="deck-small text-[#666]">{c.method}</p><p className="deck-small text-[#666]">{c.assumptions}</p><p className="deck-small text-[#666]">{c.note}</p></div>
   </>;
 }

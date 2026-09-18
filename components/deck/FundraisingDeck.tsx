@@ -89,6 +89,9 @@ export default function FundraisingDeck() {
     return () => window.removeEventListener("keydown", keydown);
   }, [navigate, notesOpen]);
 
+  const currentSlide = DECK_DATA.slides[current];
+  const researchNotes = DECK_DATA.researchNotes.find(note => note.slideId === currentSlide.id);
+
   return <div className="deck-page bg-white text-black">
     <a href="#deck-main" className="skip-link">Skip to presentation</a>
     <main id="deck-main" className="deck-stage" aria-label="Open Silicon investor presentation">
@@ -97,7 +100,7 @@ export default function FundraisingDeck() {
           <div className="deck-slide-inner">
             <header className="flex shrink-0 items-center justify-between gap-5">
               <Link href="/" aria-label="Open Silicon home" className="deck-wordmark" style={{ color: "inherit" }}><BrandWordmark /></Link>
-              <span className="deck-label text-right text-[#777]">{index === 0 ? <><DeckText>{DECK_DATA.date}</DeckText><br />{DECK_DATA.confidential}</> : slide.section}</span>
+              <span className={`deck-label text-right ${index === 0 ? "deck-cover-meta" : "text-[#777]"}`}>{index === 0 ? <>{DECK_DATA.asOf}<br />{DECK_DATA.confidential}</> : slide.section}</span>
             </header>
             <div className="deck-slide-body"><DeckSlideContent index={index} onNavigate={target => { navigate(target); requestAnimationFrame(() => slideRefs.current[target]?.focus({ preventScroll: true })); }} /></div>
             <footer className="deck-folio"><span>{DECK_DATA.brand}<span className="deck-footer-separator">/</span>{DECK_DATA.documentLabel}</span><span aria-label={`Slide ${index + 1} of ${count}`}>{String(index + 1).padStart(2, "0")}</span></footer>
@@ -112,9 +115,17 @@ export default function FundraisingDeck() {
         <Button variant="ghost" size="nav" aria-label="Table of contents" onClick={() => navigate(1)}><List aria-hidden="true" /><span className="max-[500px]:hidden">{DECK_DATA.ui.contents}</span></Button>
         <Sheet open={notesOpen} onOpenChange={setNotesOpen}>
           <SheetTrigger asChild><Button variant="ghost" size="nav" aria-label="Speaker notes" title="Speaker notes (N)"><NotebookPen aria-hidden="true" /><span className="max-[500px]:hidden">Notes</span></Button></SheetTrigger>
-          <SheetContent side="right" className="z-[70] w-full overflow-y-auto bg-white p-6 sm:max-w-md print:hidden">
-            <SheetHeader className="p-0 pt-12"><SheetTitle className="text-2xl! font-normal! tracking-[-.04em]!">{DECK_DATA.slides[current].section}</SheetTitle><SheetDescription>Slide {current + 1} of {count}</SheetDescription></SheetHeader>
-            <p className="mt-6! text-base leading-7 text-[#555]">{slideNotes[current]}</p>
+          <SheetContent side="right" className="deck-notes z-[70] w-full overflow-y-auto bg-white p-6 sm:max-w-xl print:hidden">
+            <SheetHeader className="p-0 pt-12"><SheetTitle className="text-2xl! font-normal! tracking-[-.04em]!">{currentSlide.section}</SheetTitle><SheetDescription>Slide {current + 1} of {count}</SheetDescription></SheetHeader>
+            <p className="mt-6! text-base leading-7 text-[#555]"><DeckText>{currentSlide.notes}</DeckText></p>
+            {researchNotes?.sections.map(section => <section className="mt-7 border-t border-[#e5e5e8] pt-5" key={section.title}>
+              <h3 className="text-base font-medium tracking-tight">{section.title}</h3>
+              {section.paragraphs.map(paragraph => <p key={paragraph} className="mt-3! text-sm leading-6 text-[#555]"><DeckText>{paragraph}</DeckText></p>)}
+            </section>)}
+            {!!researchNotes?.sources.length && <section className="mt-7 border-t border-[#e5e5e8] pt-5">
+              <h3 className="text-base font-medium">{DECK_DATA.ui.source}</h3>
+              <ol className="mt-4 grid list-decimal gap-4 pl-5 text-sm leading-6">{researchNotes.sources.filter(source => source.confirmed).map(source => <li key={source.url}><a className="text-[#533afe] underline underline-offset-4" href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a><span className="block text-xs text-[#777]">{source.date}</span></li>)}</ol>
+            </section>}
           </SheetContent>
         </Sheet>
         <Button variant="ghost" size="nav" onClick={() => window.print()} aria-label="Print presentation"><Printer aria-hidden="true" /><span className="max-[500px]:hidden">Print</span></Button>

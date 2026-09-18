@@ -1,0 +1,10 @@
+scenario_type,installed_capex_index,net_FLV_index,FLV_advance_rate,initial_loan_index,coupon_nominal_annual,required_DSCR,constant_CFADS_payback_months,loan_months,first_month_straight_line_DSCR,max_straight_line_loan_as_fraction_capex,max_level_payment_loan_as_fraction_capex
+hypothetical_not_borrower_data,100,70,0.6,42,0.14,1.25,22,6,0.60687,0.203908,0.209543
+hypothetical_not_borrower_data,100,70,0.6,42,0.14,1.25,22,9,0.881471,0.296174,0.308971
+hypothetical_not_borrower_data,100,70,0.6,42,0.14,1.25,22,12,1.139212,0.382775,0.404998
+hypothetical_not_borrower_data,100,70,0.6,42,0.14,1.25,30,6,0.445038,0.149533,0.153665
+hypothetical_not_borrower_data,100,70,0.6,42,0.14,1.25,30,9,0.646412,0.217195,0.226579
+hypothetical_not_borrower_data,100,70,0.6,42,0.14,1.25,30,12,0.835422,0.280702,0.296999
+hypothetical_not_borrower_data,100,70,0.6,42,0.14,1.25,36,6,0.370865,0.124611,0.128054
+hypothetical_not_borrower_data,100,70,0.6,42,0.14,1.25,36,9,0.538677,0.180995,0.188815
+hypothetical_not_borrower_data,100,70,0.6,42,0.14,1.25,36,12,0.696185,0.233918,0.247499

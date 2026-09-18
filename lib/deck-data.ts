@@ -155,7 +155,7 @@ export const DECK_DATA = {
   "date": "September 2026",
   "asOf": "17 September 2026",
   "confidential": "Private and confidential",
-  "documentLabel": "Investment discussion",
+  "documentLabel": "Discussion Materials",
   "ui": {
     "notes": "Notes",
     "print": "Print",
@@ -188,7 +188,7 @@ export const DECK_DATA = {
   "contents": [
     {
       "title": "Market and investment strategy",
-      "description": "Market conditions, financing precedents and target borrowers",
+      "description": "Agent demand, rental cycles, payback and compute financing",
       "start": "market",
       "end": "strategy"
     },
@@ -224,112 +224,197 @@ export const DECK_DATA = {
     }
   ],
   "market": {
-    "period": "North America primary data center markets, H1 2026",
     "metrics": [
       {
-        "value": "1.4%",
-        "label": "Vacancy",
-        "context": "Across primary markets"
+        "confirmed": true,
+        "value": "4×",
+        "label": "Agent tokens vs. chat",
+        "source": {
+          "confirmed": true,
+          "label": "Anthropic · Multi-agent research system",
+          "date": "13 June 2025",
+          "url": "https://www.anthropic.com/engineering/multi-agent-research-system"
+        }
       },
       {
-        "value": ">80%",
-        "label": "Construction preleased",
-        "context": "Capacity already committed"
+        "confirmed": true,
+        "value": "15×",
+        "label": "Multi-agent tokens vs. chat",
+        "source": {
+          "confirmed": true,
+          "label": "Anthropic · Multi-agent research system",
+          "date": "13 June 2025",
+          "url": "https://www.anthropic.com/engineering/multi-agent-research-system"
+        }
       },
       {
-        "value": "7,481 MW",
-        "label": "Under construction",
-        "context": "Across primary markets"
+        "confirmed": true,
+        "value": "2×",
+        "label": "Claude Code weekly users · Jan–Feb 2026",
+        "source": {
+          "confirmed": true,
+          "label": "Anthropic · Series G announcement",
+          "date": "12 February 2026",
+          "url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
+        }
+      }
+    ],
+    "metricContext": "Token comparisons reflect Anthropic’s observed workloads.",
+    "workflowTitle": "More inference within each task",
+    "workflows": [
+      {
+        "label": "Chat",
+        "title": "A response to a prompt",
+        "body": "The next request usually waits for the user."
+      },
+      {
+        "label": "Agent",
+        "title": "Repeated execution toward an outcome",
+        "body": "Plans, tool calls and revisions create additional model requests. Parallel agents add concurrent work."
       }
     ],
     "observations": [
       {
-        "title": "Power constrains available capacity",
-        "body": "Power constraints are extending delivery timelines despite record construction activity."
+        "confirmed": true,
+        "title": "Paying demand is scaling",
+        "body": "Claude Code exceeded $2.5B in annualized revenue run rate in February 2026, more than double the start of the year.",
+        "source": {
+          "confirmed": true,
+          "label": "Anthropic · Series G announcement",
+          "date": "12 February 2026",
+          "url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
+        }
       },
       {
-        "title": "Contracted assets can access debt capital",
-        "body": "The selected financings show lenders underwriting GPU assets and customer cash flows at institutional scale."
-      },
-      {
-        "title": "Borrower economics determine eligibility",
-        "body": "Site occupancy is market context. Each loan still requires evidence of compute revenue, operating costs and repayment capacity."
+        "confirmed": true,
+        "title": "Usage is translating into capacity purchases",
+        "body": "Anthropic secured access to more than 220,000 NVIDIA GPUs in May 2026 and increased Code and API limits.",
+        "source": {
+          "confirmed": true,
+          "label": "Anthropic · Usage limits and compute capacity",
+          "date": "6 May 2026",
+          "url": "https://www.anthropic.com/news/higher-limits-spacex"
+        }
       }
     ],
-    "chartTitle": "Share of capacity under construction that is preleased",
-    "chartUnit": "Percent of capacity",
-    "chart": [
-      {
-        "label": "H1 2025",
-        "value": 74.3,
-        "display": "74.3%"
+    "demandShift": {
+      "title": "Training and inference demand",
+      "unit": "Global AI data center demand · GW",
+      "source": {
+        "confirmed": true,
+        "label": "McKinsey · Data Center Demand Model",
+        "date": "17 December 2025",
+        "url": "https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-next-big-shifts-in-ai-workloads-and-hyperscaler-strategies"
       },
-      {
-        "label": "H1 2026",
-        "value": 80,
-        "display": ">80%"
-      }
-    ],
-    "chartNote": "The latest source reports more than 80%. The chart marks the reported lower bound.",
-    "scope": "Colocation market data does not measure GPU utilization, compute rental prices or borrower credit quality.",
-    "source": {
-      "confirmed": true,
-      "label": "CBRE, North America data center update, 8 September 2026",
-      "url": "https://www.cbre.com/press-releases/north-american-data-center-demand-continues-to-outpace-supply-despite-record-construction"
-    },
-    "pricingGap": "GPU rental and resale price evidence: [TODO: model-specific quotations and observation dates]"
+      "sourceCaption": "McKinsey model · 2025 estimate and 2030 forecast",
+      "maximum": 160,
+      "ticks": [
+        0,
+        40,
+        80,
+        120,
+        160
+      ],
+      "series": [
+        {
+          "key": "training",
+          "label": "Training",
+          "color": "#bdb7d5"
+        },
+        {
+          "key": "inference",
+          "label": "Inference",
+          "color": "#533afe"
+        }
+      ],
+      "points": [
+        {
+          "year": 2025,
+          "status": "Estimate",
+          "training": 23.1,
+          "inference": 20.9
+        },
+        {
+          "year": 2030,
+          "status": "Forecast",
+          "training": 62.2,
+          "inference": 93.3
+        }
+      ],
+      "shareLabel": "Inference share of AI demand",
+      "shareCaption": "2025 estimate → 2030 forecast",
+      "takeaway": "Both workloads grow. Inference takes a larger share.",
+      "mechanismTitle": "Agents add repeated inference",
+      "mechanismBody": "A task can trigger repeated model calls and parallel work. Anthropic observed 15× chat token use in multi-agent systems.",
+      "adoptionTitle": "Demand is becoming commercial",
+      "adoptionBody": "Claude Code weekly users doubled between January and February 2026."
+    }
   },
   "marketDeals": {
     "headers": [
-      "Transaction / announcement",
-      "Facility size",
-      "Structure and disclosed terms",
-      "Credit context"
+      "Public market precedent",
+      "Announced size",
+      "Financing / support",
+      "Credit relevance"
     ],
     "entries": [
       {
         "confirmed": true,
-        "name": "Nebius",
-        "date": "17 July 2026",
-        "amount": "~$775M",
-        "structure": "Senior secured facility",
-        "terms": "SOFR + 2.50%; matures 31 October 2030",
-        "context": "Deployed GPUs and cash flows from an investment-grade customer contract.",
-        "source": {
-          "label": "Nebius announcement",
-          "url": "https://nebius.com/newsroom/nebius-raises-775-million-in-first-secured-debt-financing-to-accelerate-global-buildout"
-        }
-      },
-      {
-        "confirmed": true,
         "name": "CoreWeave",
-        "date": "18 May 2026",
-        "amount": "$3.1B",
-        "structure": "Delayed draw term loan",
-        "terms": "SOFR + 4.50%; approximately 5.5 years",
-        "context": "Infrastructure dedicated to two large, non-investment-grade customer contracts.",
+        "date": "May 2024",
+        "amount": "$7.5B",
+        "structure": "Debt facility led by Blackstone and Magnetar",
+        "terms": "BlackRock-managed funds and accounts participated",
+        "context": "Institutional lenders already finance compute infrastructure.",
         "source": {
-          "label": "CoreWeave announcement",
-          "url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Closes-3-1-Billion-Loan-Facility-Expanding-Access-to-Public-Markets-for-GPU-Backed-Financing/default.aspx"
+          "confirmed": true,
+          "label": "Blackstone · CoreWeave debt financing",
+          "date": "17 May 2024",
+          "url": "https://www.blackstone.com/news/press/coreweave-secures-7-5-billion-debt-financing-facility-led-by-blackstone-and-magnetar/"
         }
       },
       {
         "confirmed": true,
-        "name": "Crusoe",
-        "date": "27 March 2025",
-        "amount": "~$225M",
-        "structure": "Credit facility for GPUs and cloud infrastructure",
-        "terms": "Pricing and maturity not disclosed in the announcement",
-        "context": "Private credit financing for platform expansion. LTV and repayment schedule not disclosed.",
+        "name": "Apollo / Valor",
+        "date": "January 2026",
+        "amount": "$3.5B",
+        "structure": "Capital solution within a $5.4B compute transaction",
+        "terms": "GB200 infrastructure leased to xAI",
+        "context": "Equipment ownership and leases support large-scale financing.",
         "source": {
-          "label": "Crusoe announcement",
-          "url": "https://crusoe.ai/newsroom/upper90-closes-usd225m-credit-facility-to-crusoe-to-expand-ai-cloud/"
+          "confirmed": true,
+          "label": "Apollo · Valor and xAI compute transaction",
+          "date": "7 January 2026",
+          "url": "https://www.apollo.com/wealth/insights-news/pressreleases/2026/01/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-3214463"
+        }
+      },
+      {
+        "confirmed": true,
+        "name": "NVIDIA / CoreWeave",
+        "date": "September 2025",
+        "amount": "$6.3B",
+        "structure": "Initial value of capacity purchase agreement",
+        "terms": "Covered unsold capacity through April 2032",
+        "context": "Contractual demand support for eligible capacity.",
+        "source": {
+          "confirmed": true,
+          "label": "CoreWeave · NVIDIA capacity agreement, SEC 8-K",
+          "date": "15 September 2025; agreement dated 9 September",
+          "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962825000047/crwv-20250909.htm"
         }
       }
     ],
-    "observationTitle": "Relevance to the proposed strategy",
-    "observation": "These transactions demonstrate access to institutional infrastructure debt. Their scale, tenor and customer support differ from the proposed Open Silicon bridge loans.",
-    "note": "Public market precedents only. These are not Open Silicon transactions or relationships. Amounts are announced facility sizes, not verified amounts drawn. Floating-rate spreads are not all-in coupons."
+    "observationTitle": "A broader potential refinancing market",
+    "observation": "Institutional capital expands financing options for eligible assets. Open Silicon underwrites repayment from each borrower’s existing cash flows.",
+    "note": "External market precedents, not Open Silicon transactions. Facility commitments are not amounts drawn. The capacity agreement is a service purchase commitment, not a loan or GPU buyback.",
+    "supportTitle": "Selective vendor support",
+    "supportBody": "NVIDIA has disclosed capacity commitments and project-specific residual-value support. Protection depends on the signed terms.",
+    "supportSource": {
+      "confirmed": true,
+      "label": "NVIDIA · Quarterly report, period ended 26 July 2026",
+      "date": "Q2 FY2027",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+    }
   },
   "strategy": {
     "headers": [
@@ -614,6 +699,10 @@ export const DECK_DATA = {
   "terms": {
     "rows": [
       {
+        "label": "Proposed first pool",
+        "value": "{{raiseRange}}"
+      },
+      {
         "label": "Individual loan size",
         "value": "{{facilitySize}}"
       },
@@ -817,24 +906,45 @@ export const DECK_DATA = {
     },
     {
       "id": "market",
-      "section": "Market overview",
-      "title": "AI compute market overview",
-      "lede": "Power and capacity remain constrained across primary data center markets.",
-      "notes": "The market data describes North American colocation capacity, not GPU utilization or rental profitability. It provides context for the strategy, while every borrower still requires its own cash flow and collateral analysis."
+      "section": "GPU rental market",
+      "title": "Agentic AI is expanding inference demand",
+      "lede": "Training demand continues to grow. Inference expands faster as AI moves into production.",
+      "notes": "The chart compares published 2025 estimates and 2030 forecasts for global AI data center demand. Both training and inference expand, with inference gaining share. Agent use is one demand driver; these forecasts do not measure its isolated contribution."
+    },
+    {
+      "id": "market-history",
+      "section": "GPU rental pricing",
+      "title": "A new wave of inference is tightening GPU supply",
+      "lede": "Rental prices fell as capacity expanded, then recovered as available inventory tightened.",
+      "notes": "The H100 contract series shows a decline followed by recovery. Market research links the change to stronger inference demand and constrained additions to available supply. This is a supported market explanation, not proof that agents alone caused the rebound."
+    },
+    {
+      "id": "operator-economics",
+      "section": "Operator economics",
+      "title": "Stronger rental pricing improves capital recovery",
+      "lede": "Holding cost and paid occupancy constant isolates the effect of rental pricing.",
+      "notes": "The illustration applies historical rent ranges to a fixed August 2026 hardware cost basis. It shows price sensitivity, not realized historical project returns. An operator’s full capital recovery period is separate from repayment of a smaller bridge loan."
+    },
+    {
+      "id": "rental-segments",
+      "section": "Rental models and capital needs",
+      "title": "Different rental models need different capital",
+      "lede": "Large buildouts and smaller operating clusters have different funding requirements.",
+      "notes": "Financing depends on contract quality, asset status and cash flow, as well as transaction size. Open Silicon targets operating facilities with paying customers while longer-term financing is arranged. Uncontracted spot-only capacity falls outside the proposed mandate."
     },
     {
       "id": "market-deals",
       "section": "Deals overview",
-      "title": "Selected financing transactions",
-      "lede": "Public precedents show a range of structures for financing GPU infrastructure.",
-      "notes": "These are publicly announced third-party transactions, not Open Silicon experience. Their scale, maturity and customer support limit direct comparison with our proposed bridge loans."
+      "title": "Institutional capital is expanding compute finance",
+      "lede": "Public financings and selective vendor support are broadening the available structures.",
+      "notes": "These are external market precedents, not Open Silicon transactions or relationships. Institutional lending and selective vendor support can improve financeability for qualifying projects. They do not establish a market-wide floor for GPU rents or resale prices."
     },
     {
       "id": "strategy",
       "section": "Investment strategy",
-      "title": "Target borrowers and credit mandate",
-      "lede": "Senior secured bridge capital for smaller operating compute facilities.",
-      "notes": "The strategy focuses on the period between operating revenue and longer-term financing. A large off-take agreement is a potential take-out route, while eligibility depends on assets, collections and a credible repayment plan."
+      "title": "Bridge credit for operating compute assets",
+      "lede": "Short-term senior secured financing while operators arrange longer-term capital.",
+      "notes": "Eligibility begins with commissioned hardware, secured power and a paying contract. Loan size must satisfy both stressed cash-flow repayment and the forced-liquidation collateral cap. A larger off-take may support refinancing, but is not an entry requirement or a guaranteed exit."
     },
     {
       "id": "lighthouse",
@@ -946,5 +1056,671 @@ export const DECK_DATA = {
     "scheduleLabel": "Straight-line principal repayment",
     "balanceLabel": "Principal at maturity",
     "note": "This payment schedule illustrates loan mechanics. It is not the lighthouse repayment forecast or a net LP return projection."
-  }
+  },
+  "operatorEconomics": {
+    "tableTitle": "Illustrative H100 payback · Fixed cost basis",
+    "headers": [
+      "Per GPU",
+      "Oct 2025 rents",
+      "Apr 2026 rents"
+    ],
+    "benchmark": {
+      "confirmed": true,
+      "label": "Public operator estimate",
+      "value": "22",
+      "unit": "months",
+      "title": "Nebius · Estimated capex payback",
+      "body": "Management’s expected payback on Q2 2026 contracts, improved from 24–36 months. Revenue-recognition basis; excludes prepayments.",
+      "source": {
+        "confirmed": true,
+        "label": "Nebius · Q2 2026 shareholder letter",
+        "date": "12 August 2026",
+        "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-2.htm"
+      }
+    },
+    "formula": {
+      "label": "Static payback in months",
+      "numerator": "Installed capex",
+      "denominator": "Monthly net cash flow before financing",
+      "ariaLabel": "Static payback in months equals installed capex divided by positive monthly net cash flow before financing."
+    },
+    "creditTitle": "Asset payback and loan repayment differ",
+    "modelDefinitions": {
+      "installedCapex": "GPU, server, networking and allocated installation costs per GPU.",
+      "paidOccupancy": "Billed GPU-hours divided by available GPU-hours, not chip compute utilization.",
+      "cashReceipts": "Actual contracted collections after discounts, credits and non-payment; market indices are context only.",
+      "cashCosts": "Power, cooling, hosting, connectivity, maintenance, insurance and allocated cash operating costs, cash taxes and working capital requirements.",
+      "payback": "A static estimate at a positive, constant monthly net cash flow before financing. Zero or negative cash flow has no finite payback. Excludes financing flows and equipment resale proceeds."
+    },
+    "assumptions": {
+      "paidOccupancy": 0.9,
+      "monthlyHours": 730,
+      "monthlyCashCosts": 400,
+      "additionalCapex": 5000,
+      "refurbishedHardware": 30750,
+      "newHardware": 40554.75
+    },
+    "scenarios": [
+      {
+        "period": "October 2025",
+        "low": 1.45,
+        "high": 1.95
+      },
+      {
+        "period": "April 2026",
+        "low": 2.1,
+        "high": 2.7
+      }
+    ],
+    "assumptionLabel": "Illustrative assumptions",
+    "labels": {
+      "rent": "Rent / paid GPU-hour",
+      "receipts": "Monthly rental receipts",
+      "cash": "Monthly cash after operating costs",
+      "refurbished": "Refurbished hardware",
+      "new": "New hardware",
+      "installed": "installed / GPU",
+      "months": "months",
+      "modelScope": "Pretax, unlevered sensitivity. August 2026 hardware asking prices held fixed across rent scenarios."
+    },
+    "creditBody": "A shorter loan requires a smaller advance sized to cash flow, amortization and a funded reserve."
+  },
+  "marketHistory": {
+    "period": "2023–April 2026",
+    "startDate": "2023-01-01",
+    "endDate": "2026-05-01",
+    "chartTitle": "H100 · One-year rental contracts",
+    "chartUnit": "USD / GPU-hour · 25th–75th percentile ranges",
+    "source": {
+      "confirmed": true,
+      "label": "SemiAnalysis · H100 one-year contract ranges",
+      "date": "Accessed 17 September 2026; series through April 2026",
+      "url": "https://gpu-index.semianalysis.com/"
+    },
+    "minimum": 1,
+    "maximum": 3.6,
+    "ticks": [
+      1,
+      1.5,
+      2,
+      2.5,
+      3,
+      3.5
+    ],
+    "axisLabels": [
+      {
+        "date": "2023-01-01",
+        "label": "2023"
+      },
+      {
+        "date": "2024-01-01",
+        "label": "2024"
+      },
+      {
+        "date": "2025-01-01",
+        "label": "2025"
+      },
+      {
+        "date": "2026-01-01",
+        "label": "2026"
+      }
+    ],
+    "ranges": [
+      {
+        "period": "1H 2023",
+        "start": "2023-01-01",
+        "end": "2023-07-01",
+        "low": 2.7,
+        "high": 3.4
+      },
+      {
+        "period": "2H 2023",
+        "start": "2023-07-01",
+        "end": "2024-01-01",
+        "low": 2.65,
+        "high": 3.3
+      },
+      {
+        "period": "1Q 2024",
+        "start": "2024-01-01",
+        "end": "2024-04-01",
+        "low": 2.5,
+        "high": 3.1
+      },
+      {
+        "period": "2Q 2024",
+        "start": "2024-04-01",
+        "end": "2024-07-01",
+        "low": 2.2,
+        "high": 2.5
+      },
+      {
+        "period": "3Q 2024",
+        "start": "2024-07-01",
+        "end": "2024-10-01",
+        "low": 2.15,
+        "high": 2.45
+      },
+      {
+        "period": "4Q 2024",
+        "start": "2024-10-01",
+        "end": "2025-01-01",
+        "low": 1.9,
+        "high": 2.1
+      },
+      {
+        "period": "1Q 2025",
+        "start": "2025-01-01",
+        "end": "2025-04-01",
+        "low": 1.8,
+        "high": 2.1
+      },
+      {
+        "period": "2Q 2025",
+        "start": "2025-04-01",
+        "end": "2025-07-01",
+        "low": 1.8,
+        "high": 2.1
+      },
+      {
+        "period": "Jul 2025",
+        "start": "2025-07-01",
+        "end": "2025-08-01",
+        "low": 1.7,
+        "high": 2.0
+      },
+      {
+        "period": "Aug 2025",
+        "start": "2025-08-01",
+        "end": "2025-09-01",
+        "low": 1.5,
+        "high": 2.0
+      },
+      {
+        "period": "Sep 2025",
+        "start": "2025-09-01",
+        "end": "2025-10-01",
+        "low": 1.5,
+        "high": 2.0
+      },
+      {
+        "period": "Oct 2025",
+        "start": "2025-10-01",
+        "end": "2025-11-01",
+        "low": 1.45,
+        "high": 1.95
+      },
+      {
+        "period": "Nov 2025",
+        "start": "2025-11-01",
+        "end": "2025-12-01",
+        "low": 1.45,
+        "high": 2.0
+      },
+      {
+        "period": "Dec 2025",
+        "start": "2025-12-01",
+        "end": "2026-01-01",
+        "low": 1.45,
+        "high": 2.0
+      },
+      {
+        "period": "Jan 2026",
+        "start": "2026-01-01",
+        "end": "2026-02-01",
+        "low": 1.5,
+        "high": 2.05
+      },
+      {
+        "period": "Feb 2026",
+        "start": "2026-02-01",
+        "end": "2026-03-01",
+        "low": 1.8,
+        "high": 2.35
+      },
+      {
+        "period": "Mar 2026",
+        "start": "2026-03-01",
+        "end": "2026-04-01",
+        "low": 2.0,
+        "high": 2.7
+      },
+      {
+        "period": "Apr 2026",
+        "start": "2026-04-01",
+        "end": "2026-05-01",
+        "low": 2.1,
+        "high": 2.7
+      }
+    ],
+    "callouts": [
+      {
+        "period": "1H 2023",
+        "date": "2023-04-01",
+        "value": 3.4,
+        "label": "$2.70–3.40"
+      },
+      {
+        "period": "Oct 2025",
+        "date": "2025-10-16",
+        "value": 1.45,
+        "label": "$1.45–1.95"
+      },
+      {
+        "period": "Apr 2026",
+        "date": "2026-04-16",
+        "value": 2.7,
+        "label": "$2.10–2.70"
+      }
+    ],
+    "coverage": "SemiAnalysis · Published contract ranges through April 2026 · Typically 25% prepayment",
+    "chapters": [
+      {
+        "period": "2023–2025",
+        "title": "Supply expansion",
+        "body": "More available GPUs intensified rental competition as operators sought to fill capacity."
+      },
+      {
+        "period": "Late 2025–2026",
+        "title": "Demand acceleration",
+        "body": "Agents, reasoning and other inference workloads expanded demand for compute."
+      },
+      {
+        "period": "Early 2026",
+        "title": "Capacity tightening",
+        "body": "Demand absorbed available inventory while higher server costs constrained new deployments."
+      }
+    ]
+  },
+  "rentalSegments": {
+    "headers": [
+      "Financing dimension",
+      "Large dedicated capacity",
+      "Smaller operating clusters",
+      "Uncontracted capacity"
+    ],
+    "rows": [
+      [
+        "Rental model",
+        "Long-term anchor off-take",
+        "Reserved clusters and paying compute contracts",
+        "On-demand and spot rentals"
+      ],
+      [
+        "Capital need",
+        "Construction, power and large deployments",
+        "Liquidity against deployed equipment and receivables",
+        "Working capital and occupancy ramp"
+      ],
+      [
+        "Credit support",
+        "Customer credit and delivery commitments",
+        "Collections and hardware liquidation value",
+        "Variable utilization and rental prices"
+      ],
+      [
+        "Financing fit",
+        "Prepayments and long-term project or asset finance",
+        "Senior secured bridge credit",
+        "Operator equity; debt needs contracted support"
+      ]
+    ],
+    "evidence": {
+      "confirmed": true,
+      "title": "Contract duration varies within the same operator",
+      "body": "Nebius describes short capacity contracts of 3–6 months, core contracts of 1–3 years and longer contracts with investment-grade customers.",
+      "source": {
+        "confirmed": true,
+        "label": "Nebius · Q2 2026 shareholder letter",
+        "date": "12 August 2026",
+        "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-2.htm"
+      }
+    },
+    "thesis": {
+      "title": "Open Silicon’s target segment",
+      "body": "{{operatorFacilityRange}} operating facilities. {{termRange}}-month secured bridge loans. Paying contracts at entry; larger off-take agreements can support refinancing."
+    },
+    "definitions": "Facility size describes operator assets, not rental-contract value or loan size. Short rental contracts can also be sold by large operators. This segmentation is a financing thesis, not an assertion that contract duration determines company size.",
+    "exclusions": "Uncontracted spot-only capacity does not meet the paying-contract eligibility requirement. Construction finance and hardware not yet commissioned are outside the proposed mandate."
+  },
+  "researchNotes": [
+    {
+      "slideId": "market",
+      "sections": [
+        {
+          "title": "Demand chart: measure and forecast",
+          "paragraphs": [
+            "McKinsey’s December 2025 model estimates training demand at 23.1 GW and inference at 20.9 GW in 2025, rising to 62.2 GW and 93.3 GW in 2030. Inference’s share of their combined demand is approximately 48% and 60%, calculated from those endpoints. Training also grows in absolute terms.",
+            "The chart shows published endpoints only, with no invented intermediate years or implied crossover date. GW measures modeled data center capacity demand, not GPU hours, paid occupancy or revenue. The source covers inference broadly, not agents alone. Hardware efficiency and deployment constraints can change the forecast."
+          ]
+        },
+        {
+          "title": "Demand mechanism",
+          "paragraphs": [
+            "An agent can plan, request tools, inspect results and revise its work over repeated model calls. Parallel agents add simultaneous tasks. This expands both the number of useful applications and the inference consumed by an individual task.",
+            "Anthropic’s June 2025 engineering report observed roughly 4× chat token use for agents and 15× for multi-agent systems in its own data. These are workload-specific observations, not universal multipliers. They do not establish equal multiples of GPU hours: model size, input/output mix, caching, batching, chip choice and efficiency matter. Tool execution and elapsed task time are not continuous GPU compute."
+          ]
+        },
+        {
+          "title": "Adoption and procurement timeline",
+          "paragraphs": [
+            "Claude Code became generally available in May 2025. On 2 September 2025, Anthropic reported more than $500M in annualized revenue run rate and more than 10× usage growth over three months. On 12 February 2026, run-rate revenue exceeded $2.5B and weekly active users had doubled since 1 January. Run rate is an annualization, not realized annual revenue or measured GPU usage.",
+            "On 6 May 2026, Anthropic announced access to all Colossus 1 capacity, more than 300 MW and 220,000 NVIDIA GPUs within that month. The announcement explicitly linked this and other capacity agreements to higher Claude Code and API limits. This connects product usage to physical compute procurement; it does not allocate all that capacity exclusively to Claude Code.",
+            "The June 2026 Economic Index described an increasing share of long-running agent tasks as Code and Cowork grew. Anthropic also uses Trainium and TPUs, so total Anthropic demand cannot be mapped directly to H100 rental demand."
+          ]
+        },
+        {
+          "title": "Evidence boundary",
+          "paragraphs": [
+            "Chat itself is inference. The thesis is acceleration in an existing market, not the discovery of inference or an absence of earlier use cases. Agent adoption, paid compute capacity, chip utilization and borrower cash collections are distinct measures. The deck supports the first two; each operator’s paid occupancy and collections still require diligence."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "confirmed": true,
+          "label": "McKinsey · Data Center Demand Model",
+          "date": "17 December 2025",
+          "url": "https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-next-big-shifts-in-ai-workloads-and-hyperscaler-strategies"
+        },
+        {
+          "confirmed": true,
+          "label": "Anthropic · Multi-agent research system",
+          "date": "13 June 2025",
+          "url": "https://www.anthropic.com/engineering/multi-agent-research-system"
+        },
+        {
+          "confirmed": true,
+          "label": "Anthropic · Series F announcement",
+          "date": "2 September 2025",
+          "url": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation"
+        },
+        {
+          "confirmed": true,
+          "label": "Anthropic · Series G announcement",
+          "date": "12 February 2026",
+          "url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
+        },
+        {
+          "confirmed": true,
+          "label": "Anthropic · Usage limits and compute capacity",
+          "date": "6 May 2026",
+          "url": "https://www.anthropic.com/news/higher-limits-spacex"
+        },
+        {
+          "confirmed": true,
+          "label": "Anthropic · Economic Index",
+          "date": "26 June 2026",
+          "url": "https://www.anthropic.com/research/economic-index-june-2026-report"
+        },
+        {
+          "confirmed": true,
+          "label": "Alphabet · Q4 2024 earnings call",
+          "date": "4 February 2025",
+          "url": "https://abc.xyz/investor/events/event-details/2025/2024-Q4-Earnings-Call/"
+        }
+      ]
+    },
+    {
+      "slideId": "market-history",
+      "sections": [
+        {
+          "title": "Price series and chart method",
+          "paragraphs": [
+            "The chart uses SemiAnalysis’s public H100 one-year contract 25th–75th percentile ranges, typically assuming 25% prepayment. Coverage runs from the first half of 2023 through April 2026. The published periods change from half-years to quarters to months. Each rectangle represents a reported period; no daily prices or within-period movements are inferred.",
+            "The reported ranges were $2.70–3.40/GPU-hour in 1H 2023, $1.45–1.95 in October 2025 and $2.10–2.70 in April 2026. These are percentile bands, not a transaction mean, price floor or market minimum/maximum. The chart stops at April even though research was accessed in September; on-demand indices are not spliced into this contract series."
+          ]
+        },
+        {
+          "title": "Why prices fell",
+          "paragraphs": [
+            "SemiAnalysis describes greater available rental inventory and competition before late 2025. Operators sought utilization and capital recovery before equipment refreshes. This supports a period of looser conditions in parts of the merchant GPU rental market.",
+            "It does not establish industry-wide overbuilding of training data centers. Alphabet said in February 2025 that AI demand exceeded its available capacity at the end of 2024 and that inference’s share of spending relative to training had been rising for three years. AWS cut H100 P5 on-demand prices by 44% in June 2025 while citing scale efficiencies and ongoing industry supply constraints. A price cut alone is not proof of weak demand or idle hardware."
+          ]
+        },
+        {
+          "title": "Why prices recovered",
+          "paragraphs": [
+            "SemiAnalysis’s April 2026 market research associates tightening with agents, open models and other inference demand, plus higher server costs and slower or cancelled deployments. Existing clusters remained in use while readily available inventory was absorbed.",
+            "Claude Code was already growing rapidly by September 2025, yet the cited contract band continued falling into October. The sharper early-2026 adoption acceleration overlaps the rental rebound. The timing and mechanism support agents as a contributor, but do not isolate their causal share from reasoning, image/video generation, other customers or supply constraints."
+          ]
+        },
+        {
+          "title": "Hypothesis and alternative explanations",
+          "paragraphs": [
+            "Working thesis: earlier capacity additions intensified rental competition; a new wave of inference subsequently absorbed available capacity while new supply adjusted with a lag. The narrower claim is better supported than “there were no useful applications, training facilities sat idle, and Claude Code alone reversed prices.”",
+            "Direct proof of the training-surplus hypothesis would require supplier GPU-hour allocations, paid occupancy, cluster conversion histories and attributed orders over time. Public evidence reviewed here does not provide that decomposition. A tighter market for selected models or contract terms is not evidence that every operator is fully leased."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "confirmed": true,
+          "label": "SemiAnalysis · H100 one-year contract ranges",
+          "date": "Accessed 17 September 2026; series through April 2026",
+          "url": "https://gpu-index.semianalysis.com/"
+        },
+        {
+          "confirmed": true,
+          "label": "SemiAnalysis · GPU rental market research",
+          "date": "2 April 2026",
+          "url": "https://newsletter.semianalysis.com/p/the-great-gpu-shortage-rental-capacity"
+        },
+        {
+          "confirmed": true,
+          "label": "Alphabet · Q4 2024 earnings call",
+          "date": "4 February 2025",
+          "url": "https://abc.xyz/investor/events/event-details/2025/2024-Q4-Earnings-Call/"
+        },
+        {
+          "confirmed": true,
+          "label": "AWS · GPU instance price reductions",
+          "date": "5 June 2025",
+          "url": "https://aws.amazon.com/blogs/aws/announcing-up-to-45-price-reduction-for-amazon-ec2-nvidia-gpu-accelerated-instances/"
+        },
+        {
+          "confirmed": true,
+          "label": "Anthropic · Series F announcement",
+          "date": "2 September 2025",
+          "url": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation"
+        },
+        {
+          "confirmed": true,
+          "label": "Anthropic · Series G announcement",
+          "date": "12 February 2026",
+          "url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
+        }
+      ]
+    },
+    {
+      "slideId": "operator-economics",
+      "sections": [
+        {
+          "title": "Inputs and calculation",
+          "paragraphs": [
+            "Monthly revenue per GPU = rent per paid GPU-hour × 730 hours × 90% paid occupancy. Monthly operating cash = revenue minus $400 in recurring cash costs. Static payback = installed capital / positive monthly operating cash. These occupancy, installation and operating-cost inputs are illustrative assumptions, not borrower facts.",
+            "Hashrate Index’s 31 August 2026 median asking prices were $324,438 for a new eight-GPU HGX H100 system and $246,000 for refurbished, or $40,554.75 and $30,750 per GPU. Adding an assumed $5,000 per GPU for installation and related infrastructure produces $45,554.75 and $35,750. Asking prices are not executed purchases or forced-liquidation bids; configurations are not fully standardized."
+          ]
+        },
+        {
+          "title": "Results and limits",
+          "paragraphs": [
+            "At October 2025 rents of $1.45–1.95, the refurbished cost basis yields 40.6–64.7 months of static payback; at April 2026 rents of $2.10–2.70, it yields 26.0–36.5 months. The same new-hardware cost basis yields 51.7–82.4 and 33.2–46.5 months. Lower payback corresponds to the higher rent.",
+            "Historical rent observations are deliberately combined with a fixed August 2026 cost basis to isolate rental-price sensitivity. These are not historical cohort returns or September 2026 executable economics. The model assumes constant rent and occupancy beyond the one-year contract, stable collections and no operating ramp; it excludes financing, taxes, extra working capital, replacement capex and resale proceeds. It does not model the timing benefit of contractual prepayments.",
+            "Paid occupancy means billed capacity divided by available capacity, not chip utilization. A customer reserving a GPU may owe payment while the chip is idle. With the same refurbished cost basis, reducing paid occupancy to 70% extends the April rent scenario to about 36.5–53.1 months. Zero or negative operating cash has no finite payback."
+          ]
+        },
+        {
+          "title": "Independent operator precedent",
+          "paragraphs": [
+            "Nebius’s Q2 2026 shareholder letter reports expected payback on new deals improving from 24–36 months to 22 months. It uses recognized revenue, excludes prepayments and includes forecast operating costs and future capacity, including assets not yet built. It is a management estimate for those contracts, not realized H100 industry payback or an input into our sensitivity."
+          ]
+        },
+        {
+          "title": "Implication for credit sizing",
+          "paragraphs": [
+            "A multi-year recovery period for the operator’s entire asset investment does not itself establish whether a smaller 6–12 month loan can amortize. Advance size must fit verified stressed collections after operating costs, interest and reserves, as well as the collateral cap. The illustrative payback table is not a lighthouse DSCR or debt-repayment forecast."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "confirmed": true,
+          "label": "SemiAnalysis · H100 one-year contract ranges",
+          "date": "Accessed 17 September 2026; series through April 2026",
+          "url": "https://gpu-index.semianalysis.com/"
+        },
+        {
+          "confirmed": true,
+          "label": "Hashrate Index · AI hardware asking-price index",
+          "date": "31 August 2026",
+          "url": "https://beta.hashrateindex.com/blog/announcement-introducing-the-ai-hardware-price-index/"
+        },
+        {
+          "confirmed": true,
+          "label": "Nebius · Q2 2026 shareholder letter",
+          "date": "12 August 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-2.htm"
+        }
+      ]
+    },
+    {
+      "slideId": "rental-segments",
+      "sections": [
+        {
+          "title": "Rental and financing dimensions",
+          "paragraphs": [
+            "Transaction size, rental duration, tenant credit and operator scale are separate dimensions. A large platform may sell short capacity contracts; a small operator may secure a long one. Large dedicated buildouts require construction and deployment capital. Smaller operating clusters may need liquidity against equipment already commissioned and recurring receivables.",
+            "Nebius describes 3–6 month capacity contracts, core 1–3 year contracts and longer agreements with investment-grade customers. This supports the existence of several rental models within the same operator. Uncontracted spot-only capacity does not satisfy Open Silicon’s paying-contract requirement."
+          ]
+        },
+        {
+          "title": "Competitive evidence",
+          "paragraphs": [
+            "Small GPU loans already exist. USD.AI’s August 2026 report describes $15.3M funded to QumulusAI and $7.5M funded to Corvex. This prevents a blanket claim that small operators cannot borrow. Open Silicon’s differentiation must be demonstrated through borrower fit, duration, execution, advance size and protections.",
+            "A paying compute contract is necessary but not sufficient. Its termination rights, collection history, assignment, tenant credit and cash after costs determine debt capacity. No public financing precedent proves a particular Open Silicon borrower is eligible."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "confirmed": true,
+          "label": "Nebius · Q2 2026 shareholder letter",
+          "date": "12 August 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-2.htm"
+        },
+        {
+          "confirmed": true,
+          "label": "USD.AI · Funded GPU loans, August recap",
+          "date": "1 September 2026",
+          "url": "https://usd.ai/insights/august-recap-100m-facility-susdai-ath"
+        }
+      ]
+    },
+    {
+      "slideId": "market-deals",
+      "sections": [
+        {
+          "title": "External transaction evidence",
+          "paragraphs": [
+            "CoreWeave’s May 2024 $7.5B debt facility was led by Blackstone and Magnetar and included funds and accounts managed by BlackRock. The amount is a facility, not a verified full draw or BlackRock’s individual contribution.",
+            "Apollo’s January 2026 $3.5B capital solution supported a $5.4B Valor/xAI compute infrastructure transaction involving GB200 equipment under leases. The amounts overlap and must not be added. NVIDIA’s anchor LP participation in the relevant vehicle does not automatically guarantee equipment value.",
+            "CoreWeave’s September 2025 NVIDIA agreement had an initial $6.3B value covering unsold capacity through 13 April 2032, subject to delivery, service and termination provisions. It is a capacity purchase arrangement, not a $6.3B loan, GPU buyback or unconditional minimum revenue for all facilities."
+          ]
+        },
+        {
+          "title": "NVIDIA financing platforms and support",
+          "paragraphs": [
+            "NVIDIA’s 10 August 2026 announcement described memoranda of understanding with Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs and KKR to mobilize more than $500B of third-party capital. This is a prospective platform target, not capital already lent or an NVIDIA guarantee.",
+            "The 11 August explanation describes selective residual-value support of up to 25% of an opportunity, assessed project by project. The public term opportunity is not equivalent to GPU purchase price, loan principal or a first-loss tranche. No uniform 25% GPU price floor can be inferred.",
+            "The quarter-ended 26 July 2026 filing disclosed $36B of AI cloud capacity commitments, typically over six years, and discretionary support mechanisms. Commitments can reduce as capacity is consumed or sold to other customers. Amounts across platforms, commitments and individual agreements overlap and cannot be added.",
+            "An August 2026 media report described a pause in certain revenue-sharing support arrangements; NVIDIA responded that the model remained operational and was evolving. Availability for any new project must therefore be confirmed in signed terms. The separately disclosed Ohio residual-value guarantee relates to real property and power infrastructure and is not a general GPU resale guarantee."
+          ]
+        },
+        {
+          "title": "Financing flexibility and limits",
+          "paragraphs": [
+            "CoreWeave’s August 2026 $2.6B DDTL 5.5 provides an additional precedent: approximately five-year debt against contracts averaging roughly three years, with SOFR + 5.50%, parent support and a subsequent 1.35× minimum DSCR. It shows some institutions underwrite renewal risk with additional protections, not that every small operator can borrow on that basis.",
+            "Institutional entry is positive evidence of a developing financing market. Potential take-out options may broaden, but no refinancing is promised. Support applies only to covered assets and signed obligations; it does not establish a market-wide rental or resale floor. Do not count both third-party tenant revenue and fallback capacity purchases for the same capacity."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "confirmed": true,
+          "label": "Blackstone · CoreWeave debt financing",
+          "date": "17 May 2024",
+          "url": "https://www.blackstone.com/news/press/coreweave-secures-7-5-billion-debt-financing-facility-led-by-blackstone-and-magnetar/"
+        },
+        {
+          "confirmed": true,
+          "label": "Apollo · Valor and xAI compute transaction",
+          "date": "7 January 2026",
+          "url": "https://www.apollo.com/wealth/insights-news/pressreleases/2026/01/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-3214463"
+        },
+        {
+          "confirmed": true,
+          "label": "CoreWeave · NVIDIA capacity agreement, SEC 8-K",
+          "date": "15 September 2025; agreement dated 9 September",
+          "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962825000047/crwv-20250909.htm"
+        },
+        {
+          "confirmed": true,
+          "label": "NVIDIA · Compute infrastructure financing platforms",
+          "date": "10 August 2026",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Partners-With-Apollo-BlackRock-Blackstone-Brookfield-Goldman-Sachs-and-KKR-to-Establish-AI-Compute-Infrastructure-Financing-Platforms-to-Mobilize-Over-500-Billion-of-Third-Party-Capital/default.aspx"
+        },
+        {
+          "confirmed": true,
+          "label": "NVIDIA · AI factory financing and selective support",
+          "date": "11 August 2026",
+          "url": "https://blogs.nvidia.com/blog/nvidia-ai-factory-compute/"
+        },
+        {
+          "confirmed": true,
+          "label": "NVIDIA · Quarterly report, period ended 26 July 2026",
+          "date": "Q2 FY2027",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+        },
+        {
+          "confirmed": true,
+          "label": "CoreWeave · DDTL 5.5 financing",
+          "date": "10 August 2026",
+          "url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Closes-2-6-Billion-Loan-Facility-Expanding-Financing-Flexibility-for-AI-Infrastructure/default.aspx"
+        },
+        {
+          "confirmed": true,
+          "label": "CoreWeave · DDTL 5.5 agreement, SEC 8-K",
+          "date": "August 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000357/crwv-20260807.htm"
+        },
+        {
+          "confirmed": true,
+          "label": "Reuters · Report on revenue-sharing arrangements and company response",
+          "date": "27 August 2026",
+          "url": "https://finance.yahoo.com/news/nvidia-pauses-revenue-sharing-deals-223140237.html"
+        }
+      ]
+    },
+    {
+      "slideId": "strategy",
+      "sections": [
+        {
+          "title": "Eligibility and advance size",
+          "paragraphs": [
+            "The proposed mandate covers {{operatorFacilityRange}} operating facilities with delivered and commissioned hardware, secured power/cooling and at least one paying compute contract. Proposed loans run {{termRange}} months with senior security and an LTV cap of {{ltvCap}}% measured against independently assessed forced-liquidation value.",
+            "The allowable advance is the lower of collateral-supported capacity and cash-flow-supported repayment capacity. Stressed collections must fund essential operating costs, interest, scheduled principal and reserve requirements. Recovery costs and time must be included in collateral analysis; neither an asking-price index nor hypothetical vendor support is a liquidation bid."
+          ]
+        },
+        {
+          "title": "Entry, repayment and take-out",
+          "paragraphs": [
+            "A signed large off-take is not an entry condition. It may enable longer-term refinancing, but cash-supported amortization, a funded reserve and a no-refinancing scenario must substantiate the proposed exit. The policy against a large maturity balloon remains subject to verification in the lighthouse model.",
+            "The {{couponRange}}% figure is the proposed loan coupon on outstanding principal before investor-level fees. It is not a guaranteed LP return. Loan size, reserve, covenants, minimum ticket and actual borrower economics still require confirmed transaction data."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  ]
 } as const;
