@@ -3,7 +3,9 @@ import { DECK_DATA as D } from "@/lib/deck-data";
 const chart = D.market.demandShift;
 const baseline = 292;
 const y = (value: number) => baseline - value / chart.maximum * 238;
-const share = (point: typeof chart.points[number]) => Math.round((point.inference / (point.training + point.inference) + Number.EPSILON) * 100);
+const share = (point: typeof chart.points[number]) => Math.round(point.inference / (point.training + point.inference) * 1000) / 10;
+const totalDemand = (point: typeof chart.points[number]) => point.training + point.inference;
+const totalMultiple = (totalDemand(chart.points[1]) / totalDemand(chart.points[0])).toFixed(1);
 const growth = (key: typeof chart.series[number]["key"]) => Math.round((chart.points[1][key] / chart.points[0][key] - 1) * 100);
 const segmentCenter = (point: typeof chart.points[number], key: typeof chart.series[number]["key"]) => y(key === "training" ? point.training / 2 : point.training + point.inference / 2);
 
@@ -46,14 +48,20 @@ export default function DemandShiftChart() {
       <p className="deck-demand-source"><a className="deck-evidence-link" href={chart.source.url} target="_blank" rel="noopener noreferrer">{chart.sourceCaption}</a></p>
     </figure>
     <aside className="deck-demand-aside">
-      <div className="deck-demand-share">
-        <h3 className="deck-label">{chart.shareLabel}</h3>
-        <p className="deck-demand-share-values">{share(chart.points[0])}% <span>→</span> {share(chart.points[1])}%</p>
-        <p className="deck-small text-[#777]">{chart.shareCaption}</p>
-        <p className="deck-body">{chart.takeaway}</p>
+      <div className="deck-demand-scale">
+        <h3 className="deck-label">{chart.scale.label}</h3>
+        <p className="deck-demand-scale-value"><span>≈</span>{totalMultiple}×</p>
+        <p className="deck-demand-scale-comparison">{chart.scale.comparison}</p>
+        <p className="deck-small text-[#777]">{chart.scale.caption}</p>
       </div>
       <div><h3 className="deck-subtitle">{chart.mechanismTitle}</h3><p className="deck-body">{chart.mechanismBody}</p></div>
-      <div><h3 className="deck-subtitle">{chart.adoptionTitle}</h3><p className="deck-body">{chart.adoptionBody}</p></div>
+      {chart.capacity.confirmed && <div>
+        <h3 className="deck-subtitle"><a className="deck-evidence-link" href={chart.capacity.source.url} target="_blank" rel="noopener noreferrer">{chart.capacity.title}</a></h3>
+        <p className="deck-supply-scope">{chart.capacity.scope}</p>
+        <dl className="deck-supply-metrics">{chart.capacity.metrics.map(metric => <div key={metric.label}>
+          <dt>{metric.label}</dt><dd>{metric.value}</dd>
+        </div>)}</dl>
+      </div>}
     </aside>
   </div>;
 }

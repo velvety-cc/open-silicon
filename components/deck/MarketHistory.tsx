@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { DECK_DATA as D } from "@/lib/deck-data";
 
 const history = D.marketHistory;
@@ -31,6 +32,10 @@ export default function MarketHistory() {
     </figure>
     <div className="deck-history-chapters">{history.chapters.map(chapter => <div key={chapter.period}>
       <p className="deck-eyebrow">{chapter.period}</p><h3 className="deck-subtitle">{chapter.title}</h3>
+      <p className="deck-history-milestones"><span className="deck-history-stage">{chapter.stage}</span>{chapter.milestones.filter(milestone => milestone.confirmed).map(milestone => <Fragment key={milestone.label}>
+        <span className="deck-history-milestone-separator">{chapter.milestoneSeparator}</span>
+        <a className="deck-evidence-link" href={milestone.url} target="_blank" rel="noopener noreferrer">{milestone.label}</a>
+      </Fragment>)}</p>
       <p className="deck-body">{chapter.body}</p>
     </div>)}</div>
   </div>;

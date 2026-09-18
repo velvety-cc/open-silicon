@@ -8,9 +8,23 @@ The chart compares published 2025 estimates and 2030 forecasts for global AI dat
 
 ### Demand chart: measure and forecast
 
-McKinsey’s December 2025 model estimates training demand at 23.1 GW and inference at 20.9 GW in 2025, rising to 62.2 GW and 93.3 GW in 2030. Inference’s share of their combined demand is approximately 48% and 60%, calculated from those endpoints. Training also grows in absolute terms. The arrows show cumulative growth, calculated as (2030 demand / 2025 demand − 1) × 100 and rounded to the nearest whole percent: training +169%, inference +346%. These are five-year increases, not annual growth rates.
+McKinsey’s December 2025 model estimates training demand at 23.1 GW and inference at 20.9 GW in 2025, rising to 62.2 GW and 93.3 GW in 2030. Inference’s share of their combined demand is 47.5% in 2025 and 60% in 2030, a gain of 12.5 percentage points calculated from those endpoints. This is distinct from inference demand growing 346%. Training also grows in absolute terms. The arrows show cumulative growth, calculated as (2030 demand / 2025 demand − 1) × 100 and rounded to the nearest whole percent: training +169%, inference +346%. These are five-year increases, not annual growth rates.
+
+The scale callout highlights combined training and inference demand. The 2025 estimate totals 44.0 GW (23.1 + 20.9), while the 2030 forecast totals 155.5 GW (62.2 + 93.3). Dividing 155.5 by 44.0 gives 3.53×, displayed as approximately 3.5× the 2025 level. The absolute increase is 111.5 GW and cumulative growth is approximately 253%. The chart arrows separately show training growth of 169% and inference growth of 346%; neither is the combined demand multiple. These are model projections, not committed capacity purchases, measured GPU utilization or Open Silicon’s addressable lending volume.
 
 The chart shows published endpoints only, with no invented intermediate years or implied crossover date. GW measures modeled data center capacity demand, not GPU hours, paid occupancy or revenue. The source covers inference broadly, not agents alone. Hardware efficiency and deployment constraints can change the forecast.
+
+### Supply outlook and comparison limits
+
+The visible supply metrics use JLL’s North America H1 2026 report, released on 11 August 2026: vacancy was approximately 1%, while 95% of 66 GW under construction was pre-committed. The first measure describes current availability; the second describes future capacity already committed before delivery. Neither measures GPU utilization, and the regional figures must not be presented as global or AI-only statistics. Pre-commitments also do not establish commissioning dates or eliminate execution and counterparty risk.
+
+JLL’s January 2026 global outlook projects approximately 14% annual growth in total data center capacity through 2030, reaching about 200 GW after roughly 100 GW of additions. This covers AI and non-AI facilities, including colocation, build-to-suit, hyperscale owner-occupied and on-premises capacity. The base case assumes innovations mitigate persistent energy constraints; it expects demand to keep pace with supply, with global vacancy below 10%. This broad supply forecast is retained as background in the notes. The sidebar highlights delivery constraints and limited uncommitted capacity rather than asserting a quantified AI capacity deficit.
+
+The adjacent McKinsey AI-demand endpoints imply a five-year CAGR of (155.5 / 44.0)^(1/5) − 1 = 28.7%. That AI-only demand rate and JLL’s 14% all-workload supply rate use different models, scope and baselines. Their difference is not an estimated annual shortfall, and 155.5 GW cannot be subtracted from JLL’s total supply to estimate spare AI capacity. Matching AI demand could involve reallocating capacity as well as new construction.
+
+Current availability provides separate evidence of supply pressure. CBRE reported that capacity in the 16 major markets it tracks grew 25% year over year to 16 GW in Q1 2026, while average vacancy fell from 8.3% to 6.7%. This indicates absorption of new supply in that market sample, not global GPU utilization or a 2030 AI shortage. CBRE also identifies power and grid constraints as limits on delivery. For the preleasing point, CBRE reports that 80% of capacity under construction in the top four US markets was already preleased as of Q4 2025. This regional construction-pipeline statistic does not imply that all global GPU rental inventory is committed.
+
+Long-run outcomes remain scenario dependent. Goldman Sachs Research’s December 2025 base case envisages enough capacity to accommodate demand, with occupancy peaking around 93% in 2026 before easing. Its bullish demand scenario remains supply constrained through 2030. The investment thesis should therefore focus on delivery timing and commissioned, powered assets with paying contracts; it should not assume a permanent market-wide supply deficit.
 
 ### Demand mechanism
 
@@ -22,13 +36,15 @@ Anthropic’s June 2025 engineering report observed roughly 4× chat token use f
 
 Claude Code became generally available in May 2025. On 2 September 2025, Anthropic reported more than $500M in annualized revenue run rate and more than 10× usage growth over three months. On 12 February 2026, run-rate revenue exceeded $2.5B and weekly active users had doubled since 1 January. Run rate is an annualization, not realized annual revenue or measured GPU usage.
 
-On 6 May 2026, Anthropic announced access to all Colossus 1 capacity, more than 300 MW and 220,000 NVIDIA GPUs within that month. The announcement explicitly linked this and other capacity agreements to higher Claude Code and API limits. This connects product usage to physical compute procurement; it does not allocate all that capacity exclusively to Claude Code.
+On 6 May 2026, Anthropic announced an agreement to access all Colossus 1 capacity, more than 300 MW and over 220,000 NVIDIA GPUs within that month. Anthropic explicitly said this and its other recent compute agreements enabled higher Claude Code and API usage limits. This procurement example is supporting context; the slide now uses this space for the supply outlook. The announcement does not establish delivered utilization, assign all capacity to Claude Code or attribute the purchase exclusively to agents.
 
 The June 2026 Economic Index described an increasing share of long-running agent tasks as Code and Cowork grew. Anthropic also uses Trainium and TPUs, so total Anthropic demand cannot be mapped directly to H100 rental demand.
 
 ### Evidence boundary
 
 Chat itself is inference. The thesis is acceleration in an existing market, not the discovery of inference or an absence of earlier use cases. Agent adoption, paid compute capacity, chip utilization and borrower cash collections are distinct measures. The deck supports the first two; each operator’s paid occupancy and collections still require diligence.
+
+Named companies are public market evidence only. They are not represented as Open Silicon borrowers, tenants, partners or committed counterparties.
 
 ### Sources
 
@@ -39,6 +55,11 @@ Chat itself is inference. The thesis is acceleration in an existing market, not 
 - [Anthropic · Usage limits and compute capacity](https://www.anthropic.com/news/higher-limits-spacex) · 6 May 2026
 - [Anthropic · Economic Index](https://www.anthropic.com/research/economic-index-june-2026-report) · 26 June 2026
 - [Alphabet · Q4 2024 earnings call](https://abc.xyz/investor/events/event-details/2025/2024-Q4-Earnings-Call/) · 4 February 2025
+- [JLL · 2026 Global Data Center Market Outlook](https://www.jll.com/en-us/insights/market-outlook/data-center-outlook) · 5 January 2026
+- [JLL · Global supply scenarios, page 7](https://www.jll.com/content/dam/jllcom/en/global/documents/reports/research-reports/26-research-global-data-center-outlook.pdf) · January 2026
+- [CBRE · Global supply and vacancy, Q1 2026](https://www.cbre.com/press-releases/global-data-center-supply-demand-scarcity-available-space) · 18 June 2026
+- [Goldman Sachs Research · Data center supply scenarios](https://www.goldmansachs.com/insights/articles/is-there-enough-data-center-capacity-for-ai) · 11 December 2025
+- [JLL · North America Data Center Report, H1 2026](https://www.jll.com/en-us/newsroom/data-center-demand-exceeds-expectations-in-h1-2026) · 11 August 2026
 
 ## A new wave of inference is tightening GPU supply
 
@@ -62,6 +83,16 @@ SemiAnalysis’s April 2026 market research associates tightening with agents, o
 
 Claude Code was already growing rapidly by September 2025, yet the cited contract band continued falling into October. The sharper early-2026 adoption acceleration overlaps the rental rebound. The timing and mechanism support agents as a contributor, but do not isolate their causal share from reasoning, image/video generation, other customers or supply constraints.
 
+### Model and agent product milestones
+
+The three presentation stages are AI chatbots, coding agents and agent teams. They describe overlapping application patterns, not exclusive technical eras or the first invention of each capability. Agent teams existed before the frontier models named in the final column; those models illustrate continued capability development. The columns describe overlapping market phases, not product release windows. ChatGPT launched on 30 November 2022 using a GPT-3.5-series model. Anthropic introduced the original Claude on 14 March 2023, labeled Claude 1 here to distinguish it from later generations. These labels identify the early conversational-AI wave, not the only models available throughout 2023–2025.
+
+Claude Code became generally available on 22 May 2025. OpenAI launched the Codex macOS app on 2 February 2026 for managing multiple agents; this was not the first release of Codex. The middle column spans 2025 through early 2026 and illustrates how coding agents expanded the range and duration of inference workloads.
+
+The final column looks forward from the historical price series. GPT Astra refers to GPT-6 Astra, released on 3 September 2026. Claude Fable refers to the model family first announced with Fable 5 on 9 June 2026. These launches came after the H100 price series ends in April 2026, so they cannot explain the earlier rebound. They illustrate capabilities for longer and more complex agent workflows. The resulting demand is a thesis, not a measured contribution to GPU consumption; adoption and efficiency determine net compute use.
+
+These are selected public milestones, not an exhaustive model history or a measured decomposition of GPU demand. Their timing does not prove that a specific release caused a price inflection. Supply, hardware costs and other inference applications remain part of the explanation. No named company is presented as an Open Silicon counterparty.
+
 ### Hypothesis and alternative explanations
 
 Working thesis: earlier capacity additions intensified rental competition; a new wave of inference subsequently absorbed available capacity while new supply adjusted with a lag. The narrower claim is better supported than “there were no useful applications, training facilities sat idle, and Claude Code alone reversed prices.”
@@ -76,6 +107,13 @@ Direct proof of the training-surplus hypothesis would require supplier GPU-hour 
 - [AWS · GPU instance price reductions](https://aws.amazon.com/blogs/aws/announcing-up-to-45-price-reduction-for-amazon-ec2-nvidia-gpu-accelerated-instances/) · 5 June 2025
 - [Anthropic · Series F announcement](https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation) · 2 September 2025
 - [Anthropic · Series G announcement](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation) · 12 February 2026
+- [Product milestone · GPT-3.5](https://openai.com/index/chatgpt/) · 30 November 2022; ChatGPT public launch
+- [Product milestone · Claude 1](https://www.anthropic.com/news/introducing-claude) · 14 March 2023; original Claude announcement
+- [Product milestone · GPT Astra](https://openai.com/index/gpt-6-astra/) · 3 September 2026; GPT-6 Astra launch
+- [Product milestone · Claude Fable](https://www.anthropic.com/news/claude-fable-5-mythos-5) · 9 June 2026; Claude Fable 5 announcement
+- [Product milestone · Claude Code](https://www.anthropic.com/news/claude-4) · 22 May 2025; general availability
+- [Product milestone · Codex](https://openai.com/index/introducing-the-codex-app/) · 2 February 2026; macOS app launch
+- [OpenAI · GPT-6 Astra launch date and safety overview](https://openai.com/index/safety-overview-gpt-6-astra/) · 3 September 2026
 
 ## Stronger rental pricing improves capital recovery
 
