@@ -1,6 +1,6 @@
 # Market speaker notes
 
-Updated: 17 September 2026. English presenter notes for the investor deck. The in-app Notes panel is the presentation copy; this file preserves the research detail and source links.
+Updated: 18 September 2026. English presenter notes for the investor deck. The in-app Notes panel is the presentation copy; this file preserves the research detail and source links.
 
 ## Agentic AI is expanding inference demand
 
@@ -129,6 +129,17 @@ A paying compute contract is necessary but not sufficient. Its termination right
 
 - [Nebius · Q2 2026 shareholder letter](https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-2.htm) · 12 August 2026
 - [USD.AI · Funded GPU loans, August recap](https://usd.ai/insights/august-recap-100m-facility-susdai-ath) · 1 September 2026
+
+### Financing dimensions by rental model
+
+Rental model: Large dedicated capacity: Long-term anchor off-take; Smaller operating clusters: Reserved clusters and paying compute contracts; Uncontracted capacity: On-demand and spot rentals.
+
+Capital need: Large dedicated capacity: Construction, power and large deployments; Smaller operating clusters: Liquidity against deployed equipment and receivables; Uncontracted capacity: Working capital and occupancy ramp.
+
+Credit support: Large dedicated capacity: Customer credit and delivery commitments; Smaller operating clusters: Collections and hardware liquidation value; Uncontracted capacity: Variable utilization and rental prices.
+
+Financing fit: Large dedicated capacity: Prepayments and long-term project or asset finance; Smaller operating clusters: Senior secured bridge credit; Uncontracted capacity: Operator equity; debt needs contracted support.
+
 
 ## Institutional capital is expanding compute finance
 

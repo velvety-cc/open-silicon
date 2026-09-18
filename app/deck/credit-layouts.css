@@ -1,0 +1,255 @@
+/* Editorial layouts for the market comparisons and credit discussion. */
+.deck-credit-page { display: flex; flex: 1; min-height: 0; flex-direction: column; gap: 1.6cqw; padding-top: .4cqw; }
+.deck-credit-page > * { flex-shrink: 0; min-width: 0; }
+.deck-page .deck-group-title { font-size: 1.5cqw; font-weight: 500; line-height: 1.3; letter-spacing: -.025em; }
+.deck-credit-columns { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 3.5cqw; }
+.deck-credit-columns > section { min-width: 0; }
+.deck-fields { display: grid; }
+.deck-fields > div { padding-block: .72cqw; border-bottom: 1px solid #e5e5e8; min-width: 0; }
+.deck-fields > div:last-child { border-bottom: 0; }
+.deck-fields dt { font-size: 1.02cqw; line-height: 1.4; color: #777; }
+.deck-fields dd { margin-top: .35cqw; font-size: 1.13cqw; line-height: 1.45; overflow-wrap: anywhere; }
+.deck-credit-columns .deck-group-title { padding-block: .6cqw .8cqw; border-top: 2px solid #d7d1eb; }
+.deck-metric-strip { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 3.5cqw; padding-block: .3cqw 1.3cqw; border-bottom: 1px solid #d9d9df; }
+.deck-metric-strip > div { padding: 0; border: 0; min-width: 0; }
+.deck-metric-strip dt { color: #666; font-size: 1.02cqw; line-height: 1.4; }
+.deck-metric-strip dd { font-size: 3.5cqw; line-height: 1.2; letter-spacing: -.05em; color: var(--accent); margin-top: .5cqw; }
+.deck-metric-strip p { font-size: .95cqw; color: #777; margin-top: .4cqw; }
+.deck-metric-unit { font-size: 1.3cqw; letter-spacing: -.02em; margin-left: .7cqw; color: #555; }
+.deck-placeholder-metrics dd { font-size: 1.55cqw; line-height: 1.4; letter-spacing: -.025em; }
+.deck-credit-conclusion { display: grid; grid-template-columns: 23cqw 1fr; gap: 3cqw; margin-top: auto; padding-top: 1.25cqw; border-top: 2px solid #d7d1eb; }
+.deck-credit-conclusion h3 { font-size: 1.2cqw; line-height: 1.4; color: var(--accent); font-weight: 500; }
+.deck-credit-conclusion p { font-size: 1.13cqw; line-height: 1.5; color: #555; }
+
+/* Underwriting: three gates, with every eligibility condition retained. */
+.deck-underwriting-gates { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 3.5cqw; padding-top: 1cqw; }
+.deck-gate-heading { border-top: 2px solid var(--accent); padding-top: 1cqw; margin-bottom: 1.25cqw; }
+.deck-gate-heading > span { display: block; font-size: 1.05cqw; color: var(--accent); margin-bottom: .7cqw; }
+.deck-gate-heading h3 { font-size: 2cqw; line-height: 1.2; font-weight: 400; letter-spacing: -.035em; }
+.deck-underwriting-gates dl { display: grid; gap: 1.15cqw; }
+.deck-underwriting-gates dl > div { border-top: 1px solid #e5e5e8; padding-top: .85cqw; }
+.deck-underwriting-gates dt { font-size: 1.18cqw; line-height: 1.4; font-weight: 500; }
+.deck-underwriting-gates dd { margin-top: .45cqw; font-size: 1.12cqw; line-height: 1.5; color: #666; }
+
+/* Cash available for repayment and the ordered exit sources. */
+.deck-repayment-overview { display: grid; grid-template-columns: 1.85fr 1fr; gap: 3cqw; }
+.deck-repayment-overview > * { min-width: 0; }
+.deck-repayment-ledger { font-size: 1.1cqw; }
+.deck-repayment-ledger [data-slot="table-head"]:first-child { width: 39%; }
+.deck-repayment-ledger tbody [data-slot="table-head"], .deck-repayment-ledger [data-slot="table-cell"] { padding-block: 1cqw; }
+.deck-ledger-sign { display: inline-block; width: 1.4cqw; color: var(--accent); }
+.deck-ledger-subtotal, .deck-ledger-subtotal:hover { background: #f5f3ff!important; }
+.deck-ledger-subtotal [data-slot="table-head"] { color: var(--accent); }
+.deck-ledger-final { border-top: 2px solid #d7d1eb; }
+.deck-repayment-sources { display: grid; gap: 1.4cqw; }
+.deck-repayment-sources section { border-top: 1px solid #d9d9df; padding-top: .7cqw; }
+.deck-repayment-sources .deck-eyebrow { font-size: .9cqw; }
+.deck-repayment-sources .deck-group-title { margin-top: .35cqw; font-size: 1.4cqw; }
+.deck-repayment-sources .deck-body { margin-top: .4cqw; font-size: 1.08cqw; color: #666; }
+
+/* Five equal stages represent status, not invented pipeline volume. */
+.deck-pipeline-stages { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 2cqw; list-style: none; padding: 0; }
+.deck-pipeline-stages li { min-width: 0; }
+.deck-pipeline-node { display: flex; align-items: center; gap: .8cqw; height: 3cqw; margin-bottom: 1cqw; }
+.deck-pipeline-node span { width: .85cqw; height: .85cqw; border: 2px solid var(--accent); border-radius: 50%; flex-shrink: 0; }
+.deck-pipeline-node::after { content: ""; height: 1px; background: #d7d1eb; flex: 1; }
+.deck-pipeline-node svg { order: 2; width: 1.2cqw; height: 1.2cqw; color: #aaa1c4; }
+.deck-pipeline-stages li:last-child .deck-pipeline-node::after { display: none; }
+.deck-pipeline-stages .deck-group-title { font-size: 1.65cqw; }
+.deck-pipeline-stages dl { display: grid; gap: 1.1cqw; margin-top: 1.6cqw; }
+.deck-pipeline-stages dt { font-size: .95cqw; color: #777; }
+.deck-pipeline-stages dd { margin-top: .4cqw; font-size: 1.22cqw; line-height: 1.4; }
+.deck-pipeline-stages li > p { margin-top: 1.5cqw; padding-top: 1cqw; border-top: 1px solid #e5e5e8; font-size: 1.07cqw; line-height: 1.5; color: #666; }
+.deck-limit-section { margin-top: auto; padding-top: 1.2cqw; border-top: 2px solid #d7d1eb; }
+.deck-fields.deck-limit-strip { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 3cqw; margin-top: .6cqw; }
+.deck-limit-strip > div { border: 0; }
+.deck-limit-strip dt { color: #333; font-weight: 500; }
+
+/* Terms: distinguish the quoted coupon from LP economics. */
+.deck-terms-columns { display: grid; grid-template-columns: 1.7fr 1fr; gap: 4cqw; }
+.deck-terms-columns > * { min-width: 0; }
+.deck-terms-columns .deck-group-title { margin-bottom: .6cqw; }
+.deck-inline-fields > div { display: grid; grid-template-columns: 16cqw 1fr; gap: 1.1cqw; padding-block: .65cqw; }
+.deck-inline-fields dd { margin: 0; font-size: 1.06cqw; }
+.deck-economics-flow { border-left: 2px solid #d7d1eb; padding-left: 2cqw; }
+.deck-economics-flow .deck-fields > div { padding-block: .65cqw; }
+.deck-economics-flow .deck-fields dd { font-size: 1.04cqw; }
+.deck-vehicle-heading { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4cqw; padding-block: .35cqw 1.3cqw; border-bottom: 1px solid #d9d9df; }
+.deck-vehicle-heading h3 { font-size: 2.4cqw; line-height: 1.2; letter-spacing: -.035em; font-weight: 400; }
+.deck-vehicle-heading p { font-size: 1.06cqw; color: #777; margin-top: .5cqw; }
+.deck-vehicle-heading dt { font-size: 1.02cqw; color: #777; }
+.deck-vehicle-heading dd { font-size: 1.5cqw; line-height: 1.4; margin-top: .4cqw; }
+.deck-participation-columns { display: grid; grid-template-columns: 1.15fr 1fr; gap: 4cqw; }
+.deck-eligibility-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8cqw 2.5cqw; margin-top: 1.25cqw; }
+.deck-eligibility-grid > div { border-top: 2px solid #d7d1eb; padding-top: .8cqw; }
+.deck-eligibility-grid h4 { font-size: 1.25cqw; font-weight: 500; line-height: 1.4; }
+.deck-eligibility-grid p { font-size: 1.1cqw; line-height: 1.5; margin-top: .5cqw; color: #666; }
+.deck-fields.deck-governance-fields { margin-top: .5cqw; }
+.deck-governance-fields > div { padding-block: .55cqw; }
+.deck-governance-fields dd { font-size: 1.04cqw; margin-top: .25cqw; }
+.deck-governance-fields dt { font-weight: 500; color: #333; }
+
+/* People, operating partners and attributable experience. */
+.deck-people-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 3cqw; margin-top: .8cqw; }
+.deck-people-grid > div { border-top: 2px solid #d7d1eb; padding-top: 1.2cqw; }
+.deck-people-grid h4 { font-size: 1.65cqw; font-weight: 400; line-height: 1.35; }
+.deck-people-grid p { font-size: 1.12cqw; line-height: 1.5; margin-top: .6cqw; }
+.deck-people-grid .deck-person-role { font-weight: 500; }
+.deck-team-evidence { display: grid; grid-template-columns: 1.3fr 1fr; gap: 4cqw; margin-top: 1cqw; }
+.deck-team-evidence > section { border-top: 1px solid #d9d9df; padding-top: 1cqw; }
+.deck-team-evidence .deck-fields { margin-top: .5cqw; }
+.deck-team-evidence .deck-fields > div { display: grid; grid-template-columns: 15cqw 1fr; gap: 1.3cqw; }
+.deck-team-evidence .deck-fields dd { margin: 0; }
+.deck-provider-grid { display: grid; gap: 1.5cqw; margin-top: 1.2cqw; }
+.deck-provider-grid h4 { font-size: 1.3cqw; font-weight: 400; line-height: 1.4; }
+.deck-provider-grid p { font-size: 1.1cqw; line-height: 1.45; margin-top: .4cqw; }
+
+/* A vertical execution timeline leaves room for the commitment mechanics. */
+.deck-execution-layout { display: grid; grid-template-columns: 23cqw 1fr; gap: 4cqw; }
+.deck-execution-duration { padding-top: 1.1cqw; border-top: 2px solid var(--accent); }
+.deck-execution-duration > p { font-size: 6.5cqw; color: var(--accent); line-height: 1; letter-spacing: -.055em; }
+.deck-execution-duration > p > span { display: block; font-size: 1.8cqw; letter-spacing: -.025em; margin-top: .6cqw; }
+.deck-execution-duration h3 { max-width: 20cqw; margin-top: 1.5cqw; font-size: 1.2cqw; line-height: 1.45; font-weight: 400; color: #666; }
+.deck-execution-timeline { padding: 0; list-style: none; display: grid; }
+.deck-execution-timeline li { display: grid; grid-template-columns: 2.5cqw 17cqw 1fr; gap: 1.2cqw; border-top: 1px solid #d9d9df; padding-block: 1.15cqw; }
+.deck-execution-timeline li > span { color: var(--accent); font-size: 1.06cqw; }
+.deck-execution-timeline h3 { font-size: 1.35cqw; line-height: 1.3; font-weight: 500; letter-spacing: -.02em; }
+.deck-execution-timeline p { font-size: 1.1cqw; line-height: 1.45; color: #666; }
+
+/* Market comparisons keep like-for-like fields in aligned columns. */
+.deck-segment-columns, .deck-precedent-columns { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 3cqw; }
+.deck-segment-columns > section { border-top: 2px solid #d9d9df; padding-top: 1cqw; }
+.deck-segment-columns > .deck-segment-target { border-color: var(--accent); }
+.deck-segment-columns h3 { min-height: 4.8cqw; font-size: 2cqw; line-height: 1.2; letter-spacing: -.03em; font-weight: 400; }
+.deck-segment-target h3 { color: var(--accent); }
+.deck-segment-columns dl > div { min-height: 4.9cqw; padding-block: .7cqw; border-top: 1px solid #e5e5e8; }
+.deck-segment-columns dt { font-size: .95cqw; color: #777; }
+.deck-segment-columns dd { font-size: 1.12cqw; line-height: 1.4; margin-top: .35cqw; }
+.deck-precedent-columns > section { border-top: 2px solid #d7d1eb; padding-top: 1cqw; min-width: 0; }
+.deck-precedent-columns h3 { font-size: 1.55cqw; font-weight: 500; line-height: 1.4; }
+.deck-precedent-date { font-size: .95cqw; color: #777; margin-top: .3cqw!important; }
+.deck-precedent-amount { font-size: 3.7cqw; line-height: 1.15; letter-spacing: -.05em; color: var(--accent); margin-top: 1cqw!important; }
+.deck-precedent-structure { min-height: 3.8cqw; font-size: 1.24cqw; line-height: 1.45; margin-top: .9cqw!important; }
+.deck-precedent-terms { min-height: 3.2cqw; font-size: 1.08cqw; color: #666; line-height: 1.45; margin-top: .65cqw!important; }
+.deck-precedent-context { border-top: 1px solid #e5e5e8; padding-top: .9cqw; font-size: 1.08cqw; line-height: 1.45; color: #666; margin-top: .8cqw!important; }
+
+/* Retain tables where numeric reconciliation and risk comparison matter. */
+.deck-slide-risks .deck-risk-table { font-size: 1.12cqw; }
+.deck-slide-risks .deck-risk-table [data-slot="table-head"]:first-child { width: 24%; }
+.deck-slide-risks .deck-risk-table [data-slot="table-head"]:nth-child(2) { width: 44%; }
+.deck-slide-risks .deck-risk-table tbody [data-slot="table-head"] { font-weight: 500; }
+.deck-slide-risks .deck-risk-table [data-slot="table-cell"]:last-child { color: #666; }
+.deck-slide-risks .deck-risk-table [data-slot="table-cell"], .deck-slide-risks .deck-risk-table tbody [data-slot="table-head"] { padding-block: .7cqw; }
+.deck-slide-structure .deck-structure-desktop { margin-block: 1cqw 1.4cqw; }
+.deck-slide-structure .deck-structure-details > div { padding-top: 1.1cqw; border-top: 2px solid #d7d1eb; }
+.deck-slide-structure .deck-structure-details .deck-small { font-size: 1.1cqw; line-height: 1.5; }
+.deck-slide-cashflows .deck-cash-assumptions { padding-block: .5cqw 1.2cqw; border-bottom: 1px solid #d9d9df; }
+.deck-slide-cashflows .deck-cash-assumptions dd { font-size: 1.9cqw; letter-spacing: -.025em; }
+.deck-slide-cashflows .deck-cash-layout { padding-top: .7cqw; }
+.deck-slide-cashflows .deck-cash-totals { margin-top: 1.5cqw; }
+.deck-slide-cashflows .deck-cash-totals dd { font-size: 2cqw; }
+.deck-slide-cashflows .deck-cash-totals > div:nth-child(2) { border-top: 2px solid var(--accent); color: var(--accent); }
+.deck-slide-cashflows .deck-cash-table [data-slot="table-row"]:last-child { border-bottom: 2px solid #d7d1eb; }
+
+@media screen and (max-width: 900px) {
+  .deck-credit-page { flex: initial; gap: 28px; padding-top: 0; }
+  .deck-page .deck-group-title { font-size: 21px; }
+  .deck-credit-columns, .deck-metric-strip, .deck-repayment-overview, .deck-terms-columns, .deck-participation-columns, .deck-team-evidence, .deck-execution-layout, .deck-segment-columns, .deck-precedent-columns { grid-template-columns: 1fr; gap: 28px; }
+  .deck-fields > div { padding-block: 12px; }
+  .deck-fields dt { font-size: 14px; }
+  .deck-fields dd { font-size: 16px; margin-top: 5px; }
+  .deck-credit-columns .deck-group-title { padding-block: 16px 8px; }
+  .deck-metric-strip { padding-block: 0 24px; }
+  .deck-metric-strip dt { font-size: 14px; }
+  .deck-metric-strip dd { margin-top: 6px; font-size: 45px; }
+  .deck-metric-strip p { margin-top: 5px; font-size: 13px; }
+  .deck-metric-unit { font-size: 19px; margin-left: 10px; }
+  .deck-placeholder-metrics dd { font-size: 23px; }
+  .deck-credit-conclusion { grid-template-columns: 1fr; gap: 12px; padding-top: 20px; margin-top: 0; }
+  .deck-credit-conclusion h3 { font-size: 18px; }
+  .deck-credit-conclusion p { font-size: 16px; }
+  .deck-underwriting-gates { grid-template-columns: 1fr; gap: 32px; padding-top: 0; }
+  .deck-gate-heading { padding-top: 16px; margin-bottom: 20px; }
+  .deck-gate-heading > span { font-size: 14px; margin-bottom: 10px; }
+  .deck-gate-heading h3 { font-size: 29px; }
+  .deck-underwriting-gates dl { gap: 18px; }
+  .deck-underwriting-gates dl > div { padding-top: 12px; }
+  .deck-underwriting-gates dt { font-size: 17px; }
+  .deck-underwriting-gates dd { font-size: 16px; margin-top: 6px; }
+  .deck-repayment-ledger { font-size: 13px; min-width: 570px; }
+  .deck-repayment-ledger tbody [data-slot="table-head"], .deck-repayment-ledger [data-slot="table-cell"] { padding-block: 14px; }
+  .deck-ledger-sign { width: 18px; }
+  .deck-repayment-sources { gap: 24px; }
+  .deck-repayment-sources section { padding-top: 12px; }
+  .deck-repayment-sources .deck-eyebrow { font-size: 12px; }
+  .deck-repayment-sources .deck-group-title { font-size: 21px; margin-top: 6px; }
+  .deck-repayment-sources .deck-body { font-size: 16px; margin-top: 7px; }
+  .deck-pipeline-stages { grid-template-columns: 1fr; gap: 24px; }
+  .deck-pipeline-stages li { position: relative; padding-left: 28px; border-left: 1px solid #d7d1eb; }
+  .deck-pipeline-node { position: absolute; left: -6px; top: 7px; height: auto; margin: 0; }
+  .deck-pipeline-node span { width: 11px; height: 11px; background: white; }
+  .deck-pipeline-node::after, .deck-pipeline-node svg { display: none; }
+  .deck-pipeline-stages .deck-group-title { font-size: 24px; }
+  .deck-pipeline-stages dl { grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+  .deck-pipeline-stages dt { font-size: 13px; }
+  .deck-pipeline-stages dd { font-size: 16px; margin-top: 5px; }
+  .deck-pipeline-stages li > p { font-size: 15px; padding-top: 12px; margin-top: 16px; }
+  .deck-limit-section { margin-top: 0; padding-top: 20px; }
+  .deck-fields.deck-limit-strip { grid-template-columns: 1fr; gap: 5px; margin-top: 8px; }
+  .deck-inline-fields > div, .deck-team-evidence .deck-fields > div { grid-template-columns: 1fr; gap: 5px; padding-block: 12px; }
+  .deck-inline-fields dd, .deck-economics-flow .deck-fields dd { font-size: 16px; }
+  .deck-terms-columns .deck-group-title { margin-bottom: 10px; }
+  .deck-economics-flow { border-left: 0; border-top: 2px solid #d7d1eb; padding: 20px 0 0; }
+  .deck-economics-flow .deck-fields > div { padding-block: 12px; }
+  .deck-vehicle-heading { grid-template-columns: 1fr; gap: 20px; padding-block: 0 22px; }
+  .deck-vehicle-heading h3 { font-size: 30px; }
+  .deck-vehicle-heading p { font-size: 15px; margin-top: 8px; }
+  .deck-vehicle-heading dt { font-size: 14px; }
+  .deck-vehicle-heading dd { font-size: 21px; margin-top: 6px; }
+  .deck-eligibility-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 20px; }
+  .deck-eligibility-grid > div { padding-top: 14px; }
+  .deck-eligibility-grid h4 { font-size: 19px; }
+  .deck-eligibility-grid p { font-size: 16px; margin-top: 8px; }
+  .deck-fields.deck-governance-fields { margin-top: 10px; }
+  .deck-governance-fields > div { padding-block: 12px; }
+  .deck-governance-fields dd { font-size: 16px; margin-top: 5px; }
+  .deck-people-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 14px; }
+  .deck-people-grid > div { padding-top: 18px; }
+  .deck-people-grid h4 { font-size: 24px; }
+  .deck-people-grid p { font-size: 16px; margin-top: 8px; }
+  .deck-team-evidence { margin-top: 0; }
+  .deck-team-evidence > section { padding-top: 20px; }
+  .deck-team-evidence .deck-fields { margin-top: 10px; }
+  .deck-provider-grid { gap: 24px; margin-top: 20px; }
+  .deck-provider-grid h4 { font-size: 19px; }
+  .deck-provider-grid p { font-size: 16px; margin-top: 6px; }
+  .deck-execution-duration { padding-top: 20px; }
+  .deck-execution-duration > p { font-size: 76px; }
+  .deck-execution-duration > p > span { font-size: 25px; margin-top: 8px; }
+  .deck-execution-duration h3 { max-width: none; font-size: 16px; margin-top: 18px; }
+  .deck-execution-timeline li { grid-template-columns: 28px 1fr; gap: 8px 14px; padding-block: 18px; }
+  .deck-execution-timeline li > span { grid-row: span 2; font-size: 15px; }
+  .deck-execution-timeline h3 { font-size: 20px; }
+  .deck-execution-timeline p { grid-column: 2; font-size: 16px; }
+  .deck-segment-columns > section { padding-top: 18px; }
+  .deck-segment-columns h3 { min-height: 0; font-size: 29px; margin-bottom: 18px; }
+  .deck-segment-columns dl > div { min-height: 0; padding-block: 12px; }
+  .deck-segment-columns dt { font-size: 13px; }
+  .deck-segment-columns dd { font-size: 16px; margin-top: 5px; }
+  .deck-precedent-columns > section { padding-top: 18px; }
+  .deck-precedent-columns h3 { font-size: 23px; }
+  .deck-precedent-date { font-size: 14px; margin-top: 5px!important; }
+  .deck-precedent-amount { font-size: 52px; margin-top: 20px!important; }
+  .deck-precedent-structure { min-height: 0; font-size: 19px; margin-top: 14px!important; }
+  .deck-precedent-terms { min-height: 0; font-size: 16px; margin-top: 10px!important; }
+  .deck-precedent-context { font-size: 16px; padding-top: 14px; margin-top: 16px!important; }
+  .deck-slide-risks .deck-risk-table { min-width: 690px; font-size: 14px; }
+  .deck-slide-risks .deck-risk-table [data-slot="table-cell"], .deck-slide-risks .deck-risk-table tbody [data-slot="table-head"] { padding-block: 13px; }
+  .deck-slide-structure .deck-structure-details > div { padding-top: 18px; }
+  .deck-slide-structure .deck-structure-details .deck-small { font-size: 16px; }
+  .deck-slide-cashflows .deck-cash-assumptions { padding-block: 0 20px; }
+  .deck-slide-cashflows .deck-cash-assumptions dd { font-size: 24px; }
+  .deck-slide-cashflows .deck-cash-layout { padding-top: 0; }
+  .deck-slide-cashflows .deck-cash-totals { margin-top: 22px; }
+  .deck-slide-cashflows .deck-cash-totals dd { font-size: 26px; }
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import FundraisingDeck from "@/components/deck/FundraisingDeck";
 import "./deck.css";
+import "./credit-layouts.css";
 
 export const metadata: Metadata = {
   title: "Open Silicon | Bridge credit for AI compute",

@@ -457,12 +457,45 @@ export const DECK_DATA = {
   },
   "lighthouse": {
     "caption": "Anonymized transaction profile",
-    "note": "Funding requires verified ownership, contract collections, an independent valuation and an approved repayment schedule."
+    "note": "Funding requires verified ownership, contract collections, an independent valuation and an approved repayment schedule.",
+    "highlights": [
+      "requestedAmount",
+      "ltv",
+      "dscr"
+    ],
+    "groups": [
+      {
+        "title": "Operating assets",
+        "keys": [
+          "region",
+          "gpuModel",
+          "gpuCount",
+          "facilitySize"
+        ]
+      },
+      {
+        "title": "Contract economics",
+        "keys": [
+          "tenantType",
+          "contractLength",
+          "monthlyRevenue"
+        ]
+      },
+      {
+        "title": "Financing request",
+        "keys": [
+          "useOfProceeds",
+          "operatorEquity",
+          "existingDebt",
+          "fundingTimeline"
+        ]
+      }
+    ]
   },
   "repayment": {
     "headers": [
-      "Cash flow item",
-      "Current monthly run rate",
+      "Monthly cash flow",
+      "Current run rate",
       "Underwritten case"
     ],
     "rows": [
@@ -513,7 +546,12 @@ export const DECK_DATA = {
     ],
     "testTitle": "No-refinancing test",
     "test": "The credit policy excludes reliance on a large maturity balloon. The lighthouse cash flow model must demonstrate compliance before funding.",
-    "reserve": "Reserve funding, size and release conditions: {{reserve}}."
+    "reserve": "Reserve funding, size and release conditions: {{reserve}}.",
+    "sourceLabels": [
+      "Primary repayment",
+      "Potential take-out",
+      "Recovery fallback"
+    ]
   },
   "underwriting": {
     "headers": [
@@ -523,38 +561,63 @@ export const DECK_DATA = {
     "rows": [
       {
         "label": "Operating assets",
-        "value": "Hardware delivered and commissioned; ownership and serial numbers verified"
+        "value": "Commissioned hardware. Verified ownership and serial numbers."
       },
       {
         "label": "Power and cooling",
-        "value": "Executed supply arrangements, operating capacity and interruption coverage"
+        "value": "Executed supply agreements, operating capacity and interruption coverage."
       },
       {
         "label": "Paying compute contract",
-        "value": "Payment history, tenant credit, contract tenor, termination rights and assignability"
+        "value": "Verified collections, tenant credit, tenor, termination rights and assignability."
       },
       {
         "label": "Collateral value",
-        "value": "Independent forced-liquidation valuation; loan ≤ {{ltvCap}}% of eligible value"
+        "value": "Independent forced-liquidation valuation. Advance ≤ {{ltvCap}}% of eligible value."
       },
       {
         "label": "Debt service",
-        "value": "Monthly cash flow model; minimum DSCR [TODO: threshold and definition]"
+        "value": "Monthly cash flow model. Minimum DSCR: [TODO: threshold and definition]."
       },
       {
         "label": "Cash control",
-        "value": "Assigned receipts, controlled collection account and monthly cash sweep"
+        "value": "Assigned receivables, controlled account and monthly cash sweep."
       },
       {
         "label": "Equity and reserve",
-        "value": "Operator equity at risk; funded reserve with documented funding source"
+        "value": "Operator equity at risk. Funded reserve with a verified funding source."
       },
       {
         "label": "Execution and monitoring",
-        "value": "Collateral agent, servicer, reporting and breach triggers in place"
+        "value": "Collateral agent, servicer, reporting and breach triggers in place."
       }
     ],
-    "note": "Every condition must be met before a loan is funded. Unresolved eligibility items prevent funding."
+    "note": "Every condition must be met before a loan is funded. Unresolved eligibility items prevent funding.",
+    "groups": [
+      {
+        "title": "Operating readiness",
+        "rows": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "Credit capacity",
+        "rows": [
+          3,
+          4,
+          6
+        ]
+      },
+      {
+        "title": "Lender control",
+        "rows": [
+          5,
+          7
+        ]
+      }
+    ]
   },
   "structure": {
     "forward": "Capital funds operating assets; the operator supplies compute",
@@ -601,27 +664,27 @@ export const DECK_DATA = {
   "risks": [
     {
       "risk": "GPU depreciation and obsolescence",
-      "mitigant": "Short loan term, independent forced-liquidation valuation and ≤ {{ltvCap}}% LTV. Revaluation triggers: [TODO: thresholds].",
+      "mitigant": "Short term, independent forced-liquidation valuation and ≤ {{ltvCap}}% LTV. Revaluation: [TODO: triggers].",
       "residual": "Sale prices and recovery timing can deteriorate together."
     },
     {
       "risk": "Utilization or rental price decline",
-      "mitigant": "Contract review, collection monitoring, downside cash flow tests and monthly cash sweep.",
+      "mitigant": "Contract review, collection monitoring, stressed cash flows and monthly cash sweep.",
       "residual": "Receivables assignment does not protect against loss of demand."
     },
     {
       "risk": "Operator default",
-      "mitigant": "Operator equity, senior security, collateral agent and replacement servicing arrangements.",
+      "mitigant": "Operator equity, senior security, collateral agent and replacement servicing.",
       "residual": "Enforcement may delay distributions and incur costs."
     },
     {
       "risk": "Power interruption or deployment delay",
-      "mitigant": "Only commissioned assets; secured power and cooling, insurance review and a funded reserve.",
+      "mitigant": "Commissioned assets, secured power and cooling, insurance review and funded reserve.",
       "residual": "Operating interruptions can continue after funding."
     },
     {
       "risk": "Refinancing or take-out failure",
-      "mitigant": "Repayment sized to verified cash flows; amortization and funded reserve; no-refinancing test.",
+      "mitigant": "Cash-supported amortization, funded reserve and a no-refinancing test.",
       "residual": "An extension or asset sale may still be necessary."
     },
     {
@@ -647,32 +710,32 @@ export const DECK_DATA = {
   "pipelineStages": [
     {
       "name": "Sourced",
-      "count": "[TODO: sourced count]",
-      "total": "[TODO: sourced amount]",
+      "count": "[TODO: count]",
+      "total": "[TODO: amount]",
       "gate": "Initial opportunity identified"
     },
     {
       "name": "Screened",
-      "count": "[TODO: screened count]",
-      "total": "[TODO: screened amount]",
+      "count": "[TODO: count]",
+      "total": "[TODO: amount]",
       "gate": "Entry criteria reviewed"
     },
     {
       "name": "In diligence",
-      "count": "[TODO: in diligence count]",
-      "total": "[TODO: in diligence amount]",
+      "count": "[TODO: count]",
+      "total": "[TODO: amount]",
       "gate": "Contracts and assets under review"
     },
     {
       "name": "Term sheet",
-      "count": "[TODO: term sheet count]",
-      "total": "[TODO: term sheet amount]",
+      "count": "[TODO: count]",
+      "total": "[TODO: amount]",
       "gate": "Terms under negotiation"
     },
     {
       "name": "Funded",
-      "count": "[TODO: funded count]",
-      "total": "[TODO: funded amount]",
+      "count": "[TODO: count]",
+      "total": "[TODO: amount]",
       "gate": "Capital deployed"
     }
   ],
@@ -697,12 +760,15 @@ export const DECK_DATA = {
         "value": "[TODO: correlated exposure limit]"
       }
     ],
-    "note": "Pipeline figures are indicative, not committed capital. Each deal appears in its current stage only. Operator facility value and requested loan size are different measures."
+    "note": "Pipeline figures are indicative, not committed capital. Each deal appears in its current stage only. Operator facility value and requested loan size are different measures.",
+    "amountLabel": "Facility amount",
+    "countLabel": "Deals",
+    "limitsTitle": "Concentration limits"
   },
   "terms": {
     "rows": [
       {
-        "label": "Proposed first pool",
+        "label": "Target LP commitments",
         "value": "{{raiseRange}}"
       },
       {
@@ -757,7 +823,32 @@ export const DECK_DATA = {
         "value": "[TODO: loss, delay and prepayment assumptions]"
       }
     ],
-    "note": "Net LP return is not established by the loan coupon alone. No conditional premium is included in the quoted coupon."
+    "note": "Net LP return is not established by the loan coupon alone. No conditional premium is included in the quoted coupon.",
+    "highlights": [
+      {
+        "label": "Target LP commitments",
+        "value": "{{raiseRange}}"
+      },
+      {
+        "label": "Loan duration",
+        "value": "{{termRange}}",
+        "unit": "months"
+      },
+      {
+        "label": "Annual loan coupon",
+        "value": "{{couponRange}}%",
+        "context": "On outstanding principal"
+      }
+    ],
+    "detailRows": [
+      1,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "detailsTitle": "Loan structure"
   },
   "participation": {
     "headers": [
@@ -767,27 +858,27 @@ export const DECK_DATA = {
     "rows": [
       {
         "label": "Investment vehicle",
-        "value": "SPV per transaction; investor interests and rights set in subscription documents"
+        "value": "SPV per transaction; rights in subscription documents"
       },
       {
         "label": "Pool and allocation",
-        "value": "[TODO: pool commitment versus deal-by-deal election; allocation authority]"
+        "value": "Capital called for approved deals. [TODO: allocation and participation rights]"
       },
       {
         "label": "Capital calls and recycling",
-        "value": "[TODO: draw conditions, investment period and reinvestment policy]"
+        "value": "[TODO: call notice, investment period and recycling]"
       },
       {
         "label": "Investment decisions",
-        "value": "[TODO: committee members, approval rights and exception policy]"
+        "value": "[TODO: committee, approvals and exceptions]"
       },
       {
         "label": "Extensions and enforcement",
-        "value": "[TODO: LP consent rights, voting thresholds and agent authority]"
+        "value": "[TODO: LP votes, consent and agent authority]"
       },
       {
         "label": "Reporting and alignment",
-        "value": "[TODO: reporting frequency, valuation, audit and manager co-investment]"
+        "value": "[TODO: reporting, valuation, audit and co-investment]"
       },
       {
         "label": "Minimum ticket",
@@ -806,14 +897,18 @@ export const DECK_DATA = {
       },
       {
         "title": "KYC / AML",
-        "body": "Required before subscription acceptance. [TODO: subscription currency, custody and conversion arrangements]"
+        "body": "Required before subscription. [TODO: currency, custody and conversion]"
       },
       {
         "title": "Optional on-chain record",
-        "body": "A record of interests does not provide liquidity. Transfers remain subject to legal and contractual restrictions."
+        "body": "Optional records do not provide liquidity. Legal and contractual transfer restrictions apply."
       }
     ],
-    "note": "Loan maturity and LP holding period can differ. Final rights, fees and offering structure depend on definitive documents."
+    "note": "Loan maturity and LP holding period can differ. Final rights, fees and offering structure depend on definitive documents.",
+    "vehicleTitle": "SPV per transaction",
+    "vehicleBody": "Proposed LP commitments, drawn into deal SPVs as approved transactions close.",
+    "governanceTitle": "Governance and investor rights",
+    "minimumLabel": "Minimum ticket"
   },
   "teamSection": {
     "teamLabel": "Investment responsibilities",
@@ -832,47 +927,60 @@ export const DECK_DATA = {
         "outcome": "[TODO: repayments, losses and recovery]"
       }
     ],
-    "note": "Prior-employer experience must be attributed to the individual and the institution where the work occurred."
+    "note": "Prior-employer experience must be attributed to the individual and the institution where the work occurred.",
+    "placeholders": {
+      "name": "[TODO: name]",
+      "role": "[TODO: credit responsibility]",
+      "bio": "[TODO: verified experience]",
+      "partnerRole": "[TODO: appointment and scope]",
+      "transaction": "[TODO: verified transaction]",
+      "actualRole": "[TODO: role and employer]",
+      "outcome": "[TODO: repayments, losses and recovery]",
+      "collateralAgent": "[TODO: collateral agent]",
+      "servicer": "[TODO: servicer]"
+    }
   },
   "process": [
     {
-      "title": "Commitment",
-      "body": "Agree allocation and subscription conditions."
+      "title": "LP commitment",
+      "body": "Execute commitment documents and complete KYC / AML."
     },
     {
-      "title": "SPV formation",
-      "body": "Establish investor rights and transaction accounts."
+      "title": "Transaction readiness",
+      "body": "Complete SPV setup, credit diligence, security documents and agent onboarding."
     },
     {
-      "title": "Credit diligence",
-      "body": "Verify the lighthouse assets, contracts and repayment model."
+      "title": "Capital call",
+      "body": "Issue a deal-linked notice stating the amount, purpose and payment deadline."
     },
     {
-      "title": "Security and servicing",
-      "body": "Appoint the agent and servicer; perfect collateral rights."
+      "title": "LP contribution",
+      "body": "Receive called capital into the designated transaction account."
     },
     {
-      "title": "Funding",
-      "body": "Fund the reserve and disburse after all conditions are met."
+      "title": "Loan funding",
+      "body": "Fund the reserve and release the loan once all closing conditions are met."
     }
   ],
   "processSection": {
-    "timeLabel": "Indicative commitment-to-funding period",
+    "timeLabel": "Indicative commitment-to-first-funding period",
     "note": "{{fundingWeeks}} weeks is a planning assumption. Credit approval, legal readiness and fulfilled funding conditions determine the actual date.",
     "gates": [
       {
-        "label": "Credit approval",
-        "value": "[TODO: approval date and decision makers]"
+        "label": "Notice period",
+        "value": "[TODO: business days before payment]"
       },
       {
-        "label": "Legal readiness",
-        "value": "[TODO: jurisdiction, vehicle and documents]"
+        "label": "Investment period",
+        "value": "[TODO: draw window and recycling]"
       },
       {
-        "label": "Capital availability",
-        "value": "[TODO: commitment and draw schedule]"
+        "label": "Unfunded commitments",
+        "value": "[TODO: late funding and default remedies]"
       }
-    ]
+    ],
+    "durationUnit": "weeks",
+    "gatesTitle": "Capital call terms to finalize"
   },
   "closing": {
     "subtitle": "Lighthouse transaction and first-pool participation",
@@ -988,7 +1096,7 @@ export const DECK_DATA = {
       "id": "portfolio",
       "section": "Portfolio construction",
       "title": "Investment pipeline and concentration",
-      "lede": "Stage-based reporting and exposure limits guide the first pool.",
+      "lede": "Indicative opportunities by stage, with exposure limits set before funding.",
       "notes": "Pipeline is indicative and must be reported without double counting. Concentration is measured across shared customers, GPU models and sites as well as individual borrowers."
     },
     {
@@ -1003,7 +1111,7 @@ export const DECK_DATA = {
       "section": "Investor participation",
       "title": "Investment structure and governance",
       "lede": "Investor rights must be explicit at the vehicle and transaction levels.",
-      "notes": "The proposed vehicle is a dedicated SPV for each loan, with the pool-level commitment and allocation mechanism still to be finalized. Subscription documents must address capital calls, voting rights, fees and the possibility that recovery extends beyond contractual loan maturity."
+      "notes": "The proposed model uses LP commitments and deal-linked capital calls, with a dedicated SPV for each loan. The legal link between commitments, allocation rights and transaction SPVs remains to be documented. Subscription terms must define call mechanics, fees, voting rights and obligations that may continue beyond an individual loan’s maturity."
     },
     {
       "id": "team",
@@ -1015,9 +1123,9 @@ export const DECK_DATA = {
     {
       "id": "process",
       "section": "Execution",
-      "title": "Commitment and funding process",
-      "lede": "Capital deployment follows completed diligence and satisfied funding conditions.",
-      "notes": "The planned commitment-to-funding period is {{fundingWeeks}} weeks. Diligence, vehicle formation and collateral work may overlap, but funding only follows approval and documented satisfaction of the conditions."
+      "title": "Commit capital. Fund as deals close.",
+      "lede": "Proposed capital call model aligned with transaction readiness.",
+      "notes": "LPs would commit capital under agreed subscription documents and fund in response to deal-linked capital calls. The {{fundingWeeks}}-week period is an indicative timeline to first funding, not the call notice period or the LP commitment period. A loan is released only after cash is received, the reserve is funded and all closing conditions are satisfied."
     },
     {
       "id": "cashflows",
@@ -1345,27 +1453,27 @@ export const DECK_DATA = {
     "rows": [
       [
         "Rental model",
-        "Long-term anchor off-take",
-        "Reserved clusters and paying compute contracts",
+        "Anchor off-take",
+        "Reserved, contracted clusters",
         "On-demand and spot rentals"
       ],
       [
         "Capital need",
-        "Construction, power and large deployments",
-        "Liquidity against deployed equipment and receivables",
+        "Construction, power and deployment",
+        "Liquidity on assets and receivables",
         "Working capital and occupancy ramp"
       ],
       [
         "Credit support",
-        "Customer credit and delivery commitments",
-        "Collections and hardware liquidation value",
+        "Tenant credit and delivery obligations",
+        "Collections and liquidation value",
         "Variable utilization and rental prices"
       ],
       [
         "Financing fit",
-        "Prepayments and long-term project or asset finance",
+        "Prepayments and long-term asset finance",
         "Senior secured bridge credit",
-        "Operator equity; debt needs contracted support"
+        "Equity until contracts support debt"
       ]
     ],
     "evidence": {
@@ -1603,6 +1711,15 @@ export const DECK_DATA = {
             "Small GPU loans already exist. USD.AI’s August 2026 report describes $15.3M funded to QumulusAI and $7.5M funded to Corvex. This prevents a blanket claim that small operators cannot borrow. Open Silicon’s differentiation must be demonstrated through borrower fit, duration, execution, advance size and protections.",
             "A paying compute contract is necessary but not sufficient. Its termination rights, collection history, assignment, tenant credit and cash after costs determine debt capacity. No public financing precedent proves a particular Open Silicon borrower is eligible."
           ]
+        },
+        {
+          "title": "Financing dimensions by rental model",
+          "paragraphs": [
+            "Rental model: Large dedicated capacity: Long-term anchor off-take; Smaller operating clusters: Reserved clusters and paying compute contracts; Uncontracted capacity: On-demand and spot rentals.",
+            "Capital need: Large dedicated capacity: Construction, power and large deployments; Smaller operating clusters: Liquidity against deployed equipment and receivables; Uncontracted capacity: Working capital and occupancy ramp.",
+            "Credit support: Large dedicated capacity: Customer credit and delivery commitments; Smaller operating clusters: Collections and hardware liquidation value; Uncontracted capacity: Variable utilization and rental prices.",
+            "Financing fit: Large dedicated capacity: Prepayments and long-term project or asset finance; Smaller operating clusters: Senior secured bridge credit; Uncontracted capacity: Operator equity; debt needs contracted support."
+          ]
         }
       ],
       "sources": [
@@ -1720,6 +1837,160 @@ export const DECK_DATA = {
           "paragraphs": [
             "A signed large off-take is not an entry condition. It may enable longer-term refinancing, but cash-supported amortization, a funded reserve and a no-refinancing scenario must substantiate the proposed exit. The policy against a large maturity balloon remains subject to verification in the lighthouse model.",
             "The {{couponRange}}% figure is the proposed loan coupon on outstanding principal before investor-level fees. It is not a guaranteed LP return. Loan size, reserve, covenants, minimum ticket and actual borrower economics still require confirmed transaction data."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slideId": "underwriting",
+      "sections": [
+        {
+          "title": "Evidence required before funding",
+          "paragraphs": [
+            "Operating assets: Hardware delivered and commissioned; ownership and serial numbers verified",
+            "Power and cooling: Executed supply arrangements, operating capacity and interruption coverage",
+            "Paying compute contract: Payment history, tenant credit, contract tenor, termination rights and assignability",
+            "Collateral value: Independent forced-liquidation valuation; loan ≤ {{ltvCap}}% of eligible value",
+            "Debt service: Monthly cash flow model; minimum DSCR [TODO: threshold and definition]",
+            "Cash control: Assigned receipts, controlled collection account and monthly cash sweep",
+            "Equity and reserve: Operator equity at risk; funded reserve with documented funding source",
+            "Execution and monitoring: Collateral agent, servicer, reporting and breach triggers in place"
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slideId": "participation",
+      "sections": [
+        {
+          "title": "Participation and investor rights",
+          "paragraphs": [
+            "Investment vehicle: SPV per transaction; investor interests and rights set in subscription documents",
+            "Pool and allocation: [TODO: pool commitment versus deal-by-deal election; allocation authority]",
+            "Capital calls and recycling: [TODO: draw conditions, investment period and reinvestment policy]",
+            "Investment decisions: [TODO: committee members, approval rights and exception policy]",
+            "Extensions and enforcement: [TODO: LP consent rights, voting thresholds and agent authority]",
+            "Reporting and alignment: [TODO: reporting frequency, valuation, audit and manager co-investment]",
+            "Minimum ticket: {{minimumTicket}}",
+            "US investors: Proposed Reg D 506(c) offering to verified accredited investors.",
+            "Offshore investors: Proposed Reg S pathway, subject to applicable transaction and selling restrictions.",
+            "KYC / AML: Required before subscription acceptance. [TODO: subscription currency, custody and conversion arrangements]",
+            "Optional on-chain record: A record of interests does not provide liquidity. Transfers remain subject to legal and contractual restrictions.",
+            "Loan maturity and LP holding period can differ. Final rights, fees and offering structure depend on definitive documents."
+          ]
+        },
+        {
+          "title": "Proposed commitment and capital call mechanics",
+          "paragraphs": [
+            "The proposal separates signed LP commitments from contributed cash. SEC educational guidance describes commitments followed by calls over time and explains that fund documents govern call mechanics. That guidance supplies general context; it does not approve Open Silicon’s proposed structure.",
+            "Proposed sequence: execute commitments and investor onboarding; complete deal diligence, vehicle formation and security documentation; issue a capital call linked to an approved transaction; confirm receipt of LP contributions; fund the reserve and disburse only after all closing conditions are met. Any staged calls for formation costs, fees or reserves must be expressly permitted and disclosed in the documents.",
+            "A master commitment vehicle investing in deal SPVs and commitments made directly to individual SPVs are different structures. The commitment recipient, allocation authority, LP participation or election rights and enforceable funding obligation remain [TODO: definitive vehicle and subscription structure]. A soft indication of interest cannot be represented as a binding commitment or cash available to lend.",
+            "Items to finalize include notice and payment deadlines, investment period, permissible uses, recycling, recallable distributions, excuse rights, late-payment remedies, cancellation and return of contributions if a deal fails to close. No notice period or penalty is assumed in this deck. Uncalled capital is not cash in the lending SPV, and no subscription credit line or emergency backstop is assumed.",
+            "Calling close to deployment may reduce cash held idle in the vehicle, but introduces LP funding and timing risk. The 13–16% loan coupon applies to the funded outstanding borrower balance; it does not accrue to LPs on uncalled commitments. Manager fees, fee bases and investor net returns remain subject to definitive terms.",
+            "The 6–10 weeks is an indicative commitment-to-first-funding planning window. It is separate from the capital call notice period, the investment period and the 6–12 month loan tenor. Loan maturity is not a promise that all LP commitment obligations or recovery processes end on that date."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "confirmed": true,
+          "label": "SEC · Starting a Private Fund",
+          "date": "13 June 2024; reviewed 18 September 2026",
+          "url": "https://www.sec.gov/about/starting-private-fund"
+        }
+      ]
+    },
+    {
+      "slideId": "terms",
+      "sections": [
+        {
+          "title": "Loan economics and investor receipts",
+          "paragraphs": [
+            "Net LP return is not established by the loan coupon alone. No conditional premium is included in the quoted coupon."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slideId": "portfolio",
+      "sections": [
+        {
+          "title": "Pipeline reporting basis",
+          "paragraphs": [
+            "Pipeline figures are indicative, not committed capital. Each deal appears in its current stage only. Operator facility value and requested loan size are different measures."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slideId": "team",
+      "sections": [
+        {
+          "title": "Verification and attribution",
+          "paragraphs": [
+            "Prior-employer experience must be attributed to the individual and the institution where the work occurred."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slideId": "cashflows",
+      "sections": [
+        {
+          "title": "Illustration assumptions",
+          "paragraphs": [
+            "Interest accrues monthly on opening principal at the annual coupon divided by 12. Payments are rounded to cents.",
+            "Before investor-level fees. Assumes scheduled payments with no default, prepayment, idle cash or reserve drag. Returned principal is not income.",
+            "Illustrative straight-line repayment. Actual amortization depends on verified borrower cash flow and the final loan documents.",
+            "This payment schedule illustrates loan mechanics. It is not the lighthouse repayment forecast or a net LP return projection."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slideId": "process",
+      "sections": [
+        {
+          "title": "Timing and closing conditions",
+          "paragraphs": [
+            "{{fundingWeeks}} weeks is a planning assumption. Credit approval, legal readiness and fulfilled funding conditions determine the actual date."
+          ]
+        },
+        {
+          "title": "Proposed commitment and capital call mechanics",
+          "paragraphs": [
+            "The proposal separates signed LP commitments from contributed cash. SEC educational guidance describes commitments followed by calls over time and explains that fund documents govern call mechanics. That guidance supplies general context; it does not approve Open Silicon’s proposed structure.",
+            "Proposed sequence: execute commitments and investor onboarding; complete deal diligence, vehicle formation and security documentation; issue a capital call linked to an approved transaction; confirm receipt of LP contributions; fund the reserve and disburse only after all closing conditions are met. Any staged calls for formation costs, fees or reserves must be expressly permitted and disclosed in the documents.",
+            "A master commitment vehicle investing in deal SPVs and commitments made directly to individual SPVs are different structures. The commitment recipient, allocation authority, LP participation or election rights and enforceable funding obligation remain [TODO: definitive vehicle and subscription structure]. A soft indication of interest cannot be represented as a binding commitment or cash available to lend.",
+            "Items to finalize include notice and payment deadlines, investment period, permissible uses, recycling, recallable distributions, excuse rights, late-payment remedies, cancellation and return of contributions if a deal fails to close. No notice period or penalty is assumed in this deck. Uncalled capital is not cash in the lending SPV, and no subscription credit line or emergency backstop is assumed.",
+            "Calling close to deployment may reduce cash held idle in the vehicle, but introduces LP funding and timing risk. The 13–16% loan coupon applies to the funded outstanding borrower balance; it does not accrue to LPs on uncalled commitments. Manager fees, fee bases and investor net returns remain subject to definitive terms.",
+            "The 6–10 weeks is an indicative commitment-to-first-funding planning window. It is separate from the capital call notice period, the investment period and the 6–12 month loan tenor. Loan maturity is not a promise that all LP commitment obligations or recovery processes end on that date."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "confirmed": true,
+          "label": "SEC · Starting a Private Fund",
+          "date": "13 June 2024; reviewed 18 September 2026",
+          "url": "https://www.sec.gov/about/starting-private-fund"
+        }
+      ]
+    },
+    {
+      "slideId": "risks",
+      "sections": [
+        {
+          "title": "Downside diligence",
+          "paragraphs": [
+            "Combined downside: [TODO: rental decline, customer default, GPU haircut, recovery costs, recovery time and resulting LP loss].",
+            "Short contractual maturity does not ensure short recovery time. Capital remains at risk."
           ]
         }
       ],
