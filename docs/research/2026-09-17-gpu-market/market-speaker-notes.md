@@ -8,7 +8,7 @@ The chart compares published 2025 estimates and 2030 forecasts for global AI dat
 
 ### Demand chart: measure and forecast
 
-McKinsey’s December 2025 model estimates training demand at 23.1 GW and inference at 20.9 GW in 2025, rising to 62.2 GW and 93.3 GW in 2030. Inference’s share of their combined demand is approximately 48% and 60%, calculated from those endpoints. Training also grows in absolute terms.
+McKinsey’s December 2025 model estimates training demand at 23.1 GW and inference at 20.9 GW in 2025, rising to 62.2 GW and 93.3 GW in 2030. Inference’s share of their combined demand is approximately 48% and 60%, calculated from those endpoints. Training also grows in absolute terms. The arrows show cumulative growth, calculated as (2030 demand / 2025 demand − 1) × 100 and rounded to the nearest whole percent: training +169%, inference +346%. These are five-year increases, not annual growth rates.
 
 The chart shows published endpoints only, with no invented intermediate years or implied crossover date. GW measures modeled data center capacity demand, not GPU hours, paid occupancy or revenue. The source covers inference broadly, not agents alone. Hardware efficiency and deployment constraints can change the forecast.
 

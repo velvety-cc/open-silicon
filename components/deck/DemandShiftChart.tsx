@@ -4,6 +4,8 @@ const chart = D.market.demandShift;
 const baseline = 292;
 const y = (value: number) => baseline - value / chart.maximum * 238;
 const share = (point: typeof chart.points[number]) => Math.round((point.inference / (point.training + point.inference) + Number.EPSILON) * 100);
+const growth = (key: typeof chart.series[number]["key"]) => Math.round((chart.points[1][key] / chart.points[0][key] - 1) * 100);
+const segmentCenter = (point: typeof chart.points[number], key: typeof chart.series[number]["key"]) => y(key === "training" ? point.training / 2 : point.training + point.inference / 2);
 
 export default function DemandShiftChart() {
   return <div className="deck-demand-layout">
@@ -11,7 +13,8 @@ export default function DemandShiftChart() {
       <figcaption><span className="deck-label">{chart.title}</span><span className="deck-chart-unit">{chart.unit}</span></figcaption>
       <svg viewBox="0 0 700 355" role="img" aria-labelledby="demand-shift-title demand-shift-description">
         <title id="demand-shift-title">{chart.title}</title>
-        <desc id="demand-shift-description">{chart.sourceCaption}. {chart.points.map(point => `${point.year}: training ${point.training} GW, inference ${point.inference} GW; inference share ${share(point)} percent`).join(". ")}. No intermediate-year values are implied.</desc>
+        <desc id="demand-shift-description">{chart.sourceCaption}. {chart.points.map(point => `${point.year}: training ${point.training} GW, inference ${point.inference} GW; inference share ${share(point)} percent`).join(". ")}. {chart.series.map(series => `${series.label} cumulative growth: ${growth(series.key)} percent`).join(". ")}. No intermediate-year values are implied.</desc>
+        <defs>{chart.series.map(series => <marker key={series.key} id={`demand-growth-${series.key}`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M 1 1 L 8 5 L 1 9" fill="none" stroke={series.annotationColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></marker>)}</defs>
         {chart.series.map((series, i) => <g key={series.key} transform={`translate(${62 + i * 150},16)`}><rect width="12" height="12" fill={series.color} /><text x="21" y="11" fontSize="14" fill="#555">{series.label}</text></g>)}
         {chart.ticks.map(tick => <g key={tick}><line x1="62" x2="665" y1={y(tick)} y2={y(tick)} stroke="#e9e7ef" /><text x="48" y={y(tick) + 5} textAnchor="end" fontSize="13" fill="#777">{tick}</text></g>)}
         {chart.points.map((point, i) => {
@@ -27,6 +30,16 @@ export default function DemandShiftChart() {
             <text x={x + 64} y={y(total) - 12} textAnchor="middle" fontSize="17" fontWeight="500" fill="#333">{total.toFixed(1)} GW</text>
             <text x={x + 64} y="320" textAnchor="middle" fontSize="19" fill="#333">{point.year}</text>
             <text x={x + 64} y="343" textAnchor="middle" fontSize="13" fill="#777">{point.status}</text>
+          </g>;
+        })}
+        {chart.series.map(series => {
+          const startY = segmentCenter(chart.points[0], series.key);
+          const endY = segmentCenter(chart.points[1], series.key);
+          const labelY = (startY + endY) / 2;
+          return <g key={series.key} aria-hidden="true">
+            <line x1="300" y1={startY} x2="452" y2={endY} stroke={series.annotationColor} strokeWidth="2" strokeLinecap="round" markerEnd={`url(#demand-growth-${series.key})`} />
+            <rect x="332" y={labelY - 16} width="88" height="32" rx="4" fill="white" />
+            <text x="376" y={labelY} dy=".35em" textAnchor="middle" fontSize="20" fontWeight="600" fill={series.annotationColor}>+{growth(series.key)}%</text>
           </g>;
         })}
       </svg>

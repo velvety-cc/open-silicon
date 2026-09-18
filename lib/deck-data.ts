@@ -319,12 +319,14 @@ export const DECK_DATA = {
         {
           "key": "training",
           "label": "Training",
-          "color": "#bdb7d5"
+          "color": "#bdb7d5",
+          "annotationColor": "#817596"
         },
         {
           "key": "inference",
           "label": "Inference",
-          "color": "#533afe"
+          "color": "#533afe",
+          "annotationColor": "#533afe"
         }
       ],
       "points": [
@@ -417,40 +419,41 @@ export const DECK_DATA = {
     }
   },
   "strategy": {
-    "headers": [
-      "Credit parameter",
-      "Proposed Open Silicon mandate"
-    ],
-    "rows": [
-      {
-        "label": "Borrower",
-        "value": "Operators with {{operatorFacilityRange}} facilities and operating GPU infrastructure"
-      },
-      {
-        "label": "Entry condition",
-        "value": "Commissioned hardware, secured power and at least one paying compute contract"
-      },
-      {
-        "label": "Financing need",
-        "value": "Short-term capital while the operator arranges longer-term financing"
-      },
-      {
-        "label": "Credit exposure",
-        "value": "{{termRange}} month senior secured loan; ≤ {{ltvCap}}% forced-liquidation LTV"
-      },
-      {
-        "label": "Repayment requirement",
-        "value": "Cash-supported amortization, cash sweep and a funded reserve"
-      },
-      {
-        "label": "Potential take-out",
-        "value": "Larger off-take contract followed by refinancing, subject to lender approval"
-      }
-    ],
-    "asideTitle": "Target financing gap",
-    "aside": "Smaller operating facilities can require capital before a large off-take agreement or long-term loan is available.",
-    "evidence": "[TODO: documented borrower financing alternatives, timing and declined applications]",
-    "note": "The financing gap is the investment thesis. Borrower-level evidence determines whether a specific opportunity qualifies."
+    "assets": {
+      "label": "Operating assets",
+      "value": "{{operatorFacilityRange}}",
+      "unit": "Facility size",
+      "criteria": [
+        "Commissioned GPUs",
+        "Secured power and cooling",
+        "At least one paying contract"
+      ]
+    },
+    "bridge": {
+      "label": "Open Silicon bridge",
+      "value": "{{termRange}}",
+      "unit": "months",
+      "security": "Senior secured",
+      "ltv": "≤ {{ltvCap}}% LTV",
+      "basis": "At forced-liquidation value"
+    },
+    "takeout": {
+      "label": "Potential take-out",
+      "title": "Long-term\ncapital",
+      "steps": [
+        "Larger off-take contract",
+        "Lender-approved refinancing"
+      ],
+      "condition": "Large off-take is not required at entry."
+    },
+    "repayment": {
+      "title": "Repayment underwritten\nwithout refinancing",
+      "controls": [
+        "Cash-supported amortization",
+        "Monthly cash sweep",
+        "Funded reserve"
+      ]
+    }
   },
   "lighthouse": {
     "caption": "Anonymized transaction profile",
@@ -1390,7 +1393,7 @@ export const DECK_DATA = {
         {
           "title": "Demand chart: measure and forecast",
           "paragraphs": [
-            "McKinsey’s December 2025 model estimates training demand at 23.1 GW and inference at 20.9 GW in 2025, rising to 62.2 GW and 93.3 GW in 2030. Inference’s share of their combined demand is approximately 48% and 60%, calculated from those endpoints. Training also grows in absolute terms.",
+            "McKinsey’s December 2025 model estimates training demand at 23.1 GW and inference at 20.9 GW in 2025, rising to 62.2 GW and 93.3 GW in 2030. Inference’s share of their combined demand is approximately 48% and 60%, calculated from those endpoints. Training also grows in absolute terms. The arrows show cumulative growth, calculated as (2030 demand / 2025 demand − 1) × 100 and rounded to the nearest whole percent: training +169%, inference +346%. These are five-year increases, not annual growth rates.",
             "The chart shows published endpoints only, with no invented intermediate years or implied crossover date. GW measures modeled data center capacity demand, not GPU hours, paid occupancy or revenue. The source covers inference broadly, not agents alone. Hardware efficiency and deployment constraints can change the forecast."
           ]
         },

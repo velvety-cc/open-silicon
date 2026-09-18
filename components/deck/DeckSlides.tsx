@@ -7,6 +7,7 @@ import CashFlowIllustration from "./CashFlowIllustration";
 import DealStructure from "./DealStructure";
 import MarketHistory from "./MarketHistory";
 import DemandShiftChart from "./DemandShiftChart";
+import StrategyOverview from "./StrategyOverview";
 
 type SlideId = typeof D.slides[number]["id"];
 function DataTable({ headers, rows, className = "" }: { headers?: readonly string[]; rows: readonly (readonly string[])[]; className?: string }) {
@@ -83,7 +84,7 @@ function SlideBody({ id, onNavigate }: { id: SlideId; onNavigate: (index: number
       <div className="deck-financing-support"><h3 className="deck-label">{D.marketDeals.supportTitle}</h3><p className="deck-body"><a className="deck-evidence-link" href={D.marketDeals.supportSource.url} target="_blank" rel="noopener noreferrer">{D.marketDeals.supportBody}</a></p></div>
       <div className="deck-takeaway"><h3>{D.marketDeals.observationTitle}</h3><p><T>{D.marketDeals.observation}</T></p></div>
     </>;
-    case "strategy": return <><div className="deck-split"><DataTable headers={D.strategy.headers} rows={D.strategy.rows.map(row => [row.label, row.value])} /><aside className="deck-aside"><h3 className="deck-subtitle">{D.strategy.asideTitle}</h3><p className="deck-body">{D.strategy.aside}</p></aside></div></>;
+    case "strategy": return <StrategyOverview />;
     case "lighthouse": return <><p className="deck-eyebrow">{D.lighthouse.caption}</p><dl className="deck-deal-profile">{D.lighthouseFields.map(field => <div key={field.key}><dt>{field.label}</dt><dd><T>{D.lighthouseDeal.confirmed ? String(D.lighthouseDeal[field.key as keyof typeof D.lighthouseDeal]) : `[TODO: ${field.label.toLowerCase()}]`}</T></dd></div>)}</dl></>;
     case "repayment": return <><div className="deck-split deck-repayment-layout"><DataTable className="deck-repayment-table" headers={D.repayment.headers} rows={D.repayment.rows.map(row => [row.label, row.value, row.case])} /><aside className="deck-repayment-aside"><Observations items={D.repayment.sources} /><div className="deck-takeaway"><h3>{D.repayment.testTitle}</h3><p>{D.repayment.test}</p></div></aside></div></>;
     case "underwriting": return <><DataTable headers={D.underwriting.headers} rows={D.underwriting.rows.map(row => [row.label, row.value])} /></>;
