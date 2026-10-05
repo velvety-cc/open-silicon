@@ -15,6 +15,7 @@ export default function Footer() {
               <li><a href="/#protocol">Marketplace</a></li>
               <li><a href="/#opportunities">Offerings</a></li>
               <li><a href="/#compute-title">Infrastructure</a></li>
+              <li><a href="/research">Research</a></li>
             </ul>
           </div>
           <div className="footer-group">

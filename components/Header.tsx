@@ -7,13 +7,16 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetDescription, SheetClose } from "@/components/ui/sheet";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header({ financing = false, darkHero = false }: { financing?: boolean; darkHero?: boolean }) {
+  const pathname = usePathname();
+  const research = pathname.startsWith("/research");
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("");
   const [menuSurface, setMenuSurface] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [lightSurface, setLightSurface] = useState(financing && !darkHero);
+  const [lightSurface, setLightSurface] = useState(research || (financing && !darkHero));
   const header = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -69,8 +72,10 @@ export default function Header({ financing = false, darkHero = false }: { financ
   ];
   const links = [
     { href: "/gpu-financing", label: "GPU Financing" },
+    { href: "/research", label: "Research" },
     { href: "/#compute-title", label: "About" },
   ];
+  const isCurrentPage = (href: string) => href === "/research" ? research : pathname === href;
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -100,14 +105,14 @@ export default function Header({ financing = false, darkHero = false }: { financ
               </NavigationMenuItem>
               {links.map(({ href, label }) => (
                 <NavigationMenuItem key={label}>
-                  <NavigationMenuLink asChild><a href={href} aria-current={financing && href === "/gpu-financing" ? "page" : undefined}>{label}</a></NavigationMenuLink>
+                  <NavigationMenuLink asChild><a href={href} aria-current={isCurrentPage(href) ? "page" : undefined}>{label}</a></NavigationMenuLink>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
           </NavigationMenu>
           <div className="header-actions">
             <Button variant="inverse" size="nav" className="header-login transition-colors! duration-200! ease-out! motion-reduce:transition-none!" type="button">Login</Button>
-            <Button asChild variant="outline" size="nav" className="header-contact transition-[background-color,border-color]! duration-200! ease-out! motion-reduce:transition-none!"><a href={financing ? "#project" : "#access"}>Get in touch</a></Button>
+            <Button asChild variant="outline" size="nav" className="header-contact transition-[background-color,border-color]! duration-200! ease-out! motion-reduce:transition-none!"><a href={financing ? "#project" : research ? "/#access" : "#access"}>Get in touch</a></Button>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="menu-button" aria-label="Open navigation">
                 <span /><span />
@@ -142,7 +147,7 @@ export default function Header({ financing = false, darkHero = false }: { financ
             </AccordionItem>
           </Accordion>
           {links.map(({ href, label }) => (
-            <SheetClose asChild key={label}><Button asChild variant="link"><a href={href} aria-current={financing && href === "/gpu-financing" ? "page" : undefined}>{label}</a></Button></SheetClose>
+            <SheetClose asChild key={label}><Button asChild variant="link"><a href={href} aria-current={isCurrentPage(href) ? "page" : undefined}>{label}</a></Button></SheetClose>
           ))}
         </nav>
       </SheetContent>
