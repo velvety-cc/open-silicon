@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
-import { Badge } from "@/components/ui/badge";
+import { FinancingCTA } from "@/components/SiteFrame";
+import { pageMetadata } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { formatResearchDate, getResearchPost, getResearchPosts } from "@/lib/research";
 
@@ -16,7 +17,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const post = await getResearchPost((await params).slug);
   if (!post) notFound();
-  return { title: `${post.title} — Open Silicon Research`, description: post.description };
+  const metadata = pageMetadata(post.title, post.description, `/research/${post.slug}`);
+  return { ...metadata, openGraph: { ...metadata.openGraph, type: "article", publishedTime: post.date, authors: [post.author] } };
 }
 
 export default async function ResearchArticlePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -30,7 +32,6 @@ export default async function ResearchArticlePage({ params }: { params: Promise<
         <Button asChild variant="link" className="research-back"><Link href="/research">All research</Link></Button>
         <div className="research-post-category">
           <span>{post.category}</span>
-          {post.example && <Badge variant="outline" className="research-example">Example article</Badge>}
         </div>
         <h1>{post.title}</h1>
         <p className="research-article-description">{post.description}</p>
@@ -44,13 +45,15 @@ export default async function ResearchArticlePage({ params }: { params: Promise<
       </header>
 
       <div className={`research-article-cover research-cover${post.cover.startsWith("/hardware/") ? " research-cover-hardware" : ""}`}>
-        <Image src={post.cover} alt={post.coverAlt} fill sizes="(max-width: 1440px) 100vw, 1312px" priority />
+        <Image src={post.cover} alt={post.coverAlt} fill sizes="(max-width: 1440px) 100vw, 1312px" preload />
       </div>
 
       <div className="research-prose">
-        {post.example && <p className="research-example-note">Example article · Sample content for this research series.</p>}
+        <aside className="research-takeaway"><h2>Our view</h2><p>{post.takeaway}</p></aside>
         <ReactMarkdown>{post.content}</ReactMarkdown>
       </div>
+
+      <div className="research-prose research-sources"><h2>Sources</h2><ol>{post.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a></li>)}</ol><FinancingCTA /></div>
 
       {nextPost && (
         <nav className="research-next" aria-label="Continue reading">

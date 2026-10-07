@@ -1,8 +1,13 @@
-import { enquiryEmail, parseEnquiry } from "@/lib/financing";
+import { enquiryEmail, parseEnquiry, financingIsConfigured } from "@/lib/financing";
 
 export async function POST(request: Request) {
   const origin = request.headers.get("origin");
-  if (origin && origin !== new URL(request.url).origin) return Response.json({ error: "Invalid request origin." }, { status: 403 });
+  // Next may normalize request.url to the server's bind hostname. Validate the
+  // browser origin against the actual request Host, not that internal hostname.
+  const requestURL = new URL(request.url);
+  const host = request.headers.get("host") || requestURL.host;
+  const protocol = request.headers.get("x-forwarded-proto")?.split(",")[0].trim() || requestURL.protocol.slice(0, -1);
+  if (origin && (!["http", "https"].includes(protocol) || origin !== `${protocol}://${host}`)) return Response.json({ error: "Invalid request origin." }, { status: 403 });
   if (!request.headers.get("content-type")?.includes("application/json")) return Response.json({ error: "JSON required." }, { status: 415 });
   if (Number(request.headers.get("content-length") || 0) > 16000) return Response.json({ error: "Request too large." }, { status: 413 });
   let data;
@@ -18,7 +23,7 @@ export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.FINANCING_EMAIL_FROM;
   const to = process.env.FINANCING_EMAIL_TO;
-  if (!apiKey || !from || !to) return Response.json({ error: "Enquiries are temporarily unavailable. Please try again later." }, { status: 503 });
+  if (!financingIsConfigured()) return Response.json({ error: "Enquiries are temporarily unavailable. Please try again later." }, { status: 503 });
 
   try {
     const response = await fetch("https://api.resend.com/emails", {
@@ -29,7 +34,7 @@ export async function POST(request: Request) {
     });
     if (!response.ok) return Response.json({ error: "Unable to send your enquiry. Please try again." }, { status: 502 });
     const result = await response.json();
-    if (typeof result.id !== "string") return Response.json({ error: "Unable to confirm your enquiry. Please try again." }, { status: 502 });
+    if (typeof result.id !== "string" || !result.id.trim()) return Response.json({ error: "Unable to confirm your enquiry. Please try again." }, { status: 502 });
     return Response.json({ ok: true });
   } catch { return Response.json({ error: "Unable to send your enquiry. Please try again." }, { status: 502 }); }
 }

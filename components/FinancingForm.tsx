@@ -1,30 +1,25 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { financingPurposes as purposes, financingAmounts as amounts, enquiryDefaults as defaults, type FinancingEnquiry as Enquiry } from "@/lib/financing";
+import { useForm } from "react-hook-form";
+import { enquiryRoles, offtakeStatuses, enquiryDefaults as defaults, type FinancingEnquiry as Enquiry } from "@/lib/financing";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-const controlClass = "min-h-12 w-full border-[#d6d6dc] bg-white p-3 font-[inherit] text-base shadow-none md:text-base";
-const labelClass = "text-[length:var(--type-label)] leading-normal font-normal";
-const fieldClass = "flex min-w-0 flex-col gap-2";
-
-export default function FinancingForm() {
+export default function FinancingForm({ available }: { available: boolean }) {
   const requestIdentity = useRef<{ payload: string; key: string } | null>(null);
   const inFlight = useRef(false);
+  const [unavailable, setUnavailable] = useState(!available);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-  const { register, control, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Enquiry>({ defaultValues: defaults, mode: "onBlur" });
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Enquiry>({ defaultValues: defaults, mode: "onBlur" });
   const errorProps = (name: keyof Enquiry) => ({ "aria-invalid": Boolean(errors[name]), "aria-describedby": errors[name] ? `${name}-error` : undefined });
-  const errorMessage = (name: keyof Enquiry) => errors[name] && <p id={`${name}-error`} className="text-[length:var(--type-label)] text-destructive">{errors[name]?.message}</p>;
+  const errorMessage = (name: keyof Enquiry) => errors[name] && <p id={`${name}-error`} className="field-error">{errors[name]?.message}</p>;
   const requiredText = (message: string) => ({ validate: (value: string) => Boolean(value.trim()) || message });
 
   async function submitEnquiry(values: Enquiry) {
-    if (inFlight.current) return;
+    if (inFlight.current || unavailable) return;
     inFlight.current = true;
     setStatus("idle");
     try {
@@ -36,7 +31,9 @@ export default function FinancingForm() {
         body: payload,
         signal: AbortSignal.timeout(15000),
       });
-      if (!response.ok) throw new Error("Submission failed");
+      if (response.status === 503) { setUnavailable(true); return; }
+      const result: unknown = await response.json();
+      if (!response.ok || !result || typeof result !== "object" || !("ok" in result) || result.ok !== true) throw new Error("Enquiry not confirmed");
       setStatus("success");
       reset(defaults);
       requestIdentity.current = null;
@@ -45,29 +42,26 @@ export default function FinancingForm() {
     finally { inFlight.current = false; }
   }
 
-  return (
-    <Card className="financing-form-card min-w-0 gap-0 border-[var(--line)] p-8 shadow-none max-[1100px]:p-6 max-[380px]:p-5"><CardContent className="p-0">
-      <form className="financing-form" noValidate onSubmit={handleSubmit(submitEnquiry)} hidden={status === "success"} aria-busy={isSubmitting}>
-        <div className="mb-8!"><h3 className="mb-2!">Your project</h3><span className="text-[length:var(--type-caption)] text-[#595959]">Required fields are marked *</span></div>
-        <div hidden aria-hidden="true"><Label htmlFor="financing-website">Leave this field empty</Label><Input id="financing-website" tabIndex={-1} autoComplete="off" {...register("website")} /></div>
-        <fieldset disabled={isSubmitting} className="m-0 grid min-w-0 grid-cols-2 gap-6 border-0 p-0 max-[1100px]:gap-x-4 max-[760px]:grid-cols-1">
-          <div className={fieldClass}><Label className={labelClass} htmlFor="financing-name">Full name *</Label><Input className={controlClass} id="financing-name" autoComplete="name" aria-required="true" maxLength={120} placeholder="Your name" {...register("name", requiredText("Enter your name."))} {...errorProps("name")} />{errorMessage("name")}</div>
-          <div className={fieldClass}><Label className={labelClass} htmlFor="financing-company">Company *</Label><Input className={controlClass} id="financing-company" autoComplete="organization" aria-required="true" maxLength={160} placeholder="Company name" {...register("company", requiredText("Enter your company name."))} {...errorProps("company")} />{errorMessage("company")}</div>
-          <div className={`col-span-full ${fieldClass}`}><Label className={labelClass} htmlFor="financing-email">Work email *</Label><Input className={controlClass} id="financing-email" type="email" autoComplete="email" aria-required="true" maxLength={200} placeholder="you@company.com" {...register("email", { required: "Enter your work email.", validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) || "Enter a valid email address." })} {...errorProps("email")} />{errorMessage("email")}</div>
-          <div className={fieldClass}><Label className={labelClass} htmlFor="financing-purpose">How can we help? *</Label><Controller name="purpose" control={control} rules={{ required: "Choose how we can help." }} render={({ field }) => <Select value={field.value} onValueChange={field.onChange} disabled={isSubmitting}><SelectTrigger ref={field.ref} onBlur={field.onBlur} className={controlClass} id="financing-purpose" aria-required="true" {...errorProps("purpose")}><SelectValue placeholder="Select your need" /></SelectTrigger><SelectContent>{purposes.map((item) => <SelectItem key={item} value={item}>{item}</SelectItem>)}</SelectContent></Select>} />{errorMessage("purpose")}</div>
-          <div className={fieldClass}><Label className={labelClass} htmlFor="financing-amount">Financing need</Label><Controller name="amount" control={control} render={({ field }) => <Select value={field.value} onValueChange={field.onChange} disabled={isSubmitting}><SelectTrigger ref={field.ref} onBlur={field.onBlur} className={controlClass} id="financing-amount"><SelectValue placeholder="Select an amount" /></SelectTrigger><SelectContent>{amounts.map((item) => <SelectItem key={item} value={item}>{item}</SelectItem>)}</SelectContent></Select>} /></div>
-          <div className={fieldClass}><Label className={labelClass} htmlFor="financing-hardware">GPU model & quantity</Label><Input className={controlClass} id="financing-hardware" maxLength={200} placeholder="e.g. 256 × H200" {...register("hardware")} /></div>
-          <div className={fieldClass}><Label className={labelClass} htmlFor="financing-location">Project location</Label><Input className={controlClass} id="financing-location" maxLength={200} placeholder="City, country" {...register("location")} /></div>
-          <div className={`col-span-full ${fieldClass}`}><Label className={labelClass} htmlFor="financing-details">Anything else we should know?</Label><Textarea className={`${controlClass} min-h-[120px] resize-y`} id="financing-details" rows={4} maxLength={1500} placeholder="Your timeline, project stage, or questions for our team" {...register("details")} /></div>
-        </fieldset>
-        <div className="mt-8! grid justify-items-start gap-4 [&>.ui-button]:max-[760px]:w-full">
-          <Button type="submit" size="lg" disabled={isSubmitting}>{isSubmitting ? "Sending…" : "Send enquiry"}</Button>
-
-          {status === "error" && <p role="alert" className="text-[length:var(--type-label)] text-destructive">We couldn’t send your enquiry. Your details are still here. Please try again, or <a className="underline" href="mailto:credit@circuit.credit">email our team</a>.</p>}
-        </div>
-      </form>
-      {status === "success" && <div id="financing-success" tabIndex={-1} role="status" className="mt-6! rounded-[var(--radius-card)] bg-[var(--accent-soft)] p-6"><h4 className="m-0 mb-2! text-[length:var(--type-emphasis)] font-medium">Thank you for sharing your project</h4><p className="text-[length:var(--type-label)]">Your enquiry has been sent. Our team will follow up using the email you provided.</p><Button className="mt-4" type="button" variant="link" onClick={() => { setStatus("idle"); requestAnimationFrame(() => document.getElementById("financing-name")?.focus()); }}>Discuss another project</Button></div>}
-      <p className="mt-6! text-[length:var(--type-caption)] leading-relaxed text-[#595959]">Financing is subject to eligibility, credit review, and agreed documentation.</p>
-    </CardContent></Card>
-  );
+  return <div className="contact-form-card">
+    <form className="financing-form" noValidate onSubmit={handleSubmit(submitEnquiry)} hidden={status === "success"} aria-busy={isSubmitting}>
+      <div className="contact-form-heading"><h2>Your project</h2><p>Required fields are marked *</p></div>
+      {unavailable && <div className="form-unavailable" role="status"><strong>Enquiries are temporarily unavailable.</strong><p>This preview is not accepting submissions. Please return once the enquiry service is available.</p></div>}
+      <div hidden aria-hidden="true"><Label htmlFor="financing-website">Leave this field empty</Label><Input id="financing-website" tabIndex={-1} autoComplete="off" {...register("website")} /></div>
+      <fieldset disabled={isSubmitting} className="contact-fields">
+        <div className="contact-field"><Label htmlFor="financing-name">Name *</Label><Input id="financing-name" autoComplete="name" aria-required="true" maxLength={120} {...register("name", requiredText("Enter your name."))} {...errorProps("name")} />{errorMessage("name")}</div>
+        <div className="contact-field"><Label htmlFor="financing-company">Company *</Label><Input id="financing-company" autoComplete="organization" aria-required="true" maxLength={160} {...register("company", requiredText("Enter your company name."))} {...errorProps("company")} />{errorMessage("company")}</div>
+        <div className="contact-field full-width"><Label htmlFor="financing-email">Work email *</Label><Input id="financing-email" type="email" autoComplete="email" aria-required="true" maxLength={200} placeholder="you@company.com" {...register("email", { required: "Enter your work email.", validate: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) || "Enter a valid email address." })} {...errorProps("email")} />{errorMessage("email")}</div>
+        <div className="contact-field full-width"><Label htmlFor="financing-role">Your role</Label><select id="financing-role" {...register("role")}><option value="">Select a role (optional)</option>{enquiryRoles.map(role => <option key={role} value={role}>{role}</option>)}</select></div>
+        <div className="contact-field"><Label htmlFor="financing-hardware">GPU model and quantity</Label><Input id="financing-hardware" maxLength={200} placeholder="Model and number of GPUs" {...register("hardware")} /></div>
+        <div className="contact-field"><Label htmlFor="financing-location">Deployment location</Label><Input id="financing-location" maxLength={200} placeholder="City, country" {...register("location")} /></div>
+        <div className="contact-field full-width"><Label htmlFor="financing-amount">Financing need</Label><Input id="financing-amount" maxLength={300} placeholder="Amount, currency and how it would be used" {...register("amount")} /></div>
+        <div className="contact-field"><Label htmlFor="financing-timeline">Expected deployment timeline</Label><Input id="financing-timeline" maxLength={200} placeholder="Your expected timing" {...register("timeline")} /></div>
+        <div className="contact-field"><Label htmlFor="financing-offtake">Offtake status</Label><select id="financing-offtake" {...register("offtake")}><option value="">Select a status (optional)</option>{offtakeStatuses.map(item => <option key={item} value={item}>{item}</option>)}</select></div>
+        <div className="contact-field full-width"><Label htmlFor="financing-details">Project description</Label><Textarea id="financing-details" rows={4} maxLength={1500} placeholder="A short overview of your project or questions" {...register("details")} /></div>
+      </fieldset>
+      <div className="contact-form-actions"><Button type="submit" size="lg" disabled={isSubmitting || unavailable} aria-describedby={unavailable ? "submission-unavailable" : undefined}>{isSubmitting ? "Sending…" : "Send enquiry"}</Button>{unavailable && <p id="submission-unavailable">Submission is currently unavailable.</p>}{status === "error" && <p role="alert" className="field-error">We couldn’t confirm your enquiry. Your details are still here. Please try again.</p>}</div>
+    </form>
+    {status === "success" && <div id="financing-success" tabIndex={-1} role="status" className="form-success"><h2>Thank you for sharing your project.</h2><p>The enquiry service has accepted your message for sending to our team.</p><Button type="button" variant="link" onClick={() => { setStatus("idle"); requestAnimationFrame(() => document.getElementById("financing-name")?.focus()); }}>Discuss another project</Button></div>}
+    <p className="form-note">An enquiry starts a conversation. Financing is subject to project review, agreed terms and documentation.</p>
+  </div>;
 }

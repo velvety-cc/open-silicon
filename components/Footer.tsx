@@ -1,49 +1,45 @@
+import Link from "next/link";
 import Brand from "@/components/Brand";
 import Arrow from "@/components/Arrow";
 
 export default function Footer() {
   return (
-      <footer className="site-footer container">
-        <div className="footer-identity">
-          <Brand />
-          <p>Open capital for the<br />intelligence economy.</p>
+    <footer className="site-footer container">
+      <div className="footer-identity">
+        <Brand />
+        <p>Financing GPU infrastructure<br />supported by customer contracts.</p>
+      </div>
+      <nav className="footer-navigation" aria-label="Footer navigation">
+        <div className="footer-group">
+          <h2>Open Silicon</h2>
+          <ul>
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/research">Research</Link></li>
+          </ul>
         </div>
-        <nav className="footer-navigation" aria-label="Footer navigation">
-          <div className="footer-group">
-            <h2>Platform</h2>
-            <ul>
-              <li><a href="/#protocol">Marketplace</a></li>
-              <li><a href="/#opportunities">Offerings</a></li>
-              <li><a href="/#compute-title">Infrastructure</a></li>
-              <li><a href="/research">Research</a></li>
-            </ul>
-          </div>
-          <div className="footer-group">
-            <h2>For partners</h2>
-            <ul>
-              <li><a href="/#protocol">Investors</a></li>
-              <li><a href="/gpu-financing">GPU Financing</a></li>
-              <li><a href="mailto:credit@circuit.credit">Discuss financing <Arrow /></a></li>
-            </ul>
-          </div>
-          <div className="footer-group">
-            <h2>Connect</h2>
-            <ul>
-              <li><a href="mailto:hello@circuit.credit">Contact the team <Arrow /></a></li>
-              <li><a href="/#access">Private launch</a></li>
-            </ul>
-          </div>
-        </nav>
-        <div className="footer-information">
-          <div className="footer-disclaimer">
-            <p>Open Silicon is a technology platform, not a bank. Digital assets and private credit involve risk, including possible loss of principal. Returns are not guaranteed.</p>
-            <p>Product availability is subject to jurisdiction and eligibility.</p>
-          </div>
-          <div className="footer-bottom">
-            <span>© 2026 Open Silicon</span>
-            <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
-          </div>
+        <div className="footer-group">
+          <h2>For partners</h2>
+          <ul>
+            <li><Link href="/our-approach">Our Approach</Link></li>
+            <li><Link href="/contact">Discuss financing <Arrow /></Link></li>
+          </ul>
         </div>
-      </footer>
+        <div className="footer-group">
+          <h2>Connect</h2>
+          <ul>
+            <li><Link href="/contact">Contact the team <Arrow /></Link></li>
+          </ul>
+        </div>
+      </nav>
+      <div className="footer-information">
+        <div className="footer-disclaimer">
+          <p>Financing is subject to project review, agreed terms and documentation.</p>
+        </div>
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} Open Silicon</span>
+          <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+        </div>
+      </div>
+    </footer>
   );
 }

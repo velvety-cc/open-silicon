@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./marketing.css";
+import { businessDescription, pageMetadata } from "@/lib/site";
+import Header from "@/components/Header";
 
 const geist = localFont({ src: "./fonts/Geist.woff2", variable: "--font-geist", display: "swap", weight: "100 900" });
 const geistMono = localFont({ src: "./fonts/GeistMono.woff2", variable: "--font-geist-mono", display: "swap", weight: "100 900" });
 
-export const metadata: Metadata = {
-  title: "Open Silicon — Open Capital for the Intelligence Economy",
-  description:
-    "Institutional credit infrastructure connecting global crypto liquidity with AI data center operators.",
-};
+export const metadata: Metadata = pageMetadata("Capital for the Intelligence Economy", businessDescription, "/");
 
 export default function RootLayout({
   children,
@@ -18,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+      <body><Header />{children}</body>
     </html>
   );
 }

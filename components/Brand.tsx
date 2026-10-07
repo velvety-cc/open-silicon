@@ -5,9 +5,9 @@ export function BrandSymbol() {
 }
 
 export function BrandWordmark({ className = "" }: { className?: string }) {
-  return <span className={`brand-lockup ${className}`}><BrandSymbol /><span className="brand-name">open silicon</span></span>;
+  return <span className={`brand-lockup ${className}`}><BrandSymbol /><span className="brand-name">OpenSilicon</span></span>;
 }
 
 export default function Brand() {
-  return <a className="brand" href="/#top" aria-label="Open Silicon home"><BrandWordmark /></a>;
+  return <a className="brand" href="/" aria-label="Open Silicon home"><BrandWordmark /></a>;
 }

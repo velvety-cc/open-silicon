@@ -6,6 +6,7 @@ category: "Compute operations"
 author: "Open Silicon Research"
 cover: "/hardware/dgx-h100-h200-studio.webp"
 coverAlt: "A graphite GPU server system photographed against a light background"
+status: draft
 example: true
 ---
 

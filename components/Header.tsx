@@ -1,156 +1,157 @@
 "use client";
 
-import Brand from "@/components/Brand";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import Brand, { BrandWordmark } from "@/components/Brand";
+import { navigation } from "@/lib/site";
 import { Button } from "@/components/ui/button";
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink, NavigationMenuTrigger, NavigationMenuContent } from "@/components/ui/navigation-menu";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/components/ui/navigation-menu";
 import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetDescription, SheetClose } from "@/components/ui/sheet";
 
-import { useEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
+type IndicatorRect = { x: number; y: number; width: number; height: number };
+type UnderlineIndicator = { rect: IndicatorRect | null; href: string | null; visible: boolean; sliding: boolean };
+const headerCTA = "Get in touch";
 
-export default function Header({ financing = false, darkHero = false }: { financing?: boolean; darkHero?: boolean }) {
+export default function Header() {
   const pathname = usePathname();
-  const research = pathname.startsWith("/research");
+  const archived = ["/legacy", "/deck", "/deck.html", "/open-silicon-deck.html"].some(href => pathname === href || pathname.startsWith(`${href}/`));
+  const darkHero = pathname === "/" || pathname === "/our-approach";
   const [open, setOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState("");
-  const [menuSurface, setMenuSurface] = useState(false);
+  const [lightSurface, setLightSurface] = useState(!darkHero);
   const [scrolled, setScrolled] = useState(false);
-  const [lightSurface, setLightSurface] = useState(research || (financing && !darkHero));
   const header = useRef<HTMLElement>(null);
+  const nav = useRef<HTMLElement>(null);
+  const hoveredLink = useRef<HTMLAnchorElement | null>(null);
+  const [underline, setUnderline] = useState<UnderlineIndicator>(() => {
+    const href = navigation.find(item => pathname.startsWith(item.href))?.href ?? null;
+    return { rect: null, href, visible: !!href, sliding: false };
+  });
+  const [hover, setHover] = useState<{ rect: IndicatorRect | null; visible: boolean; sliding: boolean }>({ rect: null, visible: false, sliding: false });
+  const isCurrent = (href: string) => href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  const measureLink = (link: HTMLAnchorElement, underline = false): IndicatorRect | null => {
+    if (!nav.current) return null;
+    const bounds = link.getBoundingClientRect();
+    if (!bounds.width) return null;
+    const origin = nav.current.getBoundingClientRect();
+    const styles = getComputedStyle(link);
+    const left = underline ? parseFloat(styles.paddingLeft) : 0;
+    const right = underline ? parseFloat(styles.paddingRight) : 0;
+    return { x: bounds.left - origin.left + left, y: bounds.top - origin.top + (underline ? bounds.height - 6 : 0), width: bounds.width - left - right, height: underline ? 1 : bounds.height };
+  };
+  const clearHover = () => {
+    hoveredLink.current = null;
+    setHover(previous => ({ ...previous, visible: false }));
+  };
+  const positionUnderline = (link: HTMLAnchorElement | null) => {
+    const rect = link ? measureLink(link, true) : null;
+    const href = link?.getAttribute("href") ?? null;
+    setUnderline(previous => ({
+      rect: rect ?? previous.rect,
+      href,
+      visible: !!rect,
+      // Re-measuring the same route must not turn a first appearance into a slide.
+      sliding: !!rect && previous.visible && (previous.href !== href || previous.sliding),
+    }));
+  };
+  const selectLink = (href: string) => {
+    clearHover();
+    const link = nav.current?.querySelector<HTMLAnchorElement>(`a[href="${href}"]`);
+    if (link) positionUnderline(link);
+  };
+  const indicatorStyle = (rect: IndicatorRect | null) => rect ? { width: rect.width, height: rect.height, transform: `translate3d(${rect.x}px, ${rect.y}px, 0)` } : undefined;
+
+  useLayoutEffect(() => {
+    if (archived || !nav.current) return;
+    let disposed = false;
+    clearHover();
+    setOpen(false);
+    const measure = () => {
+      if (disposed) return;
+      const current = nav.current?.querySelector<HTMLAnchorElement>('a[aria-current="page"]');
+      positionUnderline(current ?? null);
+      if (hoveredLink.current) {
+        const rect = measureLink(hoveredLink.current);
+        setHover(previous => ({ ...previous, rect }));
+      }
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(nav.current);
+    nav.current.querySelectorAll('a').forEach(link => observer.observe(link));
+    void document.fonts.ready.then(measure);
+    return () => { disposed = true; observer.disconnect(); };
+  }, [pathname, archived]);
 
   useEffect(() => {
-    if (activeMenu) return;
-    // Keep navigation colors on the white surface until the panel has retracted.
-    const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 180;
-    const timer = window.setTimeout(() => setMenuSurface(false), delay);
-    return () => window.clearTimeout(timer);
-  }, [activeMenu]);
-
-  useEffect(() => {
-    const hero = document.querySelector<HTMLElement>('main > .hero, main > [data-header-theme="dark"]');
+    if (archived) return;
+    const hero = document.querySelector<HTMLElement>('main > [data-header-theme="dark"]');
     let frame: number | null = null;
-    const updateSurface = () => {
+    const update = () => {
       frame = null;
-      const mobile = window.matchMedia("(max-width: 1023px)").matches;
-      setScrolled(window.scrollY >= (mobile ? 8 : 70));
-      header.current?.style.setProperty("--header-height", `${header.current.getBoundingClientRect().height}px`);
-      const probe = (header.current?.getBoundingClientRect().bottom ?? 80) + 1;
-      setLightSurface(!hero || hero.getBoundingClientRect().bottom <= probe);
+      setScrolled(window.scrollY > 8);
+      const bottom = header.current?.getBoundingClientRect().bottom ?? 80;
+      setLightSurface(!hero || hero.getBoundingClientRect().bottom <= bottom);
     };
-    const scheduleUpdate = () => {
-      if (frame === null) frame = window.requestAnimationFrame(updateSurface);
-    };
-    updateSurface();
-    const resizeObserver = new ResizeObserver(scheduleUpdate);
-    if (header.current) resizeObserver.observe(header.current);
-    window.addEventListener("scroll", scheduleUpdate, { passive: true });
-    window.addEventListener("resize", scheduleUpdate);
-    return () => {
-      resizeObserver.disconnect();
-      if (frame !== null) window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", scheduleUpdate);
-      window.removeEventListener("resize", scheduleUpdate);
-    };
-  }, [financing, darkHero]);
-
-  useEffect(() => {
-    const desktop = window.matchMedia("(min-width: 1024px)");
-    const closeOnDesktop = () => { if (desktop.matches) setOpen(false); else setActiveMenu(""); };
+    const schedule = () => { if (frame === null) frame = requestAnimationFrame(update); };
+    const desktop = window.matchMedia("(min-width: 1200px)");
+    const closeOnDesktop = () => { if (desktop.matches) setOpen(false); };
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
     desktop.addEventListener("change", closeOnDesktop);
-    return () => desktop.removeEventListener("change", closeOnDesktop);
-  }, []);
+    return () => {
+      if (frame !== null) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      desktop.removeEventListener("change", closeOnDesktop);
+    };
+  }, [pathname, darkHero, archived]);
 
-  const productGroups = [
-    { label: "For capital", items: [
-      { href: "/#protocol", label: "Marketplace" },
-      { href: "/#opportunities", label: "Current offerings" },
-    ] },
-    { label: "For operators", items: [
-      { href: "/gpu-financing", label: "GPU Financing" },
-    ] },
-  ];
-  const links = [
-    { href: "/gpu-financing", label: "GPU Financing" },
-    { href: "/research", label: "Research" },
-    { href: "/#compute-title", label: "About" },
-  ];
-  const isCurrentPage = (href: string) => href === "/research" ? research : pathname === href;
+  if (archived) return null;
 
   return (
+    <>
+    <a className="skip-link" href="#main">Skip to content</a>
     <Sheet open={open} onOpenChange={setOpen}>
-      <header ref={header} className={`site-header transition-[--header-ink] duration-200 ease-out motion-reduce:transition-none${scrolled ? " is-scrolled" : ""}${lightSurface || menuSurface ? " is-light" : ""}`}>
-        <div aria-hidden="true" data-header-glass data-visible={scrolled && !lightSurface} className="pointer-events-none absolute inset-0 bg-neutral-950 opacity-0 backdrop-blur-[50px] transition-opacity duration-300 supports-[backdrop-filter:blur(1px)]:bg-black/10 data-[visible=true]:opacity-100 motion-reduce:transition-none" />
-        <div aria-hidden="true" data-header-surface data-visible={lightSurface || menuSurface} className="pointer-events-none absolute inset-0 bg-white opacity-0 transition-opacity duration-200 ease-out data-[visible=true]:opacity-100 motion-reduce:transition-none" />
+      <header ref={header} className={`site-header marketing-header${lightSurface ? " is-light" : ""}${scrolled ? " is-scrolled" : ""}`}>
         <div className="header-inner">
           <Brand />
-          <NavigationMenu className="nav-shell" value={activeMenu} onValueChange={(value) => { setActiveMenu(value); if (value) setMenuSurface(true); }} viewport={false} aria-label="Primary navigation">
+          <NavigationMenu ref={nav} className="nav-shell marketing-nav" viewport={false} aria-label="Primary navigation" data-indicators-ready={!!underline.rect} onPointerLeave={clearHover} onFocusCapture={event => { if (event.target instanceof HTMLElement && event.target.matches(":focus-visible")) clearHover(); }}>
+            <span aria-hidden="true" className="marketing-nav-hover" data-visible={hover.visible} data-sliding={hover.sliding} style={indicatorStyle(hover.rect)} />
+            <span aria-hidden="true" className="marketing-nav-underline" data-visible={underline.visible} data-sliding={underline.sliding} style={indicatorStyle(underline.rect)} />
             <NavigationMenuList>
-              <NavigationMenuItem value="products">
-                <NavigationMenuTrigger className="h-11 bg-transparent px-3.5 font-normal text-[color:var(--ink)] transition-[background-color,box-shadow] hover:bg-black/5 hover:text-[color:var(--ink)] focus:bg-black/5 focus:text-[color:var(--ink)] data-[state=open]:bg-black/5 data-[state=open]:text-[color:var(--ink)] data-[state=open]:hover:bg-black/5 data-[state=open]:focus:bg-black/5">Products</NavigationMenuTrigger>
-                <NavigationMenuContent forceMount inert={!activeMenu} aria-hidden={!activeMenu} className="group/products fixed! top-[var(--header-height,80px)]! left-0! z-50 mt-0! w-full! rounded-none! border-0! border-b! border-neutral-200! bg-white! p-0! shadow-none! [--ink:#000] animate-none! invisible [clip-path:inset(0_0_100%)] transition-[clip-path,visibility]! duration-180! ease-[cubic-bezier(0.22,1,0.36,1)]! data-[state=open]:visible data-[state=open]:[clip-path:inset(0)] data-[state=open]:duration-320! motion-reduce:transition-none!">
-                  <div className="grid grid-cols-[repeat(2,minmax(0,240px))] justify-center gap-12 px-[var(--shell-gutter)] pt-6 pb-10 translate-y-[-6px] opacity-0 transition-[opacity,translate] duration-120 ease-out group-data-[state=open]/products:translate-y-0 group-data-[state=open]/products:opacity-100 group-data-[state=open]/products:delay-50 group-data-[state=open]/products:duration-280 motion-reduce:transition-none">
-                    {productGroups.map((group) => <div key={group.label}>
-                      <p className="mb-3! text-sm font-normal text-neutral-500">{group.label}</p>
-                      <ul className="m-0 list-none space-y-1 p-0">
-                        {group.items.map(({ href, label }) => <li key={href}>
-                          <NavigationMenuLink asChild onSelect={() => setActiveMenu("")} className="inline-flex! min-h-10 justify-center rounded-none! bg-transparent! p-0! text-base! text-black! hover:bg-transparent! hover:text-[var(--accent)]! focus:bg-transparent! focus-visible:ring-2! focus-visible:ring-[var(--accent)]!">
-                            <a href={href}>{label}</a>
-                          </NavigationMenuLink>
-                        </li>)}
-                      </ul>
-                    </div>)}
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              {links.map(({ href, label }) => (
-                <NavigationMenuItem key={label}>
-                  <NavigationMenuLink asChild><a href={href} aria-current={isCurrentPage(href) ? "page" : undefined}>{label}</a></NavigationMenuLink>
+              {navigation.map(({ href, label }) => (
+                <NavigationMenuItem key={href}>
+                  <NavigationMenuLink asChild active={isCurrent(href)}>
+                    <Link href={href} onPointerEnter={event => {
+                      if (event.pointerType === "touch" || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+                      hoveredLink.current = event.currentTarget;
+                      const rect = measureLink(event.currentTarget);
+                      setHover(previous => ({ rect, visible: !!rect, sliding: previous.visible }));
+                    }} onClick={() => { if (isCurrent(href)) clearHover(); }} onNavigate={() => selectLink(href)}>{label}</Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
           </NavigationMenu>
           <div className="header-actions">
-            <Button variant="inverse" size="nav" className="header-login transition-colors! duration-200! ease-out! motion-reduce:transition-none!" type="button">Login</Button>
-            <Button asChild variant="outline" size="nav" className="header-contact transition-[background-color,border-color]! duration-200! ease-out! motion-reduce:transition-none!"><a href={financing ? "#project" : research ? "/#access" : "#access"}>Get in touch</a></Button>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="menu-button" aria-label="Open navigation">
-                <span /><span />
-              </Button>
-            </SheetTrigger>
+            <Button asChild variant="outline" size="nav" className="header-contact marketing-header-cta"><Link href="/contact">{headerCTA}</Link></Button>
+            <SheetTrigger asChild><Button variant="ghost" size="icon" className="menu-button" aria-label="Open navigation"><span /><span /></Button></SheetTrigger>
           </div>
         </div>
       </header>
-      <div aria-hidden="true" data-products-backdrop data-open={Boolean(activeMenu)} className="pointer-events-none fixed inset-0 z-40 bg-white/25 opacity-0 transition-opacity duration-200 ease-out data-[open=true]:opacity-100 data-[open=true]:duration-300 motion-reduce:transition-none" />
-      <SheetContent side="top" className="mobile-navigation">
+      <SheetContent side="top" className="mobile-navigation marketing-mobile-nav">
         <SheetTitle className="sr-only">Navigation</SheetTitle>
         <SheetDescription className="sr-only">Explore Open Silicon</SheetDescription>
-        <Brand />
+        <SheetClose asChild><a className="mobile-brand-link brand" href="/" aria-label="Open Silicon home"><BrandWordmark /></a></SheetClose>
         <nav aria-label="Mobile navigation">
-          <Accordion type="single" collapsible>
-            <AccordionItem value="products" className="border-0">
-              <AccordionTrigger className="min-h-11 items-center py-3 text-base! font-normal! hover:no-underline">Products</AccordionTrigger>
-              <AccordionContent className="pb-2">
-                <div className="space-y-5 border-l border-neutral-200 pl-4">
-                  {productGroups.map((group) => <div key={group.label}>
-                    <p className="mb-1! px-3 pt-2 text-xs font-medium text-neutral-500">{group.label}</p>
-                    <ul className="m-0 list-none space-y-1 p-0">
-                      {group.items.map(({ href, label }) => <li key={href}>
-                        <SheetClose asChild><Button asChild variant="link" className="h-auto w-full whitespace-normal! px-3! py-3! text-left hover:no-underline!">
-                          <a href={href}>{label}</a>
-                        </Button></SheetClose>
-                      </li>)}
-                    </ul>
-                  </div>)}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-          {links.map(({ href, label }) => (
-            <SheetClose asChild key={label}><Button asChild variant="link"><a href={href} aria-current={isCurrentPage(href) ? "page" : undefined}>{label}</a></Button></SheetClose>
-          ))}
+          {navigation.map(({ href, label }) => <SheetClose asChild key={href}><Link href={href} aria-current={isCurrent(href) ? "page" : undefined}>{label}</Link></SheetClose>)}
         </nav>
+        <SheetClose asChild><Button asChild size="lg"><Link href="/contact">{headerCTA}</Link></Button></SheetClose>
       </SheetContent>
     </Sheet>
+    </>
   );
 }

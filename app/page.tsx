@@ -1,130 +1,30 @@
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell, TableCaption } from "@/components/ui/table";
-import Arrow from "@/components/Arrow";
-import ComputeTenant from "@/components/ComputeTenant";
-import Image from "next/image";
-import LoanMarketplace from "@/components/LoanMarketplace";
-import HeroVideo from "@/components/HeroVideo";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Link from "next/link";
-import { BrandWordmark } from "@/components/Brand";
+import Image from "next/image";
+import SiteFrame, { FinancingCTA } from "@/components/SiteFrame";
+import HeroVideo from "@/components/HeroVideo";
+import { Button } from "@/components/ui/button";
+import { businessDescription, pageMetadata } from "@/lib/site";
 
-
-const opportunities = [
-  { id: "OS-001", name: "H200 Cluster I", location: "North America", tenant: "Anthropic", size: "$32.0M", apr: "10.2%", term: "24 months", status: "Open" },
-  { id: "OS-002", name: "B200 Pod II", location: "Nordics", tenant: "Mistral AI", size: "$48.5M", apr: "9.6%", term: "30 months", status: "Closing" },
-  { id: "OS-003", name: "H100 Campus III", location: "APAC", tenant: "AI inference provider", size: "$18.0M", apr: "11.1%", term: "18 months", status: "Funded" },
-];
+export const metadata = pageMetadata("Capital for the Intelligence Economy", businessDescription, "/");
 
 export default function Home() {
   return (
-    <div id="top">
-      <a className="skip-link" href="#main">Skip to content</a>
-      <Header />
-      <main id="main">
-        <section data-header-theme="dark" className="hero hero-immersive" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <h1 id="hero-title">Open capital for the<br /><span>intelligence economy.</span></h1>
-            <p className="hero-description">Connecting global liquidity to the machines that move us forward. Secured credit for the next generation of AI infrastructure.</p>
-            <div className="hero-actions">
-              <Button asChild size="lg"><a href="#protocol">View current offerings</a></Button>
-              <Button asChild variant="link"><Link href="/gpu-financing">Finance infrastructure</Link></Button>
-            </div>
-            <div className="hero-partners" aria-label="Partners">
-              <p><span className="tiny-cross" aria-hidden="true">+</span> Partners</p>
-              <div className="hero-partner-logos">
-                <a href="https://www.nvidia.com/" aria-label="NVIDIA"><Image src="/logos/nvidia-white.svg" alt="NVIDIA" width={130} height={24} /></a>
-                <a href="https://www.kimi.com/" aria-label="Kimi"><Image src="/logos/kimi-white.svg" alt="Kimi" width={84} height={28} /></a>
-              </div>
-            </div>
-          </div>
-          <figure className="hero-visual" aria-label="A data center takes shape from an empty foundation to illuminated server halls at dusk">
-            <HeroVideo />
-
-          </figure>
-        </section>
-
-        <section data-header-theme="light" className="compute-showcase" aria-labelledby="compute-title">
-          <div className="container">
-            <div className="compute-heading">
-              <p className="compute-wordmark"><BrandWordmark /></p>
-              <h2 id="compute-title">Capital. Compute. Possibility.</h2>
-              <Button asChild size="lg" className="compute-cta"><a href="#protocol">View current offerings</a></Button>
-            </div>
-            <div className="compute-stage">
-              <figure className="compute-product">
-                <Image src="/compute-rack.webp" alt="A graphite GPU server rack with stacked compute hardware" width={1024} height={1536} sizes="(max-width: 760px) 90vw, (max-width: 1100px) 44vw, 560px" quality={90} />
-              </figure>
-              <div className="compute-stat compute-stat-yield">
-                <p className="compute-value">7–12<span>%</span></p>
-                <h3>Target annual yield</h3>
-                <p>Senior secured credit.<br />{" "}Backed by productive compute.</p>
-              </div>
-              <div className="compute-stat compute-stat-terms">
-                <p className="compute-value">12–36</p>
-                <h3>Months</h3>
-                <p>Flexible terms.<br />{" "}Room to build what comes next.</p>
-              </div>
-              <div className="compute-stat compute-stat-assets">
-                <h3 className="compute-feature">Real asset<br />backed</h3>
-                <p className="compute-label">Fully compliant and verifiable</p>
-              </div>
-              <div className="compute-stat compute-stat-size">
-                <p className="compute-value"><span>$</span>500<span>M</span></p>
-                <h3>Current projects in the pipeline</h3>
-              </div>
-            </div>
-            <p className="compute-note">Indicative credit parameters. Returns are not guaranteed. Financing is subject to eligibility and credit diligence.</p>
-          </div>
-        </section>
-
-        <section data-header-theme="light" className="marketplace-section" id="protocol" aria-labelledby="marketplace-title">
-          <div className="container section-space">
-            <h2 id="marketplace-title">Own a piece of<br />what powers intelligence.</h2>
-            <div className="marketplace-showcase">
-              <LoanMarketplace />
-              <aside className="marketplace-story">
-                <h3>Real infrastructure.<br />A clear investment.</h3>
-                <p>Explore AIDC credit. See the machines, the compute tenants and the terms behind every allocation.</p>
-                <div className="marketplace-features"><span>Every offering, in focus</span><ul><li>Named compute tenants</li><li>Asset-backed loan structures</li><li>Defined rates and maturities</li><li>Monthly interest payments</li></ul></div>
-                <Button asChild variant="link"><a href="#opportunities">Explore offerings</a></Button>
-              </aside>
-            </div>
-            <p className="marketplace-disclaimer">Product demonstration. All projects and terms are illustrative. Named compute tenants, including Anthropic and Mistral AI, represent hypothetical scenarios, not confirmed customers, borrowers or partners.</p>
-          </div>
-        </section>
-
-        <section data-header-theme="light" className="deals-section container section-space" id="opportunities">
-          <div className="section-heading"><div><h2>Real infrastructure.<br /><span>A clearer view.</span></h2></div></div>
-          <Table className="deals-table" containerProps={{ className: "deals-table-wrap", role: "region", "aria-label": "Illustrative credit opportunities, scroll to see all columns", tabIndex: 0 }}>
-              <TableCaption className="sr-only">Illustrative opportunities. Availability and terms are subject to diligence.</TableCaption>
-              <colgroup><col className="deal-col-asset" /><col className="deal-col-tenant" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-number" /><col className="deal-col-status" /><col className="deal-col-action" /></colgroup>
-              <TableHeader><TableRow><TableHead scope="col">Asset / Region</TableHead><TableHead scope="col">Compute Tenant</TableHead><TableHead scope="col" className="numeric">Facility</TableHead><TableHead scope="col" className="numeric">Target APR</TableHead><TableHead scope="col" className="numeric">Term</TableHead><TableHead scope="col" className="status-cell">Status</TableHead><TableHead scope="col"><span className="sr-only">Enquire</span></TableHead></TableRow></TableHeader>
-              <TableBody>{opportunities.map((deal) => (
-                <TableRow key={deal.id}>
-                  <TableHead scope="row"><div className="deal-asset"><span className="asset-id">{deal.id}</span><span className="deal-asset-name"><strong>{deal.name}</strong><span className="asset-location">{deal.location}</span></span></div></TableHead>
-                  <TableCell className="tenant-cell"><ComputeTenant name={deal.tenant} /></TableCell>
-                  <TableCell className="numeric">{deal.size}</TableCell>
-                  <TableCell className="numeric apr-value">{deal.apr}</TableCell>
-                  <TableCell className="numeric">{deal.term}</TableCell>
-                  <TableCell className="status-cell"><Badge variant="outline" className={`deal-status deal-status--${deal.status.toLowerCase()}`}><i aria-hidden="true" />{deal.status}</Badge></TableCell>
-                  <TableCell><Button asChild variant="outline" size="icon" className="deal-link"><a href={`mailto:credit@circuit.credit?subject=${encodeURIComponent(`Enquiry: ${deal.name}`)}`} aria-label={`Enquire about ${deal.name}`}><Arrow /></a></Button></TableCell>
-                </TableRow>
-              ))}</TableBody>
-          </Table>
-        </section>
-
-        <section data-header-theme="dark" className="closing closing-image" id="access" aria-labelledby="closing-title">
-          <Image className="closing-background" src="/closing-datacenter-v3.webp" alt="Warmly illuminated server racks behind the glass facade of a data center at dusk" fill sizes="100vw" quality={90} />
-          <div className="container closing-content">
-            <p className="section-label">Let’s build the next chapter</p>
-            <div className="closing-grid"><h2 id="closing-title">The future needs<br /><span>something real.</span></h2><div><p>Join the private launch for qualified capital partners and infrastructure operators.</p><Button asChild size="lg"><a href="mailto:hello@circuit.credit?subject=Open%20Silicon%20private%20launch">Start a conversation</a></Button></div></div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+    <SiteFrame>
+      <section data-header-theme="dark" className="hero hero-immersive home-hero" aria-labelledby="hero-title">
+        <div className="hero-copy">
+          <h1 id="hero-title">Capital for the<br /><span>Intelligence Economy</span></h1>
+          <p className="hero-description">{businessDescription}</p>
+        </div>
+        <figure className="hero-visual" aria-label="A data center takes shape, from an empty foundation to illuminated server halls at dusk"><HeroVideo /></figure>
+      </section>
+      <section className="home-perspective container" aria-labelledby="perspective-title">
+        <div className="home-perspective-heading"><p className="eyebrow">From demand to deployment</p><h2 id="perspective-title">Productive compute.<br />A considered capital plan.</h2></div>
+        <div className="home-perspective-grid">
+          <figure className="home-hardware"><Image src="/compute-rack.webp" alt="Graphite GPU server rack with stacked compute hardware" width={1024} height={1536} sizes="(max-width: 760px) 90vw, 48vw" quality={90} /><figcaption>Physical infrastructure. Commercial fundamentals.</figcaption></figure>
+          <div className="home-perspective-copy"><p className="home-statement">The hardware is one part.<br />The whole project matters.</p><p>Customer contracts, equipment and deployment plans belong in the same conversation. We bring these elements together to evaluate the financing opportunity.</p><div className="home-fundamentals"><span>Contracted demand</span><span>GPU infrastructure</span><span>Deployment readiness</span></div><Button asChild variant="link"><Link href="/our-approach">Explore our approach <span aria-hidden="true">↗</span></Link></Button></div>
+        </div>
+      </section>
+      <section className="home-closing" aria-labelledby="home-closing-title"><Image src="/closing-datacenter-v3.webp" alt="Illuminated server racks behind the glass facade of a data center at dusk" fill sizes="100vw" quality={90} /><div className="container home-closing-copy"><p className="eyebrow">A real project starts a conversation</p><h2 id="home-closing-title">Bring your next<br />deployment into focus.</h2><FinancingCTA /></div></section>
+    </SiteFrame>
   );
 }

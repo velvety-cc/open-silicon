@@ -6,6 +6,7 @@ category: "AI infrastructure"
 author: "Open Silicon Research"
 cover: "/hero-datacenter-final.webp"
 coverAlt: "An illuminated data center campus at dusk"
+status: draft
 example: true
 ---
 

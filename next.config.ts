@@ -2,7 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   redirects() {
-    return [{ source: "/deck.html", destination: "/deck", permanent: false }];
+    return [
+      { source: "/gpu-financing", destination: "/our-approach", permanent: true },
+    ];
   },
   images: {
     qualities: [75, 90],
