@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-  title: "GPU Financing — Open Silicon",
+  title: "GPU Financing — OpenSilicon",
   description: "Direct financing and AIDC introductions for inference providers and model labs. Customer connections for data center operators.",
 };
 

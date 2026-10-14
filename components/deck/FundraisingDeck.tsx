@@ -94,12 +94,12 @@ export default function FundraisingDeck() {
 
   return <div className="deck-page bg-white text-black">
     <a href="#deck-main" className="skip-link">Skip to presentation</a>
-    <main id="deck-main" className="deck-stage" aria-label="Open Silicon investor presentation">
+    <main id="deck-main" className="deck-stage" aria-label="OpenSilicon investor presentation">
       {DECK_DATA.slides.map((slide, index) => {
         return <section key={slide.id} id={`slide-${index + 1}`} ref={element => { slideRefs.current[index] = element; }} className={`deck-slide ${current === index ? "is-active" : ""} deck-slide-${slide.id}`} tabIndex={-1} aria-label={`${index + 1}. ${slide.section}`} aria-roledescription="slide" data-notes={slideNotes[index]} inert={!mobile && !printing && current !== index ? true : undefined}>
           <div className="deck-slide-inner">
             <header className="flex shrink-0 items-center justify-between gap-5">
-              <Link href="/" aria-label="Open Silicon home" className="deck-wordmark" style={{ color: "inherit" }}><BrandWordmark /></Link>
+              <Link href="/" aria-label="OpenSilicon home" className="deck-wordmark" style={{ color: "inherit" }}><BrandWordmark /></Link>
               <span className={`deck-label text-right ${index === 0 ? "deck-cover-meta" : "text-[#777]"}`}>{index === 0 ? <>{DECK_DATA.asOf}<br />{DECK_DATA.confidential}</> : slide.section}</span>
             </header>
             <div className="deck-slide-body"><DeckSlideContent index={index} onNavigate={target => { navigate(target); requestAnimationFrame(() => slideRefs.current[target]?.focus({ preventScroll: true })); }} /></div>
@@ -110,7 +110,7 @@ export default function FundraisingDeck() {
     </main>
     <nav className="deck-controls fixed inset-x-0 bottom-0 z-40 flex h-[64px] items-center justify-between gap-4 border-t border-[var(--line)] bg-white px-6 max-[900px]:gap-2 max-[900px]:px-3" aria-label="Presentation controls">
       <Progress value={(current + 1) / count * 100} aria-label="Presentation progress" className="absolute inset-x-0 -top-px h-[2px] rounded-none bg-transparent" />
-      <span className="text-xs text-[#777] max-[900px]:hidden">Open Silicon <span className="ml-5 text-[#aaa]">← → navigate &nbsp; / &nbsp; N notes</span></span>
+      <span className="text-xs text-[#777] max-[900px]:hidden">OpenSilicon <span className="ml-5 text-[#aaa]">← → navigate &nbsp; / &nbsp; N notes</span></span>
       <div className="flex items-center gap-1">
         <Button variant="ghost" size="nav" aria-label="Table of contents" onClick={() => navigate(1)}><List aria-hidden="true" /><span className="max-[500px]:hidden">{DECK_DATA.ui.contents}</span></Button>
         <Sheet open={notesOpen} onOpenChange={setNotesOpen}>

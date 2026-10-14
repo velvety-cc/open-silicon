@@ -7,3 +7,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Brand spelling
+
+Always write the brand as **OpenSilicon**, with capital O and S and no space in the middle. Apply this spelling consistently to UI copy, headings, metadata, accessibility labels, documentation and future replies about this project.

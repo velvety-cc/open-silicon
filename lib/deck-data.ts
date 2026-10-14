@@ -1,6 +1,6 @@
 // Editable investment content. Public sources are dated; unverified private information remains highlighted.
 export const DECK_DATA = {
-  "brand": "Open Silicon",
+  "brand": "OpenSilicon",
   "raiseSize": "[TODO: final pool size]",
   "raiseRange": {
     "min": 10000000,
@@ -428,8 +428,8 @@ export const DECK_DATA = {
       }
     ],
     "observationTitle": "A broader potential refinancing market",
-    "observation": "Institutional capital expands financing options for eligible assets. Open Silicon underwrites repayment from each borrower’s existing cash flows.",
-    "note": "External market precedents, not Open Silicon transactions. Facility commitments are not amounts drawn. The capacity agreement is a service purchase commitment, not a loan or GPU buyback.",
+    "observation": "Institutional capital expands financing options for eligible assets. OpenSilicon underwrites repayment from each borrower’s existing cash flows.",
+    "note": "External market precedents, not OpenSilicon transactions. Facility commitments are not amounts drawn. The capacity agreement is a service purchase commitment, not a loan or GPU buyback.",
     "supportTitle": "Selective vendor support",
     "supportBody": "NVIDIA has disclosed capacity commitments and project-specific residual-value support. Protection depends on the signed terms.",
     "supportSource": {
@@ -451,7 +451,7 @@ export const DECK_DATA = {
       ]
     },
     "bridge": {
-      "label": "Open Silicon bridge",
+      "label": "OpenSilicon bridge",
       "value": "{{termRange}}",
       "unit": "months",
       "security": "Senior secured",
@@ -645,7 +645,7 @@ export const DECK_DATA = {
     "back": "Controlled collections and lender distributions",
     "nodes": [
       "LPs",
-      "Open Silicon SPV",
+      "OpenSilicon SPV",
       "Borrower SPV",
       "Operator",
       "Compute tenant"
@@ -1027,7 +1027,7 @@ export const DECK_DATA = {
       "section": "Investment overview",
       "title": "Bridge credit\nfor AI compute",
       "lede": "",
-      "notes": "Open Silicon proposes short-term senior secured credit against operating GPU infrastructure. The first pool targets {{raiseRange}}, with a {{couponRange}}% annual loan coupon before investor-level fees."
+      "notes": "OpenSilicon proposes short-term senior secured credit against operating GPU infrastructure. The first pool targets {{raiseRange}}, with a {{couponRange}}% annual loan coupon before investor-level fees."
     },
     {
       "id": "contents",
@@ -1062,14 +1062,14 @@ export const DECK_DATA = {
       "section": "Rental models and capital needs",
       "title": "Different rental models need different capital",
       "lede": "Large buildouts and smaller operating clusters have different funding requirements.",
-      "notes": "Financing depends on contract quality, asset status and cash flow, as well as transaction size. Open Silicon targets operating facilities with paying customers while longer-term financing is arranged. Uncontracted spot-only capacity falls outside the proposed mandate."
+      "notes": "Financing depends on contract quality, asset status and cash flow, as well as transaction size. OpenSilicon targets operating facilities with paying customers while longer-term financing is arranged. Uncontracted spot-only capacity falls outside the proposed mandate."
     },
     {
       "id": "market-deals",
       "section": "Deals overview",
       "title": "Institutional capital is expanding compute finance",
       "lede": "Public financings and selective vendor support are broadening the available structures.",
-      "notes": "These are external market precedents, not Open Silicon transactions or relationships. Institutional lending and selective vendor support can improve financeability for qualifying projects. They do not establish a market-wide floor for GPU rents or resale prices."
+      "notes": "These are external market precedents, not OpenSilicon transactions or relationships. Institutional lending and selective vendor support can improve financeability for qualifying projects. They do not establish a market-wide floor for GPU rents or resale prices."
     },
     {
       "id": "strategy",
@@ -1557,7 +1557,7 @@ export const DECK_DATA = {
       }
     },
     "thesis": {
-      "title": "Open Silicon’s target segment",
+      "title": "OpenSilicon’s target segment",
       "body": "{{operatorFacilityRange}} operating facilities. {{termRange}}-month secured bridge loans. Paying contracts at entry; larger off-take agreements can support refinancing."
     },
     "definitions": "Facility size describes operator assets, not rental-contract value or loan size. Short rental contracts can also be sold by large operators. This segmentation is a financing thesis, not an assertion that contract duration determines company size.",
@@ -1571,7 +1571,7 @@ export const DECK_DATA = {
           "title": "Demand chart: measure and forecast",
           "paragraphs": [
             "McKinsey’s December 2025 model estimates training demand at 23.1 GW and inference at 20.9 GW in 2025, rising to 62.2 GW and 93.3 GW in 2030. Inference’s share of their combined demand is 47.5% in 2025 and 60% in 2030, a gain of 12.5 percentage points calculated from those endpoints. This is distinct from inference demand growing 346%. Training also grows in absolute terms. The arrows show cumulative growth, calculated as (2030 demand / 2025 demand − 1) × 100 and rounded to the nearest whole percent: training +169%, inference +346%. These are five-year increases, not annual growth rates.",
-            "The scale callout highlights combined training and inference demand. The 2025 estimate totals 44.0 GW (23.1 + 20.9), while the 2030 forecast totals 155.5 GW (62.2 + 93.3). Dividing 155.5 by 44.0 gives 3.53×, displayed as approximately 3.5× the 2025 level. The absolute increase is 111.5 GW and cumulative growth is approximately 253%. The chart arrows separately show training growth of 169% and inference growth of 346%; neither is the combined demand multiple. These are model projections, not committed capacity purchases, measured GPU utilization or Open Silicon’s addressable lending volume.",
+            "The scale callout highlights combined training and inference demand. The 2025 estimate totals 44.0 GW (23.1 + 20.9), while the 2030 forecast totals 155.5 GW (62.2 + 93.3). Dividing 155.5 by 44.0 gives 3.53×, displayed as approximately 3.5× the 2025 level. The absolute increase is 111.5 GW and cumulative growth is approximately 253%. The chart arrows separately show training growth of 169% and inference growth of 346%; neither is the combined demand multiple. These are model projections, not committed capacity purchases, measured GPU utilization or OpenSilicon’s addressable lending volume.",
             "The chart shows published endpoints only, with no invented intermediate years or implied crossover date. GW measures modeled data center capacity demand, not GPU hours, paid occupancy or revenue. The source covers inference broadly, not agents alone. Hardware efficiency and deployment constraints can change the forecast."
           ]
         },
@@ -1604,7 +1604,7 @@ export const DECK_DATA = {
           "title": "Evidence boundary",
           "paragraphs": [
             "Chat itself is inference. The thesis is acceleration in an existing market, not the discovery of inference or an absence of earlier use cases. Agent adoption, paid compute capacity, chip utilization and borrower cash collections are distinct measures. The deck supports the first two; each operator’s paid occupancy and collections still require diligence.",
-            "Named companies are public market evidence only. They are not represented as Open Silicon borrowers, tenants, partners or committed counterparties."
+            "Named companies are public market evidence only. They are not represented as OpenSilicon borrowers, tenants, partners or committed counterparties."
           ]
         }
       ],
@@ -1713,7 +1713,7 @@ export const DECK_DATA = {
             "The three presentation stages are AI chatbots, coding agents and agent teams. They describe overlapping application patterns, not exclusive technical eras or the first invention of each capability. Agent teams existed before the frontier models named in the final column; those models illustrate continued capability development. The columns describe overlapping market phases, not product release windows. ChatGPT launched on 30 November 2022 using a GPT-3.5-series model. Anthropic introduced the original Claude on 14 March 2023, labeled Claude 1 here to distinguish it from later generations. These labels identify the early conversational-AI wave, not the only models available throughout 2023–2025.",
             "Claude Code became generally available on 22 May 2025. OpenAI launched the Codex macOS app on 2 February 2026 for managing multiple agents; this was not the first release of Codex. The middle column spans 2025 through early 2026 and illustrates how coding agents expanded the range and duration of inference workloads.",
             "The final column looks forward from the historical price series. GPT Astra refers to GPT-6 Astra, released on 3 September 2026. Claude Fable refers to the model family first announced with Fable 5 on 9 June 2026. These launches came after the H100 price series ends in April 2026, so they cannot explain the earlier rebound. They illustrate capabilities for longer and more complex agent workflows. The resulting demand is a thesis, not a measured contribution to GPU consumption; adoption and efficiency determine net compute use.",
-            "These are selected public milestones, not an exhaustive model history or a measured decomposition of GPU demand. Their timing does not prove that a specific release caused a price inflection. Supply, hardware costs and other inference applications remain part of the explanation. No named company is presented as an Open Silicon counterparty."
+            "These are selected public milestones, not an exhaustive model history or a measured decomposition of GPU demand. Their timing does not prove that a specific release caused a price inflection. Supply, hardware costs and other inference applications remain part of the explanation. No named company is presented as an OpenSilicon counterparty."
           ]
         },
         {
@@ -1864,14 +1864,14 @@ export const DECK_DATA = {
           "title": "Rental and financing dimensions",
           "paragraphs": [
             "Transaction size, rental duration, tenant credit and operator scale are separate dimensions. A large platform may sell short capacity contracts; a small operator may secure a long one. Large dedicated buildouts require construction and deployment capital. Smaller operating clusters may need liquidity against equipment already commissioned and recurring receivables.",
-            "Nebius describes 3–6 month capacity contracts, core 1–3 year contracts and longer agreements with investment-grade customers. This supports the existence of several rental models within the same operator. Uncontracted spot-only capacity does not satisfy Open Silicon’s paying-contract requirement."
+            "Nebius describes 3–6 month capacity contracts, core 1–3 year contracts and longer agreements with investment-grade customers. This supports the existence of several rental models within the same operator. Uncontracted spot-only capacity does not satisfy OpenSilicon’s paying-contract requirement."
           ]
         },
         {
           "title": "Competitive evidence",
           "paragraphs": [
-            "Small GPU loans already exist. USD.AI’s August 2026 report describes $15.3M funded to QumulusAI and $7.5M funded to Corvex. This prevents a blanket claim that small operators cannot borrow. Open Silicon’s differentiation must be demonstrated through borrower fit, duration, execution, advance size and protections.",
-            "A paying compute contract is necessary but not sufficient. Its termination rights, collection history, assignment, tenant credit and cash after costs determine debt capacity. No public financing precedent proves a particular Open Silicon borrower is eligible."
+            "Small GPU loans already exist. USD.AI’s August 2026 report describes $15.3M funded to QumulusAI and $7.5M funded to Corvex. This prevents a blanket claim that small operators cannot borrow. OpenSilicon’s differentiation must be demonstrated through borrower fit, duration, execution, advance size and protections.",
+            "A paying compute contract is necessary but not sufficient. Its termination rights, collection history, assignment, tenant credit and cash after costs determine debt capacity. No public financing precedent proves a particular OpenSilicon borrower is eligible."
           ]
         },
         {
@@ -2046,7 +2046,7 @@ export const DECK_DATA = {
         {
           "title": "Proposed commitment and capital call mechanics",
           "paragraphs": [
-            "The proposal separates signed LP commitments from contributed cash. SEC educational guidance describes commitments followed by calls over time and explains that fund documents govern call mechanics. That guidance supplies general context; it does not approve Open Silicon’s proposed structure.",
+            "The proposal separates signed LP commitments from contributed cash. SEC educational guidance describes commitments followed by calls over time and explains that fund documents govern call mechanics. That guidance supplies general context; it does not approve OpenSilicon’s proposed structure.",
             "Proposed sequence: execute commitments and investor onboarding; complete deal diligence, vehicle formation and security documentation; issue a capital call linked to an approved transaction; confirm receipt of LP contributions; fund the reserve and disburse only after all closing conditions are met. Any staged calls for formation costs, fees or reserves must be expressly permitted and disclosed in the documents.",
             "A master commitment vehicle investing in deal SPVs and commitments made directly to individual SPVs are different structures. The commitment recipient, allocation authority, LP participation or election rights and enforceable funding obligation remain [TODO: definitive vehicle and subscription structure]. A soft indication of interest cannot be represented as a binding commitment or cash available to lend.",
             "Items to finalize include notice and payment deadlines, investment period, permissible uses, recycling, recallable distributions, excuse rights, late-payment remedies, cancellation and return of contributions if a deal fails to close. No notice period or penalty is assumed in this deck. Uncalled capital is not cash in the lending SPV, and no subscription credit line or emergency backstop is assumed.",
@@ -2127,7 +2127,7 @@ export const DECK_DATA = {
         {
           "title": "Proposed commitment and capital call mechanics",
           "paragraphs": [
-            "The proposal separates signed LP commitments from contributed cash. SEC educational guidance describes commitments followed by calls over time and explains that fund documents govern call mechanics. That guidance supplies general context; it does not approve Open Silicon’s proposed structure.",
+            "The proposal separates signed LP commitments from contributed cash. SEC educational guidance describes commitments followed by calls over time and explains that fund documents govern call mechanics. That guidance supplies general context; it does not approve OpenSilicon’s proposed structure.",
             "Proposed sequence: execute commitments and investor onboarding; complete deal diligence, vehicle formation and security documentation; issue a capital call linked to an approved transaction; confirm receipt of LP contributions; fund the reserve and disburse only after all closing conditions are met. Any staged calls for formation costs, fees or reserves must be expressly permitted and disclosed in the documents.",
             "A master commitment vehicle investing in deal SPVs and commitments made directly to individual SPVs are different structures. The commitment recipient, allocation authority, LP participation or election rights and enforceable funding obligation remain [TODO: definitive vehicle and subscription structure]. A soft indication of interest cannot be represented as a binding commitment or cash available to lend.",
             "Items to finalize include notice and payment deadlines, investment period, permissible uses, recycling, recallable distributions, excuse rights, late-payment remedies, cancellation and return of contributions if a deal fails to close. No notice period or penalty is assumed in this deck. Uncalled capital is not cash in the lending SPV, and no subscription credit line or emergency backstop is assumed.",

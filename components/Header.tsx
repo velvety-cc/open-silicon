@@ -3,6 +3,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { XIcon } from "lucide-react";
 import Brand, { BrandWordmark } from "@/components/Brand";
 import { navigation } from "@/lib/site";
 import { Button } from "@/components/ui/button";
@@ -16,7 +17,7 @@ const headerCTA = "Get in touch";
 export default function Header() {
   const pathname = usePathname();
   const archived = ["/legacy", "/deck", "/deck.html", "/open-silicon-deck.html"].some(href => pathname === href || pathname.startsWith(`${href}/`));
-  const darkHero = pathname === "/" || pathname === "/our-approach";
+  const darkHero = pathname === "/" || pathname === "/about";
   const [open, setOpen] = useState(false);
   const [lightSurface, setLightSurface] = useState(!darkHero);
   const [scrolled, setScrolled] = useState(false);
@@ -142,10 +143,13 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <SheetContent side="top" className="mobile-navigation marketing-mobile-nav">
+      <SheetContent side="top" className="mobile-navigation marketing-mobile-nav" showCloseButton={false}>
         <SheetTitle className="sr-only">Navigation</SheetTitle>
-        <SheetDescription className="sr-only">Explore Open Silicon</SheetDescription>
-        <SheetClose asChild><a className="mobile-brand-link brand" href="/" aria-label="Open Silicon home"><BrandWordmark /></a></SheetClose>
+        <SheetDescription className="sr-only">Explore OpenSilicon</SheetDescription>
+        <div className="marketing-mobile-nav-header">
+          <SheetClose asChild><a className="mobile-brand-link brand" href="/" aria-label="OpenSilicon home"><BrandWordmark /></a></SheetClose>
+          <SheetClose asChild><Button variant="ghost" size="icon" aria-label="Close navigation"><XIcon aria-hidden="true" /></Button></SheetClose>
+        </div>
         <nav aria-label="Mobile navigation">
           {navigation.map(({ href, label }) => <SheetClose asChild key={href}><Link href={href} aria-current={isCurrent(href) ? "page" : undefined}>{label}</Link></SheetClose>)}
         </nav>

@@ -1,38 +1,31 @@
 # GPU financing enquiries
 
-The independent `/contact` page uses React Hook Form with the shared Input, Label, Textarea and Button components, plus native optional selects. The existing `/api/financing` endpoint sends text enquiries through Resend.
+The `/contact` page keeps its React Hook Form fields and shared Input, Label, Textarea and Button components. It is connected to **OpenSilicon Website Inquiry**, form ID `Z5g0C_SSqMR`.
 
-## Required receiving configuration
+The introduction follows About's editorial tone: “Capital for Tomorrow’s Intelligence” and “Discover Capital Partnerships and Financing for AI Infrastructure”. The heading uses the smaller 36–48px section role and the description is 18px. It overlays the full-resolution `contact-datacenter-8k.webp` (7680 × 4320, served directly), alongside a light-gray form surface headed “Talk to OpenSilicon”. The approved desktop split composition sits beneath the fixed white header, with a 760px minimum main height. The full form stays vertically centered; shared grid rows align the introduction’s heading with “Talk to OpenSilicon” while keeping flexible space above and below. On mobile the panels use normal stacked flow. The introduction starts directly with the two-line desktop heading (“Capital for” / “Tomorrow’s Intelligence”); its Contact eyebrow is removed. The unchanged homepage Footer follows in normal document flow. The frame fills at least the viewport height, with spare space assigned to the main region so there is no blank canvas below the footer; longer pages scroll naturally. On mobile the image and form stack as one composition without outer card margins. Field borders and audience choices are fine bottom rules; instructional and sensitive-contract notices are removed. Field labels carry required/optional guidance and the action remains “Submit”.
 
-The following server-side settings must be supplied with confirmed values in `.env.local` or the eventual host configuration:
+## Connection
 
-- `RESEND_API_KEY`: a valid Resend API key.
-- `FINANCING_EMAIL_FROM`: a verified sender, optionally in `Open Silicon <address>` format.
-- `FINANCING_EMAIL_TO`: the confirmed recipient address.
+The public endpoint is configured in `lib/financing.ts`:
 
-No replacement recipient or public contact email was supplied. The retired domain is rejected in receiving configuration. Never commit credentials. Restart the server after changing these settings.
+```text
+https://formcarry.com/s/Z5g0C_SSqMR
+```
 
-The recipient comes only from server configuration. Reply-To uses the validated customer's work email. All enquiry fields are included in the plain-text email: name, company, work email, role, GPU model and quantity, deployment location, free-text financing need, expected deployment timeline, offtake status and project description.
+The client calls `sendEnquiry` directly from the browser. It sends JSON with `Content-Type: application/json` and `Accept: application/json`, following [Formcarry's front-end contract](https://formcarry.com/llms.txt). No API key, receiving-email environment variable or backend proxy is needed. The previous `/api/financing` route has been removed. Formcarry notifications, recipients and other service settings remain in the Formcarry dashboard.
 
-Only name, company and work email are required. Optional fields remain unspecified when empty; no signed contract is implied. No upload is required.
+Browser submission preserves each visitor's IP for Formcarry's rate limiting. The five visible fields are `interest`, `name`, `email`, `company` and `message`. Interest is required and starts unselected: **Providing capital** covers LPs and capital providers; **Seeking capital** covers operators, offtakers, AIDCs and NeoClouds. Name and email are required; company and message are optional. The message placeholder follows the selected interest without replacing entered text. Detailed GPU, financing amount, location, timeline and offtake questions are reserved for follow-up. The hidden spam trap uses Formcarry's reserved `_gotcha` field.
 
-## States and retry behavior
+## Submission behavior
 
-- Missing or invalid configuration: Contact displays an unavailable notice and disables submission; direct valid POST requests return 503. Fields remain editable. No success is simulated.
-- Sending: fields and submit action are disabled, and a synchronous in-flight guard prevents repeated clicks.
-- Failure, timeout or uncertain response: the fields are retained. Retrying an identical payload reuses its idempotency key so the provider can deduplicate it.
-- Accepted: the provider must return a successful response with a nonempty message ID; the client must also receive `ok: true`. Only then are fields reset and a confirmation shown.
+- Field validation and length limits run before sending, including the two permitted interests and the honeypot.
+- While sending, fields and the button are disabled; an in-flight guard prevents repeated clicks.
+- Success requires both a successful HTTP status and JSON `code: 200`, `status: "success"`. Only then does the form reset and show confirmation.
+- Failed requests preserve the visitor's entries. A rate-limited response asks the visitor to wait 15 seconds. A paused or missing form shows an unavailable message and leaves retry possible.
+- Provider acknowledgements confirm stored submissions, not final inbox delivery. A retry after a lost acknowledgement can create another submission.
 
-The confirmation means the enquiry service accepted the message. It does not prove final inbox delivery. If the provider accepts a request but the browser loses the acknowledgement, retry uses the same key rather than creating a new request identity. The provider controls the retention period for this deduplication.
+## Verification
 
-Validation applies both in the browser and server, with maximum lengths, typed fields, role/status enums, honeypot, request identity, JSON-size limits and same-origin browser checks. The origin check uses actual request Host and scheme because Next can normalize its internal bind hostname.
+Unit tests mock Formcarry and never create real submissions. `scripts/verify-site.mjs` checks the form action and honeypot without posting. A live browser test must be explicitly authorized; use clearly marked synthetic details and verify the resulting record in the Formcarry dashboard.
 
-## Before launch
-
-1. Confirm the responsible legal entity, privacy information, receiving address and verified sending identity.
-2. Configure the real service and restart/rebuild as appropriate.
-3. Submit an authorized real test through the website and verify actual receipt at the intended inbox, including every optional field and Reply-To.
-4. Check provider failure, retries and acknowledgement states against the live configuration.
-5. Apply host-level request throttling for the public endpoint. Keep any proxy that terminates TLS configured to provide the correct original scheme.
-
-No real inbox-delivery test has been performed because the receiving service and address are missing.
+On October 14, 2026, an authorized live test of the earlier, ten-field form was sent from the project's `/contact` page with marker `OS-FORMCARRY-20261014-01` and email `formcarry-test@example.com`. The page showed its success confirmation, and the Formcarry dashboard displayed all ten business fields in the stored record. The `_gotcha` field was not stored, as expected. This verifies submission storage; final notification inbox delivery was not checked. The subsequent five-field simplification retains the same endpoint; its tests mock both capital audiences without adding another live submission.

@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { primaryCTA } from "@/lib/site";
 
-export default function SiteFrame({ children }: { children: React.ReactNode }) {
-  return <div id="top" className="marketing-site"><main id="main">{children}</main><Footer /></div>;
+export default function SiteFrame({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return <div id="top" className={`marketing-site${className ? ` ${className}` : ""}`}><main id="main">{children}</main><Footer /></div>;
 }
 
 export function FinancingCTA({ className = "" }: { className?: string }) {

@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Slot } from "radix-ui"
 
-// shadcn variants share Open Silicon's size and color tokens.
+// shadcn variants share OpenSilicon's size and color tokens.
 const buttonVariants = cva(
   "ui-button",
   {

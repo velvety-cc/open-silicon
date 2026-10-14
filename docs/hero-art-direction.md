@@ -1,4 +1,4 @@
-# Open Silicon hero media
+# OpenSilicon hero media
 
 - Active video: `public/hero-datacenter-v2.mp4`, derived from the user-supplied `hf_20260911_023615_f891c903-c007-4d6e-b1d0-9d35aa3efae3.mp4`.
 - Video: 3840 × 2160, 30 fps, 149 frames, 4.966667 seconds, H.264 / yuv420p, no audio, 6,250,556 bytes.
@@ -35,3 +35,7 @@ Prompt direction: cinematic extra-wide architectural photograph of a modern AI d
 Active closing image updated to `public/closing-datacenter-v2.webp`, from user-supplied `/Users/velvety/Downloads/ChatGPT Image Sep 10, 2026, 09_11_20 PM.png`. WebP quality 92, original framing and colors preserved. Replaces the generated closing image without changing layout.
 
 Active closing image: `public/closing-datacenter-v3.webp`, from user-supplied `/Users/velvety/Downloads/hf_20260911_041351_a9c1c31d-c945-4d7e-93e2-87d204cefe61.png`. Delivered as WebP quality 92, maximum width 3840, without upscaling or changing framing/colors. Existing section layout retained.
+
+## Contact image delivery
+
+Contact reuses the same user-supplied data center photograph at its full 7680 × 4320 resolution. `public/contact-datacenter-8k.webp` is exported directly from `/Users/velvety/Downloads/hf_20260911_023258_2fddc771-4851-41d4-a0a4-e7a35544948a.png` as WebP quality 92, without resizing (2,035,212 bytes). The Contact Image uses `unoptimized` to serve this prepared asset directly. The previous width-based responsive selection loaded a 1920px variant even when the portrait-shaped cover area required a much larger raster for its height. The homepage retains its existing video and 3840px ending still.

@@ -26,5 +26,8 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local hosting workspace
+/.openai/
+
 # typescript
 *.tsbuildinfo

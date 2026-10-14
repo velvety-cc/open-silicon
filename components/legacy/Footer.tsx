@@ -36,11 +36,11 @@ export default function Footer() {
         </nav>
         <div className="footer-information">
           <div className="footer-disclaimer">
-            <p>Open Silicon is a technology platform, not a bank. Digital assets and private credit involve risk, including possible loss of principal. Returns are not guaranteed.</p>
+            <p>OpenSilicon is a technology platform, not a bank. Digital assets and private credit involve risk, including possible loss of principal. Returns are not guaranteed.</p>
             <p>Product availability is subject to jurisdiction and eligibility.</p>
           </div>
           <div className="footer-bottom">
-            <span>© 2026 Open Silicon</span>
+            <span>© 2026 OpenSilicon</span>
             <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
           </div>
         </div>

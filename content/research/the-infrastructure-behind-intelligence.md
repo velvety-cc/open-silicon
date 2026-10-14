@@ -3,7 +3,7 @@ title: "The infrastructure behind intelligence"
 description: "A closer look at the power, cooling, and connections that turn silicon into an AI data center."
 date: "2026-10-05"
 category: "AI infrastructure"
-author: "Open Silicon Research"
+author: "OpenSilicon Research"
 cover: "/hero-datacenter-final.webp"
 coverAlt: "An illuminated data center campus at dusk"
 status: draft

@@ -1,6 +1,6 @@
 # GPU 回本周期与机构融资支持：补充研究
 
-研究截止：2026-09-17，美国太平洋时间。延续三名 agent 的蓝队、红队和独立数据核验，并由主审复核关键披露及计算。本文为研究稿，未修改 app，也不将外部机构表述为 Open Silicon 的客户、投资人或合作方。
+研究截止：2026-09-17，美国太平洋时间。延续三名 agent 的蓝队、红队和独立数据核验，并由主审复核关键披露及计算。本文为研究稿，未修改 app，也不将外部机构表述为 OpenSilicon 的客户、投资人或合作方。
 
 **更新判断：用户提出的两点都应加入。租价需要转化为资本回收能力；机构融资也应作为正面证据。尤其 NVIDIA 已披露容量采购承诺，并提出选择性的残值支持机制，这比一般的行业背书更有信用意义。** 但这类支持属于合同覆盖的项目，不是全部 GPU 租金或二手价格的统一下限。
 
@@ -24,7 +24,7 @@ Hashrate Index 在 2026-08-31 公布八卡风冷 HGX H100 整机的卖方要价�
 
 一项独立卖方核对：SSP 的 8 月 26 日页面列出翻新八卡 H100 节点，指示价 $240,000，即 $30,000/GPU，明确为美国 ex-works，未含运输等到场成本。这支持成本量级，不是具有约束力的采购或回购报价。[卖方原始页面](https://sspglobal.ai/availability/nvidia-h100-availability)
 
-主图采用以下**研究假设，不是行业标准或 Open Silicon 实际数据**：
+主图采用以下**研究假设，不是行业标准或 OpenSilicon 实际数据**：
 
 | 输入 | 数值 | 性质 |
 |---|---:|---|
@@ -83,7 +83,7 @@ Nebius 在 2026 Q2 股东信中称，新合同对应的预计回本从此前 2�
 
 ## 3. BlackRock 与其他机构：融资交易确实在深化
 
-以下都是外部市场交易先例，不是 Open Silicon 过往业绩。额度、资本解决方案和企业价值不混为已支付现金。
+以下都是外部市场交易先例，不是 OpenSilicon 过往业绩。额度、资本解决方案和企业价值不混为已支付现金。
 
 | 日期 | 交易 | 已核实结构 | 对 thesis 的正面意义 |
 |---|---|---|---|
@@ -105,7 +105,7 @@ Nebius 在 2026 Q2 股东信中称，新合同对应的预计回本从此前 2�
 | 个别项目的残值支持 | NVIDIA 明确提出，实际保护取决于签署条款 | Selective vendor support can strengthen asset financeability. |
 | 整个 GPU 租金或二手价格有统一下限 | 本次未找到这样的公开承诺 | 不把市场利好写成全行业保价 |
 
-对 Open Silicon，这是**更深的潜在再融资市场与更丰富的信用结构**，是正面因素。我们可以在这个融资生态中服务特定的小额运营资产需求，而不必通过“所有机构都不愿意放款”来证明自身存在的理由。这是定位推论，仍需自己的客户及交易证明。
+对 OpenSilicon，这是**更深的潜在再融资市场与更丰富的信用结构**，是正面因素。我们可以在这个融资生态中服务特定的小额运营资产需求，而不必通过“所有机构都不愿意放款”来证明自身存在的理由。这是定位推论，仍需自己的客户及交易证明。
 
 若某借款人确实拥有覆盖其设备的容量或残值支持，可将其纳入承销，但应按实际覆盖金额、现金时点和贷方权利计入。同一份容量不能同时计满第三方租户收入与 NVIDIA fallback 收入。没有该合同的资产只能享有间接市场利好，不能把支持金额加进清算估值或偿债现金。
 
@@ -119,13 +119,13 @@ Nebius 在 2026 Q2 股东信中称，新合同对应的预计回本从此前 2�
 | 2 | Stronger rental pricing improves capital recovery | 长周期租价 + 明确标注假设的回本区间；Nebius 预计回本改善作为独立案例 |
 | 3 | Different rental models create different capital needs | 长期容量合同、已运营小集群、按需租赁各自的资本用途与融资条件 |
 | 4 | Institutional capital is establishing compute as a financeable asset | BlackRock、Blackstone、Apollo 的已公布交易；NVIDIA 融资平台目标单列 |
-| 5 | Vendor support is strengthening selected financing structures | 容量承诺、选择性残值支持及更灵活的融资期限；引出 Open Silicon 的运营资产短期信贷定位 |
+| 5 | Vendor support is strengthening selected financing structures | 容量承诺、选择性残值支持及更灵活的融资期限；引出 OpenSilicon 的运营资产短期信贷定位 |
 
 细致的 DSCR、费用瀑布和违约压力测试放到 Credit / Underwriting 节，Market 主线保持需求、经济性、融资生态的发展。对基准回款不依赖再融资的承诺，仍需在信用部分用逐月现金流验证。
 
 建议本节核心句：
 
-> **Institutional capital and selective vendor support are making compute assets more financeable. Open Silicon targets short-term credit needs at operating facilities within this expanding market.**
+> **Institutional capital and selective vendor support are making compute assets more financeable. OpenSilicon targets short-term credit needs at operating facilities within this expanding market.**
 
 ### 可复用附件
 

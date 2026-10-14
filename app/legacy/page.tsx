@@ -20,7 +20,7 @@ const opportunities = [
   { id: "OS-003", name: "H100 Campus III", location: "APAC", tenant: "AI inference provider", size: "$18.0M", apr: "11.1%", term: "18 months", status: "Funded" },
 ];
 
-export const metadata: Metadata = { title: "Legacy preview — Open Silicon", robots: { index: false, follow: false, nocache: true } };
+export const metadata: Metadata = { title: "Legacy preview — OpenSilicon", robots: { index: false, follow: false, nocache: true } };
 
 export default function LegacyHome() {
   if (process.env.NODE_ENV !== "development") notFound();

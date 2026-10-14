@@ -124,7 +124,7 @@ export default function Header({ financing = false, darkHero = false }: { financ
       <div aria-hidden="true" data-products-backdrop data-open={Boolean(activeMenu)} className="pointer-events-none fixed inset-0 z-40 bg-white/25 opacity-0 transition-opacity duration-200 ease-out data-[open=true]:opacity-100 data-[open=true]:duration-300 motion-reduce:transition-none" />
       <SheetContent side="top" className="mobile-navigation">
         <SheetTitle className="sr-only">Navigation</SheetTitle>
-        <SheetDescription className="sr-only">Explore Open Silicon</SheetDescription>
+        <SheetDescription className="sr-only">Explore OpenSilicon</SheetDescription>
         <Brand />
         <nav aria-label="Mobile navigation">
           <Accordion type="single" collapsible>

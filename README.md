@@ -1,6 +1,6 @@
-# Open Silicon — GPU infrastructure financing
+# OpenSilicon — GPU infrastructure financing
 
-Open Silicon focuses on financing GPU deployments backed by contracted compute demand. This Next.js website serves operators, compute buyers, and brokers or advisors bringing real projects for discussion.
+OpenSilicon focuses on financing GPU deployments backed by contracted compute demand. This Next.js website serves operators, compute buyers, and brokers or advisors bringing real projects for discussion.
 
 ## Local preview
 
@@ -31,9 +31,9 @@ Keep the Next server and `proxy.ts` in any eventual deployment. Static export or
 
 ## Enquiries
 
-The Contact form posts to `/api/financing`; the server uses the existing Resend mechanism. Only name, company and work email are required. Role, GPU model and quantity, location, free-text financing need, timeline, offtake status and description are optional. Offtake is blank initially.
+The Contact form submits directly from the browser to Formcarry's **OpenSilicon Website Inquiry** form (`Z5g0C_SSqMR`). Its public endpoint is `https://formcarry.com/s/Z5g0C_SSqMR`, configured in `lib/financing.ts`. Visitors choose **Providing capital** (LPs and capital providers) or **Seeking capital** (operators, offtakers, AIDCs and NeoClouds), then enter their name and email. Company and a short message are optional. There are five visible fields; detailed project questions are left for a follow-up conversation.
 
-Set `RESEND_API_KEY`, `FINANCING_EMAIL_FROM` and `FINANCING_EMAIL_TO` using confirmed receiving details and a verified sender. No receiving address has been supplied for this revision. Without valid configuration the form displays its unavailable state and the endpoint returns 503. No simulated success or old email fallback is used. See [enquiry setup](docs/financing-setup.md).
+No email credentials or environment variables are required for submission. Formcarry controls receiving notifications in its dashboard. Success requires a successful HTTP response and Formcarry's JSON acknowledgement (`code: 200`, `status: "success"`). The previous `/api/financing` backend proxy is removed, as [Formcarry recommends browser submission](https://formcarry.com/llms.txt) to preserve per-visitor IP rate limiting. See [enquiry setup](docs/financing-setup.md).
 
 ## Research publication
 
@@ -45,7 +45,7 @@ One filtered collection drives the index, article lookup, static parameters, rel
 
 ## Metadata and confirmed domain
 
-No public domain has been confirmed. `SITE_URL` is unset by default. Titles, descriptions and Open Graph text describe GPU financing; canonical, Open Graph URLs, image URLs and sitemap URLs are omitted until a confirmed HTTPS origin is supplied. Previews and unconfigured sites are excluded from indexing. After setting `SITE_URL`, rebuild to generate canonical, sharing image and sitemap URLs. Never derive these from request headers.
+No public domain has been confirmed. `SITE_URL` is unset by default. Titles, descriptions and Open Graph text follow the public brand copy; canonical, Open Graph URLs, image URLs and sitemap URLs are omitted until a confirmed HTTPS origin is supplied. Previews and unconfigured sites are excluded from indexing. After setting `SITE_URL`, rebuild to generate canonical, sharing image and sitemap URLs. Never derive these from request headers.
 
 ## Validation
 
@@ -58,7 +58,7 @@ node scripts/verify-site.mjs http://127.0.0.1:3001 production
 node scripts/verify-site.mjs http://127.0.0.1:3000 development
 ```
 
-The HTTP verifier only posts a synthetic enquiry when the page explicitly says its receiving service is unconfigured. It never submits to a configured service. Unit tests stub provider responses and do not send email.
+The HTTP verifier checks the Formcarry connection without submitting. Unit tests stub provider responses and do not create real submissions. Live browser submissions require explicit authorization and clearly marked test data.
 
 See the [delivery and launch checklist](docs/redesign/handover.md), [reusable business copy](docs/redesign/core-copy.md), and screenshots in `docs/redesign/screenshots/`.
 

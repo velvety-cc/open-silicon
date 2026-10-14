@@ -36,8 +36,10 @@ User-requested NVIDIA and Kimi marks in white. Vector path geometry is preserved
 - NVIDIA: `n24-nvidia-logo` symbol from https://www.nvidia.com/en-us/data-center/dgx-b200/.
 - Kimi: navigation wordmark SVG from https://www.kimi.com/en/resources/kimi-brand.
 
-## Open Silicon symbol
+## OpenSilicon symbol
 
-Vector reconstruction of the user-supplied `ChatGPT Image Sep 10, 2026, 09_50_06 PM.png`: circular silhouette, rounded square counter, and an open diagonal cut. `public/logos/open-silicon-symbol.svg` is the standalone transparent SVG. `components/Brand.tsx` shares the mark across page lockups using `currentColor`. `app/icon.svg` adapts to light/dark browser themes; `app/favicon.ico` contains 16/32/48px fallbacks, and `app/apple-icon.png` is a padded 180px white-background home-screen icon. Raster icons are rendered from the vector, not traced from the supplied bitmap.
+The current source is the user-approved `open-silicon-icon.svg`, supplied from Downloads on 2026-10-13. `public/logos/open-silicon-symbol.svg` preserves the supplied SVG byte for byte, including its 256 × 256 viewBox, path, transform, black fill, title and description. The outline has a circular outer edge, straight inner edges, three equal-radius circular inner corners and an open diagonal cut. It supersedes the earlier bitmap contour reconstruction.
 
-Symbol refinement: the active path now follows the largest white symbol in the supplied reference directly, using a luminance contour and smoothed quadratic curves. Uniform scale preserves the square counter, its vertical placement, the diagonal aperture, and the slightly noncircular reference silhouette. At the reference resolution, the thresholded silhouette overlap (intersection over union) is 99.81%; the remaining difference is edge smoothing. All icon variants use this same outline.
+`components/Brand.tsx` uses the same path, transform and viewBox with `currentColor` for light and dark page lockups. The legacy Brand component reuses its BrandSymbol; the standalone internal deck uses the same geometry. The OpenSilicon wordmark and existing layout proportions are retained.
+
+`app/icon.svg` uses this geometry and adapts to light/dark browser themes. `app/favicon.ico` contains transparent 16/32/48px fallbacks; `app/apple-icon.png` is a padded 180px white-background home-screen icon. Both raster formats are rendered directly from the approved SVG. The Downloads brand-assets folder and ZIP carry the approved original plus the updated site icons and implementation snapshot.

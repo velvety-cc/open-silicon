@@ -3,7 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   redirects() {
     return [
-      { source: "/gpu-financing", destination: "/our-approach", permanent: true },
+      { source: "/our-approach", destination: "/about", permanent: true },
+      { source: "/gpu-financing", destination: "/about", permanent: true },
     ];
   },
   images: {

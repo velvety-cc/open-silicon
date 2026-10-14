@@ -5,7 +5,7 @@ import "./deck.css";
 import "./credit-layouts.css";
 
 export const metadata: Metadata = {
-  title: "Open Silicon | Bridge credit for AI compute",
+  title: "OpenSilicon | Bridge credit for AI compute",
   description: "Senior secured bridge credit for operating AI compute infrastructure.",
   robots: { index: false, follow: false, nocache: true },
 };

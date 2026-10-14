@@ -3,7 +3,7 @@ title: "From GPUs to usable compute"
 description: "Hardware is the starting point. Bringing a cluster into service is a separate piece of the story."
 date: "2026-10-02"
 category: "Compute operations"
-author: "Open Silicon Research"
+author: "OpenSilicon Research"
 cover: "/hardware/dgx-h100-h200-studio.webp"
 coverAlt: "A graphite GPU server system photographed against a light background"
 status: draft

@@ -3,7 +3,7 @@ import { DECK_DATA } from "@/lib/deck-data";
 export default function DealStructure() {
   const s = DECK_DATA.structure;
   return <>
-    <svg className="deck-structure-desktop w-full" viewBox="0 0 1110 255" role="img" aria-label="LP capital flows through the Open Silicon SPV and borrower SPV to operating compute. Assigned tenant receipts sweep back to lenders. The collateral agent controls hardware security and receivables.">
+    <svg className="deck-structure-desktop w-full" viewBox="0 0 1110 255" role="img" aria-label="LP capital flows through the OpenSilicon SPV and borrower SPV to operating compute. Assigned tenant receipts sweep back to lenders. The collateral agent controls hardware security and receivables.">
       <defs><marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0l10 5-10 5z" fill="#533afe" /></marker></defs>
       <text x="0" y="20" fontSize="14" fill="#666">{s.forward}</text>
       {s.nodes.map((node, index) => <g key={node} transform={`translate(${index * 224},60)`}><rect width="206" height="72" rx="3" fill={index === 1 ? "#f0edff" : "#fafafa"} stroke={index === 1 ? "#533afe" : "#e5e5e5"} /><text x="103" y="30" textAnchor="middle" fontSize="18" fill="#000">{node}</text><text x="103" y="53" textAnchor="middle" fontSize="13" fill="#666">{s.nodeDetails[index]}</text></g>)}

@@ -7,7 +7,17 @@ import { useEffect, useRef, useState } from "react";
 
 type Phase = "loading" | "playing" | "ended";
 
-export default function HeroVideo() {
+type HeroVideoProps = {
+  src?: string;
+  poster?: string;
+  finalImage?: string;
+};
+
+export default function HeroVideo({
+  src = "/hero-datacenter-v2.mp4",
+  poster = "/hero-video-first-v2.webp",
+  finalImage = "/hero-datacenter-final.webp",
+}: HeroVideoProps = {}) {
   const [phase, setPhase] = useState<Phase>("loading");
   const videoRef = useRef<HTMLVideoElement>(null);
   const endingImageRef = useRef<HTMLImageElement>(null);
@@ -56,7 +66,7 @@ export default function HeroVideo() {
       // No server-rendered source: reduced-motion/data-saving visitors skip the download.
       video.muted = true;
       video.preload = "auto";
-      video.src = "/hero-datacenter-v2.mp4";
+      video.src = src;
       video.load();
       startupTimer = setTimeout(() => { void finish(); }, 10000);
       void video.play().catch(() => { void finish(); });
@@ -74,14 +84,14 @@ export default function HeroVideo() {
       video.removeAttribute("src");
       video.load();
     };
-  }, []);
+  }, [src, poster, finalImage]);
 
   return (
     <>
       <div className="hero-video-media" data-phase={phase} aria-hidden="true">
-        <Image className="hero-video-poster" src="/hero-video-first-v2.webp" alt="" fill unoptimized loading="eager" fetchPriority="high" />
-        <video ref={videoRef} className="hero-video" muted playsInline preload="none" poster="/hero-video-first-v2.webp" disablePictureInPicture tabIndex={-1} />
-        <Image ref={endingImageRef} className="hero-video-final" src="/hero-datacenter-final.webp" alt="" fill unoptimized loading="eager" fetchPriority="low" />
+        <Image className="hero-video-poster" src={poster} alt="" fill unoptimized loading="eager" fetchPriority="high" />
+        <video ref={videoRef} className="hero-video" muted playsInline preload="none" poster={poster} disablePictureInPicture tabIndex={-1} />
+        <Image ref={endingImageRef} className="hero-video-final" src={finalImage} alt="" fill unoptimized loading="eager" fetchPriority="low" />
       </div>
       {phase === "playing" && (
         <Button variant="outline" className="hero-video-skip" type="button" onClick={() => finishRef.current()}>Skip intro</Button>

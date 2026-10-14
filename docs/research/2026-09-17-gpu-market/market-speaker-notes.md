@@ -10,7 +10,7 @@ The chart compares published 2025 estimates and 2030 forecasts for global AI dat
 
 McKinsey’s December 2025 model estimates training demand at 23.1 GW and inference at 20.9 GW in 2025, rising to 62.2 GW and 93.3 GW in 2030. Inference’s share of their combined demand is 47.5% in 2025 and 60% in 2030, a gain of 12.5 percentage points calculated from those endpoints. This is distinct from inference demand growing 346%. Training also grows in absolute terms. The arrows show cumulative growth, calculated as (2030 demand / 2025 demand − 1) × 100 and rounded to the nearest whole percent: training +169%, inference +346%. These are five-year increases, not annual growth rates.
 
-The scale callout highlights combined training and inference demand. The 2025 estimate totals 44.0 GW (23.1 + 20.9), while the 2030 forecast totals 155.5 GW (62.2 + 93.3). Dividing 155.5 by 44.0 gives 3.53×, displayed as approximately 3.5× the 2025 level. The absolute increase is 111.5 GW and cumulative growth is approximately 253%. The chart arrows separately show training growth of 169% and inference growth of 346%; neither is the combined demand multiple. These are model projections, not committed capacity purchases, measured GPU utilization or Open Silicon’s addressable lending volume.
+The scale callout highlights combined training and inference demand. The 2025 estimate totals 44.0 GW (23.1 + 20.9), while the 2030 forecast totals 155.5 GW (62.2 + 93.3). Dividing 155.5 by 44.0 gives 3.53×, displayed as approximately 3.5× the 2025 level. The absolute increase is 111.5 GW and cumulative growth is approximately 253%. The chart arrows separately show training growth of 169% and inference growth of 346%; neither is the combined demand multiple. These are model projections, not committed capacity purchases, measured GPU utilization or OpenSilicon’s addressable lending volume.
 
 The chart shows published endpoints only, with no invented intermediate years or implied crossover date. GW measures modeled data center capacity demand, not GPU hours, paid occupancy or revenue. The source covers inference broadly, not agents alone. Hardware efficiency and deployment constraints can change the forecast.
 
@@ -44,7 +44,7 @@ The June 2026 Economic Index described an increasing share of long-running agent
 
 Chat itself is inference. The thesis is acceleration in an existing market, not the discovery of inference or an absence of earlier use cases. Agent adoption, paid compute capacity, chip utilization and borrower cash collections are distinct measures. The deck supports the first two; each operator’s paid occupancy and collections still require diligence.
 
-Named companies are public market evidence only. They are not represented as Open Silicon borrowers, tenants, partners or committed counterparties.
+Named companies are public market evidence only. They are not represented as OpenSilicon borrowers, tenants, partners or committed counterparties.
 
 ### Sources
 
@@ -91,7 +91,7 @@ Claude Code became generally available on 22 May 2025. OpenAI launched the Codex
 
 The final column looks forward from the historical price series. GPT Astra refers to GPT-6 Astra, released on 3 September 2026. Claude Fable refers to the model family first announced with Fable 5 on 9 June 2026. These launches came after the H100 price series ends in April 2026, so they cannot explain the earlier rebound. They illustrate capabilities for longer and more complex agent workflows. The resulting demand is a thesis, not a measured contribution to GPU consumption; adoption and efficiency determine net compute use.
 
-These are selected public milestones, not an exhaustive model history or a measured decomposition of GPU demand. Their timing does not prove that a specific release caused a price inflection. Supply, hardware costs and other inference applications remain part of the explanation. No named company is presented as an Open Silicon counterparty.
+These are selected public milestones, not an exhaustive model history or a measured decomposition of GPU demand. Their timing does not prove that a specific release caused a price inflection. Supply, hardware costs and other inference applications remain part of the explanation. No named company is presented as an OpenSilicon counterparty.
 
 ### Hypothesis and alternative explanations
 
@@ -149,19 +149,19 @@ A multi-year recovery period for the operator’s entire asset investment does n
 
 ## Different rental models need different capital
 
-Financing depends on contract quality, asset status and cash flow, as well as transaction size. Open Silicon targets operating facilities with paying customers while longer-term financing is arranged. Uncontracted spot-only capacity falls outside the proposed mandate.
+Financing depends on contract quality, asset status and cash flow, as well as transaction size. OpenSilicon targets operating facilities with paying customers while longer-term financing is arranged. Uncontracted spot-only capacity falls outside the proposed mandate.
 
 ### Rental and financing dimensions
 
 Transaction size, rental duration, tenant credit and operator scale are separate dimensions. A large platform may sell short capacity contracts; a small operator may secure a long one. Large dedicated buildouts require construction and deployment capital. Smaller operating clusters may need liquidity against equipment already commissioned and recurring receivables.
 
-Nebius describes 3–6 month capacity contracts, core 1–3 year contracts and longer agreements with investment-grade customers. This supports the existence of several rental models within the same operator. Uncontracted spot-only capacity does not satisfy Open Silicon’s paying-contract requirement.
+Nebius describes 3–6 month capacity contracts, core 1–3 year contracts and longer agreements with investment-grade customers. This supports the existence of several rental models within the same operator. Uncontracted spot-only capacity does not satisfy OpenSilicon’s paying-contract requirement.
 
 ### Competitive evidence
 
-Small GPU loans already exist. USD.AI’s August 2026 report describes $15.3M funded to QumulusAI and $7.5M funded to Corvex. This prevents a blanket claim that small operators cannot borrow. Open Silicon’s differentiation must be demonstrated through borrower fit, duration, execution, advance size and protections.
+Small GPU loans already exist. USD.AI’s August 2026 report describes $15.3M funded to QumulusAI and $7.5M funded to Corvex. This prevents a blanket claim that small operators cannot borrow. OpenSilicon’s differentiation must be demonstrated through borrower fit, duration, execution, advance size and protections.
 
-A paying compute contract is necessary but not sufficient. Its termination rights, collection history, assignment, tenant credit and cash after costs determine debt capacity. No public financing precedent proves a particular Open Silicon borrower is eligible.
+A paying compute contract is necessary but not sufficient. Its termination rights, collection history, assignment, tenant credit and cash after costs determine debt capacity. No public financing precedent proves a particular OpenSilicon borrower is eligible.
 
 ### Sources
 
@@ -181,7 +181,7 @@ Financing fit: Large dedicated capacity: Prepayments and long-term project or as
 
 ## Institutional capital is expanding compute finance
 
-These are external market precedents, not Open Silicon transactions or relationships. Institutional lending and selective vendor support can improve financeability for qualifying projects. They do not establish a market-wide floor for GPU rents or resale prices.
+These are external market precedents, not OpenSilicon transactions or relationships. Institutional lending and selective vendor support can improve financeability for qualifying projects. They do not establish a market-wide floor for GPU rents or resale prices.
 
 ### External transaction evidence
 

@@ -1,4 +1,4 @@
-# Open Silicon · Credit discussion notes
+# OpenSilicon · Credit discussion notes
 
 Layout and proposed capital call mechanics · 18 September 2026
 
@@ -94,7 +94,7 @@ Loan maturity and LP holding period can differ. Final rights, fees and offering 
 
 ### Proposed commitment and capital call mechanics
 
-The proposal separates signed LP commitments from contributed cash. SEC educational guidance describes commitments followed by calls over time and explains that fund documents govern call mechanics. That guidance supplies general context; it does not approve Open Silicon’s proposed structure.
+The proposal separates signed LP commitments from contributed cash. SEC educational guidance describes commitments followed by calls over time and explains that fund documents govern call mechanics. That guidance supplies general context; it does not approve OpenSilicon’s proposed structure.
 
 Proposed sequence: execute commitments and investor onboarding; complete deal diligence, vehicle formation and security documentation; issue a capital call linked to an approved transaction; confirm receipt of LP contributions; fund the reserve and disburse only after all closing conditions are met. Any staged calls for formation costs, fees or reserves must be expressly permitted and disclosed in the documents.
 
@@ -126,7 +126,7 @@ LPs would commit capital under agreed subscription documents and fund in respons
 
 ### Proposed commitment and capital call mechanics
 
-The proposal separates signed LP commitments from contributed cash. SEC educational guidance describes commitments followed by calls over time and explains that fund documents govern call mechanics. That guidance supplies general context; it does not approve Open Silicon’s proposed structure.
+The proposal separates signed LP commitments from contributed cash. SEC educational guidance describes commitments followed by calls over time and explains that fund documents govern call mechanics. That guidance supplies general context; it does not approve OpenSilicon’s proposed structure.
 
 Proposed sequence: execute commitments and investor onboarding; complete deal diligence, vehicle formation and security documentation; issue a capital call linked to an approved transaction; confirm receipt of LP contributions; fund the reserve and disburse only after all closing conditions are met. Any staged calls for formation costs, fees or reserves must be expressly permitted and disclosed in the documents.
 
