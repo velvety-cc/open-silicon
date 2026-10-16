@@ -1,0 +1,14 @@
+[
+  {
+    "route": "/about",
+    "throttle": "5 Mbps / 100ms RTT / empty cache",
+    "poster": 2436.5,
+    "playing": 4128.599999904633,
+    "phase": "playing",
+    "src": "http://127.0.0.1:3030/media/hero/about-hevc-v1.mp4",
+    "requested": [
+      "/media/hero/about-poster-portrait-v1.avif",
+      "/media/hero/about-hevc-v1.mp4"
+    ]
+  }
+]

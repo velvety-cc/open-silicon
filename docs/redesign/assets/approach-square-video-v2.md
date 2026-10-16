@@ -11,3 +11,5 @@ The supplied source is 2160 × 2160, 120 fps, with 25 seconds of video. The orig
 The web encode preserves the source resolution, complete frame, shot sequence and 25-second playback duration. Frame rate is sampled to 60 fps for web playback; no spatial resizing, scene edits, retiming or generated reframing is applied. Encoding uses H.264 High profile, level 5.2, CRF 20 and YUV 4:2:0. Poster and ending still use WebP quality 95.
 
 The existing HeroVideo component and proportional `object-fit: cover; object-position: center` continue to fit the full square source to each viewport. The ending still uses the same responsive crop as the video. The prior 1440 × 1440 version remains available as a historical asset.
+
+The H.264 file and WebP stills now remain as fallbacks. Smaller AV1/HEVC videos and AVIF stills preserve the full video resolution, frame rate and duration; see [delivery and quality measurements](../../performance/hero-media/README.md).

@@ -1,0 +1,34 @@
+{
+  "av1": {
+    "vmafModel": "vmaf_v0.6.1",
+    "sampling": "Every sixth frame across the full 1500-frame clip at native resolution",
+    "vmaf": {
+      "min": 89.292201,
+      "max": 100.0,
+      "mean": 97.251738,
+      "harmonic_mean": 97.167353
+    },
+    "ssim": 0.990368
+  },
+  "hevc": {
+    "vmafModel": "vmaf_v0.6.1",
+    "sampling": "Every sixth frame across the full 1500-frame clip at native resolution",
+    "vmaf": {
+      "min": 86.752202,
+      "max": 100.0,
+      "mean": 95.889839,
+      "harmonic_mean": 95.777006
+    },
+    "ssim": 0.989162
+  },
+  "rejectedHevc24": {
+    "bytes": 36642257,
+    "vmaf": {
+      "min": 80.78003,
+      "max": 100.0,
+      "mean": 91.557057,
+      "harmonic_mean": 91.336863
+    },
+    "reason": "Rejected in favor of preserving more source detail."
+  }
+}

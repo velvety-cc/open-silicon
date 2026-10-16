@@ -1,4 +1,5 @@
 import HeroVideo from "@/components/HeroVideo";
+import { aboutHeroMedia } from "@/lib/hero-media";
 import { Fragment, type CSSProperties } from "react";
 import SiteFrame, { FinancingCTA } from "@/components/SiteFrame";
 import { pageMetadata } from "@/lib/site";
@@ -50,11 +51,7 @@ export default function About() {
   return (
     <SiteFrame>
       <section data-header-theme="dark" className="approach-hero" aria-labelledby="approach-title">
-        <HeroVideo
-          src="/approach-intelligence-square-v2.mp4"
-          poster="/approach-square-first-v2.webp"
-          finalImage="/approach-square-final-v2.webp"
-        />
+        <HeroVideo {...aboutHeroMedia} />
         <div className="container approach-hero-copy">
           <h1 id="approach-title">Scaling Intelligence.</h1>
           <nav className="approach-contents" aria-label="On this page">

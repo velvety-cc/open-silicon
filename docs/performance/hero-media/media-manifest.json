@@ -1,0 +1,86 @@
+[
+  {
+    "file": "hero-datacenter-v2.mp4",
+    "sha256": "dc999d00e4e51c70c92bc6028706f984aeab90e68e1317b9772e2ef7efbfc6d4",
+    "fastStart": true,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "bit_rate": "10063708",
+        "nb_frames": "149"
+      }
+    ],
+    "format": {
+      "duration": "4.966667",
+      "size": "6250556"
+    }
+  },
+  {
+    "file": "approach-intelligence-square-v2.mp4",
+    "sha256": "d624c7977860652ffde79c071c492dd12c43746e1e9153ae8d0c348ea48f3063",
+    "fastStart": true,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 2160,
+        "height": 2160,
+        "r_frame_rate": "60/1",
+        "bit_rate": "30085841",
+        "nb_frames": "1500"
+      }
+    ],
+    "format": {
+      "duration": "25.000000",
+      "size": "94037581"
+    }
+  },
+  {
+    "file": "media/hero/about-av1-v1.mp4",
+    "sha256": "93a55c56a8ba09dc860ba5177c0d6be251d029a52b238b9918cc0aaf21fdc677",
+    "fastStart": true,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "av1",
+        "width": 2160,
+        "height": 2160,
+        "r_frame_rate": "60/1",
+        "bit_rate": "19922605",
+        "nb_frames": "1500"
+      }
+    ],
+    "format": {
+      "duration": "25.000000",
+      "size": "62267473"
+    }
+  },
+  {
+    "file": "media/hero/about-hevc-v1.mp4",
+    "sha256": "02d5580298e2c87b61a6561c426dcde5af4802ba549713d09416e8f74fd999d9",
+    "fastStart": true,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "hevc",
+        "width": 2160,
+        "height": 2160,
+        "r_frame_rate": "60/1",
+        "bit_rate": "20801606",
+        "nb_frames": "1500"
+      }
+    ],
+    "format": {
+      "duration": "25.000000",
+      "size": "65028644"
+    }
+  }
+]

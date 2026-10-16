@@ -1,0 +1,26 @@
+[
+  {
+    "route": "/",
+    "throttle": "5 Mbps / 100ms RTT / empty cache",
+    "poster": 1032.5,
+    "playing": 1887.8999998569489,
+    "phase": "playing",
+    "src": "http://127.0.0.1:3030/hero-datacenter-v2.mp4",
+    "requested": [
+      "/media/hero/home-poster-portrait-v1.avif",
+      "/hero-datacenter-v2.mp4"
+    ]
+  },
+  {
+    "route": "/about",
+    "throttle": "5 Mbps / 100ms RTT / empty cache",
+    "poster": 2437.699999809265,
+    "playing": 5186.5,
+    "phase": "playing",
+    "src": "http://127.0.0.1:3030/media/hero/about-av1-v1.mp4",
+    "requested": [
+      "/media/hero/about-poster-portrait-v1.avif",
+      "/media/hero/about-av1-v1.mp4"
+    ]
+  }
+]
