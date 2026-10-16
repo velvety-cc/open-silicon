@@ -4,7 +4,7 @@ The October 16 revision treats Research as a small publication. The index has a 
 
 Each published article has an original SVG cover in `public/research/covers/`. The five covers share black and gray linework, OpenSilicon purple and a neutral background. They represent the article's subject; schematic curves are conceptual illustrations, not additional market data. All five SVGs total 8,299 bytes and contain no external assets.
 
-Article pages use a shared title and reading grid, marginal author/date information on desktop, serif prose, neutral tables and an unfilled takeaway separated by fine rules. Contact actions are quiet text links. The contents rail, mobile contents disclosure, header progress line, references and full-size figures remain available. Published article text, dates, authors, sources and publication status are unchanged.
+Article pages use a shared title and reading grid, marginal author/date information on desktop, serif prose, neutral tables and an unfilled takeaway separated by fine rules. The index ends after the articles with no separate contact prompt or divider; article contact actions are quiet text links. The contents rail, mobile contents disclosure, header progress line, references and full-size figures remain available. Published article text, dates, authors, sources and publication status are unchanged.
 
 ## Verification
 

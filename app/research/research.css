@@ -17,10 +17,9 @@
 .research-featured .research-cover { aspect-ratio: 1.4 / 1; }
 .research-featured .research-card-copy { padding-top: 20px; }
 .research-featured .research-card-title { max-width: 600px; margin-top: 14px; font-size: clamp(32px, 3vw, 43px); line-height: 1.13; letter-spacing: -.035em; }
-.research-contact { margin-top: 80px; padding-top: 28px; border-top: 1px solid var(--research-rule); }
-.research-contact a, .research-article-contact a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--research-muted); font-size: 13px; line-height: 1.5; }
-.research-contact a:hover, .research-article-contact a:hover { color: var(--accent); }
-.research-contact .arrow, .research-article-contact .arrow { width: 15px; height: 15px; }
+.research-article-contact a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--research-muted); font-size: 13px; line-height: 1.5; }
+.research-article-contact a:hover { color: var(--accent); }
+.research-article-contact .arrow { width: 15px; height: 15px; }
 .research-coming { display: flex; gap: 24px; padding-block: 32px 72px; }
 .research-coming h2 { font-family: var(--research-serif); font-size: 32px; }
 .research-coming p { max-width: 520px; margin-top: 16px; color: var(--research-muted); }
@@ -146,8 +145,6 @@
   .research-card-copy { padding-top: 12px; }
   .research-card-title { font-size: 21px; line-height: 1.25; letter-spacing: -.02em; }
   .research-post-meta { gap: 2px 6px; font-size: 10px; }
-  .research-contact { margin-top: 48px; padding-top: 20px; }
-  .research-contact a { font-size: 12px; }
   .research-article { padding-block: 100px 32px; }
   .research-back { margin-bottom: 24px; }
   .research-article-meta { margin-bottom: 20px; font-size: 11px; }

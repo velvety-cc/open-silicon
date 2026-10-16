@@ -295,5 +295,21 @@
       "anchors": []
     }
   ],
-  "errors": []
+  "errors": [],
+  "indexContactRemoval": [
+    {
+      "width": 1440,
+      "contactPrompt": false,
+      "contactSection": false,
+      "articles": 5,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "contactPrompt": false,
+      "contactSection": false,
+      "articles": 5,
+      "overflow": false
+    }
+  ]
 }
