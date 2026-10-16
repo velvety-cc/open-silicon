@@ -1,34 +1,30 @@
 # Research design
 
-This revision gives the Research index and all five published articles one editorial system, consistent with OpenSilicon's existing purple accents, Geist interface typography and Georgia essay headings.
+The October 16 revision treats Research as a small publication. The index has a single title and an asymmetric composition: one lead article and four smaller entries. The introductory copy, article count, topic filters, category labels, summaries and repeated “Read article” actions are removed from the index. ResearchLibrary is now a server component.
 
-- The index introduces a featured perspective, topic filters, consistent article cards, dates and reading times.
-- Every article has a responsive masthead, a wide cover, the OpenSilicon view, a reading column and chapter navigation. The desktop rail highlights the current section; mobile uses a collapsible contents list. A thin progress line follows the article.
-- Tables remain inside a keyboard-accessible scrolling region. SVG figures reserve their intrinsic dimensions, retain their captions and open at full size in a new tab. Local research SVGs should declare numeric width and height.
-- Sources use an expandable reference list. Each article offers two further articles and a financing contact action.
-- Article text, sources, publication status, metadata and the shared publication filter are preserved. The HTTP verifier now checks the published collection rather than expecting the formerly hidden Research page.
+Each published article has an original SVG cover in `public/research/covers/`. The five covers share black and gray linework, OpenSilicon purple and a neutral background. They represent the article's subject; schematic curves are conceptual illustrations, not additional market data. All five SVGs total 8,299 bytes and contain no external assets.
+
+Article pages use a shared title and reading grid, marginal author/date information on desktop, serif prose, neutral tables and an unfilled takeaway separated by fine rules. Contact actions are quiet text links. The contents rail, mobile contents disclosure, header progress line, references and full-size figures remain available. Published article text, dates, authors, sources and publication status are unchanged.
 
 ## Verification
 
-Checked against the production build on October 15, 2026:
+Verified against the production build on October 16, 2026:
 
-- `npm test`: 38 passing, including heading IDs, repeated names, fenced examples and Unicode.
+- `npm test`: 42 passing.
 - `npm run lint`: TypeScript passes.
-- `npm run build -- --webpack`: succeeds; all five article routes prerender.
-- `node scripts/verify-site.mjs http://127.0.0.1:3028 production`: 56 checks pass, including draft and archive exclusion.
-- Browser: index and each article at 1440px, 768px and 375px (18 page/viewport combinations). No horizontal page overflow, broken loaded images, unmatched contents anchors or browser errors.
-- Interactions: topic filtering and reset, desktop chapter navigation and highlighting, mobile contents navigation and closure, source expansion, mobile Research navigation. See [browser-checks.json](browser-checks.json).
-- Header alignment: checked the progress line at 375, 390, 760, 761, 900, 1199, 1200 and 1440px, including resizing while reading. The line stays inside the header's lower edge using its shared responsive height. See [progress-checks.json](progress-checks.json).
+- `npm run build -- --webpack`: succeeds; all five articles prerender.
+- `node scripts/verify-site.mjs http://127.0.0.1:3030 production`: 56 checks pass, including private draft URLs and archive restrictions.
+- Chrome: index and all five articles at 1440, 1024, 768, 390 and 320px, 30 page/viewport combinations. No horizontal document overflow, broken loaded images, missing contents anchors or page errors.
+- Browser interactions: desktop and mobile chapter jumps, active chapter indication, mobile contents closure, references expansion, article links and return to the index. See [browser checks](publication/browser-checks.json).
+- At 390 × 844px the lead article title starts at 457px, inside the initial viewport. At the same width the progress line spans y=71–73px, inside the 73px header. The takeaway has a transparent background and no horizontal padding.
 
-## Screenshots
+Responsive checks use desktop Chrome at different viewport sizes; they are not a native Safari device test.
 
-| Research index | Article |
-| --- | --- |
-| [Desktop](research-desktop.png) | [Desktop masthead](article-desktop-hero.png) |
-| [Mobile](research-mobile.png) | [Mobile masthead](article-mobile-hero.png) |
-| | [Desktop reading](article-desktop-reading.png) |
-| | [Mobile reading](article-mobile-reading.png) |
-| | [Desktop figure](article-desktop-figure.png) |
-| | [Mobile figure](article-mobile-figure.png) |
-| | [Mobile progress alignment](progress-mobile-stage2.png) |
-| | [Desktop progress alignment](progress-desktop-stage2.png) |
+## Current previews
+
+| View | Index | Article |
+| --- | --- | --- |
+| Desktop | [Full page](publication/index-1440.png), [first viewport](publication/index-1440-top.png) | [Masthead](publication/article-1440-top.png), [reading](publication/article-1440-reading.png) |
+| Mobile | [Full page](publication/index-390.png), [first viewport](publication/index-390-top.png) | [Masthead](publication/article-390-top.png), [reading](publication/article-390-reading.png) |
+
+Older screenshots alongside this README document the previous card design. The `publication/` screenshots show the current revision.

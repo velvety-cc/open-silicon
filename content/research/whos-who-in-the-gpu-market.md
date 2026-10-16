@@ -4,8 +4,8 @@ description: "From chipmakers to capital providers: the parties behind a GPU dep
 date: "2026-10-15"
 category: "Market structure"
 author: "OpenSilicon Research"
-cover: "/hero-datacenter-final.webp"
-coverAlt: "A data center campus lit at dusk in a desert landscape"
+cover: "/research/covers/whos-who-in-the-gpu-market.svg"
+coverAlt: "A schematic network connects the operator at the center with hardware, data centers, customers, and capital providers."
 takeaway: "A GPU deployment is a chain of separate parties: chipmakers, server builders, data centers, operators, customers and capital providers. Risk concentrates where cash changes hands between them, and the largest participants increasingly hold several roles at once."
 sources:
   - title: "CoreWeave · Second quarter 2026 results, SEC filing, August 11, 2026"

@@ -137,15 +137,6 @@
 .background-path > span:last-child { color: var(--accent); }
 .about-background > div > p:not(.eyebrow) { color: var(--ink-soft); }
 .about-background > div > p + p { margin-top: 24px; }
-.research-coming { display: grid; grid-template-columns: 36px 1fr; gap: 24px; padding-block: 72px; }
-.research-coming h2 { font-size: var(--type-heading); }
-.research-coming p { margin-top: 16px; max-width: 530px; color: var(--ink-soft); }
-.research-coming .tiny-cross { color: var(--accent); }
-.research-contact { display: flex; justify-content: space-between; align-items: center; gap: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
-.research-takeaway { padding: 24px; border-radius: var(--radius); background: var(--accent-soft); }
-.research-takeaway h2 { margin-top: 0; }
-.research-sources { margin-top: 48px; border-top: 1px solid var(--line); }
-.research-sources .financing-cta { color: #fff; text-decoration: none; }
 .contact-site { --contact-header-height: 89px; display: flex; flex-direction: column; min-height: 100svh; }
 .contact-site > main { display: flex; flex-direction: column; flex: 1 0 auto; padding-top: var(--contact-header-height); }
 .contact-site > .site-footer { flex-shrink: 0; }

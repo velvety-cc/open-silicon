@@ -4,8 +4,8 @@ description: "Rental rates, occupancy and costs decide what an H100 earns. Book,
 date: "2026-10-15"
 category: "Unit economics"
 author: "OpenSilicon Research"
-cover: "/hardware/dgx-h100-h200-studio.webp"
-coverAlt: "A graphite GPU server system photographed against a light background"
+cover: "/research/covers/what-a-gpu-earns-and-what-its-worth.svg"
+coverAlt: "A conceptual illustration pairs accumulating cash flows with declining hardware value; the paths are schematic rather than measured data."
 takeaway: "Every GPU loan rests on two numbers: the cash the hardware collects and the price it would fetch if sold. Rental prices move both at once, so a prudent loan is sized to the lower of the two under stress, not to today's rate card."
 sources:
   - title: "SemiAnalysis · GPU rental pricing trends, H100 one-year contract ranges (accessed September 17, 2026)"

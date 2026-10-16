@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">From conversation to funding</title><desc id="desc">Six connected stages represent the path from a first conversation through funding and the life of a GPU loan.</desc>
+<style>.ink{stroke:#242427;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}.accent{stroke:#533afe;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}.muted{stroke:#9e9ca5;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}</style>
+<rect width="800" height="600" fill="#f6f6f5"/>
+
+<path d="M130 398H232V316H334V234H436V316H538V234H640V152" class="muted"/>
+<path d="M334 234H436V316H538" class="accent"/>
+<g fill="#f6f6f5" stroke="#242427" stroke-width="2.5">
+<rect x="108" y="372" width="44" height="52"/><rect x="210" y="290" width="44" height="52"/><rect x="312" y="208" width="44" height="52"/><rect x="414" y="290" width="44" height="52"/><rect x="516" y="208" width="44" height="52"/><rect x="618" y="126" width="44" height="52"/>
+</g>
+<g stroke="#b8b7bd" stroke-width="2"><path d="M119 388H141M119 399H137M221 306H243M221 317H239M323 224H345M323 235H341M425 306H447M425 317H443M527 224H549M527 235H545M629 142H651M629 153H647"/></g>
+<rect x="414" y="290" width="44" height="52" fill="#533afe"/><path d="M425 306H447M425 317H443" stroke="#fff" stroke-width="2"/>
+<path d="M100 475H690" stroke="#d8d8d8" stroke-width="1"/>
+<g fill="#8b898f" font-family="monospace" font-size="13" text-anchor="middle"><text x="130" y="502">01</text><text x="232" y="502">02</text><text x="334" y="502">03</text><text x="436" y="502">04</text><text x="538" y="502">05</text><text x="640" y="502">06</text></g>
+</svg>

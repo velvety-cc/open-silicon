@@ -4,8 +4,8 @@ description: "From the first call to a funded cluster: who is involved, what len
 date: "2026-10-15"
 category: "Deal process"
 author: "OpenSilicon Research"
-cover: "/closing-datacenter-v3.webp"
-coverAlt: "A glass-walled data center corridor at dusk, with illuminated server racks inside"
+cover: "/research/covers/how-a-gpu-financing-deal-gets-done.svg"
+coverAlt: "Six connected stages represent the path from a first conversation through funding and the life of a GPU loan."
 takeaway: "GPU deals close on evidence. Timing depends on how quickly four things can be proven: the hardware exists and is owned, the facility can run it, a creditworthy customer is paying, and the lender can take control if something goes wrong."
 sources:
   - title: "USD.AI · Underwriting and risk management, May 15, 2026"

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">Cash flows and asset value</title><desc id="desc">A conceptual illustration pairs accumulating cash flows with declining hardware value; the paths are schematic rather than measured data.</desc>
+<style>.ink{stroke:#242427;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}.accent{stroke:#533afe;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}.muted{stroke:#9e9ca5;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}</style>
+<rect width="800" height="600" fill="#f6f6f5"/>
+
+<g stroke="#dededd" stroke-width="1"><path d="M130 130V460H680" fill="none"/><path d="M130 350H680M130 240H680" stroke-dasharray="3 8"/></g>
+<g fill="#533afe" opacity=".12"><rect x="183" y="392" width="42" height="68"/><rect x="263" y="355" width="42" height="105"/><rect x="343" y="310" width="42" height="150"/><rect x="423" y="265" width="42" height="195"/><rect x="503" y="212" width="42" height="248"/><rect x="583" y="160" width="42" height="300"/></g>
+<path d="M204 392L284 355L364 310L444 265L524 212L604 160" class="accent"/>
+<path d="M180 163C290 193 388 256 477 310C537 347 590 367 650 379" class="ink"/>
+<g fill="#f6f6f5" stroke="#533afe" stroke-width="2.5"><circle cx="204" cy="392" r="5"/><circle cx="284" cy="355" r="5"/><circle cx="364" cy="310" r="5"/><circle cx="444" cy="265" r="5"/><circle cx="524" cy="212" r="5"/><circle cx="604" cy="160" r="5"/></g>
+<circle cx="180" cy="163" r="6" fill="#242427"/><circle cx="650" cy="379" r="6" fill="#242427"/>
+</svg>
