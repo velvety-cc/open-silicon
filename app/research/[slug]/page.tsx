@@ -4,20 +4,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
+import Arrow from "@/components/Arrow";
 import { FinancingCTA } from "@/components/SiteFrame";
+import ResearchCard from "@/components/research/ResearchCard";
+import ResearchContents from "@/components/research/ResearchContents";
 import { pageMetadata } from "@/lib/site";
-import { Button } from "@/components/ui/button";
-import { formatResearchDate, getResearchPost, getResearchPosts } from "@/lib/research";
+import { formatResearchDate, getResearchFigureSizes, getResearchPost, getResearchPosts } from "@/lib/research";
+import { getResearchHeadings } from "@/lib/research-headings";
 
 export const dynamicParams = false;
 
-// Wide comparison tables scroll inside the prose column instead of widening the page.
-const markdownComponents: Components = {
-  table: ({ node: _node, ...props }) => <div className="research-table"><table {...props} /></div>,
-};
-
 export async function generateStaticParams() {
-  return (await getResearchPosts()).map((post) => ({ slug: post.slug }));
+  return (await getResearchPosts()).map(post => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -30,46 +28,45 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function ResearchArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const post = await getResearchPost((await params).slug);
   if (!post) notFound();
-  const nextPost = (await getResearchPosts()).find((item) => item.slug !== post.slug);
+  const posts = await getResearchPosts();
+  const index = posts.findIndex(item => item.slug === post.slug);
+  const related = [...posts.slice(index + 1), ...posts.slice(0, index)].slice(0, 2);
+  const headings = getResearchHeadings(post.content);
+  const figureSizes = await getResearchFigureSizes(post.content);
+  const markdownComponents: Components = {
+    h2: ({ node, children }) => <h2 id={headings.find(heading => heading.line === node?.position?.start.line)?.id}>{children}</h2>,
+    table: ({ children }) => <div className="research-table" role="region" aria-label="Data table, scroll horizontally to explore" tabIndex={0}><table>{children}</table></div>,
+    p: ({ node, children }) => node?.children.some(child => child.type === "element" && child.tagName === "img") ? <figure className="research-figure">{children}</figure> : <p>{children}</p>,
+    img: ({ src, alt }) => typeof src === "string" ? <a className="research-figure-link" href={src} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size figure: ${alt ?? "Research chart"} (opens in a new tab)`}><img src={src} alt={alt ?? ""} {...figureSizes[src]} decoding="async" /><span className="research-figure-open">Open figure <Arrow /></span></a> : null,
+  };
 
   return (
-    <article className="container research-article">
-      <header className="research-article-header">
-        <Button asChild variant="link" className="research-back"><Link href="/research">All research</Link></Button>
-        <div className="research-post-category">
-          <span>{post.category}</span>
+    <article className="research-article">
+      <div className="container">
+        <header className="research-article-header">
+          <Link href="/research" className="research-back"><span aria-hidden="true">←</span> All research</Link>
+          <p className="research-post-category">{post.category}</p>
+          <h1>{post.title}</h1>
+          <p className="research-article-description">{post.description}</p>
+          <div className="research-article-meta"><span className="research-author">{post.author}</span><time dateTime={post.date}>{formatResearchDate(post.date)}</time><span>{post.readingMinutes} min read</span></div>
+        </header>
+        <div className={`research-article-cover research-cover${post.cover.startsWith("/hardware/") ? " research-cover-hardware" : ""}`}>
+          <Image src={post.cover} alt={post.coverAlt} fill sizes="(max-width: 1440px) 100vw, 1312px" preload />
         </div>
-        <h1>{post.title}</h1>
-        <p className="research-article-description">{post.description}</p>
-        <div className="research-article-meta">
-          <span>{post.author}</span>
-          <span aria-hidden="true">·</span>
-          <time dateTime={post.date}>{formatResearchDate(post.date)}</time>
-          <span aria-hidden="true">·</span>
-          <span>{post.readingMinutes} min read</span>
+        <div className="research-reading-layout">
+          <ResearchContents headings={headings} />
+          <div className="research-reading-column" id="research-body">
+            <aside className="research-takeaway"><p className="research-eyebrow">The OpenSilicon view</p><p>{post.takeaway}</p></aside>
+            <div className="research-prose"><ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{post.content}</ReactMarkdown></div>
+            <details className="research-sources">
+              <summary><span>Sources &amp; references <span className="research-source-count">{post.sources.length}</span></span><span className="research-sources-toggle" aria-hidden="true">+</span></summary>
+              <ol>{post.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}<Arrow /></a></li>)}</ol>
+            </details>
+            <div className="research-article-contact"><h2>Have a GPU deployment in mind?</h2><p>Bring your project into the conversation.</p><FinancingCTA /></div>
+          </div>
         </div>
-      </header>
-
-      <div className={`research-article-cover research-cover${post.cover.startsWith("/hardware/") ? " research-cover-hardware" : ""}`}>
-        <Image src={post.cover} alt={post.coverAlt} fill sizes="(max-width: 1440px) 100vw, 1312px" preload />
+        {!!related.length && <nav className="research-related" aria-labelledby="research-related-title"><div className="research-library-heading"><h2 id="research-related-title">Continue reading</h2><Link href="/research">All research <Arrow /></Link></div><div className="research-post-grid">{related.map(item => <ResearchCard key={item.slug} post={{ ...item, dateLabel: formatResearchDate(item.date) }} />)}</div></nav>}
       </div>
-
-      <div className="research-prose">
-        <aside className="research-takeaway"><h2>Our view</h2><p>{post.takeaway}</p></aside>
-        <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{post.content}</ReactMarkdown>
-      </div>
-
-      <div className="research-prose research-sources"><h2>Sources</h2><ol>{post.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a></li>)}</ol><FinancingCTA /></div>
-
-      {nextPost && (
-        <nav className="research-next" aria-label="Continue reading">
-          <p className="research-eyebrow">Continue reading</p>
-          <Link href={`/research/${nextPost.slug}`}>
-            <h2>{nextPost.title}</h2>
-            <p>{nextPost.description}</p>
-          </Link>
-        </nav>
-      )}
     </article>
   );
 }
