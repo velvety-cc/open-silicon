@@ -6,10 +6,12 @@
 - Initial poster: `public/hero-video-first-v2.webp`, extracted from frame 0 of the delivered video.
 - Ending image: `public/hero-datacenter-final.webp`, derived from user-supplied `hf_20260911_023258_2fddc771-4851-41d4-a0a4-e7a35544948a.png`.
 - Image delivery: the 7680 × 4320 source is resized to 3840 × 2160 and encoded as WebP quality 92 (737,176 bytes), preserving its framing and colors.
-- Initial HTML eagerly loads the first poster. JavaScript starts muted inline playback once, with no loop. The same crop is applied to all media.
-- On completion, the preloaded high-resolution photograph is decoded, then fades over the paused video in 400ms. No frame is exposed blank during the handoff.
+- Initial HTML eagerly loads the first poster, using AVIF with the original WebP fallback. Narrow phones receive a crop that omits offscreen side pixels while retaining the full source height. JavaScript starts muted inline playback once, with no loop. Visible framing is preserved across the media.
+- The ending photograph starts loading during the last three seconds, or immediately when skipping/falling back. Once decoded, it fades over the paused video in 400ms, then buffering is cancelled. No frame is exposed blank during the handoff.
 - Reduced-motion/data-saving preferences, blocked autoplay, media errors or a ten-second startup timeout use the high-resolution photograph. The page remains usable during loading.
 - The extracted video final frame remains at `public/hero-video-last.webp` but is no longer displayed.
+
+See [media performance and fidelity measurements](performance/hero-media/README.md) for the Home/About delivery configuration, retained originals, codec fallbacks and verification.
 
 ## Earlier generated exploration (not active)
 

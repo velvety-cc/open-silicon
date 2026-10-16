@@ -1,0 +1,28 @@
+[
+  {
+    "route": "/",
+    "throttle": "5 Mbps / 100ms RTT / empty cache",
+    "poster": 2403.199999809265,
+    "playing": 3151.0999999046326,
+    "phase": "playing",
+    "src": "http://127.0.0.1:3028/hero-datacenter-v2.mp4",
+    "requested": [
+      "/hero-video-first-v2.webp",
+      "/hero-datacenter-final.webp",
+      "/hero-datacenter-v2.mp4"
+    ]
+  },
+  {
+    "route": "/about",
+    "throttle": "5 Mbps / 100ms RTT / empty cache",
+    "poster": 5798.200000047684,
+    "playing": 6176.599999904633,
+    "phase": "playing",
+    "src": "http://127.0.0.1:3028/approach-intelligence-square-v2.mp4",
+    "requested": [
+      "/approach-square-first-v2.webp",
+      "/approach-square-final-v2.webp",
+      "/approach-intelligence-square-v2.mp4"
+    ]
+  }
+]
