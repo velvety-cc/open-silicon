@@ -58,7 +58,7 @@ The current essay replaces the former About page. `/our-approach` and `/gpu-fina
 
 ## Research
 
-Hidden from the public header, mobile navigation, footer and sitemap. Existing research content and routes are retained for future use.
+Linked from the header, mobile navigation, footer and sitemap. Articles live in `content/research/` and appear only when their front matter sets `status: published`; drafts and the two `example: true` samples stay private. The first published series (October 2026) covers market structure, financing structures and GPU unit economics; the editorial plan is in [the research series plan](../research/2026-10-15-initial-series/plan.md).
 
 ## Contact
 

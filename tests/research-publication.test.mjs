@@ -30,3 +30,19 @@ test('existing sample articles remain private', async () => {
     assert.equal(data.status, 'draft'); assert.equal(publishedResearchPost(name, data, content), null);
   }
 });
+
+test('published articles are complete and their local images exist', async () => {
+  const { readdir, access } = await import('node:fs/promises');
+  const directory = new URL('../content/research/', import.meta.url);
+  const files = (await readdir(directory)).filter(file => file.endsWith('.md'));
+  let published = 0;
+  for (const file of files) {
+    const { data, content } = matter(await readFile(new URL(file, directory), 'utf8'));
+    if (data.status !== 'published') continue;
+    const post = publishedResearchPost(file.slice(0, -3), data, content);
+    assert.ok(post, `${file} should publish`);
+    published++;
+    for (const [, src] of `${content}\n![](${data.cover})`.matchAll(/!\[[^\]]*\]\((\/[^)\s]+)\)/g)) await access(new URL(`../public${src}`, import.meta.url));
+  }
+  assert.ok(published > 0);
+});

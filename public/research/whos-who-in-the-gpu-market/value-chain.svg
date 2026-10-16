@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="524" viewBox="0 0 560 524" role="img" aria-labelledby="title desc">
+  <title id="title">How a GPU deployment fits together</title>
+  <desc id="desc">Chips and servers supply hardware and data centers supply power and space to an operator. The operator provides compute to customers, who pay the operator. Capital providers fund the operator and receive repayment and returns.</desc>
+  <defs>
+    <marker id="arrow-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#777"/>
+    </marker>
+    <marker id="arrow-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#533afe"/>
+    </marker>
+    <style>
+      text { font-family: "Geist", -apple-system, "Helvetica Neue", Arial, sans-serif; }
+      .box { fill: #fff; stroke: #111; stroke-width: 1.5; }
+      .title { font-size: 18px; font-weight: 600; fill: #111; }
+      .sub { font-size: 15px; fill: #555; }
+      .flow { stroke-width: 2; fill: none; }
+      .physical { stroke: #777; }
+      .cash { stroke: #533afe; }
+      .label { font-size: 15px; font-weight: 500; }
+      .label-physical { fill: #555; }
+      .label-cash { fill: #533afe; }
+    </style>
+  </defs>
+  <rect width="560" height="524" fill="#fff"/>
+
+  <rect class="box" x="20" y="20" width="240" height="84" rx="10"/>
+  <text class="title" x="140" y="56" text-anchor="middle">Chips &amp; servers</text>
+  <text class="sub" x="140" y="80" text-anchor="middle">Design and build hardware</text>
+
+  <rect class="box" x="300" y="20" width="240" height="84" rx="10"/>
+  <text class="title" x="420" y="56" text-anchor="middle">Data centers</text>
+  <text class="sub" x="420" y="80" text-anchor="middle">Provide space, power, cooling</text>
+
+  <rect x="160" y="210" width="240" height="84" rx="10" fill="#533afe"/>
+  <text class="title" x="280" y="246" text-anchor="middle" fill="#fff" style="fill:#fff">Operator</text>
+  <text class="sub" x="280" y="270" text-anchor="middle" style="fill:#e4dfff">Installs and runs the cluster</text>
+
+  <rect class="box" x="20" y="400" width="240" height="84" rx="10"/>
+  <text class="title" x="140" y="436" text-anchor="middle">Customers</text>
+  <text class="sub" x="140" y="460" text-anchor="middle">Rent and pay for compute</text>
+
+  <rect class="box" x="300" y="400" width="240" height="84" rx="10"/>
+  <text class="title" x="420" y="436" text-anchor="middle">Capital providers</text>
+  <text class="sub" x="420" y="460" text-anchor="middle">Fund hardware, earn returns</text>
+
+  <line class="flow physical" x1="150" y1="108" x2="232" y2="204" marker-end="url(#arrow-grey)"/>
+  <text class="label label-physical" x="178" y="160" text-anchor="end">hardware</text>
+
+  <line class="flow physical" x1="410" y1="108" x2="328" y2="204" marker-end="url(#arrow-grey)"/>
+  <text class="label label-physical" x="382" y="160" text-anchor="start">power &amp; space</text>
+
+  <line class="flow physical" x1="218" y1="298" x2="136" y2="394" marker-end="url(#arrow-grey)"/>
+  <text class="label label-physical" x="165" y="350" text-anchor="end">compute</text>
+
+  <line class="flow cash" x1="168" y1="394" x2="250" y2="298" marker-end="url(#arrow-accent)"/>
+  <text class="label label-cash" x="229" y="340" text-anchor="start">payments</text>
+
+  <line class="flow cash" x1="392" y1="394" x2="310" y2="298" marker-end="url(#arrow-accent)"/>
+  <text class="label label-cash" x="352" y="366" text-anchor="end">capital</text>
+
+  <line class="flow cash" x1="342" y1="298" x2="424" y2="394" marker-end="url(#arrow-accent)"/>
+  <text class="label label-cash" x="395" y="350" text-anchor="start">repayment</text>
+
+  <line class="flow physical" x1="20" y1="508" x2="52" y2="508" marker-end="url(#arrow-grey)"/>
+  <text class="label label-physical" x="62" y="513">Physical flow</text>
+  <line class="flow cash" x1="196" y1="508" x2="228" y2="508" marker-end="url(#arrow-accent)"/>
+  <text class="label label-cash" x="238" y="513">Cash flow</text>
+</svg>

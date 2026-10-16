@@ -36,12 +36,22 @@
 .research-prose h3 { font-size: var(--type-emphasis); margin-block: 32px 16px; }
 .research-prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
 .research-prose ul, .research-prose ol { padding-left: 24px; margin-block: 24px; }
+.research-prose ul { list-style: disc; }
+.research-prose ol { list-style: decimal; }
+.research-prose li::marker { color: var(--ink-soft); }
 .research-prose li + li { margin-top: 8px; }
 .research-prose blockquote { margin: 32px 0; padding: 12px 24px; border-left: 2px solid var(--accent); color: var(--ink-soft); }
 .research-prose strong { font-weight: var(--weight-medium); }
 .research-prose code { font-family: var(--font-geist-mono), monospace; font-size: .9em; background: var(--surface); padding: 2px 4px; border-radius: 4px; }
 .research-prose pre { overflow-x: auto; padding: 24px; background: var(--surface); border-radius: var(--radius); }
 .research-prose img { display: block; max-width: 100%; height: auto; border-radius: var(--radius); }
+.research-prose img + em { display: block; margin-top: 12px; color: var(--ink-soft); font-size: var(--type-label); font-style: normal; line-height: var(--leading-body); }
+.research-table { margin-block: 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.research-table table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: var(--type-label); line-height: 1.55; font-variant-numeric: tabular-nums; }
+.research-table th { padding: 0 16px 12px 0; border-bottom: 1px solid var(--ink); color: var(--ink); font-weight: var(--weight-medium); text-align: left; vertical-align: bottom; }
+.research-table td { padding: 12px 16px 12px 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); vertical-align: top; }
+.research-table td:first-child { color: var(--ink); }
+.research-table th:last-child, .research-table td:last-child { padding-right: 0; }
 .research-prose .research-example-note { margin-top: 0; padding-bottom: 24px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: var(--type-label); }
 .research-next { max-width: 720px; margin: 64px auto 0; padding-top: 32px; border-top: 1px solid var(--line); }
 .research-next h2 { margin-top: 16px; font-size: var(--type-heading); line-height: 1.25; }

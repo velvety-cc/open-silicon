@@ -2,13 +2,19 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { type Components } from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { FinancingCTA } from "@/components/SiteFrame";
 import { pageMetadata } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { formatResearchDate, getResearchPost, getResearchPosts } from "@/lib/research";
 
 export const dynamicParams = false;
+
+// Wide comparison tables scroll inside the prose column instead of widening the page.
+const markdownComponents: Components = {
+  table: ({ node: _node, ...props }) => <div className="research-table"><table {...props} /></div>,
+};
 
 export async function generateStaticParams() {
   return (await getResearchPosts()).map((post) => ({ slug: post.slug }));
@@ -50,7 +56,7 @@ export default async function ResearchArticlePage({ params }: { params: Promise<
 
       <div className="research-prose">
         <aside className="research-takeaway"><h2>Our view</h2><p>{post.takeaway}</p></aside>
-        <ReactMarkdown>{post.content}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{post.content}</ReactMarkdown>
       </div>
 
       <div className="research-prose research-sources"><h2>Sources</h2><ol>{post.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a></li>)}</ol><FinancingCTA /></div>
