@@ -55,7 +55,6 @@ export default async function ResearchArticlePage({ params }: { params: Promise<
             <div className={`research-article-cover research-cover${post.cover.startsWith("/hardware/") ? " research-cover-hardware" : ""}`}>
               <Image src={post.cover} alt={post.coverAlt} fill sizes="(max-width: 760px) 100vw, 720px" preload />
             </div>
-            <aside className="research-takeaway"><p className="research-eyebrow">The OpenSilicon view</p><p>{post.takeaway}</p></aside>
             <div className="research-prose"><ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{post.content}</ReactMarkdown></div>
             <details className="research-sources">
               <summary><span>Sources &amp; references <span className="research-source-count">{post.sources.length}</span></span><span className="research-sources-toggle" aria-hidden="true">+</span></summary>

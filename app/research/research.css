@@ -51,9 +51,6 @@
 .research-contents a:hover, .research-contents a[aria-current="location"], .research-contents a[aria-current="location"] .research-contents-number { color: var(--accent); }
 .research-top-link { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--research-rule); color: var(--research-muted); font-size: 12px; }
 .research-contents-mobile { display: none; }
-.research-takeaway { margin-bottom: 44px; padding-block: 24px; border-block: 1px solid var(--research-rule); }
-.research-takeaway > .research-eyebrow { margin-bottom: 12px; font-size: 11px; }
-.research-takeaway > p:last-child { color: #3d3d40; font-family: var(--research-serif); font-size: 21px; line-height: 1.6; letter-spacing: -.01em; }
 
 /* Research text stays readable; evidence uses the interface face for precision. */
 .research-prose { color: #3d3d40; font-family: var(--research-serif); font-size: 19px; line-height: 1.8; overflow-wrap: break-word; }
@@ -154,8 +151,6 @@
   .research-article-description { margin-top: 20px; font-size: 19px; line-height: 1.55; }
   .research-article-masthead { margin-bottom: 28px; }
   .research-article-cover { margin-bottom: 28px; aspect-ratio: 1.65 / 1; }
-  .research-takeaway { margin-bottom: 32px; padding-block: 20px; }
-  .research-takeaway > p:last-child { font-size: 19px; }
   .research-prose { font-size: 18px; line-height: 1.75; }
   .research-prose h2 { margin-top: 40px; font-size: 28px; }
   .research-prose h3 { font-size: 23px; }
