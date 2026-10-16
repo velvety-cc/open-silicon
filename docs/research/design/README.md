@@ -18,6 +18,7 @@ Checked against the production build on October 15, 2026:
 - `node scripts/verify-site.mjs http://127.0.0.1:3028 production`: 56 checks pass, including draft and archive exclusion.
 - Browser: index and each article at 1440px, 768px and 375px (18 page/viewport combinations). No horizontal page overflow, broken loaded images, unmatched contents anchors or browser errors.
 - Interactions: topic filtering and reset, desktop chapter navigation and highlighting, mobile contents navigation and closure, source expansion, mobile Research navigation. See [browser-checks.json](browser-checks.json).
+- Header alignment: checked the progress line at 375, 390, 760, 761, 900, 1199, 1200 and 1440px, including resizing while reading. The line stays inside the header's lower edge using its shared responsive height. See [progress-checks.json](progress-checks.json).
 
 ## Screenshots
 
@@ -29,3 +30,5 @@ Checked against the production build on October 15, 2026:
 | | [Mobile reading](article-mobile-reading.png) |
 | | [Desktop figure](article-desktop-figure.png) |
 | | [Mobile figure](article-mobile-figure.png) |
+| | [Mobile progress alignment](progress-mobile-stage2.png) |
+| | [Desktop progress alignment](progress-desktop-stage2.png) |
