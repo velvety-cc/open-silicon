@@ -2,5 +2,5 @@ import SiteFrame from "@/components/SiteFrame";
 import "./research.css";
 
 export default function ResearchLayout({ children }: { children: React.ReactNode }) {
-  return <SiteFrame>{children}</SiteFrame>;
+  return <SiteFrame className="research-site">{children}</SiteFrame>;
 }

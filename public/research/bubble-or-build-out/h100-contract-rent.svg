@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="302" viewBox="0 0 600 252" role="img" aria-labelledby="title desc">
+<title id="title">H100 one-year contract rents, 2023 to April 2026</title>
+<desc id="desc">One-year H100 contract rents fell from $2.70–3.40 per GPU-hour in the first half of 2023 to $1.45–1.95 in October 2025, then recovered to $2.10–2.70 in April 2026.</desc>
+<style>text { font-family: "Geist", -apple-system, "Helvetica Neue", Arial, sans-serif; font-variant-numeric: tabular-nums; }</style>
+<rect width="600" height="252" fill="#fff"/>
+<text x="0" y="18" font-size="15"><tspan fill="#111" font-weight="600">Contract rent</tspan><tspan dx="10" fill="#555" font-size="14">H100 one-year contracts, $ per GPU-hour, 25th–75th percentile</tspan></text>
+<line x1="44" x2="584" y1="204.0" y2="204.0" stroke="#e5e5e5" stroke-width="1"/>
+<text x="36.0" y="209.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">$0</text>
+<line x1="44" x2="584" y1="164.0" y2="164.0" stroke="#e5e5e5" stroke-width="1"/>
+<text x="36.0" y="169.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">$1</text>
+<line x1="44" x2="584" y1="124.0" y2="124.0" stroke="#e5e5e5" stroke-width="1"/>
+<text x="36.0" y="129.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">$2</text>
+<line x1="44" x2="584" y1="84.0" y2="84.0" stroke="#e5e5e5" stroke-width="1"/>
+<text x="36.0" y="89.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">$3</text>
+<line x1="44" x2="584" y1="44.0" y2="44.0" stroke="#e5e5e5" stroke-width="1"/>
+<text x="36.0" y="49.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">$4</text>
+<polygon points="44.0,68.0 124.4,68.0 124.4,72.0 206.1,72.0 206.1,80.0 246.5,80.0 246.5,104.0 286.9,104.0 286.9,106.0 327.8,106.0 327.8,120.0 368.6,120.0 368.6,120.0 408.6,120.0 408.6,120.0 449.0,120.0 449.0,124.0 462.8,124.0 462.8,124.0 476.5,124.0 476.5,124.0 489.9,124.0 489.9,126.0 503.6,126.0 503.6,124.0 516.9,124.0 516.9,124.0 530.7,124.0 530.7,122.0 544.5,122.0 544.5,110.0 556.9,110.0 556.9,96.0 570.7,96.0 570.7,96.0 584.0,96.0 584.0,120.0 570.7,120.0 570.7,124.0 556.9,124.0 556.9,132.0 544.5,132.0 544.5,144.0 530.7,144.0 530.7,146.0 516.9,146.0 516.9,146.0 503.6,146.0 503.6,146.0 489.9,146.0 489.9,144.0 476.5,144.0 476.5,144.0 462.8,144.0 462.8,136.0 449.0,136.0 449.0,132.0 408.6,132.0 408.6,132.0 368.6,132.0 368.6,128.0 327.8,128.0 327.8,118.0 286.9,118.0 286.9,116.0 246.5,116.0 246.5,104.0 206.1,104.0 206.1,98.0 124.4,98.0 124.4,96.0 44.0,96.0" fill="#533afe" fill-opacity="0.1"/>
+<polyline points="44.0,68.0 124.4,68.0 124.4,72.0 206.1,72.0 206.1,80.0 246.5,80.0 246.5,104.0 286.9,104.0 286.9,106.0 327.8,106.0 327.8,120.0 368.6,120.0 368.6,120.0 408.6,120.0 408.6,120.0 449.0,120.0 449.0,124.0 462.8,124.0 462.8,124.0 476.5,124.0 476.5,124.0 489.9,124.0 489.9,126.0 503.6,126.0 503.6,124.0 516.9,124.0 516.9,124.0 530.7,124.0 530.7,122.0 544.5,122.0 544.5,110.0 556.9,110.0 556.9,96.0 570.7,96.0 570.7,96.0 584.0,96.0" fill="none" stroke="#533afe" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="44.0,96.0 124.4,96.0 124.4,98.0 206.1,98.0 206.1,104.0 246.5,104.0 246.5,116.0 286.9,116.0 286.9,118.0 327.8,118.0 327.8,128.0 368.6,128.0 368.6,132.0 408.6,132.0 408.6,132.0 449.0,132.0 449.0,136.0 462.8,136.0 462.8,144.0 476.5,144.0 476.5,144.0 489.9,144.0 489.9,146.0 503.6,146.0 503.6,146.0 516.9,146.0 516.9,146.0 530.7,146.0 530.7,144.0 544.5,144.0 544.5,132.0 556.9,132.0 556.9,124.0 570.7,124.0 570.7,120.0 584.0,120.0" fill="none" stroke="#533afe" stroke-width="2" stroke-linejoin="round"/>
+<text x="44.0" y="232.0" font-size="14" fill="#555" text-anchor="start" font-weight="400">Jan 2023</text>
+<text x="206.1" y="232.0" font-size="14" fill="#555" text-anchor="middle" font-weight="400">Jan 2024</text>
+<text x="368.6" y="232.0" font-size="14" fill="#555" text-anchor="middle" font-weight="400">Jan 2025</text>
+<text x="530.7" y="232.0" font-size="14" fill="#555" text-anchor="middle" font-weight="400">Jan 2026</text>
+<text x="50.0" y="118.0" font-size="14" text-anchor="start"><tspan fill="#555">1H 2023</tspan><tspan dx="6" fill="#111" font-weight="500">$2.70–3.40</tspan></text>
+<text x="496.7" y="168.0" font-size="14" text-anchor="middle"><tspan fill="#555">Oct 2025</tspan><tspan dx="6" fill="#111" font-weight="500">$1.45–1.95</tspan></text>
+<text x="584.0" y="86.0" font-size="14" text-anchor="end"><tspan fill="#555">Apr 2026</tspan><tspan dx="6" fill="#111" font-weight="500">$2.10–2.70</tspan></text>
+</svg>

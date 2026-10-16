@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 export const navigation = [
   { href: "/about", label: "About" },
+  { href: "/research", label: "Research" },
 ];
 export const primaryCTA = "Discuss a financing opportunity";
 export const businessDescription = "Financing the infrastructure that scales intelligence and expands what humanity can discover, build and achieve.";

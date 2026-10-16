@@ -1,8 +1,10 @@
 import assert from 'node:assert/strict';
+import { readdir, readFile } from 'node:fs/promises';
+import matter from 'gray-matter';
 
 const base = process.argv[2] || 'http://127.0.0.1:3001';
 const mode = process.argv[3] || 'production';
-const pages = ['/', '/about', '/contact'];
+const pages = ['/', '/about', '/research', '/contact'];
 const checks = [];
 const check = (message, passed) => { assert.ok(passed, message); checks.push(message); };
 for (const route of pages) {
@@ -11,7 +13,7 @@ for (const route of pages) {
   check(`${route}: responds 200`, response.status === 200);
   check(`${route}: OpenSilicon metadata`, /<title>[^<]*OpenSilicon[^<]*<\/title>/.test(html) && html.includes('property="og:description"'));
   check(`${route}: current public destinations, including Home through the logo`, pages.every(href => html.includes(`href="${href}"`)));
-  check(`${route}: retired and hidden sections have no public links`, !/href="\/(our-approach|research)(?:[\/#"])/.test(html));
+  check(`${route}: retired approach page has no public links`, !/href="\/our-approach(?:[\/#"])/.test(html));
   // Frontier-lab names also appear in sourced editorial evidence; check retired UI terms instead.
   check(`${route}: no simulated investment or old positioning`, !/target yield|Target APR|allocation progress|circuit\.credit|crypto liquidity|onchain protocol|\$500M|Fully compliant and verifiable/i.test(html));
   check(`${route}: no internal archive link`, !/href="\/(legacy|deck|deck\.html|open-silicon-deck\.html)/.test(html));
@@ -29,7 +31,18 @@ for (const route of pages) {
 }
 const research = await fetch(new URL('/research', base));
 const researchHTML = await research.text();
-check('Hidden Research: existing page retained without sample articles', research.status === 200 && researchHTML.includes('Research is on the way.') && !researchHTML.includes('From GPUs to usable compute') && !researchHTML.includes('The infrastructure behind intelligence'));
+const articles = await Promise.all((await readdir(new URL('../content/research/', import.meta.url))).filter(name => name.endsWith('.md')).map(async name => {
+  const { data } = matter(await readFile(new URL(`../content/research/${name}`, import.meta.url), 'utf8'));
+  return { ...data, slug: name.slice(0, -3) };
+}));
+const published = articles.filter(article => article.status === 'published' && article.example !== true);
+check('Research: publication-filtered index responds 200', research.status === 200 && !researchHTML.includes('From GPUs to usable compute') && !researchHTML.includes('The infrastructure behind intelligence'));
+check('Research: every published article has an index link', published.every(article => researchHTML.includes(`href="/research/${article.slug}"`)));
+for (const article of published) {
+  const response = await fetch(new URL(`/research/${article.slug}`, base));
+  const html = await response.text();
+  check(`Research ${article.slug}: article, navigation and references present`, response.status === 200 && html.includes('research-prose') && html.includes('In this article') && html.includes('Sources &amp;') && html.includes(article.sources[0].url.replaceAll('&', '&amp;')));
+}
 for (const slug of ['from-gpus-to-usable-compute','the-infrastructure-behind-intelligence','missing-article']) {
   const response = await fetch(new URL(`/research/${slug}`, base));
   check(`Research direct URL ${slug}: 404`, response.status === 404);
@@ -44,7 +57,8 @@ for (const route of ['/legacy','/deck','/deck.html','/open-silicon-deck.html']) 
   check(`${route}: noindex header`, response.headers.get('x-robots-tag')?.includes('noindex'));
 }
 const sitemap = await (await fetch(new URL('/sitemap.xml', base))).text();
-check('Sitemap: excludes hidden sections, drafts and internal archives', !/our-approach|research|legacy|deck|from-gpus-to-usable-compute|the-infrastructure-behind-intelligence/.test(sitemap));
+check('Sitemap: excludes retired sections, drafts and internal archives', !/our-approach|legacy|deck|from-gpus-to-usable-compute|the-infrastructure-behind-intelligence/.test(sitemap));
+if (sitemap.includes('<url>')) check('Sitemap: includes published research', published.every(article => sitemap.includes(`/research/${article.slug}`)));
 const robots = await (await fetch(new URL('/robots.txt', base))).text();
 check('Robots: previews excluded or internal archives disallowed', robots.includes('Disallow: /\n') || (robots.includes('Disallow: /legacy') && robots.includes('Disallow: /deck')));
 console.log(JSON.stringify({ mode, base, passed: checks.length, checks }, null, 2));

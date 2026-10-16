@@ -15,6 +15,7 @@ export default function Footer() {
           <h2>OpenSilicon</h2>
           <ul>
             <li><Link href="/about">About</Link></li>
+            <li><Link href="/research">Research</Link></li>
           </ul>
         </div>
         <div className="footer-group">

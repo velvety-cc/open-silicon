@@ -1,0 +1,524 @@
+{
+  "checks": [
+    {
+      "width": 1440,
+      "route": "/research",
+      "title": "Research.",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [],
+      "links": [],
+      "tables": 0
+    },
+    {
+      "width": 1440,
+      "route": "/research/bubble-or-build-out",
+      "title": "Bubble or build-out? The bull and bear cases for AI compute",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "a-lender-asks-a-narrower-question-than-an-investor",
+        "the-bull-case-demand-is-real-and-already-paying",
+        "the-bear-case-spending-borrowing-and-circularity-have-run-ahead",
+        "history-shows-where-the-losses-landed-last-time",
+        "debt-on-buildings-and-debt-on-chips-carry-different-risks",
+        "a-scorecard-shows-which-way-conditions-are-moving",
+        "lending-that-survives-the-bear-case",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "a-lender-asks-a-narrower-question-than-an-investor",
+        "the-bull-case-demand-is-real-and-already-paying",
+        "the-bear-case-spending-borrowing-and-circularity-have-run-ahead",
+        "history-shows-where-the-losses-landed-last-time",
+        "debt-on-buildings-and-debt-on-chips-carry-different-risks",
+        "a-scorecard-shows-which-way-conditions-are-moving",
+        "lending-that-survives-the-bear-case",
+        "summary"
+      ],
+      "tables": 1
+    },
+    {
+      "width": 1440,
+      "route": "/research/how-a-gpu-financing-deal-gets-done",
+      "title": "How a GPU financing deal gets done",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "many-parties-must-cooperate-before-money-moves",
+        "stage-1-the-first-conversation-tests-for-a-source-of-repayment",
+        "stage-2-indicative-terms-set-the-basis-for-comparison",
+        "stage-3-diligence-proves-the-hardware-the-site-and-the-customer",
+        "stage-4-documents-give-the-lender-control",
+        "stage-5-funding-follows-physical-milestones",
+        "stage-6-after-funding-monitoring-matters-more-than-paperwork",
+        "timelines-depend-on-how-quickly-the-evidence-arrives",
+        "preparing-the-evidence-shortens-every-stage",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "many-parties-must-cooperate-before-money-moves",
+        "stage-1-the-first-conversation-tests-for-a-source-of-repayment",
+        "stage-2-indicative-terms-set-the-basis-for-comparison",
+        "stage-3-diligence-proves-the-hardware-the-site-and-the-customer",
+        "stage-4-documents-give-the-lender-control",
+        "stage-5-funding-follows-physical-milestones",
+        "stage-6-after-funding-monitoring-matters-more-than-paperwork",
+        "timelines-depend-on-how-quickly-the-evidence-arrives",
+        "preparing-the-evidence-shortens-every-stage",
+        "summary"
+      ],
+      "tables": 0
+    },
+    {
+      "width": 1440,
+      "route": "/research/three-ways-to-finance-gpus",
+      "title": "Three ways to finance GPUs: offtaker-backed, bridge and equity",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "every-financing-starts-with-a-source-of-repayment",
+        "offtaker-backed-financing-is-repaid-by-contracts-so-the-contract-is-the-credit",
+        "bridge-loans-are-repaid-by-a-next-step-so-they-need-a-second-way-out",
+        "equity-carries-the-risks-that-contracts-and-collateral-cannot",
+        "side-by-side-the-trade-offs-are-clear",
+        "other-structures-are-variations-on-the-same-question",
+        "one-project-often-uses-all-three-in-sequence",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "every-financing-starts-with-a-source-of-repayment",
+        "offtaker-backed-financing-is-repaid-by-contracts-so-the-contract-is-the-credit",
+        "bridge-loans-are-repaid-by-a-next-step-so-they-need-a-second-way-out",
+        "equity-carries-the-risks-that-contracts-and-collateral-cannot",
+        "side-by-side-the-trade-offs-are-clear",
+        "other-structures-are-variations-on-the-same-question",
+        "one-project-often-uses-all-three-in-sequence",
+        "summary"
+      ],
+      "tables": 1
+    },
+    {
+      "width": 1440,
+      "route": "/research/what-a-gpu-earns-and-what-its-worth",
+      "title": "What a GPU earns, and what it's worth",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "monthly-cash-starts-with-three-inputs",
+        "price-history-shows-how-far-payback-can-move",
+        "occupancy-and-cost-matter-as-much-as-price",
+        "a-gpu-has-three-values-and-only-one-protects-a-lender",
+        "earnings-and-value-fall-together",
+        "the-loan-is-sized-to-the-lower-of-two-limits",
+        "six-questions-test-any-gpu-pitch",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "monthly-cash-starts-with-three-inputs",
+        "price-history-shows-how-far-payback-can-move",
+        "occupancy-and-cost-matter-as-much-as-price",
+        "a-gpu-has-three-values-and-only-one-protects-a-lender",
+        "earnings-and-value-fall-together",
+        "the-loan-is-sized-to-the-lower-of-two-limits",
+        "six-questions-test-any-gpu-pitch",
+        "summary"
+      ],
+      "tables": 3
+    },
+    {
+      "width": 1440,
+      "route": "/research/whos-who-in-the-gpu-market",
+      "title": "Who's who in the GPU market",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "a-deployment-is-a-chain-of-separate-parties",
+        "chips-and-servers-set-the-timetable-and-the-starting-value",
+        "power-and-sites-decide-when-hardware-can-earn",
+        "operators-turn-hardware-into-a-service-and-usually-borrow-to-do-it",
+        "customers-supply-the-cash-and-their-credit-sets-the-price",
+        "capital-arrives-through-a-ladder-of-structures",
+        "the-largest-participants-play-several-roles-at-once",
+        "risk-concentrates-where-cash-changes-hands",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "a-deployment-is-a-chain-of-separate-parties",
+        "chips-and-servers-set-the-timetable-and-the-starting-value",
+        "power-and-sites-decide-when-hardware-can-earn",
+        "operators-turn-hardware-into-a-service-and-usually-borrow-to-do-it",
+        "customers-supply-the-cash-and-their-credit-sets-the-price",
+        "capital-arrives-through-a-ladder-of-structures",
+        "the-largest-participants-play-several-roles-at-once",
+        "risk-concentrates-where-cash-changes-hands",
+        "summary"
+      ],
+      "tables": 1
+    },
+    {
+      "width": 768,
+      "route": "/research",
+      "title": "Research.",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [],
+      "links": [],
+      "tables": 0
+    },
+    {
+      "width": 768,
+      "route": "/research/bubble-or-build-out",
+      "title": "Bubble or build-out? The bull and bear cases for AI compute",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "a-lender-asks-a-narrower-question-than-an-investor",
+        "the-bull-case-demand-is-real-and-already-paying",
+        "the-bear-case-spending-borrowing-and-circularity-have-run-ahead",
+        "history-shows-where-the-losses-landed-last-time",
+        "debt-on-buildings-and-debt-on-chips-carry-different-risks",
+        "a-scorecard-shows-which-way-conditions-are-moving",
+        "lending-that-survives-the-bear-case",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "a-lender-asks-a-narrower-question-than-an-investor",
+        "the-bull-case-demand-is-real-and-already-paying",
+        "the-bear-case-spending-borrowing-and-circularity-have-run-ahead",
+        "history-shows-where-the-losses-landed-last-time",
+        "debt-on-buildings-and-debt-on-chips-carry-different-risks",
+        "a-scorecard-shows-which-way-conditions-are-moving",
+        "lending-that-survives-the-bear-case",
+        "summary"
+      ],
+      "tables": 1
+    },
+    {
+      "width": 768,
+      "route": "/research/how-a-gpu-financing-deal-gets-done",
+      "title": "How a GPU financing deal gets done",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "many-parties-must-cooperate-before-money-moves",
+        "stage-1-the-first-conversation-tests-for-a-source-of-repayment",
+        "stage-2-indicative-terms-set-the-basis-for-comparison",
+        "stage-3-diligence-proves-the-hardware-the-site-and-the-customer",
+        "stage-4-documents-give-the-lender-control",
+        "stage-5-funding-follows-physical-milestones",
+        "stage-6-after-funding-monitoring-matters-more-than-paperwork",
+        "timelines-depend-on-how-quickly-the-evidence-arrives",
+        "preparing-the-evidence-shortens-every-stage",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "many-parties-must-cooperate-before-money-moves",
+        "stage-1-the-first-conversation-tests-for-a-source-of-repayment",
+        "stage-2-indicative-terms-set-the-basis-for-comparison",
+        "stage-3-diligence-proves-the-hardware-the-site-and-the-customer",
+        "stage-4-documents-give-the-lender-control",
+        "stage-5-funding-follows-physical-milestones",
+        "stage-6-after-funding-monitoring-matters-more-than-paperwork",
+        "timelines-depend-on-how-quickly-the-evidence-arrives",
+        "preparing-the-evidence-shortens-every-stage",
+        "summary"
+      ],
+      "tables": 0
+    },
+    {
+      "width": 768,
+      "route": "/research/three-ways-to-finance-gpus",
+      "title": "Three ways to finance GPUs: offtaker-backed, bridge and equity",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "every-financing-starts-with-a-source-of-repayment",
+        "offtaker-backed-financing-is-repaid-by-contracts-so-the-contract-is-the-credit",
+        "bridge-loans-are-repaid-by-a-next-step-so-they-need-a-second-way-out",
+        "equity-carries-the-risks-that-contracts-and-collateral-cannot",
+        "side-by-side-the-trade-offs-are-clear",
+        "other-structures-are-variations-on-the-same-question",
+        "one-project-often-uses-all-three-in-sequence",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "every-financing-starts-with-a-source-of-repayment",
+        "offtaker-backed-financing-is-repaid-by-contracts-so-the-contract-is-the-credit",
+        "bridge-loans-are-repaid-by-a-next-step-so-they-need-a-second-way-out",
+        "equity-carries-the-risks-that-contracts-and-collateral-cannot",
+        "side-by-side-the-trade-offs-are-clear",
+        "other-structures-are-variations-on-the-same-question",
+        "one-project-often-uses-all-three-in-sequence",
+        "summary"
+      ],
+      "tables": 1
+    },
+    {
+      "width": 768,
+      "route": "/research/what-a-gpu-earns-and-what-its-worth",
+      "title": "What a GPU earns, and what it's worth",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "monthly-cash-starts-with-three-inputs",
+        "price-history-shows-how-far-payback-can-move",
+        "occupancy-and-cost-matter-as-much-as-price",
+        "a-gpu-has-three-values-and-only-one-protects-a-lender",
+        "earnings-and-value-fall-together",
+        "the-loan-is-sized-to-the-lower-of-two-limits",
+        "six-questions-test-any-gpu-pitch",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "monthly-cash-starts-with-three-inputs",
+        "price-history-shows-how-far-payback-can-move",
+        "occupancy-and-cost-matter-as-much-as-price",
+        "a-gpu-has-three-values-and-only-one-protects-a-lender",
+        "earnings-and-value-fall-together",
+        "the-loan-is-sized-to-the-lower-of-two-limits",
+        "six-questions-test-any-gpu-pitch",
+        "summary"
+      ],
+      "tables": 3
+    },
+    {
+      "width": 768,
+      "route": "/research/whos-who-in-the-gpu-market",
+      "title": "Who's who in the GPU market",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "a-deployment-is-a-chain-of-separate-parties",
+        "chips-and-servers-set-the-timetable-and-the-starting-value",
+        "power-and-sites-decide-when-hardware-can-earn",
+        "operators-turn-hardware-into-a-service-and-usually-borrow-to-do-it",
+        "customers-supply-the-cash-and-their-credit-sets-the-price",
+        "capital-arrives-through-a-ladder-of-structures",
+        "the-largest-participants-play-several-roles-at-once",
+        "risk-concentrates-where-cash-changes-hands",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "a-deployment-is-a-chain-of-separate-parties",
+        "chips-and-servers-set-the-timetable-and-the-starting-value",
+        "power-and-sites-decide-when-hardware-can-earn",
+        "operators-turn-hardware-into-a-service-and-usually-borrow-to-do-it",
+        "customers-supply-the-cash-and-their-credit-sets-the-price",
+        "capital-arrives-through-a-ladder-of-structures",
+        "the-largest-participants-play-several-roles-at-once",
+        "risk-concentrates-where-cash-changes-hands",
+        "summary"
+      ],
+      "tables": 1
+    },
+    {
+      "width": 375,
+      "route": "/research",
+      "title": "Research.",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [],
+      "links": [],
+      "tables": 0
+    },
+    {
+      "width": 375,
+      "route": "/research/bubble-or-build-out",
+      "title": "Bubble or build-out? The bull and bear cases for AI compute",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "a-lender-asks-a-narrower-question-than-an-investor",
+        "the-bull-case-demand-is-real-and-already-paying",
+        "the-bear-case-spending-borrowing-and-circularity-have-run-ahead",
+        "history-shows-where-the-losses-landed-last-time",
+        "debt-on-buildings-and-debt-on-chips-carry-different-risks",
+        "a-scorecard-shows-which-way-conditions-are-moving",
+        "lending-that-survives-the-bear-case",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "a-lender-asks-a-narrower-question-than-an-investor",
+        "the-bull-case-demand-is-real-and-already-paying",
+        "the-bear-case-spending-borrowing-and-circularity-have-run-ahead",
+        "history-shows-where-the-losses-landed-last-time",
+        "debt-on-buildings-and-debt-on-chips-carry-different-risks",
+        "a-scorecard-shows-which-way-conditions-are-moving",
+        "lending-that-survives-the-bear-case",
+        "summary"
+      ],
+      "tables": 1
+    },
+    {
+      "width": 375,
+      "route": "/research/how-a-gpu-financing-deal-gets-done",
+      "title": "How a GPU financing deal gets done",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "many-parties-must-cooperate-before-money-moves",
+        "stage-1-the-first-conversation-tests-for-a-source-of-repayment",
+        "stage-2-indicative-terms-set-the-basis-for-comparison",
+        "stage-3-diligence-proves-the-hardware-the-site-and-the-customer",
+        "stage-4-documents-give-the-lender-control",
+        "stage-5-funding-follows-physical-milestones",
+        "stage-6-after-funding-monitoring-matters-more-than-paperwork",
+        "timelines-depend-on-how-quickly-the-evidence-arrives",
+        "preparing-the-evidence-shortens-every-stage",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "many-parties-must-cooperate-before-money-moves",
+        "stage-1-the-first-conversation-tests-for-a-source-of-repayment",
+        "stage-2-indicative-terms-set-the-basis-for-comparison",
+        "stage-3-diligence-proves-the-hardware-the-site-and-the-customer",
+        "stage-4-documents-give-the-lender-control",
+        "stage-5-funding-follows-physical-milestones",
+        "stage-6-after-funding-monitoring-matters-more-than-paperwork",
+        "timelines-depend-on-how-quickly-the-evidence-arrives",
+        "preparing-the-evidence-shortens-every-stage",
+        "summary"
+      ],
+      "tables": 0
+    },
+    {
+      "width": 375,
+      "route": "/research/three-ways-to-finance-gpus",
+      "title": "Three ways to finance GPUs: offtaker-backed, bridge and equity",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "every-financing-starts-with-a-source-of-repayment",
+        "offtaker-backed-financing-is-repaid-by-contracts-so-the-contract-is-the-credit",
+        "bridge-loans-are-repaid-by-a-next-step-so-they-need-a-second-way-out",
+        "equity-carries-the-risks-that-contracts-and-collateral-cannot",
+        "side-by-side-the-trade-offs-are-clear",
+        "other-structures-are-variations-on-the-same-question",
+        "one-project-often-uses-all-three-in-sequence",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "every-financing-starts-with-a-source-of-repayment",
+        "offtaker-backed-financing-is-repaid-by-contracts-so-the-contract-is-the-credit",
+        "bridge-loans-are-repaid-by-a-next-step-so-they-need-a-second-way-out",
+        "equity-carries-the-risks-that-contracts-and-collateral-cannot",
+        "side-by-side-the-trade-offs-are-clear",
+        "other-structures-are-variations-on-the-same-question",
+        "one-project-often-uses-all-three-in-sequence",
+        "summary"
+      ],
+      "tables": 1
+    },
+    {
+      "width": 375,
+      "route": "/research/what-a-gpu-earns-and-what-its-worth",
+      "title": "What a GPU earns, and what it's worth",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "monthly-cash-starts-with-three-inputs",
+        "price-history-shows-how-far-payback-can-move",
+        "occupancy-and-cost-matter-as-much-as-price",
+        "a-gpu-has-three-values-and-only-one-protects-a-lender",
+        "earnings-and-value-fall-together",
+        "the-loan-is-sized-to-the-lower-of-two-limits",
+        "six-questions-test-any-gpu-pitch",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "monthly-cash-starts-with-three-inputs",
+        "price-history-shows-how-far-payback-can-move",
+        "occupancy-and-cost-matter-as-much-as-price",
+        "a-gpu-has-three-values-and-only-one-protects-a-lender",
+        "earnings-and-value-fall-together",
+        "the-loan-is-sized-to-the-lower-of-two-limits",
+        "six-questions-test-any-gpu-pitch",
+        "summary"
+      ],
+      "tables": 3
+    },
+    {
+      "width": 375,
+      "route": "/research/whos-who-in-the-gpu-market",
+      "title": "Who's who in the GPU market",
+      "overflow": false,
+      "brokenImages": [],
+      "headings": [
+        "introduction",
+        "a-deployment-is-a-chain-of-separate-parties",
+        "chips-and-servers-set-the-timetable-and-the-starting-value",
+        "power-and-sites-decide-when-hardware-can-earn",
+        "operators-turn-hardware-into-a-service-and-usually-borrow-to-do-it",
+        "customers-supply-the-cash-and-their-credit-sets-the-price",
+        "capital-arrives-through-a-ladder-of-structures",
+        "the-largest-participants-play-several-roles-at-once",
+        "risk-concentrates-where-cash-changes-hands",
+        "summary"
+      ],
+      "links": [
+        "introduction",
+        "a-deployment-is-a-chain-of-separate-parties",
+        "chips-and-servers-set-the-timetable-and-the-starting-value",
+        "power-and-sites-decide-when-hardware-can-earn",
+        "operators-turn-hardware-into-a-service-and-usually-borrow-to-do-it",
+        "customers-supply-the-cash-and-their-credit-sets-the-price",
+        "capital-arrives-through-a-ladder-of-structures",
+        "the-largest-participants-play-several-roles-at-once",
+        "risk-concentrates-where-cash-changes-hands",
+        "summary"
+      ],
+      "tables": 1
+    }
+  ],
+  "filter": {
+    "cards": 1,
+    "title": [
+      "Three ways to finance GPUs: offtaker-backed, bridge and equity"
+    ],
+    "pressed": "true",
+    "resetCards": 5
+  },
+  "toc": {
+    "hash": "#the-bull-case-demand-is-real-and-already-paying",
+    "active": "#the-bull-case-demand-is-real-and-already-paying",
+    "position": 128.203125,
+    "progress": "scaleX(0.182902)"
+  },
+  "mobileToc": {
+    "hash": "#the-bull-case-demand-is-real-and-already-paying",
+    "open": false,
+    "position": 124
+  },
+  "sources": 53,
+  "menuResearch": true,
+  "errors": []
+}
