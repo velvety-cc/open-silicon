@@ -60,7 +60,8 @@
 .research-reading-layout { display: grid; grid-template-columns: 220px minmax(0, 760px); justify-content: center; align-items: start; gap: 64px; }
 .research-reading-column { min-width: 0; }
 .research-contents { position: sticky; top: 120px; min-width: 0; }
-.research-reading-progress { position: fixed; inset: 88px 0 auto; height: 2px; z-index: 51; pointer-events: none; }
+/* Keep the progress line inside the header's lower edge at every breakpoint. */
+.research-reading-progress { position: fixed; inset: calc(var(--marketing-header-height) - 1px) 0 auto; height: 2px; z-index: 51; pointer-events: none; }
 .research-reading-progress > span { display: block; height: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left; }
 .research-contents-desktop > .research-eyebrow { margin-bottom: 18px; color: #292530; }
 .research-contents ol { list-style: none; margin: 0; padding: 0; }

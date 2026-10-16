@@ -1,9 +1,10 @@
 /* Public site composition. Scoped rules keep the internal archive's layout intact. */
+:root { --marketing-header-height: 88px; }
 .marketing-site .eyebrow { margin-bottom: 24px; font-size: var(--type-label); font-weight: var(--weight-medium); line-height: 1.5; }
 .marketing-header { transition: background-color 200ms, color 200ms; }
 .marketing-header.is-light { background: #fff; border-bottom: 1px solid var(--line); }
 .marketing-header.is-scrolled:not(.is-light) { background: #09111dcc; backdrop-filter: blur(24px); }
-.marketing-header .header-inner { min-height: 88px; }
+.marketing-header .header-inner { min-height: var(--marketing-header-height); }
 .marketing-header .brand > span { font-size: 27px; }
 .marketing-nav { isolation: isolate; --nav-hover-background: #ffffff16; }
 .marketing-header.is-light .marketing-nav { --nav-hover-background: #00000008; }
@@ -192,7 +193,8 @@
 .not-found { min-height: 65svh; padding-bottom: 72px; }
 .not-found p:not(.eyebrow) { margin-block: 24px; }
 @media (max-width: 1199px) {
-  .marketing-header .header-inner { grid-template-columns: 1fr auto; min-height: 80px; }
+  :root { --marketing-header-height: 80px; }
+  .marketing-header .header-inner { grid-template-columns: 1fr auto; }
   .marketing-nav, .marketing-header-cta { display: none; }
   .marketing-header .menu-button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
   .marketing-header .menu-button span { display: block; height: 1px; width: 19px; background: currentColor; }
@@ -205,7 +207,7 @@
   .contact-interest-options { grid-template-columns: 1fr; gap: 16px; }
 }
 @media (max-width: 760px) {
-  .marketing-header .header-inner { min-height: 72px; }
+  :root { --marketing-header-height: 72px; }
   .marketing-header .brand-name { display: block; }
   .marketing-header .brand-symbol { width: 1.1em; height: 1.1em; }
   .marketing-header .brand > span { font-size: 25px; }

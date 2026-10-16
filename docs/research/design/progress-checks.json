@@ -1,0 +1,69 @@
+{
+  "results": [
+    {
+      "width": 375,
+      "headerBottom": 73,
+      "progressTop": 71,
+      "progressBottom": 73,
+      "scale": "scaleX(0.29178)",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "headerBottom": 73,
+      "progressTop": 71,
+      "progressBottom": 73,
+      "scale": "scaleX(0.293304)",
+      "overflow": false
+    },
+    {
+      "width": 760,
+      "headerBottom": 73,
+      "progressTop": 71,
+      "progressBottom": 73,
+      "scale": "scaleX(0.299888)",
+      "overflow": false
+    },
+    {
+      "width": 761,
+      "headerBottom": 81,
+      "progressTop": 79,
+      "progressBottom": 81,
+      "scale": "scaleX(0.296389)",
+      "overflow": false
+    },
+    {
+      "width": 900,
+      "headerBottom": 81,
+      "progressTop": 79,
+      "progressBottom": 81,
+      "scale": "scaleX(0.296394)",
+      "overflow": false
+    },
+    {
+      "width": 1199,
+      "headerBottom": 81,
+      "progressTop": 79,
+      "progressBottom": 81,
+      "scale": "scaleX(0.300745)",
+      "overflow": false
+    },
+    {
+      "width": 1200,
+      "headerBottom": 89,
+      "progressTop": 87,
+      "progressBottom": 89,
+      "scale": "scaleX(0.300698)",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "headerBottom": 89,
+      "progressTop": 87,
+      "progressBottom": 89,
+      "scale": "scaleX(0.300728)",
+      "overflow": false
+    }
+  ],
+  "errors": []
+}
