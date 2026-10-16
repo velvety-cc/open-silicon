@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-16",
+  "checks": [
+    {
+      "slug": "bubble-or-build-out",
+      "status": 200,
+      "summaryLabel": false,
+      "summaryBlock": false,
+      "body": true
+    },
+    {
+      "slug": "how-a-gpu-financing-deal-gets-done",
+      "status": 200,
+      "summaryLabel": false,
+      "summaryBlock": false,
+      "body": true
+    },
+    {
+      "slug": "three-ways-to-finance-gpus",
+      "status": 200,
+      "summaryLabel": false,
+      "summaryBlock": false,
+      "body": true
+    },
+    {
+      "slug": "what-a-gpu-earns-and-what-its-worth",
+      "status": 200,
+      "summaryLabel": false,
+      "summaryBlock": false,
+      "body": true
+    },
+    {
+      "slug": "whos-who-in-the-gpu-market",
+      "status": 200,
+      "summaryLabel": false,
+      "summaryBlock": false,
+      "body": true
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "summaryNodes": 0
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "summaryNodes": 0
+    }
+  ]
+}

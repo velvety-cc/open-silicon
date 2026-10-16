@@ -1,0 +1,315 @@
+{
+  "date": "2026-10-16",
+  "browser": "Chrome desktop with responsive viewports",
+  "checks": [
+    {
+      "width": 1440,
+      "route": "/research",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Research",
+      "anchors": []
+    },
+    {
+      "width": 1440,
+      "route": "/research/bubble-or-build-out",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Bubble or build-out? The bull and bear cases for AI compute",
+      "anchors": []
+    },
+    {
+      "width": 1440,
+      "route": "/research/how-a-gpu-financing-deal-gets-done",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "How a GPU financing deal gets done",
+      "anchors": []
+    },
+    {
+      "width": 1440,
+      "interaction": "chapter navigation",
+      "heading": {
+        "top": 131.15625
+      },
+      "progress": {
+        "top": 87,
+        "header": "88px"
+      }
+    },
+    {
+      "width": 1440,
+      "route": "/research/three-ways-to-finance-gpus",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Three ways to finance GPUs: offtaker-backed, bridge and equity",
+      "anchors": []
+    },
+    {
+      "width": 1440,
+      "route": "/research/what-a-gpu-earns-and-what-its-worth",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "What a GPU earns, and what it's worth",
+      "anchors": []
+    },
+    {
+      "width": 1440,
+      "route": "/research/whos-who-in-the-gpu-market",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Who's who in the GPU market",
+      "anchors": []
+    },
+    {
+      "width": 1024,
+      "route": "/research",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Research",
+      "anchors": []
+    },
+    {
+      "width": 1024,
+      "route": "/research/bubble-or-build-out",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Bubble or build-out? The bull and bear cases for AI compute",
+      "anchors": []
+    },
+    {
+      "width": 1024,
+      "route": "/research/how-a-gpu-financing-deal-gets-done",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "How a GPU financing deal gets done",
+      "anchors": []
+    },
+    {
+      "width": 1024,
+      "route": "/research/three-ways-to-finance-gpus",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Three ways to finance GPUs: offtaker-backed, bridge and equity",
+      "anchors": []
+    },
+    {
+      "width": 1024,
+      "route": "/research/what-a-gpu-earns-and-what-its-worth",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "What a GPU earns, and what it's worth",
+      "anchors": []
+    },
+    {
+      "width": 1024,
+      "route": "/research/whos-who-in-the-gpu-market",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Who's who in the GPU market",
+      "anchors": []
+    },
+    {
+      "width": 768,
+      "route": "/research",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Research",
+      "anchors": []
+    },
+    {
+      "width": 768,
+      "route": "/research/bubble-or-build-out",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Bubble or build-out? The bull and bear cases for AI compute",
+      "anchors": []
+    },
+    {
+      "width": 768,
+      "route": "/research/how-a-gpu-financing-deal-gets-done",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "How a GPU financing deal gets done",
+      "anchors": []
+    },
+    {
+      "width": 768,
+      "route": "/research/three-ways-to-finance-gpus",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Three ways to finance GPUs: offtaker-backed, bridge and equity",
+      "anchors": []
+    },
+    {
+      "width": 768,
+      "route": "/research/what-a-gpu-earns-and-what-its-worth",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "What a GPU earns, and what it's worth",
+      "anchors": []
+    },
+    {
+      "width": 768,
+      "route": "/research/whos-who-in-the-gpu-market",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Who's who in the GPU market",
+      "anchors": []
+    },
+    {
+      "width": 390,
+      "route": "/research",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Research",
+      "anchors": []
+    },
+    {
+      "width": 390,
+      "route": "/research/bubble-or-build-out",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Bubble or build-out? The bull and bear cases for AI compute",
+      "anchors": []
+    },
+    {
+      "width": 390,
+      "route": "/research/how-a-gpu-financing-deal-gets-done",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "How a GPU financing deal gets done",
+      "anchors": []
+    },
+    {
+      "width": 390,
+      "interaction": "chapter navigation",
+      "heading": {
+        "top": 128.40625
+      },
+      "progress": {
+        "top": 71,
+        "header": "72px"
+      }
+    },
+    {
+      "width": 390,
+      "route": "/research/three-ways-to-finance-gpus",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Three ways to finance GPUs: offtaker-backed, bridge and equity",
+      "anchors": []
+    },
+    {
+      "width": 390,
+      "route": "/research/what-a-gpu-earns-and-what-its-worth",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "What a GPU earns, and what it's worth",
+      "anchors": []
+    },
+    {
+      "width": 390,
+      "route": "/research/whos-who-in-the-gpu-market",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Who's who in the GPU market",
+      "anchors": []
+    },
+    {
+      "width": 320,
+      "route": "/research",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Research",
+      "anchors": []
+    },
+    {
+      "width": 320,
+      "route": "/research/bubble-or-build-out",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Bubble or build-out? The bull and bear cases for AI compute",
+      "anchors": []
+    },
+    {
+      "width": 320,
+      "route": "/research/how-a-gpu-financing-deal-gets-done",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "How a GPU financing deal gets done",
+      "anchors": []
+    },
+    {
+      "width": 320,
+      "route": "/research/three-ways-to-finance-gpus",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Three ways to finance GPUs: offtaker-backed, bridge and equity",
+      "anchors": []
+    },
+    {
+      "width": 320,
+      "route": "/research/what-a-gpu-earns-and-what-its-worth",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "What a GPU earns, and what it's worth",
+      "anchors": []
+    },
+    {
+      "width": 320,
+      "route": "/research/whos-who-in-the-gpu-market",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "Who's who in the GPU market",
+      "anchors": []
+    }
+  ],
+  "errors": [],
+  "indexContactRemoval": [
+    {
+      "width": 1440,
+      "contactPrompt": false,
+      "contactSection": false,
+      "articles": 5,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "contactPrompt": false,
+      "contactSection": false,
+      "articles": 5,
+      "overflow": false
+    }
+  ]
+}

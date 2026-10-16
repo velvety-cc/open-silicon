@@ -4,8 +4,8 @@ description: "Real demand and stretched financing can exist at the same time. We
 date: "2026-10-15"
 category: "Market outlook"
 author: "OpenSilicon Research"
-cover: "/approach-intelligence-final-v3.webp"
-coverAlt: "Earth seen from space, with city lights visible on its night side"
+cover: "/research/covers/bubble-or-build-out.svg"
+coverAlt: "Conceptual diverging trajectories for the bull and bear cases for AI compute; an illustration, not plotted market data."
 takeaway: "Both cases rest on real evidence. Demand is turning into revenue, while spending and borrowing are growing faster than proven profits, and some of the money circulates among a small group of firms. For a lender, the useful question is narrower than bubble or not: does this asset repay before its contract, or its usefulness, runs out?"
 sources:
   - title: "OpenAI · DevDay 2025"

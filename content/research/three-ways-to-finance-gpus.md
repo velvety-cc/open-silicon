@@ -4,8 +4,8 @@ description: "The first question in any GPU financing is what will repay the cap
 date: "2026-10-15"
 category: "Financing"
 author: "OpenSilicon Research"
-cover: "/gpu-financing-hero-v1.webp"
-coverAlt: "Rows of illuminated GPU server racks behind a glass wall in a data center"
+cover: "/research/covers/three-ways-to-finance-gpus.svg"
+coverAlt: "Three schematic paths represent contracted cash flows, a bridge to a defined next step, and equity participation in future upside."
 takeaway: "Choose the structure by the source of repayment. Signed compute contracts support lower-cost offtaker-backed debt. Bridge loans fund a defined gap to a known next step. Equity carries the risks that contracts and collateral cannot yet cover."
 sources:
   - title: "CoreWeave · $8.5B investment-grade GPU-backed financing (DDTL 4.0), March 31, 2026"

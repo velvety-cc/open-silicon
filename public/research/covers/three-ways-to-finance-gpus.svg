@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">Three sources of repayment</title><desc id="desc">Three schematic paths represent contracted cash flows, a bridge to a defined next step, and equity participation in future upside.</desc>
+<style>.ink{stroke:#242427;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}.accent{stroke:#533afe;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}.muted{stroke:#9e9ca5;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}</style>
+<rect width="800" height="600" fill="#f6f6f5"/>
+
+<g class="muted"><path d="M150 160H650M150 300H650M150 440H390"/></g>
+<path d="M230 160H570" class="accent"/>
+<path d="M230 300H385" stroke="#533afe" stroke-width="3" fill="none"/><path d="M385 300H490" stroke="#533afe" stroke-width="3" stroke-dasharray="7 8" fill="none"/><path d="M490 300H570" class="ink"/>
+<path d="M230 440H390C470 440 480 386 570 386M390 440H570M390 440C470 440 480 494 570 494" class="accent"/>
+<g fill="#f6f6f5" stroke="#242427" stroke-width="2.5"><circle cx="150" cy="160" r="12"/><circle cx="650" cy="160" r="12"/><circle cx="150" cy="300" r="12"/><circle cx="650" cy="300" r="12"/><circle cx="150" cy="440" r="12"/></g>
+<g fill="#f6f6f5" stroke="#533afe" stroke-width="2.5"><rect x="310" y="140" width="40" height="40"/><rect x="470" y="280" width="40" height="40"/><circle cx="581" cy="386" r="11"/><circle cx="581" cy="440" r="11"/><circle cx="581" cy="494" r="11"/></g>
+<g stroke="#c9c8cd" stroke-width="1"><path d="M110 230H690M110 370H690"/></g>
+</svg>
