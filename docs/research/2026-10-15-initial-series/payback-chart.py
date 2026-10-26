@@ -1,14 +1,15 @@
 """Render the rent charts for the GPU unit economics and market outlook articles.
 
-Standard library only. Reads the September 2026 SemiAnalysis contract ranges and applies
-the same illustrative scenario as payback-model.py: $35,750 installed cost per GPU,
-90% paid occupancy, $400 monthly cash costs and 730 hours per month.
+Standard library only. The October outlook chart uses the September 2026 snapshot.
+The May unit-economics chart delegates to its own dated-source renderer, which
+uses pricing disclosed April 2, 2026 and a hypothetical $35,000 installed budget.
 
 Writes the two-panel rent-and-payback chart and a rent-only chart.
 
 Usage: python3 -I docs/research/2026-10-15-initial-series/payback-chart.py
 """
 import csv
+import runpy
 from datetime import date
 from pathlib import Path
 
@@ -122,8 +123,8 @@ def main():
         callout(RIGHT, pay_y(last["fast"]) + 22, "Apr 2026", f'{last["fast"]:.1f}–{last["slow"]:.1f} months', "end"),
         "</svg>",
     ]
-    OUTPUT.write_text("\n".join(parts) + "\n")
-    print(f"Wrote {OUTPUT.relative_to(ROOT)}")
+    # Never regenerate the May article from the later September snapshot.
+    runpy.run_path(str(ROOT / "docs/research/2026-10-26-temporal-audit/unit-economics-chart.py"), run_name="__main__")
 
     rent = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{RENT_HEIGHT * 1.2:.0f}" viewBox="0 0 {WIDTH} {RENT_HEIGHT}" role="img" aria-labelledby="title desc">',
