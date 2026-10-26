@@ -1,7 +1,7 @@
 ---
 title: "Bubble or build-out? The bull and bear cases for AI compute"
 description: "Real demand and stretched financing can exist at the same time. We set out the strongest case on each side, and what it means for lending against GPUs."
-date: "2026-10-26"
+date: "2026-10-20"
 category: "Market outlook"
 author: "OpenSilicon Research"
 cover: "/research/covers/bubble-or-build-out.svg"
