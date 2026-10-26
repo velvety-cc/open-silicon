@@ -8,34 +8,14 @@ cover: "/research/covers/three-ways-to-finance-gpus.svg"
 coverAlt: "Three schematic paths represent contracted cash flows, a bridge to a defined next step, and equity participation in future upside."
 takeaway: "Choose the structure by the source of repayment. Signed compute contracts support lower-cost offtaker-backed debt. Bridge loans fund a defined gap to a known next step. Equity carries the risks that contracts and collateral cannot yet cover."
 sources:
-  - title: "CoreWeave · $8.5B investment-grade GPU-backed financing (DDTL 4.0), March 31, 2026"
+  - title: "CoreWeave · $8.5B investment-grade GPU-backed financing, March 31, 2026"
     url: "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Closes-Landmark-8-5-Billion-Financing-Facility-Achieving-First-Investment-Grade-Rated-GPU-backed-Financing/default.aspx"
-  - title: "CoreWeave · $2.6B loan facility (DDTL 5.5), August 10, 2026"
-    url: "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Closes-2-6-Billion-Loan-Facility-Expanding-Financing-Flexibility-for-AI-Infrastructure/default.aspx"
-  - title: "CoreWeave · DDTL 5.5 credit agreement, SEC Form 8-K"
-    url: "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000357/crwv-20260807.htm"
-  - title: "Applied Digital · $300M senior secured bridge facility, May 2026"
+  - title: "Applied Digital · $300M senior secured bridge facility, May 4, 2026"
     url: "https://ir.applieddigital.com/_assets/_2b270afc37018352de7ef24c16a6e485/appliedblockchaininc/news/2026-05-04_Applied_Digital_Announces_300_Million_Senior_150.pdf"
-  - title: "Boost Run · Quarterly report for the period ended June 30, 2026, SEC Form 10-Q"
-    url: "https://www.sec.gov/Archives/edgar/data/2090646/000149315226039031/form10-q.htm"
-  - title: "Federal Reserve Bank of New York · Secured Overnight Financing Rate"
-    url: "https://www.newyorkfed.org/markets/reference-rates/sofr"
-  - title: "USD.AI · Borrower terms (accessed September 17, 2026)"
-    url: "https://usd.ai/borrow"
-  - title: "USD.AI · August 2026 recap of funded GPU loans"
-    url: "https://usd.ai/insights/august-recap-100m-facility-susdai-ath"
-  - title: "Astatine · Infrastructure strategy"
-    url: "https://astatineip.com/infrastructure/"
-  - title: "QumulusAI · $26M multi-year lease financing for a B200 cluster, May 2026"
+  - title: "QumulusAI · B200 equipment lease, May 7, 2026"
     url: "https://www.qumulusai.com/articles/qumulusai-secures-26m-multi-year-lease-financing-for-50-node-nvidia-b200-gpu-cluster"
-  - title: "Lambda · $926M senior secured term loan B facility, August 2026"
-    url: "https://lambda.ai/blog/lambda-closes-926-million-senior-secured-term-loan-b-facility"
-  - title: "DigitalOcean · Equipment financing facility, SEC Form 8-K, September 2026"
-    url: "https://www.sec.gov/Archives/edgar/data/1582961/000110465926106704/tm2625205d1_8k.htm"
-  - title: "NVIDIA · Quarterly report for the period ended July 26, 2026, SEC Form 10-Q"
-    url: "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
-  - title: "NVIDIA · AI factory financing and selective residual-value support, August 11, 2026"
-    url: "https://blogs.nvidia.com/blog/nvidia-ai-factory-compute/"
+  - title: "Apollo · Valor and xAI compute infrastructure lease transaction, January 7, 2026"
+    url: "https://www.apollo.com/wealth/insights-news/pressreleases/2026/01/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-3214463"
 status: published
 ---
 
@@ -49,7 +29,7 @@ Our thesis is that the structure should follow the source of repayment. Signed c
 
 The argument runs in seven parts. We first identify the three places a GPU deployment can repay its capital from. We then take the three structures we describe on our About page in turn: offtaker-backed financing, where the contract is the real credit; bridge loans, which need a second way out; and GPU equity, which absorbs what debt should not. A side-by-side table draws the comparison together, and a short tour of other structures shows that they are variations on the same question. Finally, we show how one project often uses all three in sequence.
 
-The pricing figures throughout come from publicly disclosed transactions. They are reference points, not OpenSilicon targets, and they exclude fees and credit losses. We begin with the question that comes before any of them.
+The transaction examples below were announced by July 21, 2026. Their pricing figures come from those dated announcements. They are reference points, not OpenSilicon targets, and they exclude fees and credit losses. We begin with the question that comes before any of them.
 
 ## Every financing starts with a source of repayment
 
@@ -73,9 +53,9 @@ Because the customer is the real credit, the contract is what the lender is real
 - **Prepayment.** Customers often pay part of the contract in advance. That changes the timing of cash, so prepaid amounts cannot be counted again as monthly revenue.
 - **Assignability.** The lender needs to take security over the contract and its receivables. Some contracts restrict that.
 
-When those terms are strong, the pricing shows it. The most visible reference points are CoreWeave's facilities. In March 2026 it closed an $8.5 billion delayed-draw term loan that it describes as the first investment-grade-rated GPU-backed financing, with a fixed-rate tranche at about 5.9% and a floating tranche at SOFR + 2.25%. In August 2026 it closed a $2.6 billion facility at SOFR + 5.50%, which is about 9.4% using the 3.88% SOFR published on October 7, 2026. These two transactions anchor the roughly 6–10% range shown on our About page.
+When those terms are strong, the pricing shows it. The most visible reference points are CoreWeave's facilities. In March 2026 it closed an $8.5 billion delayed-draw term loan that it describes as the first investment-grade-rated GPU-backed financing, with a fixed-rate tranche at about 5.9% and a floating tranche at SOFR + 2.25%. The floating-rate spread is stated without converting it into an all-in coupon: that coupon changes with the benchmark rate. One large platform's transaction is a reference point, not a market-wide pricing range.
 
-The August facility also shows how the structure is evolving. Its debt runs about five years against customer contracts that average roughly three years, so its lenders are underwriting renewal risk: the chance that the capacity is re-contracted on similar terms. In return they have other protections, including a parent guarantee, collateral and a minimum debt service coverage ratio of 1.35×. That is a meaningful development, but those terms reflect a large platform and should not be assumed for every operator.
+Term matching still matters. If debt runs beyond the committed customer contract, repayment may depend on renewal or re-rental at an unknown price. A lender must identify that gap and decide what amortization, reserves or other protection covers it. A strong first customer does not remove the risk after its contract ends.
 
 Offtaker-backed debt is the cleanest structure when a creditworthy customer has already signed. Many projects, however, need capital before that point, and that is the job of the bridge loan.
 
@@ -87,9 +67,9 @@ A bridge loan is short-term capital that carries a project to a defined next ste
 - Delivery to commissioning and customer acceptance.
 - Commissioning to a signed contract or a longer-term facility.
 
-Because the risks of these gaps vary, the public reference points sit in a wider band than for contracted debt. In May 2026 Applied Digital closed a $300 million senior secured bridge facility led by Goldman Sachs. It has a 364-day term, carries SOFR + 2.75% (about 6.6%) and funds data center construction. At the other end, Boost Run disclosed an August 2025 bridge loan at prime + 4.50% with a 7.50% floor on the prime rate, so the rate cannot fall below 12%. That loan was secured by substantially all of the company's assets and repaid in May 2026. Together these anchor the roughly 7–12% range on our About page.
+A dated example shows the mechanism. On May 4, 2026, Applied Digital announced a $300 million senior secured bridge facility led by Goldman Sachs, with a 364-day term at SOFR + 2.75%. It funds data center construction, so it illustrates bridge mechanics rather than a directly comparable GPU-only loan. The company's announcement says it expects to seek additional construction financing, making the next financing step explicit.
 
-The band widens further as contracted support falls away. USD.AI, a specialist GPU lender, advertises 12–15% plus a 3% origination fee for borrowers without an offtake contract or with contracts shorter than 24 months. Among its funded loans, it reports a $7.5 million three-year loan to Corvex at a fixed 10% and a $15.3 million loan to QumulusAI at a fixed 15%. Similar loan sizes priced five points apart show that the borrower and its contracts matter more than the ticket size.
+When contracted support falls away, the borrower is asking the lender to take more uncertainty. That can change the price, advance rate, reserves and permitted use of proceeds. A single disclosed construction bridge does not establish the rate for a smaller GPU deployment, and pricing should be compared only after those differences are understood.
 
 Pricing reflects risk, but sizing is what controls it. A prudent bridge loan is sized against two limits, and the smaller one applies:
 
@@ -106,7 +86,7 @@ Some risks are too uncertain for either kind of debt. Those belong to equity.
 
 GPU equity is ownership of an operator or a project company, and its role is to take the risks that lenders should not. Equity takes the first loss and keeps everything left after debt: re-rental income once the first contracts end, resale proceeds and the value of a growing platform.
 
-Because that upside is uncertain, public return benchmarks specific to GPU equity are scarce. The 15%+ figure on our About page is a gross target IRR from Astatine's infrastructure strategy, which includes data centers, and we use it as a broad infrastructure proxy. GPU equity carries risks that buildings and power assets do not, including rapid technology turnover. The proxy is therefore a starting reference, not a measured GPU return.
+Equity returns depend on the entry price, operating performance, follow-on capital and the eventual exit. A target IRR is not directly comparable with a loan's contractual coupon, and a broad infrastructure strategy is not a measured return for GPU equity. We therefore do not assign a GPU equity return benchmark from these debt examples.
 
 Equity matters to lenders as much as to owners. It funds what debt should not: deposits before there is collateral, the ramp before contracts start, and capacity sold only on demand. Uncontracted spot capacity is mainly an equity risk, because its cash flow can change quickly. Lenders generally expect the operator to keep meaningful equity at risk, so that owner and lender share an interest in the project's success.
 
@@ -122,7 +102,7 @@ Set out together, the three structures differ less in their mechanics than in wh
 | Typical term | Matched to the contract, often several years | Months | Open-ended, until an exit |
 | Main protection | Contract, cash control and security over hardware | Collateral, cash control and reserves | Ownership only |
 | Main risk | Customer credit and contract terms | The next step slips or fails | Pricing, utilization and obsolescence |
-| Public reference | ≈6–10% annual loan pricing | ≈7–12% annual loan pricing | 15%+ gross target IRR, infrastructure proxy |
+| Disclosed example | CoreWeave: about 5.9% fixed or SOFR + 2.25% | Applied Digital: SOFR + 2.75%, 364 days; construction bridge | Negotiated ownership return; no comparable coupon |
 | Fits when | A creditworthy customer has signed | There is a timing gap with a clear exit | The risk cannot yet be contracted or secured |
 
 Read down any column and the logic holds: the weaker and less certain the source of repayment, the shorter the term, the thinner the protection and the higher the return required. The market's other structures follow the same logic.
@@ -132,10 +112,10 @@ Read down any column and the logic holds: the weaker and less certain the source
 The three categories cover most conversations, but the market uses many variations, and each answers the same question about repayment in a different way:
 
 - **Equipment leases.** A lessor owns the hardware and the operator pays rent. In May 2026 QumulusAI signed a three-year lease for a 50-node B200 cluster with about $26 million of total fixed payments and an option to buy at the end.
-- **Term loans with full amortization.** Lambda closed a $926 million senior secured term loan in August 2026 at SOFR + 3.00%, fully amortizing by the end of 2030, to fund deployments for investment-grade customers.
-- **Bank equipment financing.** In September 2026 DigitalOcean disclosed $725 million of committed equipment financing. Each draw is fixed at the matching SOFR swap rate plus 2.75% and amortizes monthly.
+- **Amortizing term loans.** Scheduled principal payments reduce the amount that must be refinanced or recovered at maturity. The schedule has to fit the cash the deployment can produce.
+- **Bank equipment financing.** A facility can fund eligible equipment purchases under an agreed borrowing limit, with pricing and repayment terms set in the documents.
 - **Delayed-draw facilities.** A lender commits a total amount, and the borrower draws it as hardware is delivered. Several of CoreWeave's facilities use this form.
-- **Vendor support.** NVIDIA disclosed $36 billion of AI cloud capacity commitments as of July 26, 2026, typically over six years. It also describes selective residual-value support of up to 25% of an opportunity, assessed project by project. Where it applies, this support strengthens a financing. It is not a market-wide floor for GPU prices.
+- **Leasing vehicles with vendor investment.** Apollo's January 2026 announcement describes NVIDIA investing in the Valor vehicle that acquired and leased compute infrastructure to an xAI subsidiary. Vendor equity in a vehicle is different from a guarantee of every GPU's resale price.
 
 Each of these changes who owns the hardware, when the money is drawn or who stands behind the cash flow. None changes the underlying question. That question is easiest to see over the life of a single project, which often moves through all three main structures.
 

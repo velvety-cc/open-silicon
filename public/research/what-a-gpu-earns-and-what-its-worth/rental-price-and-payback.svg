@@ -1,44 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="574" viewBox="0 0 600 478" role="img" aria-labelledby="title desc">
-<title id="title">H100 contract rents and modeled payback, 2023 to April 2026</title>
-<desc id="desc">One-year H100 contract rents fell from $2.70–3.40 per GPU-hour in the first half of 2023 to $1.45–1.95 in October 2025, then recovered to $2.10–2.70 in April 2026. Holding cost, occupancy and operating costs constant, modeled payback rose from 19.5–26.0 months to 40.6–64.7 months, then fell to 26.0–36.5 months.</desc>
-<style>text { font-family: "Geist", -apple-system, "Helvetica Neue", Arial, sans-serif; font-variant-numeric: tabular-nums; }</style>
+<title id="title">H100 pricing observations and hypothetical payback</title>
+<desc id="desc">SemiAnalysis reported on April 2, 2026 that one-year H100 contract pricing was $1.70 per GPU-hour in October 2025 and $2.35 in March 2026. With a hypothetical $35,000 installed budget, 90% paid occupancy and $400 monthly cash costs, modeled payback is 48.8 and 30.6 months respectively. These are two observations, not a continuous series or percentile ranges.</desc>
+<style>text { font-family: Geist, -apple-system, "Helvetica Neue", Arial, sans-serif; font-variant-numeric: tabular-nums; }</style>
 <rect width="600" height="478" fill="#fff"/>
-<text x="0" y="18" font-size="15"><tspan fill="#111" font-weight="600">Contract rent</tspan><tspan dx="10" fill="#555" font-size="14">H100 one-year contracts, $ per GPU-hour</tspan></text>
-<text x="0" y="244" font-size="15"><tspan fill="#111" font-weight="600">Modeled payback</tspan><tspan dx="10" fill="#555" font-size="14">Months, with cost and occupancy held constant</tspan></text>
-<line x1="44" x2="584" y1="204.0" y2="204.0" stroke="#e5e5e5" stroke-width="1"/>
-<text x="36.0" y="209.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">$0</text>
-<line x1="44" x2="584" y1="164.0" y2="164.0" stroke="#e5e5e5" stroke-width="1"/>
-<text x="36.0" y="169.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">$1</text>
-<line x1="44" x2="584" y1="124.0" y2="124.0" stroke="#e5e5e5" stroke-width="1"/>
-<text x="36.0" y="129.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">$2</text>
-<line x1="44" x2="584" y1="84.0" y2="84.0" stroke="#e5e5e5" stroke-width="1"/>
-<text x="36.0" y="89.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">$3</text>
-<line x1="44" x2="584" y1="44.0" y2="44.0" stroke="#e5e5e5" stroke-width="1"/>
-<text x="36.0" y="49.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">$4</text>
-<polygon points="44.0,68.0 124.4,68.0 124.4,72.0 206.1,72.0 206.1,80.0 246.5,80.0 246.5,104.0 286.9,104.0 286.9,106.0 327.8,106.0 327.8,120.0 368.6,120.0 368.6,120.0 408.6,120.0 408.6,120.0 449.0,120.0 449.0,124.0 462.8,124.0 462.8,124.0 476.5,124.0 476.5,124.0 489.9,124.0 489.9,126.0 503.6,126.0 503.6,124.0 516.9,124.0 516.9,124.0 530.7,124.0 530.7,122.0 544.5,122.0 544.5,110.0 556.9,110.0 556.9,96.0 570.7,96.0 570.7,96.0 584.0,96.0 584.0,120.0 570.7,120.0 570.7,124.0 556.9,124.0 556.9,132.0 544.5,132.0 544.5,144.0 530.7,144.0 530.7,146.0 516.9,146.0 516.9,146.0 503.6,146.0 503.6,146.0 489.9,146.0 489.9,144.0 476.5,144.0 476.5,144.0 462.8,144.0 462.8,136.0 449.0,136.0 449.0,132.0 408.6,132.0 408.6,132.0 368.6,132.0 368.6,128.0 327.8,128.0 327.8,118.0 286.9,118.0 286.9,116.0 246.5,116.0 246.5,104.0 206.1,104.0 206.1,98.0 124.4,98.0 124.4,96.0 44.0,96.0" fill="#533afe" fill-opacity="0.1"/>
-<polyline points="44.0,68.0 124.4,68.0 124.4,72.0 206.1,72.0 206.1,80.0 246.5,80.0 246.5,104.0 286.9,104.0 286.9,106.0 327.8,106.0 327.8,120.0 368.6,120.0 368.6,120.0 408.6,120.0 408.6,120.0 449.0,120.0 449.0,124.0 462.8,124.0 462.8,124.0 476.5,124.0 476.5,124.0 489.9,124.0 489.9,126.0 503.6,126.0 503.6,124.0 516.9,124.0 516.9,124.0 530.7,124.0 530.7,122.0 544.5,122.0 544.5,110.0 556.9,110.0 556.9,96.0 570.7,96.0 570.7,96.0 584.0,96.0" fill="none" stroke="#533afe" stroke-width="2" stroke-linejoin="round"/>
-<polyline points="44.0,96.0 124.4,96.0 124.4,98.0 206.1,98.0 206.1,104.0 246.5,104.0 246.5,116.0 286.9,116.0 286.9,118.0 327.8,118.0 327.8,128.0 368.6,128.0 368.6,132.0 408.6,132.0 408.6,132.0 449.0,132.0 449.0,136.0 462.8,136.0 462.8,144.0 476.5,144.0 476.5,144.0 489.9,144.0 489.9,146.0 503.6,146.0 503.6,146.0 516.9,146.0 516.9,146.0 530.7,146.0 530.7,144.0 544.5,144.0 544.5,132.0 556.9,132.0 556.9,124.0 570.7,124.0 570.7,120.0 584.0,120.0" fill="none" stroke="#533afe" stroke-width="2" stroke-linejoin="round"/>
-<line x1="44" x2="584" y1="430.0" y2="430.0" stroke="#e5e5e5" stroke-width="1"/>
-<text x="36.0" y="435.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">0</text>
-<line x1="44" x2="584" y1="390.0" y2="390.0" stroke="#e5e5e5" stroke-width="1"/>
-<text x="36.0" y="395.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">20</text>
-<line x1="44" x2="584" y1="350.0" y2="350.0" stroke="#e5e5e5" stroke-width="1"/>
-<text x="36.0" y="355.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">40</text>
-<line x1="44" x2="584" y1="310.0" y2="310.0" stroke="#e5e5e5" stroke-width="1"/>
-<text x="36.0" y="315.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">60</text>
-<line x1="44" x2="584" y1="270.0" y2="270.0" stroke="#e5e5e5" stroke-width="1"/>
-<text x="36.0" y="275.0" font-size="14" fill="#555" text-anchor="end" font-weight="400">80</text>
-<polygon points="44.0,378.0 124.4,378.0 124.4,376.7 206.1,376.7 206.1,372.5 246.5,372.5 246.5,361.6 286.9,361.6 286.9,359.4 327.8,359.4 327.8,345.7 368.6,345.7 368.6,338.6 408.6,338.6 408.6,338.6 449.0,338.6 449.0,330.3 462.8,330.3 462.8,307.9 476.5,307.9 476.5,307.9 489.9,307.9 489.9,300.6 503.6,300.6 503.6,300.6 516.9,300.6 516.9,300.6 530.7,300.6 530.7,307.9 544.5,307.9 544.5,338.6 556.9,338.6 556.9,351.8 570.7,351.8 570.7,357.0 584.0,357.0 584.0,378.0 570.7,378.0 570.7,378.0 556.9,378.0 556.9,367.5 544.5,367.5 544.5,354.5 530.7,354.5 530.7,351.8 516.9,351.8 516.9,351.8 503.6,351.8 503.6,348.9 489.9,348.9 489.9,351.8 476.5,351.8 476.5,351.8 462.8,351.8 462.8,351.8 449.0,351.8 449.0,357.0 408.6,357.0 408.6,357.0 368.6,357.0 368.6,357.0 327.8,357.0 327.8,370.9 286.9,370.9 286.9,372.5 246.5,372.5 246.5,386.3 206.1,386.3 206.1,389.6 124.4,389.6 124.4,391.0 44.0,391.0" fill="#111" fill-opacity="0.07"/>
-<polyline points="44.0,378.0 124.4,378.0 124.4,376.7 206.1,376.7 206.1,372.5 246.5,372.5 246.5,361.6 286.9,361.6 286.9,359.4 327.8,359.4 327.8,345.7 368.6,345.7 368.6,338.6 408.6,338.6 408.6,338.6 449.0,338.6 449.0,330.3 462.8,330.3 462.8,307.9 476.5,307.9 476.5,307.9 489.9,307.9 489.9,300.6 503.6,300.6 503.6,300.6 516.9,300.6 516.9,300.6 530.7,300.6 530.7,307.9 544.5,307.9 544.5,338.6 556.9,338.6 556.9,351.8 570.7,351.8 570.7,357.0 584.0,357.0" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round"/>
-<polyline points="44.0,391.0 124.4,391.0 124.4,389.6 206.1,389.6 206.1,386.3 246.5,386.3 246.5,372.5 286.9,372.5 286.9,370.9 327.8,370.9 327.8,357.0 368.6,357.0 368.6,357.0 408.6,357.0 408.6,357.0 449.0,357.0 449.0,351.8 462.8,351.8 462.8,351.8 476.5,351.8 476.5,351.8 489.9,351.8 489.9,348.9 503.6,348.9 503.6,351.8 516.9,351.8 516.9,351.8 530.7,351.8 530.7,354.5 544.5,354.5 544.5,367.5 556.9,367.5 556.9,378.0 570.7,378.0 570.7,378.0 584.0,378.0" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round"/>
-<text x="44.0" y="456.0" font-size="14" fill="#555" text-anchor="start" font-weight="400">Jan 2023</text>
-<text x="206.1" y="456.0" font-size="14" fill="#555" text-anchor="middle" font-weight="400">Jan 2024</text>
-<text x="368.6" y="456.0" font-size="14" fill="#555" text-anchor="middle" font-weight="400">Jan 2025</text>
-<text x="530.7" y="456.0" font-size="14" fill="#555" text-anchor="middle" font-weight="400">Jan 2026</text>
-<text x="50.0" y="118.0" font-size="14" text-anchor="start"><tspan fill="#555">1H 2023</tspan><tspan dx="6" fill="#111" font-weight="500">$2.70–3.40</tspan></text>
-<text x="496.7" y="168.0" font-size="14" text-anchor="middle"><tspan fill="#555">Oct 2025</tspan><tspan dx="6" fill="#111" font-weight="500">$1.45–1.95</tspan></text>
-<text x="584.0" y="86.0" font-size="14" text-anchor="end"><tspan fill="#555">Apr 2026</tspan><tspan dx="6" fill="#111" font-weight="500">$2.10–2.70</tspan></text>
-<text x="50.0" y="368.0" font-size="14" text-anchor="start"><tspan fill="#555">1H 2023</tspan><tspan dx="6" fill="#111" font-weight="500">19.5–26.0 months</tspan></text>
-<text x="496.7" y="290.6" font-size="14" text-anchor="middle"><tspan fill="#555">Oct 2025</tspan><tspan dx="6" fill="#111" font-weight="500">40.6–64.7 months</tspan></text>
-<text x="584.0" y="400.0" font-size="14" text-anchor="end"><tspan fill="#555">Apr 2026</tspan><tspan dx="6" fill="#111" font-weight="500">26.0–36.5 months</tspan></text>
+<text x="0" y="20" font-size="15" font-weight="600" fill="#111">H100 one-year contract pricing</text>
+<text x="0" y="43" font-size="13" fill="#555">Two observations disclosed April 2, 2026 · $ per GPU-hour</text>
+<text x="0" y="250" font-size="15" font-weight="600" fill="#111">Modeled payback</text>
+<text x="0" y="273" font-size="13" fill="#555">Hypothetical $35,000 budget · 90% occupancy · $400/month costs</text>
+<text x="0" y="94" font-size="14" fill="#555">Oct 2025</text>
+<rect x="104" y="70" width="430" height="36" fill="#f3f3f3"/>
+<rect x="104" y="70" width="243.67" height="36" fill="#533afe" fill-opacity=".12"/>
+<line x1="104" y1="106" x2="347.67" y2="106" stroke="#533afe" stroke-width="2"/>
+<text x="357.67" y="94" font-size="14" font-weight="500" fill="#111">$1.70</text>
+<text x="0" y="158" font-size="14" fill="#555">Mar 2026</text>
+<rect x="104" y="134" width="430" height="36" fill="#f3f3f3"/>
+<rect x="104" y="134" width="336.83" height="36" fill="#533afe" fill-opacity=".12"/>
+<line x1="104" y1="170" x2="440.83" y2="170" stroke="#533afe" stroke-width="2"/>
+<text x="450.83" y="158" font-size="14" font-weight="500" fill="#111">$2.35</text>
+<text x="0" y="324" font-size="14" fill="#555">Oct 2025</text>
+<rect x="104" y="300" width="430" height="36" fill="#f3f3f3"/>
+<rect x="104" y="300" width="349.89" height="36" fill="#111" fill-opacity=".12"/>
+<line x1="104" y1="336" x2="453.89" y2="336" stroke="#111" stroke-width="2"/>
+<text x="463.89" y="324" font-size="14" font-weight="500" fill="#111">48.8 months</text>
+<text x="0" y="388" font-size="14" fill="#555">Mar 2026</text>
+<rect x="104" y="364" width="430" height="36" fill="#f3f3f3"/>
+<rect x="104" y="364" width="219.27" height="36" fill="#111" fill-opacity=".12"/>
+<line x1="104" y1="400" x2="323.27" y2="400" stroke="#111" stroke-width="2"/>
+<text x="333.27" y="388" font-size="14" font-weight="500" fill="#111">30.6 months</text>
+<text x="0" y="451" font-size="13" fill="#555">Cost and occupancy are assumptions, not historical equipment quotes.</text>
 </svg>
