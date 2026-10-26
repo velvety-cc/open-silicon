@@ -11,7 +11,7 @@ precede the article; an earlier reporting period alone is insufficient.
 | What a GPU earns, and what it's worth | May 12, 2026 | Removed August hardware quotes, later operating results and the rental dashboard snapshot collected in September. Rebuilt the model, tables and figure from two observations published April 2 and explicitly hypothetical cost inputs. |
 | Three ways to finance GPUs | July 21, 2026 | Removed August/September facilities, a later-filed June-quarter report, September lender terms and the October SOFR conversion. Retained dated January/ March/May transaction examples. Removed return ranges whose supporting evidence was later or undated. |
 | How a GPU financing deal gets done | September 9, 2026 | Removed the September 17 product-page observation and a May underwriting post revised in October. Retained the September 1 funding recap and August 10 filing; generic diligence steps are an analytical framework. |
-| Bubble or build-out? | October 26, 2026 | Reviewed body dates, source labels and the rental figure. Its cited observations and reporting releases predate October 26; no chronology edit required. |
+| Bubble or build-out? | October 20, 2026 | Reviewed body dates, source labels and the rental figure. Its cited observations and reporting releases predate October 20; no chronology edit required. |
 
 ## Retained dated evidence for the earlier articles
 
