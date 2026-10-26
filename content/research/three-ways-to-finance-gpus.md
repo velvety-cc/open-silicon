@@ -1,7 +1,7 @@
 ---
 title: "Three ways to finance GPUs: offtaker-backed, bridge and equity"
 description: "The first question in any GPU financing is what will repay the capital. The answer usually decides the structure."
-date: "2026-10-15"
+date: "2026-07-21"
 category: "Financing"
 author: "OpenSilicon Research"
 cover: "/research/covers/three-ways-to-finance-gpus.svg"

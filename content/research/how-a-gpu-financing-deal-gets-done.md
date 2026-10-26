@@ -1,7 +1,7 @@
 ---
 title: "How a GPU financing deal gets done"
 description: "From the first call to a funded cluster: who is involved, what lenders need to see and where deals slow down."
-date: "2026-10-15"
+date: "2026-09-09"
 category: "Deal process"
 author: "OpenSilicon Research"
 cover: "/research/covers/how-a-gpu-financing-deal-gets-done.svg"

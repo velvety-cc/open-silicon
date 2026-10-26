@@ -1,7 +1,7 @@
 ---
 title: "What a GPU earns, and what it's worth"
 description: "Rental rates, occupancy and costs decide what an H100 earns. Book, market and recovery values decide what it's worth. We work through both."
-date: "2026-10-15"
+date: "2026-05-12"
 category: "Unit economics"
 author: "OpenSilicon Research"
 cover: "/research/covers/what-a-gpu-earns-and-what-its-worth.svg"
