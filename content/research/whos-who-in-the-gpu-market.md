@@ -1,7 +1,7 @@
 ---
 title: "Who's who in the GPU market"
 description: "From chipmakers to capital providers: the parties behind a GPU deployment and the points where risk changes hands."
-date: "2026-10-15"
+date: "2026-03-18"
 category: "Market structure"
 author: "OpenSilicon Research"
 cover: "/research/covers/whos-who-in-the-gpu-market.svg"
