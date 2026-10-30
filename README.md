@@ -17,7 +17,7 @@ The deployed Home, About, Research articles and Contact implementation are prese
 
 Existing redirects and hero media are preserved. The former internal website deck/archive routes remain unavailable in production; the current deck has its own application.
 
-For the existing Vercel website project, use `apps/web` as Root Directory, retain Next.js framework defaults and include shared files outside that directory. The website's prebuild synchronizes approved brand assets. Only the website is deployed publicly; the other apps are separate source and local workflows.
+For the existing Vercel website project, use `apps/web` as Root Directory, retain Next.js framework defaults and include shared files outside that directory. Set the Install Command to `cd ../.. && npm ci --include=dev` so the root-owned TypeScript and Tailwind build dependencies are installed alongside the workspaces. The website's prebuild synchronizes approved brand assets. Only the website is deployed publicly; the other apps are separate source and local workflows.
 
 ## Validation and outputs
 
