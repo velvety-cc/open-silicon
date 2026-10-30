@@ -190,28 +190,7 @@ a:hover .arrow { transform: translate(2px, -2px); }
 .closing h2 { font-size: var(--type-section); }
 .closing-grid p { max-width: 330px; font-size: var(--type-body); line-height: var(--leading-body); color: var(--ink); }
 .closing .ui-button { margin-top: 24px; }
-.site-footer { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(0, 3fr); column-gap: 56px; row-gap: 80px; padding-block: 88px 48px; background: #fff; color: #000; }
 
-.footer-identity .brand > span { font-size: 29px; }
-.footer-identity > p { margin-top: 24px; font-size: var(--type-label); line-height: 1.7; }
-.footer-navigation { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; padding-top: 3px; }
-.footer-group h2 { margin: 0 0 24px; font-size: var(--type-caption); line-height: 1.5; letter-spacing: 0; font-weight: var(--weight-regular); }
-.footer-group ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
-.footer-group a { display: inline-flex; align-items: center; gap: 10px; font-size: var(--type-label); line-height: 1.6; text-underline-offset: 5px; }
-.footer-group a:hover, .footer-bottom a:hover { text-decoration: underline; }
-
-.footer-group .arrow { font-size: 14px; }
-.footer-information { grid-column: 2; border-top: 1px solid #e9e9e9; padding-top: 38px; }
-.footer-disclaimer { max-width: 880px; font-size: var(--type-caption); line-height: 1.85; }
-.footer-disclaimer p + p { margin-top: 12px; }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: 40px; font-size: var(--type-caption); line-height: 1.6; }
-.footer-information > .footer-bottom:only-child { margin-top: 0; }
-.footer-bottom a { display: inline-flex; gap: 12px; text-underline-offset: 5px; }
-
-@media (min-width: 761px) and (max-width: 1023px) {.site-footer { grid-template-columns: minmax(180px, 1fr) minmax(0, 3fr); column-gap: 32px; }
-.footer-navigation { gap: 20px; }
-
-}
 /* Shared crop for video, loading poster and the final held frame. */
 .hero-immersive {
   --ink: #fff;
@@ -277,13 +256,6 @@ h2 { font-size: var(--type-section); }
 .deals-table .status-cell { padding-left: 24px; }
 .deal-asset { gap: 16px; }
 .closing h2 { font-size: var(--type-section); }
-.site-footer { grid-template-columns: minmax(0, 1fr); gap: 48px; padding-block: 56px 32px; }
-.footer-identity > p { margin-top: 18px; }
-.footer-navigation { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; padding-top: 0; }
-.footer-group h2 { margin-bottom: 18px; }
-.footer-group ul { gap: 16px; }
-.footer-information { grid-column: 1; padding-top: 28px; }
-.footer-bottom { margin-top: 30px; }
 
 }
 
@@ -291,7 +263,6 @@ h2 { font-size: var(--type-section); }
 *, *::before, *::after { transition: none !important; animation: none !important; }
 
 }
-
 
 @media (min-width: 1600px) {.hero-immersive { min-height: 100svh; }
 .hero-immersive .hero-visual { min-height: 0; }
@@ -314,7 +285,6 @@ h2 { font-size: var(--type-section); }
 .hero-immersive .hero-visual::after { background: linear-gradient(180deg, #0008, #0003 55%, #0007); }
 
 }
-
 
 @media (max-width: 1023px) {.header-inner { min-height: 72px; padding: 14px var(--shell-gutter); grid-template-columns: 1fr auto; gap: 16px; }
 
@@ -345,12 +315,10 @@ h2 { font-size: var(--type-section); }
 
 }
 
-
 @media (max-width: 360px) {
   .site-header .brand > span { font-size: 20px; }
 
 }
-
 
 .hero-video-media { position: absolute; inset: 0; }
 .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
@@ -458,7 +426,6 @@ h2 { font-size: var(--type-section); }
 
 }
 
-
 .compute-user-brand { display: inline-flex; align-items: center; justify-content: flex-end; gap: 7px; vertical-align: middle; }
 
 .compute-user-logo { display: block; width: auto; height: 13px; object-fit: contain; flex-shrink: 0; }
@@ -531,10 +498,3 @@ h2 { font-size: var(--type-section); }
 .closing-image .closing-grid p { font-size: var(--type-body); max-width: 320px; }
 
 }
-
-/* Updated footer; all other deployed global page rules are preserved. */
-.site-footer { width: 100%; max-width: none; padding-inline: max(var(--shell-gutter), calc((100% - var(--shell-width)) / 2 + var(--shell-gutter))); }
-.footer-information { grid-column: 1 / -1; }
-.footer-disclaimer { max-width: 880px; font-size: var(--type-caption); line-height: 1.85; }
-.footer-disclaimer h2 { margin-bottom: 18px; font-size: var(--type-caption); line-height: 1.5; letter-spacing: 0; }
-.footer-disclaimer p + p { margin-top: 12px; }

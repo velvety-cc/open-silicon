@@ -139,7 +139,7 @@
 .about-background > div > p + p { margin-top: 24px; }
 .contact-site { --contact-header-height: 89px; display: flex; flex-direction: column; min-height: 100svh; }
 .contact-site > main { display: flex; flex-direction: column; flex: 1 0 auto; padding-top: var(--contact-header-height); }
-.contact-site > .site-footer { flex-shrink: 0; }
+
 .contact-page { --contact-outer-gutter: calc(max(0px, (100vw - var(--shell-width)) / 2) + var(--shell-gutter)); display: grid; flex: 1; grid-template-columns: .9fr 1.1fr; grid-template-rows: minmax(64px, 1fr) auto minmax(64px, 1fr); width: 100%; min-height: 760px; }
 .contact-intro { position: relative; isolation: isolate; display: grid; grid-column: 1; grid-row: 1 / -1; grid-template-rows: subgrid; min-width: 0; color: #fff; background: #101b2a; }
 .contact-copy { position: relative; z-index: 1; grid-row: 2; align-self: start; width: 100%; padding-inline: var(--contact-outer-gutter) var(--shell-gutter); }

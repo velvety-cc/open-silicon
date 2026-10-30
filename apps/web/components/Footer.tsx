@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./Footer.module.css";
 import Brand from "@/components/Brand";
 import Arrow from "@/components/Arrow";
 import { footerInformation } from "@/lib/footer-information";
@@ -6,7 +7,7 @@ import { businessDescription } from "@opensilicon/content/company";
 
 export default function Footer() {
   return (
-    <footer className="site-footer container">
+    <footer className={`site-footer ${styles.footer}`}>
       <div className="footer-identity">
         <Brand />
         <p>{businessDescription}</p>

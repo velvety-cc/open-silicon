@@ -1,0 +1,56 @@
+/* One shared footer design for every website route. */
+.footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  column-gap: 100px;
+  row-gap: 80px;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  margin: 0;
+  padding: 112px max(var(--shell-gutter), calc((100% - var(--shell-width)) / 2 + var(--shell-gutter))) 120px;
+  border-top: 1px solid #e1e1e5;
+  background: #fff;
+  color: #171719;
+  font: 400 16px/1.6 var(--font-geist), Arial, sans-serif;
+  letter-spacing: normal;
+  flex-shrink: 0;
+}
+
+.footer :global(.brand) { color: inherit; }
+.footer :global(.footer-identity .brand > span) { font-size: 29px; }
+.footer :global(.footer-identity > p) { max-width: 360px; margin-top: 24px; color: #6c6c74; font-size: 13px; line-height: 1.8; }
+.footer :global(.footer-navigation) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; padding-top: 3px; }
+.footer :global(.footer-group h2) { margin: 0 0 22px; color: #6c6c74; font-size: 12px; line-height: 1.5; font-weight: 400; letter-spacing: 0; }
+.footer :global(.footer-group ul) { display: grid; gap: 12px; list-style: none; margin: 0; padding: 0; }
+.footer :global(.footer-group a) { display: inline-flex; align-items: center; gap: 10px; min-height: 32px; color: #171719; font-size: 13px; line-height: 1.6; text-underline-offset: 5px; }
+.footer :global(.footer-group a:hover), .footer :global(.footer-bottom a:hover) { text-decoration: underline; }
+.footer :global(.footer-group .arrow) { font-size: 14px; }
+.footer :global(.footer-information) { grid-column: 1 / -1; border-top: 1px solid #e1e1e5; padding-top: 40px; }
+.footer :global(.footer-disclaimer) { max-width: none; color: #6c6c74; font-size: 12px; line-height: 1.9; }
+.footer :global(.footer-disclaimer h2) { margin: 0 0 18px; color: #6c6c74; font-size: 12px; line-height: 1.5; font-weight: 400; letter-spacing: 0; }
+.footer :global(.footer-disclaimer p + p) { margin-top: 12px; }
+.footer :global(.footer-bottom) { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: 40px; color: #6c6c74; font-size: 12px; line-height: 1.6; }
+.footer :global(.footer-bottom a) { display: inline-flex; gap: 12px; color: inherit; text-underline-offset: 5px; }
+.footer :global(:focus-visible) { outline: 2px solid var(--accent); outline-offset: 5px; }
+
+@media (max-width: 1100px) {
+  .footer { column-gap: 56px; }
+  .footer :global(.footer-navigation) { gap: 28px; }
+}
+
+@media (max-width: 850px) {
+  .footer { grid-template-columns: minmax(0, 1fr); row-gap: 56px; }
+  .footer :global(.footer-information) { grid-column: 1; }
+}
+
+@media (max-width: 760px) {
+  .footer { padding-block: 80px 88px; row-gap: 48px; }
+  .footer :global(.footer-navigation) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; padding-top: 0; }
+  .footer :global(.footer-group a) { min-height: 36px; }
+  .footer :global(.footer-information) { padding-top: 32px; }
+}
+
+@media (max-width: 380px) {
+  .footer :global(.footer-navigation) { grid-template-columns: 1fr; gap: 32px; }
+}
