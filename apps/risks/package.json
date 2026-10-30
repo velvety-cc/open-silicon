@@ -1,0 +1,19 @@
+{
+  "name": "@opensilicon/risks",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "examples": "node scripts/export-examples.mjs",
+    "audit": "python3 scripts/audit-source.py",
+    "predev": "node ../../tooling/sync-assets.mjs",
+    "dev": "node scripts/serve.mjs",
+    "prestart": "node ../../tooling/sync-assets.mjs",
+    "prebuild": "node ../../tooling/sync-assets.mjs",
+    "build": "node scripts/build.mjs",
+    "typecheck": "node scripts/check.mjs",
+    "verify": "node scripts/verify-release.mjs"
+  }
+}

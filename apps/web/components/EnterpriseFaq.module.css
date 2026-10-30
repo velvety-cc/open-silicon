@@ -1,0 +1,46 @@
+.section {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 5.4fr);
+  gap: clamp(40px, 5vw, 80px);
+  align-items: start;
+  width: min(1312px, calc(100% - 2 * var(--shell-gutter)));
+  margin-inline: auto;
+  padding-block: 72px 48px;
+  border-top: 1px solid #e8e8e8;
+  scroll-margin-top: calc(var(--marketing-header-height) + 20px);
+  color: #24212a;
+  font-family: var(--font-geist), Arial, sans-serif;
+}
+.section h2 { max-width: 460px; margin: 0; font-size: clamp(36px, 3.4vw, 48px); font-weight: 400; line-height: 1.1; letter-spacing: -.045em; }
+.accordion { min-width: 0; border-top: 1px solid #e8e8e8; }
+.accordion [data-slot="accordion-item"] { border-color: #e8e8e8; }
+.accordion h3 { margin: 0; }
+.accordion [data-slot="accordion-trigger"] { width: 100%; min-height: 76px; padding: 24px 0; border-radius: 0; border: 0; background: transparent; color: #24212a; font: inherit; font-size: 17px; font-weight: 400; line-height: 1.55; letter-spacing: normal; text-wrap: initial; text-align: left; text-decoration: none; transition: color 160ms ease-out; }
+.accordion [data-slot="accordion-trigger"] > svg { width: 17px; height: 17px; margin-top: 4px; color: #8b8496; transition: transform 200ms cubic-bezier(.23, 1, .32, 1), rotate 200ms cubic-bezier(.23, 1, .32, 1); }
+.accordion [data-slot="accordion-trigger"]:focus-visible { outline: 2px solid #6552e5; outline-offset: 5px; box-shadow: none; }
+.accordion [data-slot="accordion-content"] { animation-duration: 220ms; animation-timing-function: cubic-bezier(.23, 1, .32, 1); }
+.accordion .answer { max-width: 640px; padding: 0 28px 24px 0; color: #6f6f77; font-size: 15px; line-height: 1.75; }
+.answer p { margin: 0; }
+.answer p + p, .answer ol + p { margin-top: 18px; }
+.answer ol { margin: 18px 0 0; padding-left: 22px; list-style: decimal; }
+.answer li + li { margin-top: 10px; }
+.answer strong { color: #49434f; font-weight: 500; }
+.answer a { color: #6552e5; text-decoration: underline; text-underline-offset: 4px; }
+.answer a:focus-visible { outline: 2px solid #6552e5; outline-offset: 4px; }
+@media (hover: hover) and (pointer: fine) {
+  .accordion [data-slot="accordion-trigger"]:hover { color: #6552e5; }
+}
+@media (max-width: 1000px) {
+  .section { grid-template-columns: minmax(0, 4fr) minmax(0, 5fr); gap: 35px; }
+  .accordion [data-slot="accordion-trigger"] { font-size: 16px; }
+}
+@media (max-width: 760px) {
+  .section { grid-template-columns: 1fr; gap: 32px; padding-block: 48px 24px; }
+  .section h2 { max-width: 440px; font-size: 40px; }
+  .accordion [data-slot="accordion-trigger"] { min-height: 72px; padding-block: 22px; }
+  .accordion .answer { padding-right: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .accordion [data-slot="accordion-trigger"], .accordion [data-slot="accordion-trigger"] > svg { transition: none; }
+  .accordion [data-slot="accordion-content"] { animation: none; }
+}

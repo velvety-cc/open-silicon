@@ -1,0 +1,130 @@
+.section {
+  width: min(1312px, calc(100% - 2 * var(--shell-gutter)));
+  margin-inline: auto;
+  padding-block: 72px 48px;
+  border-top: 1px solid #e8e8e8;
+  scroll-margin-top: calc(var(--marketing-header-height) + 20px);
+  color: #24212a;
+  font-family: var(--font-geist), Arial, sans-serif;
+}
+.heading { margin-bottom: 38px; }
+.section .heading h2 { margin: 0 0 22px; font-size: clamp(36px, 3.4vw, 48px); font-weight: 400; line-height: 1.1; letter-spacing: -.045em; }
+.heading p { max-width: 720px; margin: 0; color: #6b6b6b; font-size: 17px; line-height: 1.65; }
+.calculator { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); overflow: hidden; border: 1px solid #e4e3e8; border-radius: 12px; }
+.controls { display: flex; flex-direction: column; min-width: 0; padding: 38px; }
+.section fieldset { min-width: 0; padding: 0; margin: 0; border: 0; }
+.section .step { display: flex; align-items: baseline; gap: 12px; padding: 0; margin: 0 0 17px; font-size: 16px; line-height: 1.5; font-weight: 400; }
+.step > span { color: #8b849c; font-size: 12px; font-variant-numeric: tabular-nums; }
+.options { display: flex; flex-wrap: wrap; gap: 8px; }
+.option { position: relative; display: block; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.option input { position: absolute; width: 1px; height: 1px; opacity: 0; margin: 0; }
+.option > span { display: block; padding: 11px 17px; border: 1px solid transparent; border-radius: 999px; background: #f3f2f5; color: #65616d; font-size: 14px; line-height: 1.5; transition: background-color 160ms ease-out, color 160ms ease-out; }
+.option input:checked + span { background: #6552e5; color: #fff; }
+.option input:focus-visible + span { outline: 2px solid #6552e5; outline-offset: 4px; }
+.section .hint { margin: 15px 0 0; color: #77727f; font-size: 13px; line-height: 1.65; }
+.hint strong { font-weight: 400; color: #5f5a66; }
+.quantityField { min-width: 0; width: 100%; max-width: 296px; margin-top: 40px; }
+.stepper { display: grid; grid-template-columns: 40px minmax(0, 1fr) 40px; gap: 5px; }
+.section .stepper button, .section .stepper input { width: 100%; min-height: 46px; margin: 0; padding: 8px; border: 1px solid transparent; border-radius: 5px; background: #f3f2f5; color: #24212a; font: inherit; text-align: center; }
+.section .stepper button { cursor: pointer; font-size: 20px; line-height: 1; transition: background-color 140ms ease-out, transform 125ms cubic-bezier(.23, 1, .32, 1); }
+.section .stepper button:active { transform: scale(.94); }
+.section .stepper button:disabled { opacity: .4; cursor: default; transform: none; }
+.section .stepper input { min-width: 0; appearance: textfield; font-size: 18px; font-variant-numeric: tabular-nums; }
+.stepper input::-webkit-inner-spin-button, .stepper input::-webkit-outer-spin-button { appearance: none; margin: 0; }
+.stepper input[aria-invalid="true"] { border-color: #bd4949; }
+.section button:focus-visible, .section input:focus-visible, .section a:focus-visible { outline: 2px solid #6552e5; outline-offset: 4px; }
+.result { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; padding: 36px 38px; border-left: 1px solid #e4e3e8; background: #f9f8fc; }
+.resultBody { width: 100%; }
+.section .resultLabel { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin: 0 0 16px; color: #706978; font-size: 14px; line-height: 1.5; }
+.section .total { margin: 0 0 25px; color: #26212f; font-size: clamp(30px, 3.5vw, 49px); font-weight: 400; letter-spacing: -.055em; line-height: 1.12; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.budgetBar { display: flex; gap: 3px; height: 6px; margin-bottom: 20px; overflow: hidden; border-radius: 99px; background: #e9e5f3; }
+.budgetBar span { min-width: 0; }
+.equipment { background: #6552e5; }
+.infrastructure { background: #b6a9f0; }
+.contingency { background: #dcd4f4; }
+.section .breakdown { margin: 0; font-size: 13px; line-height: 1.5; }
+.breakdown > div { display: flex; justify-content: space-between; gap: 16px; margin-top: 11px; }
+.breakdown dt { display: flex; align-items: center; gap: 8px; color: #77707e; font-weight: 400; }
+.breakdown i { width: 6px; height: 6px; flex-shrink: 0; border-radius: 1px; }
+.breakdown dd { margin: 0; color: #514a5c; font-variant-numeric: tabular-nums; text-align: right; }
+.window { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: 24px; padding-top: 21px; border-top: 1px solid #e5e1ed; }
+.window > span { color: #706978; font-size: 13px; }
+.window strong { color: #30273c; font-size: 23px; line-height: 1.3; font-weight: 400; letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+.section .windowNote { max-width: 360px; margin: 8px 0 0; color: #80788b; font-size: 12px; line-height: 1.6; }
+.section .rounding { margin: 12px 0 0; color: #655a77; font-size: 12px; line-height: 1.65; }
+.section .cta { display: inline-flex; align-items: center; justify-content: center; gap: 22px; min-height: 42px; margin-top: 26px; padding: 10px 17px; border-radius: 5px; background: #28242f; color: #fff; font-size: 13px; line-height: 1.5; text-decoration: none; transition: background-color 140ms ease-out; }
+.cta span { font-size: 16px; }
+.error { min-height: 220px; padding-block: 12px; font-size: 14px; line-height: 1.65; color: #7f323c; }
+.error strong { font-weight: 500; }
+.error p { margin: 12px 0 0; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (hover: hover) and (pointer: fine) {
+  .option:hover > span { background: #e8e4f2; }
+  .option:hover input:checked + span { background: #5945d6; }
+  .section .stepper button:hover:not(:disabled) { background: #e8e4f2; }
+  .section .cta:hover { background: #443752; }
+}
+@media (max-width: 1100px) {
+  .controls, .result { padding: 28px; }
+  .option > span { padding-inline: 13px; font-size: 13px; }
+  .section .step { font-size: 14px; gap: 9px; }
+  .stepper { grid-template-columns: 34px minmax(0, 1fr) 34px; }
+  .window { flex-wrap: wrap; gap: 8px; }
+}
+@media (max-width: 850px) {
+  .calculator { grid-template-columns: 1fr; }
+  .result { border-left: 0; border-top: 1px solid #e4e3e8; }
+  .controls { padding: 32px; }
+  .section .step { font-size: 16px; }
+  .option > span { font-size: 14px; }
+  .section .total { font-size: 46px; }
+}
+@media (max-width: 760px) {
+  .section { padding-block: 48px 24px; }
+  .section .heading h2 { font-size: 40px; }
+  .heading p { font-size: 16px; }
+  .heading { margin-bottom: 28px; }
+}
+@media (max-width: 480px) {
+  .controls, .result { padding: 24px; }
+  .options { gap: 7px; }
+  .option > span { padding: 9px 13px; font-size: 13px; }
+  .quantityField { max-width: 280px; }
+  .stepper { grid-template-columns: 44px minmax(0, 1fr) 44px; }
+  .section .total { font-size: clamp(28px, 8.8vw, 41px); }
+  .section .resultLabel { gap: 4px; }
+  .breakdown > div { gap: 8px; font-size: 12px; }
+  .window { flex-direction: column; gap: 7px; }
+  .section .cta { width: 100%; justify-content: space-between; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .option > span, .section .stepper button, .section .cta { transition: none; }
+  .section .stepper button:active { transform: none; }
+}
+@media (forced-colors: active) {
+  .option > span { border-color: CanvasText; }
+  .option input:checked + span { border-color: Highlight; background: Highlight; color: HighlightText; forced-color-adjust: none; }
+}
+
+/* Contribution choices share the GPU option styling. */
+.section .loanField { width: 100%; margin-top: 40px; }
+.loanOptions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 320px; }
+.loanOptions .option > span { text-align: center; }
+.financialSection { margin-top: 30px; padding-top: 26px; border-top: 1px solid #e4e3e8; }
+.section .financialSection h3 { margin: 0; color: #24212a; font-size: 14px; font-weight: 400; line-height: 1.5; }
+.financialMetrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 0; }
+.financialMetrics dt { font-size: 12px; line-height: 1.5; }
+.financialMetrics dd { margin: 9px 0 0; font-size: 26px; line-height: 1.2; letter-spacing: -.035em; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.financialMetrics dd small { display: block; margin-top: 7px; font-size: 11px; line-height: 1.5; letter-spacing: 0; color: #77727f; }
+.section .resultHint { margin: 16px 0 0; color: #77727f; font-size: 12px; line-height: 1.6; }
+@media (max-width: 1100px) { .financialMetrics { gap: 16px; } .financialMetrics dd { font-size: 23px; } }
+@media (max-width: 480px) { .financialMetrics dd { font-size: 24px; } }
+@media (max-width: 380px) { .financialMetrics { gap: 12px; } .financialMetrics dd { font-size: 21px; } }
+
+/* The explanation stays out of the layout until requested. */
+.section .loanStep { align-items: center; }
+.section .loanInfoButton { display: inline-grid; place-items: center; flex-shrink: 0; width: 24px; height: 24px; min-width: 0; min-height: 0; margin: 0 0 0 -11px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: #85858f; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: color 125ms ease, background-color 125ms ease; }
+.loanInfoButton svg { display: block; }
+@media (hover: hover) and (pointer: fine) { .section .loanInfoButton:hover { color: #171719; background: #f1f1f3; } }
+@media (pointer: coarse) { .section .loanInfoButton { width: 44px; height: 44px; margin-block: -10px; margin-left: -21px; } }
+@media (prefers-reduced-motion: reduce) { .section .loanInfoButton { transition: none; } }

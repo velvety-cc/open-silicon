@@ -1,0 +1,5 @@
+
+/* Five equal areas, each centered on its own number-and-caption axis. */
+.deck #deck-page-6 .aurora-five-metrics{grid-template-columns:repeat(5,minmax(0,1fr));column-gap:0}
+.deck #deck-page-6 .aurora-five-metrics>section{padding-inline:8px;text-align:center}
+.deck #deck-page-6 .aurora-five-metrics strong,.deck #deck-page-6 .aurora-five-metrics p{text-align:center}

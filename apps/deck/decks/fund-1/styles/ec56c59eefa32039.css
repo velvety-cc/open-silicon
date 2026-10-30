@@ -1,0 +1,10 @@
+
+/* Four supplied advantage statements, retaining the established four-column composition. */
+.deck #deck-page-5.standards-v3 .os-standards>section{row-gap:18px}
+.deck #deck-page-5.standards-bullets-test-v3 .body .os-standards ul{gap:8px}
+.deck #deck-page-5.standards-bullets-test-v3 .body .os-standards li.standards-added{min-height:54px}
+@media screen and (max-width:900px){
+ .deck #deck-page-5.standards-v3 .os-standards>section{row-gap:20px}
+ .deck #deck-page-5.standards-bullets-test-v3 .body .os-standards ul{gap:12px}
+ .deck #deck-page-5.standards-bullets-test-v3 .body .os-standards li.standards-added{min-height:0}
+}

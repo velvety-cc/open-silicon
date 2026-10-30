@@ -1,0 +1,5 @@
+
+/* Remove redundant stage verbs; keep the index alongside each topic heading. */
+.deck .concept-page.concept-a .a-heading{display:flex;align-items:baseline;gap:12px;min-height:28px}
+.deck .concept-page.concept-a .a-heading h3{margin:0;white-space:nowrap}
+.deck .concept-page.concept-a .a-index{font:400 14px/20px Geist,Arial,sans-serif;font-variant-numeric:tabular-nums;color:var(--brand-accent);flex-shrink:0;min-width:18px}

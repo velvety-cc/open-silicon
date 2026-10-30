@@ -1,0 +1,239 @@
+{
+  "principal": 168000000.0,
+  "annual_nominal_rate": 0.15,
+  "monthly_rate": 0.0125,
+  "term_months": 36,
+  "monthly_payment": 5823775.188704614,
+  "monthly_cash_after_credits_and_DC": 6780744.0,
+  "modeled_DSCR": 1.1643210426720207,
+  "equipment_cost": 280000000.0,
+  "recovery_scenario_proceeds": 112000000.0,
+  "first_month_of_gross_principal_coverage": 14,
+  "balance_after_14_payments": 111412097.6270104,
+  "amortization": [
+    {
+      "month": 0,
+      "principal": 168000000.0,
+      "required_recovery_percent": 60.0,
+      "shortfall_at_40_percent": 56000000.0
+    },
+    {
+      "month": 1,
+      "principal": 164276224.8112954,
+      "required_recovery_percent": 58.670080289748356,
+      "shortfall_at_40_percent": 52276224.81129539
+    },
+    {
+      "month": 2,
+      "principal": 160505902.43273196,
+      "required_recovery_percent": 57.32353658311856,
+      "shortfall_at_40_percent": 48505902.43273196
+    },
+    {
+      "month": 3,
+      "principal": 156688451.0244365,
+      "required_recovery_percent": 55.96016108015589,
+      "shortfall_at_40_percent": 44688451.0244365
+    },
+    {
+      "month": 4,
+      "principal": 152823281.47353736,
+      "required_recovery_percent": 54.579743383406196,
+      "shortfall_at_40_percent": 40823281.47353735
+    },
+    {
+      "month": 5,
+      "principal": 148909797.30325195,
+      "required_recovery_percent": 53.182070465447126,
+      "shortfall_at_40_percent": 36909797.30325195
+    },
+    {
+      "month": 6,
+      "principal": 144947394.580838,
+      "required_recovery_percent": 51.766926636013565,
+      "shortfall_at_40_percent": 32947394.580837984
+    },
+    {
+      "month": 7,
+      "principal": 140935461.82439384,
+      "required_recovery_percent": 50.33409350871209,
+      "shortfall_at_40_percent": 28935461.824393846
+    },
+    {
+      "month": 8,
+      "principal": 136873379.90849414,
+      "required_recovery_percent": 48.88334996731934,
+      "shortfall_at_40_percent": 24873379.908494156
+    },
+    {
+      "month": 9,
+      "principal": 132760521.96864572,
+      "required_recovery_percent": 47.41447213165919,
+      "shortfall_at_40_percent": 20760521.96864572
+    },
+    {
+      "month": 10,
+      "principal": 128596253.30454917,
+      "required_recovery_percent": 45.92723332305328,
+      "shortfall_at_40_percent": 16596253.30454918
+    },
+    {
+      "month": 11,
+      "principal": 124379931.28215143,
+      "required_recovery_percent": 44.4214040293398,
+      "shortfall_at_40_percent": 12379931.28215143
+    },
+    {
+      "month": 12,
+      "principal": 120110905.2344737,
+      "required_recovery_percent": 42.896751869454896,
+      "shortfall_at_40_percent": 8110905.234473711
+    },
+    {
+      "month": 13,
+      "principal": 115788516.36120002,
+      "required_recovery_percent": 41.35304155757144,
+      "shortfall_at_40_percent": 3788516.361200019
+    },
+    {
+      "month": 14,
+      "principal": 111412097.6270104,
+      "required_recovery_percent": 39.79003486678943,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 15,
+      "principal": 106980973.65864342,
+      "required_recovery_percent": 38.20749059237265,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 16,
+      "principal": 102494460.64067185,
+      "required_recovery_percent": 36.60516451452566,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 17,
+      "principal": 97951866.20997563,
+      "required_recovery_percent": 34.98280936070559,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 18,
+      "principal": 93352489.34889571,
+      "required_recovery_percent": 33.340174767462756,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 19,
+      "principal": 88695620.2770523,
+      "required_recovery_percent": 31.677007241804393,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 20,
+      "principal": 83980540.34181084,
+      "required_recovery_percent": 29.993050122075303,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 21,
+      "principal": 79206521.90737887,
+      "required_recovery_percent": 28.288043538349594,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 22,
+      "principal": 74372828.24251649,
+      "required_recovery_percent": 26.56172437232732,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 23,
+      "principal": 69478713.40684333,
+      "required_recovery_percent": 24.813826216729762,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 24,
+      "principal": 64523422.13572426,
+      "required_recovery_percent": 23.044079334187234,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 25,
+      "principal": 59506189.7237162,
+      "required_recovery_percent": 21.252210615612928,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 26,
+      "principal": 54426241.90655804,
+      "required_recovery_percent": 19.437943538056444,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 27,
+      "principal": 49282794.741685405,
+      "required_recovery_percent": 17.6009981220305,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 28,
+      "principal": 44075054.487251855,
+      "required_recovery_percent": 15.741090888304235,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 29,
+      "principal": 38802217.47963789,
+      "required_recovery_percent": 13.85793481415639,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 30,
+      "principal": 33463470.00942875,
+      "required_recovery_percent": 11.951239289081697,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 31,
+      "principal": 28057988.195841998,
+      "required_recovery_percent": 10.02071006994357,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 32,
+      "principal": 22584937.85958541,
+      "required_recovery_percent": 8.066049235566219,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 33,
+      "principal": 17043474.394125614,
+      "required_recovery_percent": 6.086955140759148,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 34,
+      "principal": 11432742.635347571,
+      "required_recovery_percent": 4.08312236976699,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 35,
+      "principal": 5751876.729584803,
+      "required_recovery_percent": 2.0542416891374295,
+      "shortfall_at_40_percent": 0.0
+    },
+    {
+      "month": 36,
+      "principal": 0.0,
+      "required_recovery_percent": 0.0,
+      "shortfall_at_40_percent": 0.0
+    }
+  ],
+  "DSCR_display": "~1.2x",
+  "appendix_scope": "Illustrative blended portfolio assumptions, without project budget, revenue, unit pricing, counts or BOM detail."
+}

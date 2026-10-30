@@ -1,0 +1,15 @@
+
+/* Match page 5's outer padding and rebalance Aurora's content spacing. */
+.deck .sheet#deck-page-6{padding:32px 56px 28px}
+.deck #deck-page-6.aurora-v3-page .body{margin-top:28px}
+.deck #deck-page-6 .aurora-five-metrics{gap:32px;margin-top:0;padding-bottom:18px}
+.deck #deck-page-6 .aurora-credit-metrics strong{font-size:44px;line-height:48px}
+.deck #deck-page-6 .aurora-credit-metrics strong>span{font-size:24px}
+.deck #deck-page-6 .aurora-credit .aurora-credit-metrics p{margin-top:8px;line-height:22px}
+.deck #deck-page-6 .aurora-credit-detail{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:48px;margin-top:24px}
+.deck #deck-page-6 .aurora-profile-table{margin-top:16px}
+.deck #deck-page-6 .aurora-profile-table th,.deck #deck-page-6 .aurora-profile-table td{padding-top:9px;padding-bottom:9px}
+.deck #deck-page-6 .aurora-profile-table th{padding-right:22px}
+.deck #deck-page-6 .aurora-credit-detail>aside{padding-left:28px}
+.deck #deck-page-6 .aurora-credit-detail ul{font-size:17.5px;line-height:28px;gap:18px;margin-top:18px}
+.deck #deck-page-6 .aurora-credit-detail li{margin:0;padding:0;line-height:28px}

@@ -1,0 +1,9 @@
+
+.deck #deck-page-6.aurora-v3-page .body{margin-top:24px}
+.deck #deck-page-6 .aurora-five-metrics{grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;padding-bottom:16px}
+.deck #deck-page-6 .aurora-credit-metrics strong{font-size:48px;line-height:52px;white-space:nowrap}
+.deck #deck-page-6 .aurora-credit-metrics strong>span{font-size:26px}
+.deck #deck-page-6 .aurora-credit-metrics p>span{font-size:15px;line-height:21px}
+.deck #deck-page-6 .aurora-credit-detail{margin-top:18px}
+.deck #deck-page-6 .aurora-recovery-note{font-size:16px;font-weight:400;fill:var(--brand-accent)}
+.deck #deck-page-6 .aurora-financial-note{font:400 14px/18px Geist,Arial,sans-serif;color:#74777d;margin:6px 0 0;text-wrap:pretty}

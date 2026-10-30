@@ -1,0 +1,32 @@
+{
+  "font-9d7583b7dc9e812afd32": {
+    "path": "packages/brand/fonts/9d7583b7dc9e812afd32.ttf",
+    "mime": "font/ttf",
+    "sha256": "9d7583b7dc9e812afd32a14280c5cac3160012efe50c8d08938f4fea266ff67f"
+  },
+  "font-a698f828af526e0532c9": {
+    "path": "packages/brand/fonts/a698f828af526e0532c9.ttf",
+    "mime": "font/ttf",
+    "sha256": "a698f828af526e0532c9127533bbe8043e80f57fe9199e0b0e92c9f0bd0e5746"
+  },
+  "font-046f66ba5c2c0046926d": {
+    "path": "packages/brand/fonts/046f66ba5c2c0046926d.ttf",
+    "mime": "font/ttf",
+    "sha256": "046f66ba5c2c0046926d825db8ba9830736f44acc0c83b8b0200d60cd27d1f38"
+  },
+  "brand-symbol": {
+    "path": "packages/brand/assets/open-silicon-symbol.svg",
+    "mime": "image/svg+xml",
+    "sha256": "c2d34c23c20d7869d4ca20ab09971023d5c963a092f62a274cb2b0ee401a5866"
+  },
+  "image-538d0991d3c876940a7d": {
+    "path": "apps/other-materials/assets/538d0991d3c876940a7d.svg",
+    "mime": "image/svg+xml",
+    "sha256": "538d0991d3c876940a7d54eb9c3c034573007fb688f6fee13695c5c9d24c1e1a"
+  },
+  "image-ac9915c7ee0bc054193a": {
+    "path": "apps/other-materials/assets/ac9915c7ee0bc054193a.svg",
+    "mime": "image/svg+xml",
+    "sha256": "ac9915c7ee0bc054193ad19888d826cd426c25bbe621d666421e47e04a8b14c2"
+  }
+}

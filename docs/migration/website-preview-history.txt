@@ -1,0 +1,223 @@
+OpenSilicon — public credibility prototype, visual revision 11
+27 October 2026
+
+This is an isolated local test version. It has no Git remote, no copied environment
+files and no production hosting configuration. No commit, push or deployment was made.
+
+Run:
+  npm run build
+  npm run start -- --hostname 127.0.0.1 --port 3106
+
+Review:
+  http://127.0.0.1:3106/
+  http://127.0.0.1:3106/approach
+
+Visual revision 11:
+  Increased footer top/bottom padding to 80px/48px on desktop and 56px/32px on
+  mobile. Added space above and within the disclosure area. Desktop sitemap
+  columns now have responsive 72–120px gaps while staying aligned to the right.
+  Build passed; browser checks at 1280px, 1024px and 390px show no horizontal
+  overflow. Desktop and mobile screenshots are in review/v11.
+
+Visual revision 10:
+  Footer sitemap columns now fit their content and align as a group to the right
+  edge, eliminating the blank remainder of the former equal-width last column.
+  Build passed. Browser checks at 1280px and 1024px confirmed a zero right inset
+  and no horizontal overflow. Mobile rules are unchanged. Screenshot: review/v10.
+
+Visual revision 9:
+  Increased desktop spacing between footer branding and sitemap navigation from
+  56px to 96–128px, with a wider branding column. Mobile keeps the stacked layout.
+  Build passed. Browser checks at 1280px, 1024px and 390px showed no horizontal
+  overflow; 1024px navigation labels fit. Screenshots are in review/v9.
+
+Implemented:
+  Homepage: financing focus, credit logic, deployment perspective, selected research,
+  and equal entry points for capital partners and project operators/offtakers.
+  Our approach: four underwriting dimensions, a generic transaction flow,
+  milestone-based execution and portfolio dependency review.
+  Contact: audience selection carried into the form; local demonstration only.
+  About: original thesis retained; indicative product yield figures removed.
+
+Public-content basis:
+  Latest 26 October deck: Standards and Approach, Credit Protection,
+  Deal Structure, Deal Stages, and Governance/Portfolio Discipline.
+  Offtaker and broker materials: operators, sites/colocation and hardware sourcing.
+  Only general methods were adapted; no private source documents are linked.
+
+Kept out:
+  Fund identity/formation details, proposed fund size, fees, target returns,
+  subscription and GP terms, service provider identities, project aliases,
+  transaction counterparties, pipeline amounts, budget models and deal assumptions.
+  The structure diagram is labeled illustrative; no completed deal is implied.
+
+Safety of the test:
+  Server binds to loopback only. All pages are noindex/nofollow.
+  Private deck/archive routes return 404. Contact form sends no data externally
+  and does not save entries. Existing research text, sources and dates are preserved.
+
+Dependencies are reused via a local node_modules symlink. For an independent
+installation, replace the symlink with npm ci.
+
+Visual revision 2:
+  Restored the original brand typography and immersive imagery.
+  Removed numbered feature grids, hardware thumbnail cards and the boxed deal diagram.
+  Rebuilt the homepage around a concise strategy, a large infrastructure image,
+  underwriting focus, editorial research links and two equal contact paths.
+  Rebuilt Approach with an image-led opening, concise disclosures, an unboxed
+  repayment path and a vertically arranged execution sequence.
+  Limited display typography to main content so footer headings retain their scale.
+  Original version 1 files are preserved in review/v1-source for comparison.
+
+Visual revision 3:
+  Review priority: mature equipment-finance/private-credit fund presentation first;
+  restrained modern interactions second, where they explain the credit approach.
+  Clarified equipment term financing and procurement/deployment bridge financing.
+  Moved equal capital-partnership and equipment-financing paths into the hero rail.
+  Replaced repeated exterior imagery with a server-room interior in the home focus.
+  Added three research selections with substantive takeaways; article text and dates
+  remain unchanged, including the 20 October article.
+  Added a Repayment / Deployment / Recovery framework explainer, using existing
+  Radix tabs. The conceptual diagram changes with the selected dimension; it does
+  not calculate, approve or score any transaction. No data entry or remote service.
+  Motion: occasional marketing explanation/state indication; CSS opacity/transform
+  and clipped tab indicator, 200ms, using shared easing tokens. Keyboard changes
+  are instant; reduced-motion users receive no position animation. Hover motion
+  is limited to fine pointers. No new dependencies.
+  Red and blue teams both passed the final wording and desktop visual hierarchy.
+  Their corrections removed absolute repayment claims, portfolio-history ambiguity
+  and non-semantic flow icons. Private institutional and transaction data stay out.
+  Preserved revision 2 source in review/v2-source. Review images are in review/v3.
+
+Design references:
+  https://github.com/emilkowalski/skills/tree/main/skills/animate
+  https://github.com/emilkowalski/skills/tree/main/skills/emil-design-eng
+  https://vercel.com/
+  https://usd.ai/
+  https://trinitycapital.com/equipment-financing/
+  https://www.slrcapitalpartners.com/Financial-Solutions/Equipment-Finance
+  https://www.eldridge.com/asset-based-credit
+  https://crayhill.com/
+
+Visual revision 4:
+  Responds to feedback that v3 was wordy, visually empty, and mechanically interactive.
+  Rebuilt Approach around an illustrative GPU financing, with capital use, supplier /
+  operator / customer roles, and collections split between operations and debt service.
+  Replaced the abstract underwriting accordion and repeated process prose with a
+  purchase / delivery / acceptance / collections evidence table and compact process.
+  Reduced section spacing and hero height. No fictitious cases, clients or performance.
+  Home financing descriptions now state capital use and repayment source separately.
+  Removed the wireframe racks. Added a detailed editorial equipment image generated
+  with the built-in image_gen tool; this is illustrative, not an owned installation.
+  Asset and final prompt: review/v4/ASSET-NOTES.txt.
+  Three home credit judgments remain readable throughout. Selection highlights the
+  relevant judgment and reveals concrete materials. The image and main copy stay still.
+  Desktop feedback appears above the image; mobile feedback appears inside the
+  selected row so a tap does not require scrolling past the image to see its result.
+  CSS indicator uses the shared 200ms ease-out token; evidence fades use 160ms.
+  Keyboard changes are instant; reduced-motion rules remove motion. Existing Radix
+  keyboard navigation and hidden-panel isolation are retained. No dependencies added.
+  Source before this revision is preserved in review/v3-source; images in review/v4.
+  Final validation: production build / TypeScript and 42 existing tests passed;
+  desktop, 390px and 320px browser checks passed. Switching preserves image and
+  document geometry; keyboard switching has zero-duration transitions; mobile
+  response is visible beside its trigger. Private-content and source-isolation
+  audit passed for all 12 linked pages. Duplicate anchor offsets were removed.
+
+Visual revision 5:
+  Replaced the weak caption-only home interaction with three explorable loan stages.
+  Purchase: equipment close-up plus funding / supplier-payment / equipment path.
+  Deploy: a different data-center image plus delivery/site, acceptance and billing path.
+  Collect: a cash-flow diagram, with customer payments, collection accounts and
+  parallel operating-obligation / debt-service uses. No fictitious financial figures.
+  Every stage also changes the credit question, evidence and financing decision.
+  Controls remain in place; panels crossfade with the shared 200ms token. Keyboard
+  changes are instant, with hidden panels inert and excluded from accessibility.
+  Both photographic views load eagerly so a first click does not reveal a blank image.
+  Direct review: http://127.0.0.1:3106/#financing-explorer
+  Source before this revision is preserved in review/v4-source; evidence in review/v5.
+
+Build operation for this local preview:
+  next.config.ts uses distDir .next-preview-v5. The previous .next directory had a
+  blocked cleanup operation; a fresh build directory completed successfully.
+  preview-check.py scans client chunks from the current build directory.
+  The normal build/start commands above still apply. Production source is untouched.
+
+Final v5 verification: production build passed; desktop and 390px mobile verified across all three stages with distinct main visuals, credit questions and evidence. Document height stays constant across stages. Native desktop clicks retain scroll position. Keyboard arrows/End select stages without transition. 320px viewport has no horizontal overflow. Actual screenshots and checks saved in review/v5/.
+
+
+Revision 6 — 27 October 2026
+Preserves OpenSilicon's architectural imagery, black/white palette, Geist typography
+and restrained violet details. USD.AI was studied for information architecture and
+explanatory interaction; its artwork, product claims, metrics and typography were
+not copied into this preview.
+
+Homepage and Approach were rebuilt around equipment, customer contracts, funding
+conditions and repayment. Original code-native SVG hardware and HTML/CSS transaction
+scenes use a shared visual language. Repayment includes an illustrative on-schedule /
+delayed-payment scenario, with no numerical credit score, quote or approval claim.
+Capital-provider and operator paths have distinct preparation/detail sections and
+carry the correct audience into the local-only enquiry form.
+
+Validation: final production build and TypeScript pass. Four distinct diagram states,
+credit questions and evidence views verified on desktop and mobile. Native desktop
+clicks preserve scroll position and document height. Keyboard arrows/Home/End work;
+keyboard transitions are instant. Inactive panels have inert and aria-hidden attributes.
+390px and 320px widths checked for overflow and narrow diagram layout. Local acceptance
+audit passes for 12 pages: links/anchors, 404 private routes, private-content markers,
+no live enquiry backend, no indexing, unchanged original checkout and research dates/text.
+
+Actual full-page screenshots (assembled from overlapping browser viewport captures):
+  review/v6/home-desktop-full.png       1280 x 4703
+  review/v6/approach-desktop-full.png   1280 x 4033
+  review/v6/home-mobile-full.png         390 x 6317
+  review/v6/approach-mobile-full.png     390 x 5597
+Final state screenshots and interaction-checks.json are in review/v6/.
+Pre-revision source is preserved in review/v5-source/.
+
+Local build uses .next-preview-v6 and the shared dependency root. Tailwind source
+scanning is explicitly limited to app/components/lib, excluding generated artifacts.
+No new dependency, production checkout change, commit, push or deployment was made.
+
+
+Revision 7 — browser-comment edits, 27 October 2026
+Removed the homepage hero eyebrow, Explore our focus link and bottom audience strip.
+Comment 1 was interpreted from its marker on the eyebrow text. The hero-copy layer
+uses pointer-events:none, explaining why the annotation selected the background img.
+The architectural background is retained under that interpretation.
+
+The first section now explicitly states We finance GPU infrastructure and describes
+equipment term loans and procurement/deployment bridges. Product card headings now
+name the actual financing types. Other sections, Approach, research and interactions
+are unchanged.
+
+Production build/TypeScript and the 12-page local acceptance audit passed. Desktop
+and 390px mobile layout verified; no horizontal overflow. Actual updated full-page
+screenshots are in review/v7/home-desktop-full.png and home-mobile-full.png. Source
+before these edits is preserved in review/v6-source/. No commit, push or deployment.
+
+
+Revision 8 — footer disclosures, 27 October 2026
+Added four paragraphs of Important information to the shared footer across the
+public test pages: general information / no advice or offer / no lending commitment;
+financing review, approval and documentation conditions; capital-loss and credit /
+deployment / collateral risks; illustrative transactions, imagery and third-party references.
+No APY, digital-asset protocol, regulatory-status, or specific geographic-exclusion
+claims were imported from the USD.AI reference.
+
+This is contextual public-site draft wording, not a conclusion about regulatory
+status or the legality of a future offering. Entity-, offering- and jurisdiction-
+specific wording needs to follow the final arrangements before publication.
+
+Reference context consulted on 27 October 2026:
+https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/general-solicitation
+https://www.fca.org.uk/firms/financial-promotions-and-adverts/approving-financial-promotions
+These sources support the distinction between a website label and the substantive
+content / regulatory route of a communication. Their text was not copied into the site.
+
+Validation: production build and TypeScript pass; desktop and 390px mobile footer
+checked for readable paragraphs and no horizontal overflow; 12-page local acceptance
+audit passes, private routes remain 404, original checkout and research remain unchanged.
+Screenshots: review/v8/footer-desktop.jpg and footer-mobile.jpg.
+Source before this change: review/v7-source/components/Footer.tsx and app/fund-preview.css.
+Only the isolated test version was edited. No commit, push or deployment.

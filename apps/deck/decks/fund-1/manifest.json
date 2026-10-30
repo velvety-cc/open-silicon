@@ -1,0 +1,300 @@
+{
+  "id": "fund-1",
+  "title": "AI Infra Access Fund",
+  "classification": "Confidential",
+  "revision": "2026-10-28-appendix-layout",
+  "canvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "page": 1,
+      "title": "AI Infra Access Fund",
+      "sourceId": "deck-page-1",
+      "file": "slides/01.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/4adf038faecb7caa.css",
+        "styles/2134ef3a5442930e.css",
+        "styles/12c933e53735fa42.css",
+        "styles/73e351da12dc0b8d.css",
+        "styles/19d2155eb6c63e9f.css",
+        "styles/6831ee2c229c4e38.css",
+        "styles/a8ce5bac7a9cd951.css",
+        "styles/add9321c14f03b72.css",
+        "styles/91ef026ef10b47f2.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-appendix-page11-layout-20261028/page-14-source.html",
+        "sha256": "936b92b5e57962c2da3f8bee9bf2112e04a1023c9971730dfd9b1a9617c151de"
+      }
+    },
+    {
+      "page": 2,
+      "title": "Table of contents",
+      "sourceId": "deck-page-2",
+      "file": "slides/02.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/4adf038faecb7caa.css",
+        "styles/2134ef3a5442930e.css",
+        "styles/12c933e53735fa42.css",
+        "styles/73e351da12dc0b8d.css",
+        "styles/19d2155eb6c63e9f.css",
+        "styles/6831ee2c229c4e38.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-proposed-15-model-20261028/page-02-source.html",
+        "sha256": "5dc6959199e8ae6e82623050259bfe4ae79de7b71f447e446edd47b3986f94cd"
+      }
+    },
+    {
+      "page": 3,
+      "title": "Executive Summary",
+      "sourceId": "deck-page-3",
+      "file": "slides/03.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/4adf038faecb7caa.css",
+        "styles/2134ef3a5442930e.css",
+        "styles/12c933e53735fa42.css",
+        "styles/73e351da12dc0b8d.css",
+        "styles/19d2155eb6c63e9f.css",
+        "styles/6831ee2c229c4e38.css",
+        "styles/a8ce5bac7a9cd951.css",
+        "styles/356c0132b98e2d68.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-summary-emphasis-20261028/render-source.html",
+        "sha256": "7d1923d258c66d90bed0d11b91b662231060c614700a45310630d520d4687616"
+      }
+    },
+    {
+      "page": 4,
+      "title": "Supply constraints support GPU-backed credit",
+      "sourceId": "deck-page-4",
+      "file": "slides/04.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/4adf038faecb7caa.css",
+        "styles/2134ef3a5442930e.css",
+        "styles/12c933e53735fa42.css",
+        "styles/73e351da12dc0b8d.css",
+        "styles/19d2155eb6c63e9f.css",
+        "styles/6831ee2c229c4e38.css",
+        "styles/a8ce5bac7a9cd951.css",
+        "styles/add9321c14f03b72.css",
+        "styles/91ef026ef10b47f2.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-appendix-page11-layout-20261028/page-14-source.html",
+        "sha256": "936b92b5e57962c2da3f8bee9bf2112e04a1023c9971730dfd9b1a9617c151de"
+      }
+    },
+    {
+      "page": 5,
+      "title": "Our Advantages and Underwriting Approach",
+      "sourceId": "concept-a",
+      "file": "slides/05.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/6a80341e57476176.css",
+        "styles/47639c2033ea7613.css",
+        "styles/6b479c11f8bd2ed1.css",
+        "styles/a132a2509248b6f1.css",
+        "styles/e0818044d846ea52.css",
+        "styles/025ae52e290f2df2.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-underwriting-final-20261027/page-05.html",
+        "sha256": "49aa419bcce5f61f1db44a1ffbb14df3388987ab275580dd01512411ef876651"
+      }
+    },
+    {
+      "page": 6,
+      "title": "Current in the Pipeline: Project Aurora",
+      "sourceId": "deck-page-6",
+      "file": "slides/06.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/4adf038faecb7caa.css",
+        "styles/2134ef3a5442930e.css",
+        "styles/12c933e53735fa42.css",
+        "styles/73e351da12dc0b8d.css",
+        "styles/19d2155eb6c63e9f.css",
+        "styles/6831ee2c229c4e38.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-proposed-15-model-20261028/page-06-source.html",
+        "sha256": "ba30ea12e957332b6fd2f9b1b66aa50b81da9a5a0bdd1f061191708b8110602d"
+      }
+    },
+    {
+      "page": 7,
+      "title": "Project Aurora Entity Structure",
+      "sourceId": "deck-page-7",
+      "file": "slides/07.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/4adf038faecb7caa.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-aurora-structure-subtitle-20261027/render-source.html",
+        "sha256": "c80dc07a20e789766a7e9f6458f6d0f893c47562a6e72aa3d42a6d3b82c1ef2a"
+      }
+    },
+    {
+      "page": 8,
+      "title": "Project Aurora: Capital Release Milestones",
+      "sourceId": "deck-page-8",
+      "file": "slides/08.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/4adf038faecb7caa.css",
+        "styles/2134ef3a5442930e.css",
+        "styles/12c933e53735fa42.css",
+        "styles/73e351da12dc0b8d.css",
+        "styles/19d2155eb6c63e9f.css",
+        "styles/6831ee2c229c4e38.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-aurora-stage-signoff-20261027/render-source.html",
+        "sha256": "4024434969400e3198ef21346c32902790f9449f2096765e9348429eb0949bd9"
+      }
+    },
+    {
+      "page": 9,
+      "title": "Risk protection: how loans are repaid",
+      "sourceId": "deck-page-10",
+      "file": "slides/09.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/4adf038faecb7caa.css",
+        "styles/2134ef3a5442930e.css",
+        "styles/12c933e53735fa42.css",
+        "styles/73e351da12dc0b8d.css",
+        "styles/19d2155eb6c63e9f.css",
+        "styles/6831ee2c229c4e38.css",
+        "styles/a8ce5bac7a9cd951.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-payback-protection-20261027/render-source.html",
+        "sha256": "caa763e3a0cc3a943a2fd3d9554e6ee3bd9800dbd1ffe097a0bd4c95412ddf36"
+      }
+    },
+    {
+      "page": 10,
+      "title": "Risk Sensitivity Analysis",
+      "sourceId": "deck-page-9",
+      "file": "slides/10.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/4adf038faecb7caa.css",
+        "styles/2134ef3a5442930e.css",
+        "styles/12c933e53735fa42.css",
+        "styles/73e351da12dc0b8d.css",
+        "styles/19d2155eb6c63e9f.css",
+        "styles/6831ee2c229c4e38.css",
+        "styles/a8ce5bac7a9cd951.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-proposed-15-model-20261028/page-10-source.html",
+        "sha256": "141f6afff6310b88de206d18b8c0cfaf15e5349d180234081732a85ad0601a46"
+      }
+    },
+    {
+      "page": 11,
+      "title": "Fund terms",
+      "sourceId": "deck-page-12",
+      "file": "slides/11.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/4adf038faecb7caa.css",
+        "styles/2134ef3a5442930e.css",
+        "styles/12c933e53735fa42.css",
+        "styles/73e351da12dc0b8d.css",
+        "styles/19d2155eb6c63e9f.css",
+        "styles/6831ee2c229c4e38.css",
+        "styles/a8ce5bac7a9cd951.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-rounded-appendix-statements-20261028/page-11-source.html",
+        "sha256": "fd17989810037b56044e6691415055e4444e9535613a4a35f29bd3d7bbe34a4d"
+      }
+    },
+    {
+      "page": 12,
+      "title": "Governance, reporting and tax",
+      "sourceId": "deck-page-13",
+      "file": "slides/12.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/4adf038faecb7caa.css",
+        "styles/2134ef3a5442930e.css",
+        "styles/12c933e53735fa42.css",
+        "styles/73e351da12dc0b8d.css",
+        "styles/19d2155eb6c63e9f.css",
+        "styles/6831ee2c229c4e38.css",
+        "styles/a8ce5bac7a9cd951.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-rounded-appendix-statements-20261028/page-12-source.html",
+        "sha256": "4a70ef3c98e4a80c12d389ea26fd33956aa8baa2e47e601907880893e318a7b6"
+      }
+    },
+    {
+      "page": 13,
+      "title": "Thank you.",
+      "sourceId": "deck-contact-cover",
+      "file": "slides/13.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/4adf038faecb7caa.css",
+        "styles/2134ef3a5442930e.css",
+        "styles/12c933e53735fa42.css",
+        "styles/2815253e4509c7a8.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-contact-wording-20261027/back-cover-source.html",
+        "sha256": "330ae4cd69a85effa4fb24dabc0e52b5c7de4c8731fdce2de709f4bcb868b37d"
+      }
+    },
+    {
+      "page": 14,
+      "title": "Illustrative Portfolio Assumptions",
+      "sourceId": "deck-page-14",
+      "file": "slides/14.html",
+      "styles": [
+        "styles/6386cc4e0bc73f12.css",
+        "styles/ec56c59eefa32039.css",
+        "styles/4adf038faecb7caa.css",
+        "styles/2134ef3a5442930e.css",
+        "styles/12c933e53735fa42.css",
+        "styles/73e351da12dc0b8d.css",
+        "styles/19d2155eb6c63e9f.css",
+        "styles/6831ee2c229c4e38.css",
+        "styles/a8ce5bac7a9cd951.css",
+        "styles/add9321c14f03b72.css",
+        "styles/91ef026ef10b47f2.css"
+      ],
+      "provenance": {
+        "source": "tmp/deck-appendix-page11-layout-20261028/page-14-source.html",
+        "sha256": "936b92b5e57962c2da3f8bee9bf2112e04a1023c9971730dfd9b1a9617c151de"
+      }
+    }
+  ]
+}

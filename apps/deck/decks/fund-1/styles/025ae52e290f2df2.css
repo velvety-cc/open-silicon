@@ -1,0 +1,16 @@
+
+/* Redistribute vertical space to the source visuals while preserving copy and four-column hierarchy. */
+.deck .sheet.concept-page.concept-a{padding:32px 56px 28px}
+.deck .concept-page.concept-a .page-heading h1{margin-top:10px;margin-bottom:10px}
+.deck .concept-page.concept-a .body{margin-top:24px}
+.deck .concept-page.concept-a .a-stage>.concept-visual{height:124px;margin-bottom:20px}
+.deck .concept-page.concept-a .concept-visual.os-standard-logos{gap:12px}
+.deck .concept-page.concept-a .concept-visual.os-standard-logos:after{display:none;content:none}
+.deck .concept-page.concept-a .concept-visual.os-standard-logos img{width:190px;height:34px}
+.deck .concept-page.concept-a .concept-visual.os-standard-logos .fireworks-logo{height:30px}
+.deck .concept-page.concept-a .concept-visual.os-standard-logos .nebius-logo{width:174px;height:32px}
+.deck .concept-page.concept-a .concept-visual.os-standard-gpu img{width:120px;height:120px}
+.deck .concept-page.concept-a .concept-visual svg{width:241px;height:104px}
+.deck .concept-page.concept-a .a-proof{margin-top:16px}
+.deck .concept-page.concept-a .body .a-caption{margin-top:8px}
+.deck .concept-page.concept-a .body .a-criterion{margin-top:20px}

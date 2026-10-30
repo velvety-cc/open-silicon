@@ -1,0 +1,261 @@
+{
+  "sourceApp": "gpu-financing-app",
+  "sourceReleaseSha256": "9b1984a0a47be0a8ec80def163be843a8b19aef8c1b06b49aaca06e8996bcf84",
+  "sourceWorkbookSha256": "aefc0b4867c8eac903ef59f254315bafa99dcf9205565ee8e11471b197b12cf6",
+  "templates": {
+    "standard": {
+      "inputHash": "fnv1a64:f934141e079bdfb4",
+      "settings": {
+        "defaultDate": "2027-11-02",
+        "defaultType": "borrower",
+        "strategy": "liquidate"
+      },
+      "ledgerSha256": "c12e146c24d983a9e29f19443814c63eef217d3fc1040e8e7600c92d2b53c416",
+      "summary": {
+        "commitment": 168000000,
+        "originalAdvanced": 168000000,
+        "originalRecovered": 168000000.00000003,
+        "originalOutstanding": 0,
+        "recoveryPercent": 1.0000000000000002,
+        "workoutAdvanced": 0,
+        "workoutRecovered": 0,
+        "workoutLoss": 0,
+        "interestAccrued": 23972602.73972593,
+        "interestPaid": 23972602.73972601,
+        "interestUnpaid": 0,
+        "interestForgiven": 0,
+        "pikCapitalized": 0,
+        "pikRecovered": 0,
+        "pikOutstanding": 0,
+        "feePaid": 0,
+        "totalDebtClaim": 0,
+        "principalShortfall": -2.9802322387695312e-8,
+        "shortfallLabel": "Recovered by horizon",
+        "netCashLoss": -23972602.739726014,
+        "npv": 933698.5229163328,
+        "discountedEconomicLoss": -933698.5229163328,
+        "irr": 0.12559280206895862,
+        "irrRoots": [
+          0.12559280206895862
+        ],
+        "minDscr": -0.29931546321101504,
+        "balloonCoverage": null,
+        "maxCashGap": 0,
+        "firstGap": null,
+        "additionalWorkoutCash": 0,
+        "workoutCost": 1400000,
+        "workoutPaid": 1400000,
+        "saleDate": "2028-01-31",
+        "recoveryReceiptDate": "2028-04-30",
+        "defaultDate": "2027-11-02",
+        "enforcementDate": "2028-01-01",
+        "resumeDate": null,
+        "maturity": "2029-11-02",
+        "originalMaturity": "2029-11-02",
+        "horizon": "2032-11-02",
+        "milestones": {
+          "50": {
+            "date": "2028-04-30",
+            "month": "2028-04"
+          },
+          "75": {
+            "date": "2028-04-30",
+            "month": "2028-04"
+          },
+          "90": {
+            "date": "2028-04-30",
+            "month": "2028-04"
+          },
+          "100": {
+            "date": "2028-04-30",
+            "month": "2028-04"
+          }
+        },
+        "recoveryBuckets": {
+          "operations": 51333333.33333333,
+          "borrowerCash": 38624776.41832306,
+          "collateral": 78041890.24834365,
+          "deposit": 0,
+          "guarantee": 0,
+          "insurance": 0,
+          "reserve": 0
+        },
+        "atDefault": {
+          "advanced": 168000000,
+          "recovered": 51333333.33333333,
+          "exposure": 116666666.66666672,
+          "claim": 117855707.76255713,
+          "fundedNotOperating": 0
+        },
+        "prepayReceived": 131694336,
+        "prepayCredited": 121872384,
+        "prepayRemaining": 9821952,
+        "closingReceivable": 0,
+        "closingUnbilled": 0,
+        "closingBorrowerCash": 30472141.99454835,
+        "closingReserve": 0,
+        "depositRemaining": 0,
+        "guaranteeRemaining": null,
+        "insuranceRemaining": null,
+        "eligibility": {
+          "status": "conditional",
+          "reasons": [
+            "Equipment lien evidence: missing evidence",
+            "Site access evidence: missing evidence",
+            "Removal rights evidence: missing evidence",
+            "Contract / asset transfer evidence: missing evidence",
+            "Claim priority / lien scope not evidenced"
+          ]
+        },
+        "reconciliation": {
+          "debtError": 0,
+          "cashError": 1.4901161193847656e-8,
+          "interestError": 1.0913936421275139e-10,
+          "poolError": 0,
+          "originalError": -2.9802322387695312e-8,
+          "workoutError": 0,
+          "pikError": 0,
+          "prepayError": 0,
+          "opexError": 0,
+          "capexError": 0
+        },
+        "constraints": {
+          "principal": true,
+          "liquidity": true,
+          "dscr": false,
+          "return": true
+        },
+        "prepayRefunded": 0,
+        "remainingRecoveryCosts": 0,
+        "remainingSeniorClaims": 0
+      }
+    },
+    "throttled": {
+      "inputHash": "fnv1a64:b50f33465427f86c",
+      "settings": {
+        "defaultDate": "2027-11-02",
+        "defaultType": "borrower",
+        "strategy": "liquidate"
+      },
+      "ledgerSha256": "81e07bf363777dab784bc8f22779037f4ca398add6e018b2732ee161c9327519",
+      "summary": {
+        "commitment": 144000000,
+        "originalAdvanced": 144000000,
+        "originalRecovered": 144000000,
+        "originalOutstanding": 0,
+        "recoveryPercent": 1,
+        "workoutAdvanced": 0,
+        "workoutRecovered": 0,
+        "workoutLoss": 0,
+        "interestAccrued": 20547945.205479287,
+        "interestPaid": 20547945.20547947,
+        "interestUnpaid": 0,
+        "interestForgiven": 0,
+        "pikCapitalized": 0,
+        "pikRecovered": 0,
+        "pikOutstanding": 0,
+        "feePaid": 0,
+        "totalDebtClaim": 0,
+        "principalShortfall": 0,
+        "shortfallLabel": "Recovered by horizon",
+        "netCashLoss": -20547945.205479488,
+        "npv": 800313.0196425421,
+        "discountedEconomicLoss": -800313.0196425421,
+        "irr": 0.12559280206895862,
+        "irrRoots": [
+          0.12559280206895862
+        ],
+        "minDscr": -0.2578717836894899,
+        "balloonCoverage": null,
+        "maxCashGap": 0,
+        "firstGap": null,
+        "additionalWorkoutCash": 0,
+        "workoutCost": 1400000,
+        "workoutPaid": 1400000,
+        "saleDate": "2028-01-31",
+        "recoveryReceiptDate": "2028-04-30",
+        "defaultDate": "2027-11-02",
+        "enforcementDate": "2028-01-01",
+        "resumeDate": null,
+        "maturity": "2029-11-02",
+        "originalMaturity": "2029-11-02",
+        "horizon": "2032-11-02",
+        "milestones": {
+          "50": {
+            "date": "2028-04-30",
+            "month": "2028-04"
+          },
+          "75": {
+            "date": "2028-04-30",
+            "month": "2028-04"
+          },
+          "90": {
+            "date": "2028-04-30",
+            "month": "2028-04"
+          },
+          "100": {
+            "date": "2028-04-30",
+            "month": "2028-04"
+          }
+        },
+        "recoveryBuckets": {
+          "operations": 44000000,
+          "borrowerCash": 34187661.99911576,
+          "collateral": 65812338.00088424,
+          "deposit": 0,
+          "guarantee": 0,
+          "insurance": 0,
+          "reserve": 0
+        },
+        "atDefault": {
+          "advanced": 144000000,
+          "recovered": 44000000,
+          "exposure": 100000000,
+          "claim": 101019178.08219178,
+          "fundedNotOperating": 0
+        },
+        "prepayReceived": 111259008.00000001,
+        "prepayCredited": 102961152,
+        "prepayRemaining": 8297856.000000015,
+        "closingReceivable": 0,
+        "closingUnbilled": 0,
+        "closingBorrowerCash": 27199689.635880314,
+        "closingReserve": 0,
+        "depositRemaining": 0,
+        "guaranteeRemaining": null,
+        "insuranceRemaining": null,
+        "eligibility": {
+          "status": "conditional",
+          "reasons": [
+            "Equipment lien evidence: missing evidence",
+            "Site access evidence: missing evidence",
+            "Removal rights evidence: missing evidence",
+            "Contract / asset transfer evidence: missing evidence",
+            "Claim priority / lien scope not evidenced"
+          ]
+        },
+        "reconciliation": {
+          "debtError": 0,
+          "cashError": 1.4901161193847656e-8,
+          "interestError": 1.0913936421275139e-10,
+          "poolError": 0,
+          "originalError": 0,
+          "workoutError": 0,
+          "pikError": 0,
+          "prepayError": 0,
+          "opexError": 0,
+          "capexError": 0
+        },
+        "constraints": {
+          "principal": true,
+          "liquidity": true,
+          "dscr": false,
+          "return": true
+        },
+        "prepayRefunded": 0,
+        "remainingRecoveryCosts": 0,
+        "remainingSeniorClaims": 0
+      }
+    }
+  }
+}

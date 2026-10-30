@@ -1,0 +1,14 @@
+.vc-sheet .hero h1{font-size:53px}
+.vc-sheet .metrics{grid-template-columns:repeat(3,minmax(0,1fr));padding:21px 0}
+.vc-sheet .metric,.vc-sheet .metric:nth-child(2){padding:0 9px}
+.vc-sheet .value,.vc-sheet .metric:nth-child(2) .value{font-size:37px;letter-spacing:-.7px;height:45px}
+.vc-sheet .details{grid-template-columns:1.16fr 1fr;gap:36px;margin-top:25px}
+.vc-sheet .partnership-steps h3{font-size:12px;line-height:1.4;font-weight:600;margin:0 0 3px}
+.vc-sheet .partnership-steps li{margin-top:17px}
+.vc-sheet .partnership-steps li:first-child{margin-top:0}
+.vc-sheet .resource h3{font-size:24px;gap:8px;white-space:nowrap}
+.vc-sheet .resources{margin-top:24px;padding-top:18px}
+.partnership-next{margin-top:24px;padding-top:16px;border-top:1px solid var(--line)}
+.partnership-next h2{font-family:Editorial,Georgia,serif;font-size:24px;line-height:1.2;font-weight:400;letter-spacing:-.3px;text-transform:none;color:var(--ink);margin:0 0 8px}
+.partnership-next p{font-size:12px;line-height:1.6;color:var(--muted);margin:0}
+.vc-sheet .closing{padding-top:13px}

@@ -1,0 +1,13 @@
+# Calculation plan
+
+1. Preserve the snapshot, capture bounded current-source reads and reconcile material input and formula differences.
+2. Define a metadata-bearing input dictionary. Separate historical estimates, deliberately chosen illustrative terms and missing evidence. Freeze templates and apply versioned scenario overrides.
+3. Build a dependency-free ES module engine. All dates use UTC calendar dates. Iterate exact daily events; integrate operating accruals and contractual interest daily, issue invoices on monthly billing boundaries, collect on exact lagged dates and allocate only received cash. Aggregate the same ledger to calendar months.
+4. Separate borrower cash and costs from lender wires, interest, original-principal receipts, PIK receipts, fees and subsequent workout funding. Retain visible operating/capex shortfalls with no implicit sponsor contribution. Costs paid by the lender are cash outflows, not original principal.
+5. Track exclusive physical asset states, independent accounting depreciation and age-based economic resale. Default type and acceleration are separate. Use explicit dated transitions for cure, enforcement, downtime, sale and recovery collection. Stop draws at borrower/site default. Buyer nonpayment alone stops buyer collections without loan acceleration unless selected.
+6. Compare hold, restructure, re-lease, relocate and liquidate. Test evidence-backed rights, strategy-specific timing/costs, committed funding and available support. Unknown rights remain conditional. A missing required right makes a workout unavailable.
+7. Route dated proceeds through unique costs, senior claims, original/PIK/workout principal under a declared allocation, unpaid interest and fees. Cap all recoveries to claims. Support sources are consumed once, expire and cannot repay already satisfied obligations.
+8. Calculate recovery milestones on exact receipt dates, dated annual IRR with a 365-day basis, NPV, liquidity gaps and recurring/maturity coverage. Warn on incomplete horizons, ambiguous IRR, missing data, infeasibility and failed reconciliations.
+9. Test specified arithmetic cases and integrated edge conditions before connecting the UI. Then add synchronized controls, immutable saved scenarios, charts, three sensitivity grids, bounded constrained searches and reproducible JSON/CSV review exports.
+
+The borrower owns and pays for equipment/site costs and receives compute collections. Sponsor equity is a specified contribution. The lender supplies original wires and only explicit workout funding; borrower deficits remain unpaid liabilities and cash gaps. Retained borrower cash can service debt but financing/equity/liquidation never enters operating CFADS.

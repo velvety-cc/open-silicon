@@ -1,0 +1,54 @@
+[
+  {
+    "source": "packages/brand/assets/icon.svg",
+    "targets": [
+      "apps/web/app/icon.svg",
+      "apps/deck/app/icon.svg"
+    ]
+  },
+  {
+    "source": "packages/brand/assets/apple-icon.png",
+    "targets": [
+      "apps/web/app/apple-icon.png",
+      "apps/deck/app/apple-icon.png"
+    ]
+  },
+  {
+    "source": "packages/brand/assets/favicon.ico",
+    "targets": [
+      "apps/web/app/favicon.ico",
+      "apps/deck/app/favicon.ico"
+    ]
+  },
+  {
+    "source": "packages/brand/assets/open-silicon-symbol.svg",
+    "targets": [
+      "apps/web/public/logos/open-silicon-symbol.svg",
+      "apps/risks/assets/symbol.svg"
+    ]
+  },
+  {
+    "source": "packages/brand/fonts/Geist.woff2",
+    "targets": [
+      "apps/risks/assets/Geist.woff2"
+    ]
+  },
+  {
+    "source": "packages/brand/fonts/GeistMono.woff2",
+    "targets": [
+      "apps/risks/assets/GeistMono.woff2"
+    ]
+  },
+  {
+    "source": "packages/brand/fonts/OFL.txt",
+    "targets": [
+      "apps/risks/assets/OFL.txt"
+    ]
+  },
+  {
+    "source": "packages/brand/tokens.css",
+    "targets": [
+      "apps/risks/assets/brand-tokens.css"
+    ]
+  }
+]

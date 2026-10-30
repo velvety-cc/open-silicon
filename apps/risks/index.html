@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>OpenSilicon — Principal recovery</title>
+ <meta name="description" content="A simple GPU financing and principal recovery calculator.">
+ <link rel="icon" href="assets/symbol.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+</head>
+<body class="simple-app">
+ <a class="skip-link" href="#main">Skip to model</a>
+ <header class="simple-header"><div class="header-inner"><a class="brand" href="#" aria-label="OpenSilicon financing model"><img src="assets/symbol.svg" alt=""><span class="brand-name">OpenSilicon</span></a><span class="app-label">GPU financing</span><div class="simple-actions"><button id="save" class="btn" aria-label="Save scenario" disabled>Save<span class="save-context"> scenario</span></button><button id="export" class="btn dark" disabled>Export ↓</button></div></div></header>
+ <main id="main">
+  <div class="simple-heading"><div><h1>Principal recovery</h1><p>Adjust the deal. See how much principal comes back.</p></div></div>
+  <div class="simple-workspace">
+   <aside class="quick-inputs" aria-label="Parameters"><div class="control-heading"><h2>Parameters</h2><button class="text-btn" id="reset">Reset</button></div><label class="configuration-label"><span class="sr-only">Reference configuration</span><select id="configuration" aria-label="Reference configuration"><option value="standard">GB300 · Standard</option><option value="throttled">GB300 · Throttled</option></select></label><p id="deal-context"></p><div id="controls"></div>
+    <div class="simple-default"><div class="default-top"><span>Default event</span><div class="segmented" id="default-presets"><button data-default="none">No default</button><button data-default="custom">Default</button></div></div><div class="default-timing"><label class="default-range">After <output id="default-month-label">12</output> months<input id="default-month" aria-label="Default month" type="range" min="0" max="71" step="1" value="12"></label><input id="default-date" aria-label="Exact default date" type="date"></div><span class="sr-only" id="default-note"></span></div>
+    <label class="strategy-parameter">Recovery strategy<select id="recovery-strategy" aria-label="Recovery strategy"><option value="hold">Hold &amp; operate</option><option value="restructure">Restructure</option><option value="release">Re-lease</option><option value="relocate">Relocate</option><option value="liquidate" selected>Liquidate</option></select></label>
+    <details id="more-assumptions" class="more-assumptions"><summary>More assumptions</summary><div id="extra-controls"></div><details class="sidebar-details"><summary>Repayment & funding</summary><div id="structure-controls"></div></details><details class="sidebar-details"><summary>Exact timing</summary><div id="timing-controls"></div></details><label class="event-type-label">Event type<select id="default-type" aria-label="Default type"><option value="borrower">Borrower default</option><option value="buyer">Buyer nonpayment</option><option value="site">Site failure</option></select></label><button class="text-btn" id="open-register">All inputs & sources ↗</button></details>
+   </aside>
+   <section class="simple-output" aria-label="Principal recovery results">
+
+    <div id="simple-results" aria-live="polite"><div class="loading">Calculating…</div></div>
+   </section>
+  </div>
+  <details id="advanced-model" class="advanced-model"><summary><span>Advanced model</span><span>Cash flows, sensitivities, sources & saved scenarios</span><span aria-hidden="true">+</span></summary><div class="tabbar" role="tablist" aria-label="Detailed analysis"><button data-tab="overview" class="active" role="tab">Full analysis</button><button data-tab="workouts" role="tab">Recovery options</button><button data-tab="sensitivities" role="tab">Sensitivities</button><button data-tab="cashflows" role="tab">Cash flows</button><button data-tab="sources" role="tab">Inputs & sources</button><button data-tab="saved" role="tab">Saved <span id="saved-count">0</span></button></div><div id="results"></div><p class="advanced-meta" id="run-meta"></p></details>
+  <footer class="simple-footer"><span>Historical budget + illustrative terms. Recovery is conditional; this is not a financing offer.</span><span id="run-status" role="status">Calculating…</span></footer>
+ </main>
+ <dialog id="save-dialog"><form method="dialog"><h2>Save scenario</h2><p>Keep a frozen copy of these inputs and results in this browser.</p><label>Scenario name<input id="scenario-name" required maxlength="80" value="GB300 — candidate A"></label><div class="dialog-actions"><button value="cancel" class="btn">Cancel</button><button value="save" id="confirm-save" class="btn dark">Save scenario</button></div></form></dialog>
+ <input id="import-file" type="file" accept="application/json" hidden>
+ <script type="module" src="app.mjs"></script>
+</body>
+</html>

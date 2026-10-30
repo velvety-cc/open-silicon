@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "materials": [
+    {
+      "id": "fund-tear-sheet",
+      "title": "AI Infra Access Fund tear sheet",
+      "audience": "LPs / investors",
+      "status": "current",
+      "source": "materials/fund-tear-sheet/source.html",
+      "styles": "styles/fund-tear-sheet.css",
+      "fileStem": "AI-Infra-Access-Fund-Tear-Sheet",
+      "provenance": {
+        "date": "2026-10-26",
+        "workspace": "Compute Lending Protocol",
+        "html": "output/pdf/AI-Infra-Access-Fund-Tear-Sheet.html",
+        "htmlSha256": "54b4046e8473416064fcda5ff2809be60fb3cbd5b4ebb99ec2ab6b422f11f938",
+        "pdfSha256": "2beef84309fa6b621660fc750279e24e57eddb474bac6451829830f9d279ac85",
+        "textSha256": "2daefdb24c1d11d83522248b0871ee465886e058f45ef202d58f48fb1ef0976d"
+      }
+    },
+    {
+      "id": "broker-tear-sheet",
+      "title": "OpenSilicon broker tear sheet",
+      "audience": "Brokers / origination partners",
+      "status": "current",
+      "source": "materials/broker-tear-sheet/source.html",
+      "styles": "styles/financing-tear-sheet.css",
+      "fileStem": "OpenSilicon-Broker-Tear-Sheet",
+      "provenance": {
+        "date": "2026-10-26",
+        "workspace": "Compute Lending Protocol",
+        "html": "output/pdf/OpenSilicon-Broker-Tear-Sheet.html",
+        "htmlSha256": "857d5909e292cf5ee5b5b8c38f45c090bd85c5f778eced67ee20c134fcda68e6",
+        "pdfSha256": "1c1abd38dc6add3182178a8b5490fb69bae1feee27f0da70fd462d7a292c3eef",
+        "textSha256": "e26950aa8a0391096d5ac5e5abf13f8f60da400b74095941b64bbc6a15fa7cd0"
+      }
+    },
+    {
+      "id": "offtaker-tear-sheet",
+      "title": "OpenSilicon offtaker tear sheet",
+      "audience": "Offtakers / project counterparties",
+      "status": "current",
+      "source": "materials/offtaker-tear-sheet/source.html",
+      "styles": "styles/financing-tear-sheet.css",
+      "fileStem": "OpenSilicon-Offtaker-Tear-Sheet",
+      "provenance": {
+        "date": "2026-10-26",
+        "workspace": "Compute Lending Protocol",
+        "html": "output/pdf/OpenSilicon-Offtaker-Tear-Sheet.html",
+        "htmlSha256": "6d61e0cf5a4d5d246bd9b091380bddcc9898fd63ccb81272a95abc31943c776e",
+        "pdfSha256": "15caf273eb27751741363d74f7367bbf65801c9643fae3fd74c32734aa6061b8",
+        "textSha256": "3081bbef6ced1bcc205fb254675fb51411370654e8502e5393009bf127de34dc"
+      }
+    },
+    {
+      "id": "vc-tear-sheet",
+      "title": "OpenSilicon VC compute partnership tear sheet",
+      "audience": "Venture capital firms / portfolio support teams",
+      "status": "current",
+      "source": "materials/vc-tear-sheet/source.html",
+      "styles": [
+        "styles/financing-tear-sheet.css",
+        "styles/vc-tear-sheet.css"
+      ],
+      "fileStem": "OpenSilicon-VC-Compute-Partnership-Tear-Sheet",
+      "provenance": {
+        "date": "2026-10-30",
+        "basis": [
+          "broker-tear-sheet",
+          "offtaker-tear-sheet"
+        ],
+        "brief": "Compute partnership for VC portfolio companies: access to compute and support toward their next milestone; focus on what OpenSilicon provides.",
+        "textSha256": "187b1729c8385676c95100e63cd97d33071ce56de39aa85579634a5d35c44fe6"
+      }
+    },
+    {
+      "id": "fund-1-tear-sheet",
+      "title": "OpenSilicon Fund 1 tear sheet",
+      "audience": "LPs / investors",
+      "status": "archived",
+      "source": "archive/fund-1-tear-sheet/source.html",
+      "styles": "styles/fund-1-tear-sheet.css",
+      "fileStem": "OpenSilicon-Fund-1-Tear-Sheet",
+      "provenance": {
+        "date": "2026-10-26",
+        "workspace": "Compute Lending Protocol",
+        "html": "output/pdf/OpenSilicon-Fund-1-Tear-Sheet.html",
+        "htmlSha256": "c17a5c6dcf04083d301ae4942b95f1dadc13b773bb2122a0a7a63098eb054644",
+        "pdfSha256": "a3dcbd37573e8a996e9a19c13430e519b5faed9a66245109f211e64d48530239",
+        "textSha256": "031136936bf96572b3da9231b444d50a1ff11e077758278971988dc055170c46"
+      }
+    }
+  ]
+}

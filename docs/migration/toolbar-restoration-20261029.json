@@ -1,0 +1,89 @@
+{
+  "checks": [
+    {
+      "width": 1390,
+      "height": 64,
+      "bottom": 900,
+      "documentWidth": 1390,
+      "dropdowns": 0,
+      "iconButtons": 4,
+      "counter": "04 / 14",
+      "progressColor": "rgb(83, 58, 254)",
+      "nextColor": "rgb(83, 58, 254)",
+      "contentsJump": true,
+      "keyboard": true,
+      "readingCounter": false
+    },
+    {
+      "width": 1280,
+      "height": 64,
+      "bottom": 900,
+      "documentWidth": 1280,
+      "dropdowns": 0,
+      "iconButtons": 4,
+      "counter": "04 / 14",
+      "progressColor": "rgb(83, 58, 254)",
+      "nextColor": "rgb(83, 58, 254)",
+      "contentsJump": true,
+      "keyboard": true,
+      "readingCounter": false
+    },
+    {
+      "width": 900,
+      "height": 64,
+      "bottom": 900,
+      "documentWidth": 900,
+      "dropdowns": 0,
+      "iconButtons": 4,
+      "counter": "04 / 14",
+      "progressColor": "rgb(83, 58, 254)",
+      "nextColor": "rgb(83, 58, 254)",
+      "contentsJump": true,
+      "keyboard": false,
+      "readingCounter": true
+    },
+    {
+      "width": 390,
+      "height": 64,
+      "bottom": 900,
+      "documentWidth": 390,
+      "dropdowns": 0,
+      "iconButtons": 4,
+      "counter": "04 / 14",
+      "progressColor": "rgb(83, 58, 254)",
+      "nextColor": "rgb(83, 58, 254)",
+      "contentsJump": true,
+      "keyboard": false,
+      "readingCounter": true
+    },
+    {
+      "width": 320,
+      "height": 64,
+      "bottom": 900,
+      "documentWidth": 320,
+      "dropdowns": 0,
+      "iconButtons": 4,
+      "counter": "04 / 14",
+      "progressColor": "rgb(83, 58, 254)",
+      "nextColor": "rgb(83, 58, 254)",
+      "contentsJump": true,
+      "keyboard": false,
+      "readingCounter": true
+    }
+  ],
+  "errors": [],
+  "print": "complete 14-page document; native print stubbed during QA",
+  "cause": "The architecture migration replaced the approved toolbar rather than preserving its implementation.",
+  "restored": [
+    "64px compact toolbar",
+    "Contents drawer",
+    "icon Print control",
+    "thin presentation progress line",
+    "ghost previous button and accented next button",
+    "two-digit monospace page counter"
+  ],
+  "unit_tests": 45,
+  "typecheck": "passed",
+  "deck_production_build": "passed",
+  "slide_templates_changed": false
+}

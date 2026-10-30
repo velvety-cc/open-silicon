@@ -1,0 +1,1103 @@
+{
+  "source_pdf": "/Users/velvety/Documents/Compute Lending Protocol/output/deck-rounded-appendix-statements-20261028/AI-Infra-Access-Fund-Deck.pdf",
+  "source_sha256": "fb28cd1fc8ee135b5cc301c903002660a1eed504c8de52b8995355aa2c5037e2",
+  "output_pdf": "/Users/velvety/Documents/Compute Lending Protocol/output/deck-appendix-page11-layout-20261028/AI-Infra-Access-Fund-Deck.pdf",
+  "output_sha256": "3f6b39e2dfd2871a28e481d6550a06a4557989b897cb928e2bd9b516e76060b5",
+  "page_count": 14,
+  "edited_pages": [
+    14
+  ],
+  "reference_page": 11,
+  "layout": "Two pairs of label and value columns, followed by one full-width funding and scope row",
+  "content_preservation": {
+    "rounded_financial_inputs_preserved": true,
+    "all_seven_original_input_categories_retained": true,
+    "proposed_interest_rate": "15% p.a.",
+    "displayed_DSCR": "~1.2x",
+    "prepayment_counted_once_and_later_credits_retained": true
+  },
+  "unchanged_page_streams_and_text": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "back_cover_email_link_preserved": true,
+  "layout_audit": {
+    "reference": {
+      "title": "Fund terms",
+      "titleLines": 1,
+      "text": "07 \u00b7 INVESTOR TERMS\nFund terms\n\nProposed terms for a $150 million, three-year closed-ended GPU credit fund.\n\nFund\n\t\nAI Infra Access Fund \u00b7 Cayman Islands\n\t\nUnderlying assets\n\t\nSenior secured GPU equipment loans across multiple offtakers\n\n\nType\n\t\nClosed-ended private credit fund\n\t\nTarget net IRR\n\t\n14%\n\n\nTarget size\n\t\n$150 million\n\t\nManagement fee\n\t\n1%\n\n\nFund term\n\t\n3 years\n\t\nPerformance fee\n\t\n10%\n\n\nMinimum subscription\n\t\n$5 million\n\t\nHurdle rate\n\t\n6%\n\n\nCapital calls\n\t\nWithin 14 days of notice\n\n\nGP commitment\n\t\nMore than 10%; same class as LPs\n\n\nInvestor liquidity\n\t\nHold through wind-down; transfers subject to agreed consent rules\n\n\nDistributions\n\t\nAfter the first year: available principal and income, net of liabilities, expenses and reserves.\nOpenSilicon\nConfidential \u00b7 October 2026\n11 / 14",
+      "folio": "11 / 14",
+      "rows": [
+        [
+          "Fund",
+          "AI Infra Access Fund \u00b7 Cayman Islands",
+          "Underlying assets",
+          "Senior secured GPU equipment loans across multiple offtakers"
+        ],
+        [
+          "Type",
+          "Closed-ended private credit fund",
+          "Target net IRR",
+          "14%"
+        ],
+        [
+          "Target size",
+          "$150 million",
+          "Management fee",
+          "1%"
+        ],
+        [
+          "Fund term",
+          "3 years",
+          "Performance fee",
+          "10%"
+        ],
+        [
+          "Minimum subscription",
+          "$5 million",
+          "Hurdle rate",
+          "6%"
+        ],
+        [
+          "Capital calls",
+          "Within 14 days of notice"
+        ],
+        [
+          "GP commitment",
+          "More than 10%; same class as LPs"
+        ],
+        [
+          "Investor liquidity",
+          "Hold through wind-down; transfers subject to agreed consent rules"
+        ],
+        [
+          "Distributions",
+          "After the first year: available principal and income, net of liabilities, expenses and reserves."
+        ]
+      ],
+      "rowPositions": [
+        {
+          "cells": [
+            {
+              "text": "Fund",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 175.078125,
+                "width": 210.234375,
+                "height": 65,
+                "bottom": 240.078125
+              }
+            },
+            {
+              "text": "AI Infra Access Fund \u00b7 Cayman Islands",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 175.078125,
+                "width": 373.75,
+                "height": 65,
+                "bottom": 240.078125
+              }
+            },
+            {
+              "text": "Underlying assets",
+              "lines": 2,
+              "position": {
+                "x": 639.984375,
+                "y": 175.078125,
+                "width": 210.234375,
+                "height": 65,
+                "bottom": 240.078125
+              }
+            },
+            {
+              "text": "Senior secured GPU equipment loans across multiple offtakers",
+              "lines": 3,
+              "position": {
+                "x": 850.21875,
+                "y": 175.078125,
+                "width": 373.78125,
+                "height": 65,
+                "bottom": 240.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 175.078125,
+            "width": 1168,
+            "height": 65,
+            "bottom": 240.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "Type",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 240.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 281.078125
+              }
+            },
+            {
+              "text": "Closed-ended private credit fund",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 240.078125,
+                "width": 373.75,
+                "height": 41,
+                "bottom": 281.078125
+              }
+            },
+            {
+              "text": "Target net IRR",
+              "lines": 2,
+              "position": {
+                "x": 639.984375,
+                "y": 240.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 281.078125
+              }
+            },
+            {
+              "text": "14%",
+              "lines": 2,
+              "position": {
+                "x": 850.21875,
+                "y": 240.078125,
+                "width": 373.78125,
+                "height": 41,
+                "bottom": 281.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 240.078125,
+            "width": 1168,
+            "height": 41,
+            "bottom": 281.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "Target size",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 281.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 322.078125
+              }
+            },
+            {
+              "text": "$150 million",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 281.078125,
+                "width": 373.75,
+                "height": 41,
+                "bottom": 322.078125
+              }
+            },
+            {
+              "text": "Management fee",
+              "lines": 2,
+              "position": {
+                "x": 639.984375,
+                "y": 281.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 322.078125
+              }
+            },
+            {
+              "text": "1%",
+              "lines": 2,
+              "position": {
+                "x": 850.21875,
+                "y": 281.078125,
+                "width": 373.78125,
+                "height": 41,
+                "bottom": 322.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 281.078125,
+            "width": 1168,
+            "height": 41,
+            "bottom": 322.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "Fund term",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 322.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 363.078125
+              }
+            },
+            {
+              "text": "3 years",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 322.078125,
+                "width": 373.75,
+                "height": 41,
+                "bottom": 363.078125
+              }
+            },
+            {
+              "text": "Performance fee",
+              "lines": 2,
+              "position": {
+                "x": 639.984375,
+                "y": 322.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 363.078125
+              }
+            },
+            {
+              "text": "10%",
+              "lines": 2,
+              "position": {
+                "x": 850.21875,
+                "y": 322.078125,
+                "width": 373.78125,
+                "height": 41,
+                "bottom": 363.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 322.078125,
+            "width": 1168,
+            "height": 41,
+            "bottom": 363.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "Minimum subscription",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 363.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 404.078125
+              }
+            },
+            {
+              "text": "$5 million",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 363.078125,
+                "width": 373.75,
+                "height": 41,
+                "bottom": 404.078125
+              }
+            },
+            {
+              "text": "Hurdle rate",
+              "lines": 2,
+              "position": {
+                "x": 639.984375,
+                "y": 363.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 404.078125
+              }
+            },
+            {
+              "text": "6%",
+              "lines": 2,
+              "position": {
+                "x": 850.21875,
+                "y": 363.078125,
+                "width": 373.78125,
+                "height": 41,
+                "bottom": 404.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 363.078125,
+            "width": 1168,
+            "height": 41,
+            "bottom": 404.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "Capital calls",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 404.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 445.078125
+              }
+            },
+            {
+              "text": "Within 14 days of notice",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 404.078125,
+                "width": 957.765625,
+                "height": 41,
+                "bottom": 445.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 404.078125,
+            "width": 1168,
+            "height": 41,
+            "bottom": 445.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "GP commitment",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 445.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 486.078125
+              }
+            },
+            {
+              "text": "More than 10%; same class as LPs",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 445.078125,
+                "width": 957.765625,
+                "height": 41,
+                "bottom": 486.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 445.078125,
+            "width": 1168,
+            "height": 41,
+            "bottom": 486.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "Investor liquidity",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 486.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 527.078125
+              }
+            },
+            {
+              "text": "Hold through wind-down; transfers subject to agreed consent rules",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 486.078125,
+                "width": 957.765625,
+                "height": 41,
+                "bottom": 527.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 486.078125,
+            "width": 1168,
+            "height": 41,
+            "bottom": 527.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "Distributions",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 527.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 568.078125
+              }
+            },
+            {
+              "text": "After the first year: available principal and income, net of liabilities, expenses and reserves.",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 527.078125,
+                "width": 957.765625,
+                "height": 41,
+                "bottom": 568.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 527.078125,
+            "width": 1168,
+            "height": 41,
+            "bottom": 568.078125
+          }
+        }
+      ],
+      "table": {
+        "x": 56,
+        "y": 174.578125,
+        "width": 1168,
+        "height": 394,
+        "bottom": 568.578125
+      },
+      "footer": {
+        "x": 56,
+        "y": 651,
+        "width": 1168,
+        "height": 33,
+        "bottom": 684
+      },
+      "labelStyle": {
+        "font": "500 16px / 24px Geist, Arial, sans-serif",
+        "color": "rgb(23, 25, 27)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": [
+          "0px",
+          "0px",
+          "0px",
+          "0px"
+        ]
+      },
+      "valueStyle": {
+        "font": "17px / 24px Geist, Arial, sans-serif",
+        "color": "rgb(98, 102, 107)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": [
+          "0px",
+          "0px",
+          "0px",
+          "0px"
+        ]
+      },
+      "labelCellStyle": {
+        "font": "",
+        "color": "rgb(77, 82, 89)",
+        "background": "rgb(245, 245, 247)",
+        "padding": [
+          "8px",
+          "13px",
+          "8px",
+          "13px"
+        ]
+      },
+      "valueCellStyle": {
+        "font": "",
+        "color": "rgb(23, 25, 27)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": [
+          "8px",
+          "22px",
+          "8px",
+          "17px"
+        ]
+      },
+      "footerClearance": 82.421875,
+      "issues": []
+    },
+    "appendix": {
+      "title": "Illustrative Portfolio Assumptions",
+      "titleLines": 1,
+      "text": "APPENDIX A \u00b7 PORTFOLIO MODEL\nIllustrative Portfolio Assumptions\n\nRepresentative project inputs for the proposed portfolio model.\n\nEquipment cost\n\t\n~$280m\n\t\nProject debt\n\t\n~$170m (~60% of equipment cost)\n\n\nGross revenue\n\t\n~$150m per year\n\t\nBilling basis\n\t\n~$6 / GPU-hour; ~2,900 billable GPUs at full billing\n\n\nCustomer prepayment\n\t\n~$130m at inception (~30% of modeled three-year revenue)\n\t\nBilling credits\n\t\nPrepayment counted once; later invoice credits\n\n\nCash after credits\n\t\n~$100m per year\n\t\nData-center cost\n\t\n~$20m per year\n\n\nCash after DC cost\n\t\n~$80m per year, or ~$7m per month\n\t\nModeled DSCR\n\t\n~1.2x\n\n\nProposed financing\n\t\n15% p.a.; ~3-year tenor\n\t\nDebt service\n\t\nMonthly amortization; ~$6m per month\n\n\nBOM subtotal\n\t\n~$280m\n\t\nDeployment\n\t\n40 active + 2 spare racks\n\n\nFunding and scope\n\t\nDebt and company capital fund deployments. Amounts are rounded. DSCR compares cash after credits and DC cost with debt service, before other costs, tax and reserves.\nOpenSilicon\nConfidential \u00b7 October 2026\n14 / 14",
+      "folio": "14 / 14",
+      "rows": [
+        [
+          "Equipment cost",
+          "~$280m",
+          "Project debt",
+          "~$170m (~60% of equipment cost)"
+        ],
+        [
+          "Gross revenue",
+          "~$150m per year",
+          "Billing basis",
+          "~$6 / GPU-hour; ~2,900 billable GPUs at full billing"
+        ],
+        [
+          "Customer prepayment",
+          "~$130m at inception (~30% of modeled three-year revenue)",
+          "Billing credits",
+          "Prepayment counted once; later invoice credits"
+        ],
+        [
+          "Cash after credits",
+          "~$100m per year",
+          "Data-center cost",
+          "~$20m per year"
+        ],
+        [
+          "Cash after DC cost",
+          "~$80m per year, or ~$7m per month",
+          "Modeled DSCR",
+          "~1.2x"
+        ],
+        [
+          "Proposed financing",
+          "15% p.a.; ~3-year tenor",
+          "Debt service",
+          "Monthly amortization; ~$6m per month"
+        ],
+        [
+          "BOM subtotal",
+          "~$280m",
+          "Deployment",
+          "40 active + 2 spare racks"
+        ],
+        [
+          "Funding and scope",
+          "Debt and company capital fund deployments. Amounts are rounded. DSCR compares cash after credits and DC cost with debt service, before other costs, tax and reserves."
+        ]
+      ],
+      "rowPositions": [
+        {
+          "cells": [
+            {
+              "text": "Equipment cost",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 175.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 216.078125
+              }
+            },
+            {
+              "text": "~$280m",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 175.078125,
+                "width": 373.75,
+                "height": 41,
+                "bottom": 216.078125
+              }
+            },
+            {
+              "text": "Project debt",
+              "lines": 2,
+              "position": {
+                "x": 639.984375,
+                "y": 175.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 216.078125
+              }
+            },
+            {
+              "text": "~$170m (~60% of equipment cost)",
+              "lines": 2,
+              "position": {
+                "x": 850.21875,
+                "y": 175.078125,
+                "width": 373.78125,
+                "height": 41,
+                "bottom": 216.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 175.078125,
+            "width": 1168,
+            "height": 41,
+            "bottom": 216.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "Gross revenue",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 216.078125,
+                "width": 210.234375,
+                "height": 65,
+                "bottom": 281.078125
+              }
+            },
+            {
+              "text": "~$150m per year",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 216.078125,
+                "width": 373.75,
+                "height": 65,
+                "bottom": 281.078125
+              }
+            },
+            {
+              "text": "Billing basis",
+              "lines": 2,
+              "position": {
+                "x": 639.984375,
+                "y": 216.078125,
+                "width": 210.234375,
+                "height": 65,
+                "bottom": 281.078125
+              }
+            },
+            {
+              "text": "~$6 / GPU-hour; ~2,900 billable GPUs at full billing",
+              "lines": 3,
+              "position": {
+                "x": 850.21875,
+                "y": 216.078125,
+                "width": 373.78125,
+                "height": 65,
+                "bottom": 281.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 216.078125,
+            "width": 1168,
+            "height": 65,
+            "bottom": 281.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "Customer prepayment",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 281.078125,
+                "width": 210.234375,
+                "height": 65,
+                "bottom": 346.078125
+              }
+            },
+            {
+              "text": "~$130m at inception (~30% of modeled three-year revenue)",
+              "lines": 3,
+              "position": {
+                "x": 266.234375,
+                "y": 281.078125,
+                "width": 373.75,
+                "height": 65,
+                "bottom": 346.078125
+              }
+            },
+            {
+              "text": "Billing credits",
+              "lines": 2,
+              "position": {
+                "x": 639.984375,
+                "y": 281.078125,
+                "width": 210.234375,
+                "height": 65,
+                "bottom": 346.078125
+              }
+            },
+            {
+              "text": "Prepayment counted once; later invoice credits",
+              "lines": 3,
+              "position": {
+                "x": 850.21875,
+                "y": 281.078125,
+                "width": 373.78125,
+                "height": 65,
+                "bottom": 346.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 281.078125,
+            "width": 1168,
+            "height": 65,
+            "bottom": 346.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "Cash after credits",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 346.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 387.078125
+              }
+            },
+            {
+              "text": "~$100m per year",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 346.078125,
+                "width": 373.75,
+                "height": 41,
+                "bottom": 387.078125
+              }
+            },
+            {
+              "text": "Data-center cost",
+              "lines": 2,
+              "position": {
+                "x": 639.984375,
+                "y": 346.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 387.078125
+              }
+            },
+            {
+              "text": "~$20m per year",
+              "lines": 2,
+              "position": {
+                "x": 850.21875,
+                "y": 346.078125,
+                "width": 373.78125,
+                "height": 41,
+                "bottom": 387.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 346.078125,
+            "width": 1168,
+            "height": 41,
+            "bottom": 387.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "Cash after DC cost",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 387.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 428.078125
+              }
+            },
+            {
+              "text": "~$80m per year, or ~$7m per month",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 387.078125,
+                "width": 373.75,
+                "height": 41,
+                "bottom": 428.078125
+              }
+            },
+            {
+              "text": "Modeled DSCR",
+              "lines": 2,
+              "position": {
+                "x": 639.984375,
+                "y": 387.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 428.078125
+              }
+            },
+            {
+              "text": "~1.2x",
+              "lines": 2,
+              "position": {
+                "x": 850.21875,
+                "y": 387.078125,
+                "width": 373.78125,
+                "height": 41,
+                "bottom": 428.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 387.078125,
+            "width": 1168,
+            "height": 41,
+            "bottom": 428.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "Proposed financing",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 428.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 469.078125
+              }
+            },
+            {
+              "text": "15% p.a.; ~3-year tenor",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 428.078125,
+                "width": 373.75,
+                "height": 41,
+                "bottom": 469.078125
+              }
+            },
+            {
+              "text": "Debt service",
+              "lines": 2,
+              "position": {
+                "x": 639.984375,
+                "y": 428.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 469.078125
+              }
+            },
+            {
+              "text": "Monthly amortization; ~$6m per month",
+              "lines": 2,
+              "position": {
+                "x": 850.21875,
+                "y": 428.078125,
+                "width": 373.78125,
+                "height": 41,
+                "bottom": 469.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 428.078125,
+            "width": 1168,
+            "height": 41,
+            "bottom": 469.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "BOM subtotal",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 469.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 510.078125
+              }
+            },
+            {
+              "text": "~$280m",
+              "lines": 2,
+              "position": {
+                "x": 266.234375,
+                "y": 469.078125,
+                "width": 373.75,
+                "height": 41,
+                "bottom": 510.078125
+              }
+            },
+            {
+              "text": "Deployment",
+              "lines": 2,
+              "position": {
+                "x": 639.984375,
+                "y": 469.078125,
+                "width": 210.234375,
+                "height": 41,
+                "bottom": 510.078125
+              }
+            },
+            {
+              "text": "40 active + 2 spare racks",
+              "lines": 2,
+              "position": {
+                "x": 850.21875,
+                "y": 469.078125,
+                "width": 373.78125,
+                "height": 41,
+                "bottom": 510.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 469.078125,
+            "width": 1168,
+            "height": 41,
+            "bottom": 510.078125
+          }
+        },
+        {
+          "cells": [
+            {
+              "text": "Funding and scope",
+              "lines": 2,
+              "position": {
+                "x": 56,
+                "y": 510.078125,
+                "width": 210.234375,
+                "height": 65,
+                "bottom": 575.078125
+              }
+            },
+            {
+              "text": "Debt and company capital fund deployments. Amounts are rounded. DSCR compares cash after credits and DC cost with debt service, before other costs, tax and reserves.",
+              "lines": 3,
+              "position": {
+                "x": 266.234375,
+                "y": 510.078125,
+                "width": 957.765625,
+                "height": 65,
+                "bottom": 575.078125
+              }
+            }
+          ],
+          "position": {
+            "x": 56,
+            "y": 510.078125,
+            "width": 1168,
+            "height": 65,
+            "bottom": 575.078125
+          }
+        }
+      ],
+      "table": {
+        "x": 56,
+        "y": 174.578125,
+        "width": 1168,
+        "height": 401,
+        "bottom": 575.578125
+      },
+      "footer": {
+        "x": 56,
+        "y": 651,
+        "width": 1168,
+        "height": 33,
+        "bottom": 684
+      },
+      "labelStyle": {
+        "font": "500 16px / 24px Geist, Arial, sans-serif",
+        "color": "rgb(23, 25, 27)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": [
+          "0px",
+          "0px",
+          "0px",
+          "0px"
+        ]
+      },
+      "valueStyle": {
+        "font": "17px / 24px Geist, Arial, sans-serif",
+        "color": "rgb(98, 102, 107)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": [
+          "0px",
+          "0px",
+          "0px",
+          "0px"
+        ]
+      },
+      "labelCellStyle": {
+        "font": "",
+        "color": "rgb(77, 82, 89)",
+        "background": "rgb(245, 245, 247)",
+        "padding": [
+          "8px",
+          "13px",
+          "8px",
+          "13px"
+        ]
+      },
+      "valueCellStyle": {
+        "font": "",
+        "color": "rgb(23, 25, 27)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": [
+          "8px",
+          "22px",
+          "8px",
+          "17px"
+        ]
+      },
+      "footerClearance": 75.421875,
+      "issues": []
+    },
+    "stylesMatch": true
+  },
+  "visual_verification": {
+    "rendered_final_pdf_pages_reviewed": [
+      14
+    ],
+    "compared_with_reference_page": 11,
+    "no_clipping_or_overlap": true,
+    "table_font_colors_padding_and_alignment_match_reference": true
+  }
+}

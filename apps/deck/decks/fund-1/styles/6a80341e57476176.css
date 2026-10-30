@@ -1,0 +1,63 @@
+
+/* Alternatives for a single existing slide. Established fonts, color and page furniture retained. */
+.deck .concept-page .body{margin-top:32px;padding:0}
+.deck .concept-page .body p{font:400 18px/26px Geist,Arial,sans-serif;color:#62666b;margin:0;text-wrap:pretty}
+.deck .concept-page .body h3{font:500 22px/28px Geist,Arial,sans-serif;letter-spacing:-.025em;color:#17191b;margin:0}
+.deck .concept-page .body strong{font-weight:500;color:var(--brand-accent)}
+.deck .concept-page .concept-visual{width:100%;height:88px;box-sizing:border-box;margin:0 0 12px;padding:0;display:flex;align-items:center;justify-content:center;overflow:visible;background:white}
+.deck .concept-page .concept-visual.os-standard-logos{flex-direction:column;gap:6px}
+.deck .concept-page .concept-visual img{position:static;transform:none;display:block;object-fit:contain;max-width:100%;flex-shrink:0}
+.deck .concept-page .concept-visual.os-standard-logos img{width:174px;height:28px}
+.deck .concept-page .concept-visual.os-standard-logos .fireworks-logo{height:24px}
+.deck .concept-page .concept-visual.os-standard-logos .nebius-logo{width:151px;height:28px}
+.deck .concept-page .concept-visual figcaption{font:400 14px/18px Geist,Arial,sans-serif;color:#74777d;margin:0}
+.deck .concept-page .concept-visual.os-standard-gpu img{width:88px;height:88px}
+.deck .concept-page .concept-visual svg{display:block;width:241px;height:88px;max-width:100%}
+.deck .concept-page .a-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px}
+.deck .concept-page .a-stage{min-width:0;position:relative}
+.deck .concept-page .a-stage+section:before{content:"";position:absolute;left:-18px;top:0;bottom:0;width:1px;background:#d9d9df}
+.deck .concept-page .a-step{font:400 14px/20px Geist,Arial,sans-serif;color:var(--brand-accent)}
+.deck .concept-page .a-step span{margin-left:10px}
+.deck .concept-page .a-stage h3{margin-top:8px}
+.deck .concept-page .a-proof{font:400 52px/62px Editorial,Georgia,serif;letter-spacing:-.025em;color:var(--brand-accent);margin-top:12px}
+.deck .concept-page .body .a-caption{height:52px;margin-top:8px}
+.deck .concept-page .body .a-criterion{border-top:1px solid #d9d9df;margin-top:16px;padding-top:14px}
+.deck .concept-page .b-ledger{width:100%;table-layout:fixed;border-collapse:collapse;margin:0}
+.deck .concept-page .b-visual-col{width:230px}
+.deck .concept-page .b-focus-col{width:170px}
+.deck .concept-page .b-advantage-col{width:350px}
+.deck .concept-page .b-underwriting-col{width:418px}
+.deck .concept-page .b-ledger thead th{border:0;background:transparent;padding:0 28px 12px 0;text-align:left;font:400 14px/20px Geist,Arial,sans-serif;letter-spacing:0;color:#74777d}
+.deck .concept-page .b-ledger tbody th,.deck .concept-page .b-ledger tbody td{border:0;border-top:1px solid #d9d9df;background:transparent;text-align:left;vertical-align:top;padding:6px 20px 6px 0;letter-spacing:0}
+.deck .concept-page .b-ledger tbody td:last-child{padding-right:0}
+.deck .concept-page .b-ledger tbody th{position:relative;padding-left:26px}
+.deck .concept-page .b-index{position:absolute;left:0;top:9px;font:400 12px/20px Geist,Arial,sans-serif;color:var(--brand-accent)}
+.deck .concept-page .b-ledger h3{font-size:20px;line-height:26px}
+.deck .concept-page .body .b-ledger p.b-proof{font:500 20px/26px Geist,Arial,sans-serif;letter-spacing:-.02em;color:var(--brand-accent)}
+.deck .concept-page .body .b-ledger p.b-effect{margin-top:6px}
+.deck .concept-page .b-ledger .concept-visual{height:80px;margin:0}
+.deck .concept-page .b-ledger .concept-visual.os-standard-logos{gap:5px}
+.deck .concept-page .b-ledger .concept-visual.os-standard-logos img{height:24px}
+.deck .concept-page .b-ledger .concept-visual.os-standard-logos .fireworks-logo{height:20px}
+.deck .concept-page .b-ledger .concept-visual.os-standard-logos .nebius-logo{height:24px}
+.deck .concept-page .b-ledger .concept-visual.os-standard-gpu img{width:80px;height:80px}
+.deck .concept-page .b-ledger .concept-visual svg{height:80px}
+.deck .concept-page .c-layout{display:grid;grid-template-columns:340px minmax(0,1fr);gap:52px}
+.deck .concept-page .c-pipeline{border-right:1px solid #d9d9df;padding-right:36px}
+.deck .concept-page .c-number{font:400 88px/88px Editorial,Georgia,serif;letter-spacing:-.045em;color:var(--brand-accent);margin-top:16px}
+.deck .concept-page .body .c-count-label{font:400 19px/27px Geist,Arial,sans-serif;margin-top:6px;color:#17191b}
+.deck .concept-page .c-credit-gate{border-top:1px solid #d9d9df;margin-top:26px;padding-top:22px}
+.deck .concept-page .c-credit-gate h4{font:500 20px/26px Geist,Arial,sans-serif;letter-spacing:-.02em;margin:0 0 10px;color:var(--brand-accent)}
+.deck .concept-page .c-details{display:grid;align-content:start;gap:18px}
+.deck .concept-page .c-detail{display:grid;grid-template-columns:180px minmax(0,1fr);gap:20px;min-width:0}
+.deck .concept-page .c-detail+section{border-top:1px solid #d9d9df;padding-top:18px}
+.deck .concept-page .c-detail .concept-visual{margin:0}
+.deck .concept-page .c-detail h3{margin-bottom:10px}
+@media screen and (max-width:1000px){
+ .deck .concept-page .a-flow,.deck .concept-page .c-layout{grid-template-columns:1fr;gap:28px}
+ .deck .concept-page .a-stage+section:before{display:none}
+ .deck .concept-page .a-stage+section{border-top:1px solid #d9d9df;padding-top:22px}
+ .deck .concept-page .b-ledger{table-layout:auto}
+ .deck .concept-page .b-ledger col{width:auto}
+ .deck .concept-page .c-pipeline{border-right:0;border-bottom:1px solid #d9d9df;padding:0 0 24px}
+}

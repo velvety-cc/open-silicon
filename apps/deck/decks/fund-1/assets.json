@@ -1,0 +1,51 @@
+{
+  "f1939771ea15c9f6216b.webp": {
+    "path": "apps/deck/decks/fund-1/assets/f1939771ea15c9f6216b.webp",
+    "mime": "image/webp",
+    "sha256": "f1939771ea15c9f6216bc5c46a967b8ceca21b6f924baa7d9c2f97d3ad014106"
+  },
+  "f4027d378d529e5c5e3c.svg": {
+    "path": "packages/brand/assets/open-silicon-symbol.svg",
+    "mime": "image/svg+xml"
+  },
+  "046f66ba5c2c0046926d.ttf": {
+    "path": "packages/brand/fonts/046f66ba5c2c0046926d.ttf",
+    "mime": "font/ttf",
+    "sha256": "046f66ba5c2c0046926d825db8ba9830736f44acc0c83b8b0200d60cd27d1f38"
+  },
+  "a698f828af526e0532c9.ttf": {
+    "path": "packages/brand/fonts/a698f828af526e0532c9.ttf",
+    "mime": "font/ttf",
+    "sha256": "a698f828af526e0532c9127533bbe8043e80f57fe9199e0b0e92c9f0bd0e5746"
+  },
+  "9d7583b7dc9e812afd32.ttf": {
+    "path": "packages/brand/fonts/9d7583b7dc9e812afd32.ttf",
+    "mime": "font/ttf",
+    "sha256": "9d7583b7dc9e812afd32a14280c5cac3160012efe50c8d08938f4fea266ff67f"
+  },
+  "538d0991d3c876940a7d.svg": {
+    "path": "apps/deck/decks/fund-1/assets/538d0991d3c876940a7d.svg",
+    "mime": "image/svg+xml",
+    "sha256": "538d0991d3c876940a7d54eb9c3c034573007fb688f6fee13695c5c9d24c1e1a"
+  },
+  "ac9915c7ee0bc054193a.svg": {
+    "path": "apps/deck/decks/fund-1/assets/ac9915c7ee0bc054193a.svg",
+    "mime": "image/svg+xml",
+    "sha256": "ac9915c7ee0bc054193ad19888d826cd426c25bbe621d666421e47e04a8b14c2"
+  },
+  "1d09743457031e6c9332.webp": {
+    "path": "apps/deck/decks/fund-1/assets/1d09743457031e6c9332.webp",
+    "mime": "image/webp",
+    "sha256": "1d09743457031e6c9332317155403b5ff0b63e6b175545ab64798aa2764603fd"
+  },
+  "b9e2eac83d653064f524.svg": {
+    "path": "apps/deck/decks/fund-1/assets/b9e2eac83d653064f524.svg",
+    "mime": "image/svg+xml",
+    "sha256": "b9e2eac83d653064f524b46251ac1fb147ff14241ddb1a2d7807f305ae054d68"
+  },
+  "190cd38c4aaf4bbc15ec.svg": {
+    "path": "apps/deck/decks/fund-1/assets/190cd38c4aaf4bbc15ec.svg",
+    "mime": "image/svg+xml",
+    "sha256": "190cd38c4aaf4bbc15ec242b8a1f5c64e5dbd4629cf12fa44e56d616d803c37f"
+  }
+}

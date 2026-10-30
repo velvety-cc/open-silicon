@@ -1,0 +1,4 @@
+
+/* Restore approved display labels; adjust only the two upper group gaps. */
+.deck .concept-page.concept-a .a-stage>.concept-visual{margin-bottom:24px}
+.deck .concept-page.concept-a .a-proof{margin-top:24px}

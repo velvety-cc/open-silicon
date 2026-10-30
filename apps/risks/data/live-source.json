@@ -1,0 +1,1202 @@
+{
+  "checkedAt": "2026-10-30T00:18:54.510Z",
+  "modifiedTime": "2026-10-20T03:48:46.669Z",
+  "spreadsheetId": "1__hJwK9PNFUJeaChBNe74FsU4FfWfZpjoPO7JNBUiCg",
+  "ranges": [
+    "A1:J40",
+    "A1:J40",
+    "A1:H40"
+  ],
+  "sheets": {
+    "GB300_Financing_Model": {
+      "A1": {
+        "value": "Assumptions (Tuning Knobs)",
+        "formula": null
+      },
+      "D1": {
+        "value": "Year 0",
+        "formula": null
+      },
+      "E1": {
+        "value": 1,
+        "formula": null
+      },
+      "F1": {
+        "value": 2,
+        "formula": null
+      },
+      "G1": {
+        "value": 3,
+        "formula": null
+      },
+      "H1": {
+        "value": 4,
+        "formula": null
+      },
+      "I1": {
+        "value": 5,
+        "formula": null
+      },
+      "J1": {
+        "value": "Total",
+        "formula": null
+      },
+      "A2": {
+        "value": "GB300 Unit Price / rack",
+        "formula": null
+      },
+      "B2": {
+        "value": 7000000,
+        "formula": null
+      },
+      "A3": {
+        "value": "Sell Price ($/h/card)",
+        "formula": null
+      },
+      "B3": {
+        "value": 5.8,
+        "formula": null
+      },
+      "A5": {
+        "value": "Number of Cards",
+        "formula": null
+      },
+      "B5": {
+        "value": 2880,
+        "formula": null
+      },
+      "C5": {
+        "value": "Equipment Payment",
+        "formula": null
+      },
+      "D5": {
+        "value": -112000000,
+        "formula": "-$B$26*(1-B21)"
+      },
+      "E5": {
+        "value": -69946628.73399709,
+        "formula": "IF(E1>$B$19,0, PMT($B20, $B19, $B26*$B21))"
+      },
+      "F5": {
+        "value": -69946628.73399709,
+        "formula": "IF(F1>$B$19,0, PMT($B20, $B19, $B26*$B21))"
+      },
+      "G5": {
+        "value": -69946628.73399709,
+        "formula": "IF(G1>$B$19,0, PMT($B20, $B19, $B26*$B21))"
+      },
+      "H5": {
+        "value": 0,
+        "formula": "IF(H1>$B$19,0, PMT($B20, $B19, $B26*$B21))"
+      },
+      "I5": {
+        "value": 0,
+        "formula": "IF(I1>$B$19,0, PMT($B20, $B19, $B26*$B21))"
+      },
+      "J5": {
+        "value": -321839886.2019913,
+        "formula": "SUM(D5:I5)"
+      },
+      "C7": {
+        "value": "DC Fee",
+        "formula": null
+      },
+      "D7": {
+        "value": -8666666.666666666,
+        "formula": "-B11"
+      },
+      "E7": {
+        "value": -21060000,
+        "formula": "-($B32*$B9*12)"
+      },
+      "F7": {
+        "value": -21060000,
+        "formula": "-($B32*$B9*12)"
+      },
+      "G7": {
+        "value": -21060000,
+        "formula": "-($B32*$B9*12)"
+      },
+      "H7": {
+        "value": -21060000,
+        "formula": "-($B32*$B9*12)"
+      },
+      "I7": {
+        "value": -21060000,
+        "formula": "-($B32*$B9*12)"
+      },
+      "J7": {
+        "value": -105300000,
+        "formula": "SUM(E7:I7)"
+      },
+      "A9": {
+        "value": "Electric rate (KW/month)",
+        "formula": null
+      },
+      "B9": {
+        "value": 270,
+        "formula": null
+      },
+      "C9": {
+        "value": "Total Opex",
+        "formula": null
+      },
+      "D9": {
+        "value": -8666666.666666666,
+        "formula": "SUM(D6:D8)"
+      },
+      "E9": {
+        "value": -21060000,
+        "formula": "SUM(E6:E8)"
+      },
+      "F9": {
+        "value": -21060000,
+        "formula": "SUM(F6:F8)"
+      },
+      "G9": {
+        "value": -21060000,
+        "formula": "SUM(G6:G8)"
+      },
+      "H9": {
+        "value": -21060000,
+        "formula": "SUM(H6:H8)"
+      },
+      "I9": {
+        "value": -21060000,
+        "formula": "SUM(I6:I8)"
+      },
+      "J9": {
+        "value": -105300000,
+        "formula": "SUM(J6:J8)"
+      },
+      "A10": {
+        "value": "Power / node (KW)",
+        "formula": null
+      },
+      "B10": {
+        "value": 150,
+        "formula": null
+      },
+      "C10": {
+        "value": "Total Payment",
+        "formula": null
+      },
+      "D10": {
+        "value": -120666666.66666667,
+        "formula": "D5+D9"
+      },
+      "E10": {
+        "value": -91006628.73399709,
+        "formula": "E5+E9"
+      },
+      "F10": {
+        "value": -91006628.73399709,
+        "formula": "F5+F9"
+      },
+      "G10": {
+        "value": -91006628.73399709,
+        "formula": "G5+G9"
+      },
+      "H10": {
+        "value": -21060000,
+        "formula": "H5+H9"
+      },
+      "I10": {
+        "value": -21060000,
+        "formula": "I5+I9"
+      },
+      "J10": {
+        "value": -532439886.2019913,
+        "formula": "SUM(J5:J9)"
+      },
+      "A11": {
+        "value": "DC NRC",
+        "formula": null
+      },
+      "B11": {
+        "value": 8666666.666666666,
+        "formula": "26000000/3"
+      },
+      "A13": {
+        "value": "Additional power reserve",
+        "formula": null
+      },
+      "B13": {
+        "value": 500,
+        "formula": null
+      },
+      "C13": {
+        "value": "Income",
+        "formula": null
+      },
+      "C14": {
+        "value": "Rent Revenue",
+        "formula": null
+      },
+      "D14": {
+        "value": 131694336,
+        "formula": "$B$29*$B16*B19"
+      },
+      "E14": {
+        "value": 102428928,
+        "formula": "IF(E1<=$B$19,$B$30,$B$29)"
+      },
+      "F14": {
+        "value": 102428928,
+        "formula": "IF(F1<=$B$19,$B$30,$B$29)"
+      },
+      "G14": {
+        "value": 102428928,
+        "formula": "IF(G1<=$B$19,$B$30,$B$29)"
+      },
+      "H14": {
+        "value": 146327040,
+        "formula": "IF(H1<=$B$19,$B$30,$B$29)"
+      },
+      "I14": {
+        "value": 146327040,
+        "formula": "IF(I1<=$B$19,$B$30,$B$29)"
+      },
+      "J14": {
+        "value": 731635200,
+        "formula": "SUM(D14:I14)"
+      },
+      "A16": {
+        "value": "Downpay",
+        "formula": null
+      },
+      "B16": {
+        "value": 0.3,
+        "formula": null
+      },
+      "C16": {
+        "value": "Net Cash Flow",
+        "formula": null
+      },
+      "D16": {
+        "value": 11027669.333333328,
+        "formula": "D14+D10"
+      },
+      "E16": {
+        "value": 11422299.266002908,
+        "formula": "E14+E10"
+      },
+      "F16": {
+        "value": 11422299.266002908,
+        "formula": "F14+F10"
+      },
+      "G16": {
+        "value": 11422299.266002908,
+        "formula": "G14+G10"
+      },
+      "H16": {
+        "value": 125267040,
+        "formula": "H14+H10"
+      },
+      "I16": {
+        "value": 125267040,
+        "formula": "I14+I10"
+      },
+      "J16": {
+        "value": 295828647.13134205,
+        "formula": "SUM(D16:I16)"
+      },
+      "C17": {
+        "value": "Cum cash flow",
+        "formula": null
+      },
+      "D17": {
+        "value": 11027669.333333328,
+        "formula": "SUM($D16:D16)"
+      },
+      "E17": {
+        "value": 22449968.599336237,
+        "formula": "SUM($D16:E16)"
+      },
+      "F17": {
+        "value": 33872267.865339145,
+        "formula": "SUM($D16:F16)"
+      },
+      "G17": {
+        "value": 45294567.13134205,
+        "formula": "SUM($D16:G16)"
+      },
+      "H17": {
+        "value": 170561607.13134205,
+        "formula": "SUM($D16:H16)"
+      },
+      "I17": {
+        "value": 295828647.13134205,
+        "formula": "SUM($D16:I16)"
+      },
+      "A19": {
+        "value": "Finance period",
+        "formula": null
+      },
+      "B19": {
+        "value": 3,
+        "formula": null
+      },
+      "A20": {
+        "value": "Debt Interest Rate",
+        "formula": null
+      },
+      "B20": {
+        "value": 0.12,
+        "formula": null
+      },
+      "A21": {
+        "value": "Debt LTV (%)",
+        "formula": null
+      },
+      "B21": {
+        "value": 0.6,
+        "formula": null
+      },
+      "A24": {
+        "value": "Calculations",
+        "formula": null
+      },
+      "A25": {
+        "value": "Nodes",
+        "formula": null
+      },
+      "B25": {
+        "value": 40,
+        "formula": "B5/72"
+      },
+      "A26": {
+        "value": "Total Equipment",
+        "formula": null
+      },
+      "B26": {
+        "value": 280000000,
+        "formula": "$B$2*B25"
+      },
+      "A27": {
+        "value": "Total Capex",
+        "formula": null
+      },
+      "B27": {
+        "value": 288666666.6666667,
+        "formula": "B26+B11"
+      },
+      "A28": {
+        "value": "Loan amount",
+        "formula": null
+      },
+      "B28": {
+        "value": 168000000,
+        "formula": "B26*B21"
+      },
+      "A29": {
+        "value": "Annual Revenue",
+        "formula": null
+      },
+      "B29": {
+        "value": 146327040,
+        "formula": "$B$5*$B$3*24*365"
+      },
+      "A30": {
+        "value": "Annual Revenue (After downpay)",
+        "formula": null
+      },
+      "B30": {
+        "value": 102428928,
+        "formula": "$B$5*$B$3*24*365*(1-$B$16)"
+      },
+      "A31": {
+        "value": "DSCR",
+        "formula": null
+      },
+      "B31": {
+        "value": 0.8884856115451788,
+        "formula": "-E10/E14"
+      },
+      "A32": {
+        "value": "Total IT load",
+        "formula": null
+      },
+      "B32": {
+        "value": 6500,
+        "formula": "B10*B25+B13"
+      },
+      "A34": {
+        "value": "Break-Even price - 3y",
+        "formula": null
+      },
+      "B34": {
+        "value": 5.2015494576127015,
+        "formula": "-SUM(D10:G10)/3/24/365/B5"
+      },
+      "A35": {
+        "value": "Break-Even price - 5y",
+        "formula": null
+      },
+      "B35": {
+        "value": 3.4548337841566616,
+        "formula": "-SUM(D10:I10)/5/24/365/B5"
+      },
+      "A36": {
+        "value": "Pay-off period",
+        "formula": null
+      },
+      "B36": {
+        "value": 2.578869985874599,
+        "formula": "-SUM(E5:I5)/(E9+E14)"
+      }
+    },
+    "GB300_Financing_Model-throttled": {
+      "A1": {
+        "value": "Assumptions (Tuning Knobs)",
+        "formula": null
+      },
+      "D1": {
+        "value": "Year 0",
+        "formula": null
+      },
+      "E1": {
+        "value": 1,
+        "formula": null
+      },
+      "F1": {
+        "value": 2,
+        "formula": null
+      },
+      "G1": {
+        "value": 3,
+        "formula": null
+      },
+      "H1": {
+        "value": 4,
+        "formula": null
+      },
+      "I1": {
+        "value": 5,
+        "formula": null
+      },
+      "J1": {
+        "value": "Total",
+        "formula": null
+      },
+      "A2": {
+        "value": "GB300 Unit Price / rack",
+        "formula": null
+      },
+      "B2": {
+        "value": 6000000,
+        "formula": null
+      },
+      "A3": {
+        "value": "Sell Price ($/h/card)",
+        "formula": null
+      },
+      "B3": {
+        "value": 4.9,
+        "formula": null
+      },
+      "A5": {
+        "value": "Number of Cards",
+        "formula": null
+      },
+      "B5": {
+        "value": 2880,
+        "formula": null
+      },
+      "C5": {
+        "value": "Equipment Payment",
+        "formula": null
+      },
+      "D5": {
+        "value": -96000000,
+        "formula": "-$B$26*(1-B21)"
+      },
+      "E5": {
+        "value": -59954253.200568944,
+        "formula": "IF(E1>$B$19,0, PMT($B20, $B19, $B26*$B21))"
+      },
+      "F5": {
+        "value": -59954253.200568944,
+        "formula": "IF(F1>$B$19,0, PMT($B20, $B19, $B26*$B21))"
+      },
+      "G5": {
+        "value": -59954253.200568944,
+        "formula": "IF(G1>$B$19,0, PMT($B20, $B19, $B26*$B21))"
+      },
+      "H5": {
+        "value": 0,
+        "formula": "IF(H1>$B$19,0, PMT($B20, $B19, $B26*$B21))"
+      },
+      "I5": {
+        "value": 0,
+        "formula": "IF(I1>$B$19,0, PMT($B20, $B19, $B26*$B21))"
+      },
+      "J5": {
+        "value": -275862759.60170686,
+        "formula": "SUM(D5:I5)"
+      },
+      "C7": {
+        "value": "DC Fee",
+        "formula": null
+      },
+      "D7": {
+        "value": -8666666.666666666,
+        "formula": "-B11"
+      },
+      "E7": {
+        "value": -15552000,
+        "formula": "-($B32*$B9*12)"
+      },
+      "F7": {
+        "value": -15552000,
+        "formula": "-($B32*$B9*12)"
+      },
+      "G7": {
+        "value": -15552000,
+        "formula": "-($B32*$B9*12)"
+      },
+      "H7": {
+        "value": -15552000,
+        "formula": "-($B32*$B9*12)"
+      },
+      "I7": {
+        "value": -15552000,
+        "formula": "-($B32*$B9*12)"
+      },
+      "J7": {
+        "value": -77760000,
+        "formula": "SUM(E7:I7)"
+      },
+      "A9": {
+        "value": "Electric rate (KW/month)",
+        "formula": null
+      },
+      "B9": {
+        "value": 270,
+        "formula": null
+      },
+      "C9": {
+        "value": "Total Opex",
+        "formula": null
+      },
+      "D9": {
+        "value": -8666666.666666666,
+        "formula": "SUM(D6:D8)"
+      },
+      "E9": {
+        "value": -15552000,
+        "formula": "SUM(E6:E8)"
+      },
+      "F9": {
+        "value": -15552000,
+        "formula": "SUM(F6:F8)"
+      },
+      "G9": {
+        "value": -15552000,
+        "formula": "SUM(G6:G8)"
+      },
+      "H9": {
+        "value": -15552000,
+        "formula": "SUM(H6:H8)"
+      },
+      "I9": {
+        "value": -15552000,
+        "formula": "SUM(I6:I8)"
+      },
+      "J9": {
+        "value": -77760000,
+        "formula": "SUM(J6:J8)"
+      },
+      "A10": {
+        "value": "Power / node (KW)",
+        "formula": null
+      },
+      "B10": {
+        "value": 120,
+        "formula": null
+      },
+      "C10": {
+        "value": "Total Payment",
+        "formula": null
+      },
+      "D10": {
+        "value": -104666666.66666667,
+        "formula": "D5+D9"
+      },
+      "E10": {
+        "value": -75506253.20056894,
+        "formula": "E5+E9"
+      },
+      "F10": {
+        "value": -75506253.20056894,
+        "formula": "F5+F9"
+      },
+      "G10": {
+        "value": -75506253.20056894,
+        "formula": "G5+G9"
+      },
+      "H10": {
+        "value": -15552000,
+        "formula": "H5+H9"
+      },
+      "I10": {
+        "value": -15552000,
+        "formula": "I5+I9"
+      },
+      "J10": {
+        "value": -431382759.60170686,
+        "formula": "SUM(J5:J9)"
+      },
+      "A11": {
+        "value": "DC NRC",
+        "formula": null
+      },
+      "B11": {
+        "value": 8666666.666666666,
+        "formula": "26000000/3"
+      },
+      "A13": {
+        "value": "Additional power reserve",
+        "formula": null
+      },
+      "B13": {
+        "value": 0,
+        "formula": null
+      },
+      "C13": {
+        "value": "Income",
+        "formula": null
+      },
+      "C14": {
+        "value": "Rent Revenue",
+        "formula": null
+      },
+      "D14": {
+        "value": 111259008,
+        "formula": "$B$29*$B16*B19"
+      },
+      "E14": {
+        "value": 86534784,
+        "formula": "IF(E1<=$B$19,$B$30,$B$29)"
+      },
+      "F14": {
+        "value": 86534784,
+        "formula": "IF(F1<=$B$19,$B$30,$B$29)"
+      },
+      "G14": {
+        "value": 86534784,
+        "formula": "IF(G1<=$B$19,$B$30,$B$29)"
+      },
+      "H14": {
+        "value": 123621120.00000001,
+        "formula": "IF(H1<=$B$19,$B$30,$B$29)"
+      },
+      "I14": {
+        "value": 123621120.00000001,
+        "formula": "IF(I1<=$B$19,$B$30,$B$29)"
+      },
+      "J14": {
+        "value": 618105600,
+        "formula": "SUM(D14:I14)"
+      },
+      "A16": {
+        "value": "Downpay",
+        "formula": null
+      },
+      "B16": {
+        "value": 0.3,
+        "formula": null
+      },
+      "C16": {
+        "value": "Net Cash Flow",
+        "formula": null
+      },
+      "D16": {
+        "value": 6592341.333333328,
+        "formula": "D14+D10"
+      },
+      "E16": {
+        "value": 11028530.799431056,
+        "formula": "E14+E10"
+      },
+      "F16": {
+        "value": 11028530.799431056,
+        "formula": "F14+F10"
+      },
+      "G16": {
+        "value": 11028530.799431056,
+        "formula": "G14+G10"
+      },
+      "H16": {
+        "value": 108069120.00000001,
+        "formula": "H14+H10"
+      },
+      "I16": {
+        "value": 108069120.00000001,
+        "formula": "I14+I10"
+      },
+      "J16": {
+        "value": 255816173.7316265,
+        "formula": "SUM(D16:I16)"
+      },
+      "C17": {
+        "value": "Cum cash flow",
+        "formula": null
+      },
+      "D17": {
+        "value": 6592341.333333328,
+        "formula": "SUM($D16:D16)"
+      },
+      "E17": {
+        "value": 17620872.132764384,
+        "formula": "SUM($D16:E16)"
+      },
+      "F17": {
+        "value": 28649402.93219544,
+        "formula": "SUM($D16:F16)"
+      },
+      "G17": {
+        "value": 39677933.731626496,
+        "formula": "SUM($D16:G16)"
+      },
+      "H17": {
+        "value": 147747053.7316265,
+        "formula": "SUM($D16:H16)"
+      },
+      "I17": {
+        "value": 255816173.7316265,
+        "formula": "SUM($D16:I16)"
+      },
+      "A19": {
+        "value": "Finance period",
+        "formula": null
+      },
+      "B19": {
+        "value": 3,
+        "formula": null
+      },
+      "A20": {
+        "value": "Debt Interest Rate",
+        "formula": null
+      },
+      "B20": {
+        "value": 0.12,
+        "formula": null
+      },
+      "A21": {
+        "value": "Debt LTV (%)",
+        "formula": null
+      },
+      "B21": {
+        "value": 0.6,
+        "formula": null
+      },
+      "A24": {
+        "value": "Calculations",
+        "formula": null
+      },
+      "A25": {
+        "value": "Nodes",
+        "formula": null
+      },
+      "B25": {
+        "value": 40,
+        "formula": "B5/72"
+      },
+      "A26": {
+        "value": "Total Equipment",
+        "formula": null
+      },
+      "B26": {
+        "value": 240000000,
+        "formula": "$B$2*B25"
+      },
+      "A27": {
+        "value": "Total Capex",
+        "formula": null
+      },
+      "B27": {
+        "value": 248666666.66666666,
+        "formula": "B26+B11"
+      },
+      "A28": {
+        "value": "Loan amount",
+        "formula": null
+      },
+      "B28": {
+        "value": 144000000,
+        "formula": "B26*B21"
+      },
+      "A29": {
+        "value": "Annual Revenue",
+        "formula": null
+      },
+      "B29": {
+        "value": 123621120.00000001,
+        "formula": "$B$5*$B$3*24*365"
+      },
+      "A30": {
+        "value": "Annual Revenue (After downpay)",
+        "formula": null
+      },
+      "B30": {
+        "value": 86534784,
+        "formula": "$B$5*$B$3*24*365*(1-$B$16)"
+      },
+      "A31": {
+        "value": "DSCR",
+        "formula": null
+      },
+      "B31": {
+        "value": 0.8725537836966109,
+        "formula": "-E10/E14"
+      },
+      "A32": {
+        "value": "Total IT load",
+        "formula": null
+      },
+      "B32": {
+        "value": 4800,
+        "formula": "B10*B25+B13"
+      },
+      "A34": {
+        "value": "Break-Even price - 3y",
+        "formula": null
+      },
+      "B34": {
+        "value": 4.375758739593554,
+        "formula": "-SUM(D10:G10)/3/24/365/B5"
+      },
+      "A35": {
+        "value": "Break-Even price - 5y",
+        "formula": null
+      },
+      "B35": {
+        "value": 2.8720305862218853,
+        "formula": "-SUM(D10:I10)/5/24/365/B5"
+      },
+      "A36": {
+        "value": "Pay-off period",
+        "formula": null
+      },
+      "B36": {
+        "value": 2.5338927197009746,
+        "formula": "-SUM(E5:I5)/(E9+E14)"
+      }
+    },
+    "BOM List": {
+      "A1": {
+        "value": "Equipment",
+        "formula": null
+      },
+      "B1": {
+        "value": "Unit price",
+        "formula": null
+      },
+      "C1": {
+        "value": "Unit",
+        "formula": null
+      },
+      "D1": {
+        "value": "Total",
+        "formula": null
+      },
+      "A2": {
+        "value": "GPU",
+        "formula": null
+      },
+      "A4": {
+        "value": "GB300 Rack",
+        "formula": null
+      },
+      "B4": {
+        "value": 6000000,
+        "formula": null
+      },
+      "C4": {
+        "value": 40,
+        "formula": null
+      },
+      "D4": {
+        "value": 240000000,
+        "formula": "B4*C4"
+      },
+      "A5": {
+        "value": "GB300 Rack (Spare)",
+        "formula": null
+      },
+      "B5": {
+        "value": 6000000,
+        "formula": null
+      },
+      "C5": {
+        "value": 2,
+        "formula": null
+      },
+      "D5": {
+        "value": 12000000,
+        "formula": "B5*C5"
+      },
+      "A6": {
+        "value": "Networking",
+        "formula": null
+      },
+      "A8": {
+        "value": "IB Switch Q3400-RA - Spine",
+        "formula": null
+      },
+      "B8": {
+        "value": 125000,
+        "formula": null
+      },
+      "C8": {
+        "value": 60,
+        "formula": "C4*1.5"
+      },
+      "D8": {
+        "value": 7500000,
+        "formula": "B8*C8"
+      },
+      "E8": {
+        "value": "72 OSFP slot per switch",
+        "formula": null
+      },
+      "A9": {
+        "value": "IB Switch Q3400-RA - Leaf",
+        "formula": null
+      },
+      "B9": {
+        "value": 125000,
+        "formula": null
+      },
+      "C9": {
+        "value": 3,
+        "formula": "C5*1.5"
+      },
+      "D9": {
+        "value": 375000,
+        "formula": "B9*C9"
+      },
+      "E9": {
+        "value": "40 leaf server + 20 spine server",
+        "formula": null
+      },
+      "A10": {
+        "value": "IB Transceivers (Switch side)",
+        "formula": null
+      },
+      "B10": {
+        "value": 1500,
+        "formula": null
+      },
+      "C10": {
+        "value": 4536,
+        "formula": "(C4+C5)*108"
+      },
+      "D10": {
+        "value": 6804000,
+        "formula": "B10*C10"
+      },
+      "A11": {
+        "value": "IB Transceivers (Server side)",
+        "formula": null
+      },
+      "B11": {
+        "value": 1200,
+        "formula": null
+      },
+      "C11": {
+        "value": 3024,
+        "formula": "(C4+C5)*72"
+      },
+      "D11": {
+        "value": 3628800,
+        "formula": "B11*C11"
+      },
+      "A12": {
+        "value": "Storage Networking",
+        "formula": null
+      },
+      "A14": {
+        "value": "Storage Switch SN5610",
+        "formula": null
+      },
+      "B14": {
+        "value": 60000,
+        "formula": null
+      },
+      "C14": {
+        "value": 31,
+        "formula": "CEILING((C4+C5)*18/32*1.3)"
+      },
+      "D14": {
+        "value": 1860000,
+        "formula": "B14*C14"
+      },
+      "A15": {
+        "value": "Storage Transceivers (Switch side)",
+        "formula": null
+      },
+      "B15": {
+        "value": 700,
+        "formula": null
+      },
+      "C15": {
+        "value": 1890,
+        "formula": "(C4+C5)*18*2.5"
+      },
+      "D15": {
+        "value": 1323000,
+        "formula": "B15*C15"
+      },
+      "A16": {
+        "value": "Storage Transceivers (Server side)",
+        "formula": null
+      },
+      "B16": {
+        "value": 700,
+        "formula": null
+      },
+      "C16": {
+        "value": 756,
+        "formula": "(C4+C5)*18"
+      },
+      "D16": {
+        "value": 529200,
+        "formula": "B16*C16"
+      },
+      "A17": {
+        "value": "Cluster Mgmt",
+        "formula": null
+      },
+      "A19": {
+        "value": "Control Switch (N9570)",
+        "formula": null
+      },
+      "B19": {
+        "value": 36000,
+        "formula": null
+      },
+      "C19": {
+        "value": 8,
+        "formula": "CEILING((C4+C5)*18/96)"
+      },
+      "D19": {
+        "value": 288000,
+        "formula": "B19*C19"
+      },
+      "A20": {
+        "value": "Control network transceivers (Switch side)",
+        "formula": null
+      },
+      "B20": {
+        "value": 500,
+        "formula": null
+      },
+      "C20": {
+        "value": 1209.6000000000001,
+        "formula": "(C4+C5)*18*1.6"
+      },
+      "D20": {
+        "value": 604800.0000000001,
+        "formula": "B20*C20"
+      },
+      "A21": {
+        "value": "Control network transceivers (Server side)",
+        "formula": null
+      },
+      "B21": {
+        "value": 500,
+        "formula": null
+      },
+      "C21": {
+        "value": 756,
+        "formula": "(C4+C5)*18"
+      },
+      "D21": {
+        "value": 378000,
+        "formula": "B21*C21"
+      },
+      "A22": {
+        "value": "OOB Network  (Misc)",
+        "formula": null
+      },
+      "B22": {
+        "value": 10000,
+        "formula": null
+      },
+      "C22": {
+        "value": 1,
+        "formula": null
+      },
+      "D22": {
+        "value": 10000,
+        "formula": "B22*C22"
+      },
+      "A23": {
+        "value": "UFM Server",
+        "formula": null
+      },
+      "B23": {
+        "value": 30000,
+        "formula": null
+      },
+      "C23": {
+        "value": 2,
+        "formula": null
+      },
+      "D23": {
+        "value": 60000,
+        "formula": "B23*C23"
+      },
+      "A24": {
+        "value": "DC Cost",
+        "formula": null
+      },
+      "A26": {
+        "value": "CDU - Coolant Distribution Unit",
+        "formula": null
+      },
+      "A27": {
+        "value": "PDU - Power Distribution Unit",
+        "formula": null
+      },
+      "A28": {
+        "value": "fitout",
+        "formula": null
+      },
+      "A30": {
+        "value": "Actual unit",
+        "formula": null
+      },
+      "C30": {
+        "value": 40,
+        "formula": null
+      },
+      "A31": {
+        "value": "Subtotal",
+        "formula": null
+      },
+      "D31": {
+        "value": 275360800,
+        "formula": "SUM(D4:D29)"
+      },
+      "A32": {
+        "value": "Total per rack",
+        "formula": null
+      },
+      "D32": {
+        "value": 6884020,
+        "formula": "SUM(D4:D29)/C4"
+      },
+      "A33": {
+        "value": "Total per rack (Include spare)",
+        "formula": null
+      },
+      "D33": {
+        "value": 6884020,
+        "formula": "D31/C30"
+      }
+    }
+  }
+}

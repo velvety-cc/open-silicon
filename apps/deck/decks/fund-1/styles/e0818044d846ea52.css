@@ -1,0 +1,3 @@
+
+/* Keep the original image positions after removing the visible Examples captions. */
+.deck .concept-page.concept-a .concept-visual.os-standard-logos:after{content:"";display:block;flex:0 0 18px;height:18px}

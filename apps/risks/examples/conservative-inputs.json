@@ -1,0 +1,1210 @@
+{
+  "modelVersion": "1.0.0",
+  "deal": {
+    "id": "gb300-standard",
+    "name": "GB300 conservative working illustration",
+    "inputVersion": 2,
+    "modelVersion": "1.0.0",
+    "configuration": "standard",
+    "assumptions": {
+      "gpuModel": {
+        "value": "GB300",
+        "unit": "text",
+        "currency": null,
+        "source": "BOM List!A4",
+        "sourceDate": "2026-10-21",
+        "status": "estimated"
+      },
+      "quantity": {
+        "value": 2880,
+        "unit": "GPUs",
+        "currency": null,
+        "source": "GB300_Financing_Model!B5",
+        "sourceDate": "2026-10-21",
+        "status": "estimated"
+      },
+      "gpusPerRack": {
+        "value": 72,
+        "unit": "GPUs/rack",
+        "currency": null,
+        "source": "GB300_Financing_Model!B25 = B5/72",
+        "sourceDate": "2026-10-21",
+        "status": "estimated"
+      },
+      "gpusPerNode": {
+        "value": null,
+        "unit": "GPUs/node",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "spareRacks": {
+        "value": 2,
+        "unit": "racks",
+        "currency": null,
+        "source": "BOM List!C5",
+        "sourceDate": "2026-10-21",
+        "status": "estimated"
+      },
+      "equipmentCost": {
+        "value": 280000000,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "GB300_Financing_Model!B26 = B2 × B25",
+        "sourceDate": "2026-10-21",
+        "status": "estimated"
+      },
+      "valuationDate": {
+        "value": "2026-10-21",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "networkingExtra": {
+        "value": 0,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "installation": {
+        "value": 0,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "otherCapex": {
+        "value": 0,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "scopeEvidence": {
+        "value": null,
+        "unit": "text",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "siteNrc": {
+        "value": 8666666.666666666,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "GB300_Financing_Model!B11 = 26000000/3",
+        "sourceDate": "2026-10-21",
+        "status": "estimated"
+      },
+      "siteRate": {
+        "value": 270,
+        "unit": "USD/kW/month",
+        "currency": "USD",
+        "source": "GB300_Financing_Model!B9",
+        "sourceDate": "2026-10-21",
+        "status": "estimated"
+      },
+      "rackKw": {
+        "value": 150,
+        "unit": "kW/rack",
+        "currency": null,
+        "source": "GB300_Financing_Model!B10",
+        "sourceDate": "2026-10-21",
+        "status": "estimated"
+      },
+      "reserveKw": {
+        "value": 500,
+        "unit": "kW",
+        "currency": null,
+        "source": "GB300_Financing_Model!B13",
+        "sourceDate": "2026-10-21",
+        "status": "estimated"
+      },
+      "powerBundled": {
+        "value": true,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "powerPrice": {
+        "value": null,
+        "unit": "USD/kWh",
+        "currency": "USD",
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "pue": {
+        "value": null,
+        "unit": "x",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "minimumSite": {
+        "value": 0,
+        "unit": "USD/month",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "networkMonthly": {
+        "value": 0,
+        "unit": "USD/month",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "maintenance": {
+        "value": 0,
+        "unit": "USD/month",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "insurance": {
+        "value": 0,
+        "unit": "USD/month",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "taxMonthly": {
+        "value": 0,
+        "unit": "USD/month",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "otherOpex": {
+        "value": 0,
+        "unit": "USD/month",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "reserveMonthly": {
+        "value": 0,
+        "unit": "USD/month",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "siteStart": {
+        "value": "2026-12-02",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "price": {
+        "value": 4.64,
+        "unit": "USD/GPU-hour",
+        "currency": "USD",
+        "source": "User scenario override",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "capacity": {
+        "value": 1,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "utilization": {
+        "value": 0.8,
+        "unit": "fraction",
+        "currency": null,
+        "source": "User scenario override",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "availability": {
+        "value": 0.95,
+        "unit": "fraction",
+        "currency": null,
+        "source": "User scenario override",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "rampDays": {
+        "value": 0,
+        "unit": "days",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "takeOrPay": {
+        "value": 0,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "credits": {
+        "value": 0,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "termination": {
+        "value": null,
+        "unit": "text",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "contractMonths": {
+        "value": 36,
+        "unit": "months",
+        "currency": null,
+        "source": "GB300_Financing_Model!B19 × 12 (unverified linkage)",
+        "sourceDate": "2026-10-21",
+        "status": "estimated"
+      },
+      "prepayFraction": {
+        "value": 0,
+        "unit": "fraction",
+        "currency": null,
+        "source": "User scenario override",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "prepayDate": {
+        "value": "2026-11-02",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "prepayRefund": {
+        "value": 0,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "billingLag": {
+        "value": 0,
+        "unit": "days",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "collectionLag": {
+        "value": 30,
+        "unit": "days",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "collectionRate": {
+        "value": 1,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "firstWire": {
+        "value": "2026-11-02",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "draw2Date": {
+        "value": "2026-12-02",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "draw2Fraction": {
+        "value": 0,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "delivery": {
+        "value": "2026-12-02",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "installationDate": {
+        "value": "2026-12-16",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "commission": {
+        "value": "2027-01-02",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "acceptance": {
+        "value": "2027-01-02",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "billingStart": {
+        "value": "2027-01-02",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "accrualStart": {
+        "value": "2026-11-02",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "cashInterestStart": {
+        "value": "2026-12-02",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "principalStart": {
+        "value": "2026-12-02",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "ltv": {
+        "value": 0.6,
+        "unit": "fraction",
+        "currency": null,
+        "source": "GB300_Financing_Model!B21; denominator B26",
+        "sourceDate": "2026-10-21",
+        "status": "estimated"
+      },
+      "equity": {
+        "value": 120666666.66666667,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "equityDate": {
+        "value": "2026-11-02",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "coupon": {
+        "value": 0.12,
+        "unit": "fraction",
+        "currency": null,
+        "source": "GB300_Financing_Model!B20",
+        "sourceDate": "2026-10-21",
+        "status": "estimated"
+      },
+      "dayCount": {
+        "value": "ACT/365",
+        "unit": "enum",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "targetYield": {
+        "value": 0.12,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "oid": {
+        "value": 0,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "fee": {
+        "value": 0,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "tenor": {
+        "value": 36,
+        "unit": "months",
+        "currency": null,
+        "source": "GB300_Financing_Model!B19 × 12",
+        "sourceDate": "2026-10-21",
+        "status": "estimated"
+      },
+      "amortMonths": {
+        "value": 36,
+        "unit": "months",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "frequency": {
+        "value": 1,
+        "unit": "months",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "repayment": {
+        "value": "equal-principal",
+        "unit": "enum",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "balloon": {
+        "value": 0,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "pikMonths": {
+        "value": 0,
+        "unit": "months",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "sweep": {
+        "value": 0,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "allocation": {
+        "value": "original-first",
+        "unit": "enum",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "accelerateBuyer": {
+        "value": false,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "cancelDraws": {
+        "value": true,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "cureDays": {
+        "value": 30,
+        "unit": "days",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "enforceDays": {
+        "value": 30,
+        "unit": "days",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "recoveryLag": {
+        "value": 90,
+        "unit": "days",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "saleDays": {
+        "value": 30,
+        "unit": "days",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "annualDecay": {
+        "value": 0.45,
+        "unit": "fraction",
+        "currency": null,
+        "source": "User scenario override",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "residualFloor": {
+        "value": 0.1,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "condition": {
+        "value": 1,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "haircut": {
+        "value": 0.35,
+        "unit": "fraction",
+        "currency": null,
+        "source": "User scenario override",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "saleCost": {
+        "value": 0.05,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "quoteIsNet": {
+        "value": false,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "resaleQuote": {
+        "value": null,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "supplierRefund": {
+        "value": 0,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "accountingLife": {
+        "value": 60,
+        "unit": "months",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "seniorClaim": {
+        "value": 0,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "legalCost": {
+        "value": 250000,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "enforcementCost": {
+        "value": 250000,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "siteArrears": {
+        "value": 0,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "storageCost": {
+        "value": 100000,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "preservationCost": {
+        "value": 200000,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "deinstallCost": {
+        "value": 500000,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "transportCost": {
+        "value": 750000,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "remarketCost": {
+        "value": 100000,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "reinstallCost": {
+        "value": 750000,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "newSiteNrc": {
+        "value": 500000,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "newSiteRate": {
+        "value": 270,
+        "unit": "USD/kW/month",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "workoutCommitment": {
+        "value": 0,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "replacementPrice": {
+        "value": 0.75,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "replacementUtil": {
+        "value": 0.8,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "replacementCollect": {
+        "value": 0.9,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "replacementLag": {
+        "value": 60,
+        "unit": "days",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "replacementMonths": {
+        "value": 24,
+        "unit": "months",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "restructureMonths": {
+        "value": 12,
+        "unit": "months",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "restructureCoupon": {
+        "value": 0.08,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "forgiveInterest": {
+        "value": 0,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "holdDays": {
+        "value": 365,
+        "unit": "days",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "restructureDays": {
+        "value": 30,
+        "unit": "days",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "releaseDays": {
+        "value": 120,
+        "unit": "days",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "relocateDays": {
+        "value": 180,
+        "unit": "days",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "priority": {
+        "value": null,
+        "unit": "text",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "lien": {
+        "value": null,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "accountControl": {
+        "value": null,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "siteAccess": {
+        "value": null,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "stepIn": {
+        "value": null,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "removal": {
+        "value": null,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "transfer": {
+        "value": null,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "restructureConsent": {
+        "value": null,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "replacementBuyer": {
+        "value": null,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "newSite": {
+        "value": null,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "supportDeposit": {
+        "value": 0,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "depositSource": {
+        "value": "Sponsor outside project",
+        "unit": "text",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "depositBeneficiary": {
+        "value": "lender",
+        "unit": "text",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "depositAvailable": {
+        "value": null,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "depositTrigger": {
+        "value": "Borrower/site default or selected acceleration",
+        "unit": "text",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "depositCovered": {
+        "value": "original principal",
+        "unit": "text",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "depositCollect": {
+        "value": 1,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "depositExpiry": {
+        "value": "2032-01-01",
+        "unit": "date",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "depositReleaseDate": {
+        "value": null,
+        "unit": "date",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "depositRelease": {
+        "value": 0,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "guarantee": {
+        "value": null,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "guaranteeSource": {
+        "value": null,
+        "unit": "text",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "guaranteeBeneficiary": {
+        "value": "lender",
+        "unit": "text",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "guaranteeTrigger": {
+        "value": "Unpaid original principal after collateral",
+        "unit": "text",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "guaranteeCovered": {
+        "value": "original principal",
+        "unit": "text",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "guaranteeAvailable": {
+        "value": null,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "guaranteeCollect": {
+        "value": null,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "guaranteeExpiry": {
+        "value": null,
+        "unit": "date",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "insuranceRecovery": {
+        "value": null,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "insuranceSource": {
+        "value": null,
+        "unit": "text",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "insuranceBeneficiary": {
+        "value": "lender",
+        "unit": "text",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "insuranceTrigger": {
+        "value": "Selected covered default event",
+        "unit": "text",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "insuranceCovered": {
+        "value": "original principal",
+        "unit": "text",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "insuranceAvailable": {
+        "value": null,
+        "unit": "boolean",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "insuranceCollect": {
+        "value": null,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "insuranceExpiry": {
+        "value": null,
+        "unit": "date",
+        "currency": null,
+        "source": "Missing evidence",
+        "sourceDate": null,
+        "status": "missing"
+      },
+      "horizonMonths": {
+        "value": 72,
+        "unit": "months",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "minRecovery": {
+        "value": 1,
+        "unit": "fraction",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "minDscr": {
+        "value": 1.2,
+        "unit": "x",
+        "currency": null,
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      },
+      "maxGap": {
+        "value": 0,
+        "unit": "USD",
+        "currency": "USD",
+        "source": "Illustrative underwriting choice; requires deal evidence",
+        "sourceDate": "2026-10-30",
+        "status": "illustrative"
+      }
+    },
+    "overrides": {
+      "prepayFraction": 0,
+      "utilization": 0.8,
+      "availability": 0.95,
+      "price": 4.64,
+      "annualDecay": 0.45,
+      "haircut": 0.35
+    },
+    "parentHash": "fnv1a64:f934141e079bdfb4"
+  },
+  "settings": {
+    "defaultDate": "2027-11-02",
+    "defaultType": "borrower",
+    "strategy": "liquidate"
+  }
+}

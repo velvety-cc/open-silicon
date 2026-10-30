@@ -1,0 +1,29 @@
+.section {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 5.4fr);
+  gap: clamp(40px, 5vw, 80px);
+  align-items: start;
+  width: min(1312px, calc(100% - 2 * var(--shell-gutter)));
+  margin-inline: auto;
+  padding-block: 72px 48px;
+  border-top: 1px solid #e8e8e8;
+  color: #171717;
+  font-family: var(--font-geist), Arial, sans-serif;
+}
+
+.anchor { position: absolute; top: 0; scroll-margin-top: calc(var(--marketing-header-height) + 20px); }
+.copy { min-width: 0; padding-top: 4px; }
+.section .copy h2 { max-width: 460px; margin: 0 0 26px; font-size: clamp(36px, 3.4vw, 48px); font-weight: 400; line-height: 1.1; letter-spacing: -.045em; }
+.copy p { max-width: 460px; margin: 0; color: #6b6b6b; font-size: 17px; line-height: 1.65; }
+
+@media (max-width: 1000px) {
+  .section { grid-template-columns: minmax(0, 4fr) minmax(0, 5fr); gap: 35px; }
+  .copy p { font-size: 16px; }
+}
+@media (max-width: 760px) {
+  .section { grid-template-columns: 1fr; gap: 32px; padding-block: 48px 24px; }
+  .copy { padding-top: 0; }
+  .section .copy h2 { max-width: 440px; font-size: 40px; margin-bottom: 22px; }
+  .copy p { max-width: 600px; }
+}

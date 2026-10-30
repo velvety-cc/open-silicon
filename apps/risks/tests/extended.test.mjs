@@ -1,0 +1,22 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {TEMPLATES,overrideDeal,values} from '../model/inputs.mjs';
+import {runScenario,validateInputs,strategyEligibility} from '../model/engine.mjs';
+const close=(a,b)=>assert.ok(Math.abs(a-b)<.001,`${a} != ${b}`);
+function deal(overrides={}){return overrideDeal(TEMPLATES.standard,{equipmentCost:100,ltv:1,equity:0,siteNrc:0,siteRate:0,rackKw:0,reserveKw:0,quantity:1,gpusPerRack:1,price:0,prepayFraction:0,coupon:0,legalCost:0,enforcementCost:0,preservationCost:0,storageCost:0,deinstallCost:0,remarketCost:0,workoutCommitment:0,...overrides});}
+test('integrated workout example: original advance 100, preserve 10, recover 90',()=>{const r=runScenario(deal({legalCost:10,workoutCommitment:10,resaleQuote:90,quoteIsNet:true}),{defaultDate:'2027-03-01',strategy:'liquidate'});close(r.summary.originalAdvanced,100);close(r.summary.workoutAdvanced,10);close(r.summary.originalRecovered,90);close(r.summary.principalShortfall,10);close(r.summary.netCashLoss,20);});
+test('integrated liquidation fixture with 20 prior principal, 70 sale, 5 costs, 15 senior',()=>{const r=runScenario(deal({equity:20,tenor:15,amortMonths:15,frequency:3,principalStart:'2026-12-02',cashInterestStart:'2026-12-02',resaleQuote:70,quoteIsNet:true,legalCost:5,seniorClaim:15}),{defaultDate:'2026-12-03',strategy:'liquidate'});close(r.summary.atDefault.recovered,20);close(r.summary.originalRecovered,70);close(r.summary.principalShortfall,30);});
+test('same-day staged wires include both tranches exactly once',()=>{const r=runScenario(deal({draw2Fraction:.5,draw2Date:'2026-11-02'}));close(r.summary.originalAdvanced,100);close(r.cashFlows.filter(f=>f.kind==='original wire').reduce((s,f)=>s+f.amount,0),-100);});
+test('partial funding only commissions the paid equipment share',()=>{const r=runScenario(deal({draw2Fraction:.5,draw2Date:'2027-06-01',price:1}),{defaultDate:'2027-03-01',strategy:'hold'});close(r.summary.originalAdvanced,50);const op=r.ledger.find(x=>x.assetState==='operating'&&x.date>'2027-05-01');assert.ok(op);close(op.commissionedGpus,.5);close(op.revenue,12);});
+test('an explicitly unavailable removal right prevents sale and recovery',()=>{const r=runScenario(deal({removal:false,resaleQuote:100}),{defaultDate:'2027-03-01',strategy:'liquidate'});assert.equal(r.eligibility.status,'unavailable');assert.equal(r.summary.saleDate,null);close(r.summary.originalRecovered,0);assert.ok(r.ledger.every(r=>r.assetState!=='sold'));});
+test('illustrative true legal declarations remain conditional until evidence status is supplied',()=>{const p=values(deal({lien:true,siteAccess:true,removal:true,transfer:true,priority:'first lien asserted'}));const d=deal({lien:true,siteAccess:true,removal:true,transfer:true,priority:'first lien asserted'});assert.equal(strategyEligibility(p,'liquidate','borrower',d).status,'conditional');});
+test('null operating costs never silently become zero; malformed booleans rejected',()=>{assert.equal(validateInputs(deal({maintenance:null})).valid,false);assert.equal(validateInputs(deal({powerBundled:'true'})).valid,false);assert.equal(runScenario(deal(),{strategy:'invalid'}).valid,false);});
+test('recovery pays senior operating/supplier liabilities and customer refunds once',()=>{
+ const d=deal({price:.01,prepayFraction:.3,prepayRefund:1,siteRate:10,rackKw:1,resaleQuote:500,quoteIsNet:true});const r=runScenario(d,{defaultDate:'2027-03-01',strategy:'liquidate'});assert.equal(r.valid,true);for(const [k,v]of Object.entries(r.summary.reconciliation))close(v,0);close(r.ledger.at(-1).opexPayable,0);close(r.ledger.at(-1).capexPayable,0);close(r.summary.prepayReceived-r.summary.prepayCredited-r.summary.prepayRefunded-r.summary.prepayRemaining,0);assert.ok(r.summary.prepayRefunded>0);
+});
+test('default, OID, PIK, reserve and support stress cases reconcile all balances',()=>{
+ for(let i=0;i<24;i++){
+  const d=overrideDeal(TEMPLATES.standard,{coupon:(i%5)*.04,pikMonths:i%4,draw2Fraction:i%3/4,prepayFraction:i%4/10,utilization:(i%7)/6,price:(i%6),reserveMonthly:i%2*10000,oid:i%2*.02,fee:i%3*.01,equity:100e6,annualDecay:.1+(i%5)*.15,haircut:i%5/5,workoutCommitment:i%2*2e6});
+  const r=runScenario(d,{defaultDate:['2026-11-17','2027-11-02','2028-11-02'][i%3],strategy:['hold','restructure','release','relocate','liquidate'][i%5]});assert.equal(r.valid,true);for(const[k,v]of Object.entries(r.summary.reconciliation))assert.ok(Math.abs(v)<.001,`${i} ${k}: ${v}`);
+ }
+});

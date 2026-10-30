@@ -1,0 +1,11 @@
+{
+  "name": "@opensilicon/other-materials",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.mjs",
+    "build": "node export.mjs --html-only",
+    "export": "node export.mjs",
+    "typecheck": "node --check render.mjs && node --check server.mjs && node --check export.mjs"
+  }
+}

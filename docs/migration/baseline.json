@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-29",
+  "original_checkout": "/Users/velvety/Documents/opensilicon",
+  "git_head": "0a4ea496bf9d2746fa51373fb521b236b7b7b2dd",
+  "git_status": [
+    "## main...origin/main [behind 4]",
+    " M app/robots.ts",
+    " M components/Header.tsx",
+    " M next-env.d.ts",
+    " M proxy.ts",
+    "?? app/fund-1/",
+    "?? components/fund-deck/",
+    "?? lib/fund-1-deck.ts",
+    "?? public/fonts/",
+    "?? public/fund-deck/"
+  ],
+  "website": {
+    "source": "/Users/velvety/Documents/Compute Lending Protocol/output/opensilicon-credibility-preview-20261026",
+    "revision": "visual revision 11",
+    "contact_mode": "preview by default; original live adapter retained"
+  },
+  "deck": {
+    "source_pdf": "/Users/velvety/Documents/Compute Lending Protocol/output/deck-appendix-page11-layout-20261028/AI-Infra-Access-Fund-Deck.pdf",
+    "sha256": "3f6b39e2dfd2871a28e481d6550a06a4557989b897cb928e2bd9b516e76060b5",
+    "page_count": 14
+  },
+  "legacy_fund_1": {
+    "page_count": 20,
+    "status": "archived source, not the current deck"
+  }
+}

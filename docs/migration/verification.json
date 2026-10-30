@@ -1,0 +1,867 @@
+{
+  "reference_release": "2026-10-28-appendix-layout",
+  "unit_tests": 45,
+  "independent_builds": [
+    "web",
+    "deck"
+  ],
+  "typescript": "passed",
+  "npm_ci_lock_validation": "dry-run passed",
+  "website_http": "12 pages, local anchors, 5 private routes checked",
+  "browser_widths": [
+    1280,
+    390,
+    320
+  ],
+  "browser_errors": [],
+  "pdf_pages": 14,
+  "all_pdf_page_words_preserved": true,
+  "all_pdf_page_sizes_preserved": true,
+  "pixel_identical_pages": [
+    1,
+    2,
+    3,
+    6,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "remaining_pixel_difference": "Only right-hand folio glyphs; less than 0.01 percent of page pixels",
+  "details": {
+    "text": [
+      {
+        "page": 1,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      },
+      {
+        "page": 2,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      },
+      {
+        "page": 3,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      },
+      {
+        "page": 4,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      },
+      {
+        "page": 5,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      },
+      {
+        "page": 6,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      },
+      {
+        "page": 7,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      },
+      {
+        "page": 8,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      },
+      {
+        "page": 9,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      },
+      {
+        "page": 10,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      },
+      {
+        "page": 11,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      },
+      {
+        "page": 12,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      },
+      {
+        "page": 13,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      },
+      {
+        "page": 14,
+        "size": [
+          0,
+          0,
+          960,
+          540
+        ],
+        "missing": {},
+        "extra": {},
+        "identical_words": true
+      }
+    ],
+    "pixels": [
+      {
+        "page": 1,
+        "different_pixels_over_20": 0,
+        "fraction": 0.0,
+        "mean_channel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "difference_bounds": null
+      },
+      {
+        "page": 2,
+        "different_pixels_over_20": 0,
+        "fraction": 0.0,
+        "mean_channel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "difference_bounds": null
+      },
+      {
+        "page": 3,
+        "different_pixels_over_20": 0,
+        "fraction": 0.0,
+        "mean_channel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "difference_bounds": null
+      },
+      {
+        "page": 4,
+        "different_pixels_over_20": 61,
+        "fraction": 7e-05,
+        "mean_channel_error": [
+          0.0024327256944444444,
+          0.0023719618055555555,
+          0.0022721354166666667
+        ],
+        "difference_bounds": [
+          1188,
+          667,
+          1210,
+          678
+        ]
+      },
+      {
+        "page": 5,
+        "different_pixels_over_20": 60,
+        "fraction": 7e-05,
+        "mean_channel_error": [
+          0.002431640625,
+          0.002375217013888889,
+          0.0022786458333333335
+        ],
+        "difference_bounds": [
+          1188,
+          675,
+          1210,
+          686
+        ]
+      },
+      {
+        "page": 6,
+        "different_pixels_over_20": 0,
+        "fraction": 0.0,
+        "mean_channel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "difference_bounds": null
+      },
+      {
+        "page": 7,
+        "different_pixels_over_20": 67,
+        "fraction": 7e-05,
+        "mean_channel_error": [
+          0.0035980902777777777,
+          0.003523220486111111,
+          0.003372395833333333
+        ],
+        "difference_bounds": [
+          1189,
+          667,
+          1210,
+          678
+        ]
+      },
+      {
+        "page": 8,
+        "different_pixels_over_20": 39,
+        "fraction": 4e-05,
+        "mean_channel_error": [
+          0.0015690104166666667,
+          0.0015353732638888889,
+          0.0014800347222222222
+        ],
+        "difference_bounds": [
+          1195,
+          667,
+          1210,
+          678
+        ]
+      },
+      {
+        "page": 9,
+        "different_pixels_over_20": 60,
+        "fraction": 7e-05,
+        "mean_channel_error": [
+          0.0025444878472222223,
+          0.002488064236111111,
+          0.0023838975694444446
+        ],
+        "difference_bounds": [
+          1188,
+          675,
+          1210,
+          686
+        ]
+      },
+      {
+        "page": 10,
+        "different_pixels_over_20": 0,
+        "fraction": 0.0,
+        "mean_channel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "difference_bounds": null
+      },
+      {
+        "page": 11,
+        "different_pixels_over_20": 0,
+        "fraction": 0.0,
+        "mean_channel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "difference_bounds": null
+      },
+      {
+        "page": 12,
+        "different_pixels_over_20": 0,
+        "fraction": 0.0,
+        "mean_channel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "difference_bounds": null
+      },
+      {
+        "page": 13,
+        "different_pixels_over_20": 0,
+        "fraction": 0.0,
+        "mean_channel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "difference_bounds": null
+      },
+      {
+        "page": 14,
+        "different_pixels_over_20": 0,
+        "fraction": 0.0,
+        "mean_channel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "difference_bounds": null
+      }
+    ]
+  },
+  "final_main_repository": {
+    "source_and_backup_verified": true,
+    "original_source_files_backed_up": 303,
+    "original_git_head_preserved": true,
+    "checks": {
+      "checks": [
+        {
+          "command": [
+            "npm",
+            "test"
+          ],
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "typecheck"
+          ],
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "git",
+            "diff",
+            "--check"
+          ],
+          "exit_code": 0
+        }
+      ],
+      "source_hash_matches_review": true,
+      "source_hash": "5afc2839b3ac86354fcbec95c4e158c4e038a480ae00d1ed918269c55442ca50"
+    },
+    "final_deck_regression_and_build": {
+      "checks": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "check:architecture"
+          ],
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "node",
+            "--test",
+            "tooling/tests/deck.test.mjs"
+          ],
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "build:deck"
+          ],
+          "exit_code": 0
+        }
+      ],
+      "source_hash": "11b8ed2c433f4f7f3db51a20e74a4faf12494cd84638b376e5d8461b146401df"
+    },
+    "production_deck_routes": "presentation, slide and export routes return 404",
+    "website_compiled_client_scan": "35 files; no private deck markers",
+    "browser_results": {
+      "results": [
+        {
+          "app": "web",
+          "route": "/",
+          "status": 200,
+          "title": "OpenSilicon - Capital for the Intelligence Economy",
+          "width": 1280,
+          "documentWidth": 1280,
+          "h1": "Capital for theIntelligence Economy",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "web",
+          "route": "/approach",
+          "status": 200,
+          "title": "Our approach \u2014 OpenSilicon",
+          "width": 1280,
+          "documentWidth": 1280,
+          "h1": "From purchaseto repayment.",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "web",
+          "route": "/about",
+          "status": 200,
+          "title": "About \u2014 OpenSilicon",
+          "width": 1280,
+          "documentWidth": 1280,
+          "h1": "Scaling Intelligence.",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "web",
+          "route": "/research",
+          "status": 200,
+          "title": "Research \u2014 OpenSilicon",
+          "width": 1280,
+          "documentWidth": 1280,
+          "h1": "Research",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "web",
+          "route": "/contact?interest=capital",
+          "status": 200,
+          "title": "Contact \u2014 OpenSilicon",
+          "width": 1280,
+          "documentWidth": 1280,
+          "h1": "Capital forTomorrow\u2019s Intelligence",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "web",
+          "route": "/",
+          "status": 200,
+          "title": "OpenSilicon - Capital for the Intelligence Economy",
+          "width": 390,
+          "documentWidth": 390,
+          "h1": "Capital for theIntelligence Economy",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "web",
+          "route": "/approach",
+          "status": 200,
+          "title": "Our approach \u2014 OpenSilicon",
+          "width": 390,
+          "documentWidth": 390,
+          "h1": "From purchaseto repayment.",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "web",
+          "route": "/about",
+          "status": 200,
+          "title": "About \u2014 OpenSilicon",
+          "width": 390,
+          "documentWidth": 390,
+          "h1": "Scaling Intelligence.",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "web",
+          "route": "/research",
+          "status": 200,
+          "title": "Research \u2014 OpenSilicon",
+          "width": 390,
+          "documentWidth": 390,
+          "h1": "Research",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "web",
+          "route": "/contact?interest=capital",
+          "status": 200,
+          "title": "Contact \u2014 OpenSilicon",
+          "width": 390,
+          "documentWidth": 390,
+          "h1": "Capital forTomorrow\u2019s Intelligence",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "deck",
+          "mode": "reading",
+          "width": 390,
+          "sizes": [
+            {
+              "page": 1,
+              "height": 650,
+              "width": 366,
+              "contentWidth": 366
+            },
+            {
+              "page": 2,
+              "height": 1007,
+              "width": 366,
+              "contentWidth": 366
+            },
+            {
+              "page": 3,
+              "height": 1681,
+              "width": 366,
+              "contentWidth": 366
+            },
+            {
+              "page": 4,
+              "height": 1701,
+              "width": 366,
+              "contentWidth": 366
+            },
+            {
+              "page": 5,
+              "height": 2531,
+              "width": 366,
+              "contentWidth": 366
+            },
+            {
+              "page": 6,
+              "height": 2754,
+              "width": 366,
+              "contentWidth": 366
+            },
+            {
+              "page": 7,
+              "height": 530,
+              "width": 366,
+              "contentWidth": 366
+            },
+            {
+              "page": 8,
+              "height": 1724,
+              "width": 366,
+              "contentWidth": 366
+            },
+            {
+              "page": 9,
+              "height": 1765,
+              "width": 366,
+              "contentWidth": 366
+            },
+            {
+              "page": 10,
+              "height": 1140,
+              "width": 366,
+              "contentWidth": 366
+            },
+            {
+              "page": 11,
+              "height": 1886,
+              "width": 366,
+              "contentWidth": 366
+            },
+            {
+              "page": 12,
+              "height": 2073,
+              "width": 366,
+              "contentWidth": 366
+            },
+            {
+              "page": 13,
+              "height": 650,
+              "width": 366,
+              "contentWidth": 366
+            },
+            {
+              "page": 14,
+              "height": 2121,
+              "width": 366,
+              "contentWidth": 366
+            }
+          ]
+        },
+        {
+          "app": "web",
+          "route": "/",
+          "status": 200,
+          "title": "OpenSilicon - Capital for the Intelligence Economy",
+          "width": 320,
+          "documentWidth": 320,
+          "h1": "Capital for theIntelligence Economy",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "web",
+          "route": "/approach",
+          "status": 200,
+          "title": "Our approach \u2014 OpenSilicon",
+          "width": 320,
+          "documentWidth": 320,
+          "h1": "From purchaseto repayment.",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "web",
+          "route": "/about",
+          "status": 200,
+          "title": "About \u2014 OpenSilicon",
+          "width": 320,
+          "documentWidth": 320,
+          "h1": "Scaling Intelligence.",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "web",
+          "route": "/research",
+          "status": 200,
+          "title": "Research \u2014 OpenSilicon",
+          "width": 320,
+          "documentWidth": 320,
+          "h1": "Research",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "web",
+          "route": "/contact?interest=capital",
+          "status": 200,
+          "title": "Contact \u2014 OpenSilicon",
+          "width": 320,
+          "documentWidth": 320,
+          "h1": "Capital forTomorrow\u2019s Intelligence",
+          "noindex": "noindex, follow"
+        },
+        {
+          "app": "deck",
+          "mode": "reading",
+          "width": 320,
+          "sizes": [
+            {
+              "page": 1,
+              "height": 650,
+              "width": 296,
+              "contentWidth": 296
+            },
+            {
+              "page": 2,
+              "height": 1367,
+              "width": 296,
+              "contentWidth": 296
+            },
+            {
+              "page": 3,
+              "height": 2114,
+              "width": 296,
+              "contentWidth": 296
+            },
+            {
+              "page": 4,
+              "height": 2177,
+              "width": 296,
+              "contentWidth": 296
+            },
+            {
+              "page": 5,
+              "height": 2889,
+              "width": 296,
+              "contentWidth": 296
+            },
+            {
+              "page": 6,
+              "height": 2992,
+              "width": 296,
+              "contentWidth": 296
+            },
+            {
+              "page": 7,
+              "height": 577,
+              "width": 296,
+              "contentWidth": 296
+            },
+            {
+              "page": 8,
+              "height": 2169,
+              "width": 296,
+              "contentWidth": 296
+            },
+            {
+              "page": 9,
+              "height": 2266,
+              "width": 296,
+              "contentWidth": 296
+            },
+            {
+              "page": 10,
+              "height": 1470,
+              "width": 296,
+              "contentWidth": 296
+            },
+            {
+              "page": 11,
+              "height": 2139,
+              "width": 296,
+              "contentWidth": 296
+            },
+            {
+              "page": 12,
+              "height": 2672,
+              "width": 296,
+              "contentWidth": 296
+            },
+            {
+              "page": 13,
+              "height": 650,
+              "width": 296,
+              "contentWidth": 296
+            },
+            {
+              "page": 14,
+              "height": 2482,
+              "width": 296,
+              "contentWidth": 296
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    "all_14_mobile_slides_checked_at": [
+      390,
+      320
+    ],
+    "pdf": {
+      "pages": 14,
+      "all_page_text_preserved": true,
+      "page_sizes_preserved": true,
+      "email_link_preserved": true,
+      "output_hashes_verified": true,
+      "export_html_identical_after_viewer_keyboard_fix": true,
+      "source_hash": "11b8ed2c433f4f7f3db51a20e74a4faf12494cd84638b376e5d8461b146401df",
+      "release": "/Users/velvety/Documents/Compute Lending Protocol/output/releases/fund-1-2026-10-29T18-18-01Z"
+    },
+    "final_rendered_pages": [
+      {
+        "page": 1,
+        "pixel_identical_to_reviewed_export": true
+      },
+      {
+        "page": 2,
+        "pixel_identical_to_reviewed_export": true
+      },
+      {
+        "page": 3,
+        "pixel_identical_to_reviewed_export": true
+      },
+      {
+        "page": 4,
+        "pixel_identical_to_reviewed_export": true
+      },
+      {
+        "page": 5,
+        "pixel_identical_to_reviewed_export": true
+      },
+      {
+        "page": 6,
+        "pixel_identical_to_reviewed_export": true
+      },
+      {
+        "page": 7,
+        "pixel_identical_to_reviewed_export": true
+      },
+      {
+        "page": 8,
+        "pixel_identical_to_reviewed_export": true
+      },
+      {
+        "page": 9,
+        "pixel_identical_to_reviewed_export": true
+      },
+      {
+        "page": 10,
+        "pixel_identical_to_reviewed_export": true
+      },
+      {
+        "page": 11,
+        "pixel_identical_to_reviewed_export": true
+      },
+      {
+        "page": 12,
+        "pixel_identical_to_reviewed_export": true
+      },
+      {
+        "page": 13,
+        "pixel_identical_to_reviewed_export": true
+      },
+      {
+        "page": 14,
+        "pixel_identical_to_reviewed_export": true
+      }
+    ]
+  }
+}

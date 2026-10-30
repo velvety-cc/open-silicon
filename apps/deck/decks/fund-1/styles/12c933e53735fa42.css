@@ -1,0 +1,8 @@
+
+/* Match the Headline Terms table style from slide 3, scoped to Aurora's profile. */
+.deck #deck-page-6 .aurora-profile-table{display:table;width:100%;table-layout:fixed;border-collapse:collapse;border-top:1px solid #cfd2d7;font:400 16px/22.4px Geist,Arial,sans-serif;margin:14px 0 0}
+.deck #deck-page-6 .aurora-profile-table tbody{display:table-row-group}
+.deck #deck-page-6 .aurora-profile-table tr{display:table-row}
+.deck #deck-page-6 .aurora-profile-table th,.deck #deck-page-6 .aurora-profile-table td{display:table-cell;padding:7px 14px 7px 0;border-bottom:1px solid #d9dce0;vertical-align:top;text-align:left;font-size:16px;line-height:22.4px}
+.deck #deck-page-6 .aurora-profile-table th{width:31%;background:none;color:#17191b;font-weight:600;padding-left:0}
+.deck #deck-page-6 .aurora-profile-table td{width:69%;color:#4d5259;padding-right:0;font-weight:400}

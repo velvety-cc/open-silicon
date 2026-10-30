@@ -1,33 +1,24 @@
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
+node_modules/
+**/.next*/
+**/out/
+**/*.tsbuildinfo
 .DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# local env files
 .env*
+!.env.example
+.workspace.local.json
+.artifacts/
+.openai/
+.vercel/
+npm-debug.log*
 
-# vercel
-.vercel
+# Generated from tooling/assets.json
+/apps/web/app/icon.svg
+/apps/deck/app/icon.svg
+/apps/web/app/apple-icon.png
+/apps/deck/app/apple-icon.png
+/apps/web/app/favicon.ico
+/apps/deck/app/favicon.ico
+/apps/web/public/logos/open-silicon-symbol.svg
 
-# local hosting workspace
-/.openai/
-
-# typescript
-*.tsbuildinfo
+# Generated risk app brand copies
+/apps/risks/assets/

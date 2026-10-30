@@ -1,0 +1,301 @@
+/* Approved enterprise page composition. Locally scoped; the shared Header stays outside this surface. */
+
+.page { --page: #fff; --surface: #fafafa; --surface-strong: #f1f1f3; --text: #171719; --muted: #6c6c74; --line: #e4e4e8; --design-accent: #6552e5; --button-bg: #171719; --button-text: #fff; --design-error: #9e3442; --content-width: 1248px; min-height: 100vh; background: var(--page); color: var(--text); font-family: var(--font-geist), Arial, sans-serif; }
+.page :global(a) { color: inherit; }
+.page :global(button), .page :global(a) { touch-action: manipulation; }
+.page :global(:focus-visible) { outline: 2px solid var(--design-accent); outline-offset: 5px; }
+.page :global(section[id]) { scroll-margin-top: 148px; }
+.page :global(:is(#process, #timeline, #equipment-and-sites, #faq)) { width: min(var(--content-width), calc(100% - 2 * var(--shell-gutter))); margin-inline: auto; padding-block: 104px; border-color: var(--line); color: var(--text); }
+.page :global(:is(#process, #timeline, #equipment-and-sites, #faq) h2) { color: var(--text); font-size: clamp(38px, 4.1vw, 58px); font-weight: 400; line-height: 1.08; letter-spacing: -.05em; }
+.page :global(:is(#process, #timeline) > div:first-of-type > p) { color: var(--muted); font-size: 17px; line-height: 1.75; }
+.page :global(#process > div:first-child) { padding-top: 45px; }
+.page :global(#process > div:first-child > p:first-of-type) { color: var(--text); font-size: 21px; line-height: 1.55; }
+.page :global(#process strong) { color: var(--text); font-weight: 500; }
+.page :global(#equipment-and-sites > header) { margin-bottom: 40px; }
+.page :global(#equipment-and-sites > header p) { max-width: 720px; color: var(--muted); font-size: 17px; line-height: 1.7; }
+.page :global(#equipment-and-sites > div:first-of-type) { border-color: var(--line); border-radius: 10px; }
+.page :global(#equipment-and-sites > div:first-of-type > div:first-child) { padding: 38px; }
+.page :global(#equipment-and-sites > div:first-of-type > div:last-child) { padding: 38px; background: var(--surface); border-color: var(--line); }
+.page :global(#equipment-and-sites legend), .page :global(#equipment-and-sites label) { color: var(--text); }
+.page :global(#equipment-and-sites legend > span), .page :global(#equipment-and-sites label > span:first-child) { color: var(--muted); }
+.page :global(#equipment-and-sites :is(input[name=estimate-model], input[name=estimate-loan]) + span) { min-height: 44px; border-radius: 6px; border: 1px solid var(--line); background: transparent; color: var(--muted); padding: 10px 15px; font-size: 13px; }
+.page :global(#equipment-and-sites :is(input[name=estimate-model], input[name=estimate-loan]):checked + span) { background: var(--button-bg); border-color: var(--button-bg); color: var(--button-text); }
+.page :global(#equipment-and-sites fieldset > p), .page :global(#estimate-server-count) { color: var(--muted); font-size: 13px; }
+.page :global(#equipment-and-sites fieldset > p strong) { color: var(--muted); }
+.page :global(#equipment-and-sites label[for=estimate-quantity] + div) { grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 6px; }
+.page :global(#estimate-quantity) { font-size: 22px; color: var(--text); background: var(--surface-strong); border-radius: 5px; min-height: 52px; }
+.page :global(#equipment-and-sites button:not([data-loan-info])) { min-width: 44px; min-height: 48px; color: var(--text); background: var(--surface-strong); }
+.page :global(#equipment-and-sites input[type=number]) { color: var(--text); border-color: var(--line); background: var(--surface-strong); }
+.page :global(#equipment-and-sites :is(dt, dd)) { color: var(--muted); }
+.page :global(#equipment-and-sites div[aria-label="Your deployment estimate"] > div:first-child > p:not([title])) { color: var(--muted); }
+.page :global(#equipment-and-sites div[aria-label="Your deployment estimate"] p[title]) { color: var(--text); font-size: clamp(34px, 3.6vw, 50px); letter-spacing: -.055em; }
+.page :global(#equipment-and-sites div[aria-label="Your deployment estimate"] div:has(> span):has(> strong)) { border-color: var(--line); }
+.page :global(#equipment-and-sites div[aria-label="Your deployment estimate"] div:has(> span):has(> strong) :is(span, strong)) { color: var(--text); }
+.page :global(#equipment-and-sites a[href^="/contact"]) { background: var(--button-bg); color: var(--button-text); border-radius: 5px; min-height: 44px; }
+.page :global(#equipment-and-sites :is(summary, details)) { border-color: var(--line); color: var(--muted); }
+.page :global(#equipment-and-sites details) { border-color: var(--line); }
+.page :global(#equipment-and-sites details > div), .page :global(#equipment-and-sites > p) { color: var(--muted); }
+.page :global(#equipment-and-sites details legend) { color: var(--text); }
+.page :global(#equipment-and-sites :is(th, td)) { border-color: var(--line); color: var(--muted); }
+.page :global(#equipment-and-sites caption) { color: var(--text); }
+.page :global(#equipment-and-sites td) { text-align: right; }
+.page :global(#equipment-and-sites th:last-child) { text-align: right; }
+.page :global(#equipment-and-sites a[target=_blank]) { color: var(--design-accent); }
+.page :global(#equipment-and-sites [role=alert]), .page :global(#equipment-and-sites [role=alert] p) { color: var(--design-error); }
+.page :global(#faq [data-slot=accordion]) { border-color: var(--line); }
+.page :global(#faq [data-slot=accordion-item]) { border-color: var(--line); }
+.page :global(#faq [data-slot=accordion-trigger]) { background: transparent; color: var(--text); min-height: 80px; font-size: 17px; }
+.page :global(#faq [data-slot=accordion-trigger] svg) { color: var(--muted); }
+.page :global(#faq [data-slot=accordion-content] > div) { color: var(--muted); font-size: 16px; }
+.page :global(#faq [data-slot=accordion-content] :is(strong, a)) { color: var(--text); }
+.page :global(.site-footer) { width: min(var(--content-width), calc(100% - 2 * var(--shell-gutter))); margin-inline: auto; padding-block: 76px 32px; row-gap: 56px; border-top: 1px solid var(--line); color: var(--text); background: var(--page); grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); }
+.page :global(.footer-navigation) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.page :global(.footer-identity > p) { max-width: 360px; color: var(--muted); font-size: 13px; }
+.page :global(.footer-group h2) { color: var(--muted); font-size: 12px; }
+.page :global(.footer-group a) { color: var(--text); font-size: 13px; }
+.page :global(.footer-information) { grid-column: 1 / -1; padding-top: 28px; border-color: var(--line); }
+.page :global(.footer-disclaimer) { max-width: none; color: var(--muted); font-size: 12px; line-height: 1.8; }
+.page :global(.footer-disclaimer h2) { margin-bottom: 18px; color: var(--muted); font-size: 12px; font-weight: 400; letter-spacing: 0; }
+.page :global(.footer-bottom) { color: var(--muted); font-size: 12px; margin-top: 28px; }
+.page[data-composition] { --content-width: 1280px; --surface: #fafafa; --surface-strong: #f1f1f3; --line: #e1e1e5; }
+.page[data-composition] :global(:is(#process, #timeline, #equipment-and-sites, #faq)) { width: 100%; padding: 80px 48px; margin: 0; }
+.page[data-composition] :global(#process) { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; border-top: 0; }
+.page[data-composition] :global(#process > div) { padding: 68px 48px; }
+.page[data-composition] :global(#process h2) { font-size: 56px; }
+.page[data-composition] :global(#process > div > p) { font-size: 16px; }
+.page[data-composition] :global(#process > div > p:first-of-type) { font-size: 20px; }
+.page[data-composition] :global(#timeline) { display: block; }
+.page[data-composition] :global(#timeline h2) { max-width: none; margin-bottom: 24px; font-size: 54px; }
+.page[data-composition] :global(#timeline > div:first-of-type p) { max-width: 700px; }
+.page[data-composition] :global(#timeline > div:last-child) { margin-top: 44px; }
+.page[data-composition] :global(#equipment-and-sites) { background: #fafafa; }
+.page[data-composition] :global(#equipment-and-sites > div:first-of-type) { border-radius: 0; background: #fff; }
+.page[data-composition] :global(#equipment-and-sites > div:first-of-type > div:last-child) { background: #fff; }
+.page[data-composition] :global(#equipment-and-sites :is(input[name=estimate-model], input[name=estimate-loan]) + span) { border-radius: 4px; }
+.page[data-composition] :global(#faq) { display: block; }
+.page[data-composition] :global(#faq h2) { max-width: none; margin-bottom: 42px; font-size: 54px; }
+.page[data-composition] :global(#faq [data-slot=accordion-content] > div) { max-width: 850px; }
+.page[data-composition] :global(.site-footer) { padding-inline: 48px; border-inline: 1px solid var(--line); }
+
+@media (hover: hover) and (pointer: fine) {
+  .page :global(#equipment-and-sites :is(input[name=estimate-model], input[name=estimate-loan]) + span:hover) { border-color: var(--muted); }
+  .page :global(#faq [data-slot=accordion-trigger]:hover) { color: var(--design-accent); }
+}
+
+@media (max-width: 1100px) {
+  .page[data-composition] :global(:is(#timeline, #equipment-and-sites, #faq)) { padding-inline: 32px; }
+  .page[data-composition] :global(#process > div) { padding: 54px 32px; }
+}
+@media (max-width: 1000px) {
+}
+@media (max-width: 760px) {
+  .page :global(section[id]) { scroll-margin-top: 140px; }
+  .page :global(:is(#process, #timeline, #equipment-and-sites, #faq)) { grid-template-columns: 1fr; gap: 32px; padding-block: 64px; }
+  .page :global(:is(#process, #timeline, #equipment-and-sites, #faq) h2) { font-size: 42px; max-width: 520px; }
+  .page :global(#process > div:first-child) { padding-top: 0; }
+  .page :global(#process > div > p), .page :global(#timeline > div > p) { font-size: 16px; }
+  .page :global(#process > div > p:first-of-type) { font-size: 19px; }
+  .page :global(#equipment-and-sites > header p) { font-size: 16px; }
+  .page :global(#equipment-and-sites > div:first-of-type > div) { padding: 26px; }
+  .page :global(#equipment-and-sites input[type=number]) { font-size: 16px; }
+  .page :global(#equipment-and-sites input#estimate-quantity) { font-size: 22px; }
+  .page :global(#equipment-and-sites div[aria-label="Your deployment estimate"] p[title]) { font-size: 37px; }
+  .page :global(#equipment-and-sites legend) { font-size: 15px; }
+  .page :global(#faq [data-slot=accordion-trigger]) { font-size: 16px; min-height: 76px; }
+  .page :global(#faq [data-slot=accordion-content] > div) { font-size: 15px; }
+  .page :global(.site-footer) { grid-template-columns: 1fr; gap: 44px; padding-block: 56px 30px; }
+  .page :global(.footer-navigation) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 24px; }
+  .page :global(.footer-information) { grid-column: 1; }
+  .page[data-composition] :global(:is(#timeline, #equipment-and-sites, #faq)) { width: 100%; padding: 54px 24px; }
+  .page[data-composition] :global(#process) { grid-template-columns: 1fr; }
+  .page[data-composition] :global(#process > div) { padding: 48px 24px 18px; }
+  .page[data-composition] :global(:is(#process, #timeline, #faq) h2) { font-size: 40px; }
+  .page[data-composition] :global(#equipment-and-sites > div:first-of-type > div) { padding: 24px 20px; }
+  .page[data-composition] :global(#equipment-and-sites :is(input[name=estimate-model], input[name=estimate-loan]) + span) { padding-inline: 12px; font-size: 12px; }
+  .page[data-composition] :global(.site-footer) { width: calc(100% - 32px); padding-inline: 24px; }
+}
+@media (max-width: 380px) {
+  .page :global(#equipment-and-sites div[aria-label="Your deployment estimate"] p[title]) { font-size: 30px; }
+}
+.page[data-input=keyboard] :global(:is(a, button, input, svg, label span)), .page[data-input=keyboard] :global(label span::after) { transition: none; }
+.page[data-input=keyboard] :global([data-slot=accordion-content]) { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .page :global(:is(a, button, input, svg, label span)), .page :global(label span::after) { transition: none; }
+  .page :global([data-slot=accordion-content]) { animation: none; }
+}
+/* Approved white grid, grayscale layer diagram, compact typography and full-width footer. */
+.page[data-composition] { --content-width: var(--shell-width); --hybrid-inset: calc(var(--shell-gutter) - 1px); --section-padding-top: 112px; --section-padding-bottom: 120px; }
+.page[data-composition] :global(main) { width: 100%; border: 0; }
+.page[data-composition] .body { width: min(var(--content-width), 100%); margin-inline: auto; border-inline: 1px solid var(--line); }
+.page[data-composition] :global(.enterprise-immersive-hero) { min-height: min(92svh, 1040px); }
+.page[data-composition] :global(.enterprise-immersive-hero .hero-copy) { width: min(var(--content-width), 100%); padding: clamp(144px, 21svh, 205px) calc(var(--hybrid-inset) + 1px) 64px; }
+.page[data-composition] :global(.enterprise-immersive-hero h1) { margin: 0; color: #fff; font-size: var(--type-hero); font-weight: 400; line-height: 1.03; letter-spacing: -.06em; }
+.page[data-composition] :global(.enterprise-immersive-hero h1 > span) { color: inherit; }
+.page[data-composition] :global(.enterprise-immersive-hero .hero-description) { max-width: 560px; margin-top: 28px; color: #ffffffe6; font-size: 18px; line-height: 1.6; }
+.page[data-composition] :global(.enterprise-hero-cta) { display: inline-flex; align-items: center; justify-content: center; gap: 12px; width: fit-content; min-height: 48px; margin-top: 28px; padding: 12px 20px; border: 1px solid #ffffff99; border-radius: 100px; background: transparent; color: #fff; font-size: 13px; font-weight: 400; line-height: 1.5; }
+.page[data-composition] :global(.enterprise-hero-cta .arrow) { width: 17px; height: 17px; transform: none; }
+.page[data-composition] :global(.enterprise-hero-cta:focus-visible) { outline: 2px solid #fff; outline-offset: 4px; }
+.page[data-composition] :global(:is(#process, #timeline, #equipment-and-sites, #faq) h2) { max-width: none; font-size: 30px; line-height: 1.375; letter-spacing: -.035em; font-weight: 400; }
+.page[data-composition] :global(:is(#process, #timeline, #equipment-and-sites, #faq) h2::before) { display: inline-block; margin-right: 13px; color: #858585; font-variant-numeric: tabular-nums; }
+.page[data-composition] :global(#process h2::before) { content: "01"; }
+.page[data-composition] :global(#timeline h2::before) { content: "02"; }
+.page[data-composition] :global(#equipment-and-sites h2::before) { content: "03"; }
+.page[data-composition] :global(#faq h2::before) { content: "04"; }
+.page[data-composition] :global(:is(#timeline, #equipment-and-sites, #faq)) { padding: var(--section-padding-top) var(--hybrid-inset) var(--section-padding-bottom); }
+.page[data-composition] :global(#process) { align-items: start; padding: var(--section-padding-top) var(--hybrid-inset) var(--section-padding-bottom); grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 64px; }
+.page[data-composition] :global(#process > div) { display: contents; }
+.page[data-composition] :global(#process h2) { grid-column: 1; grid-row: 1; margin: 0; }
+.page[data-composition] :global(#process > div > p),
+.page[data-composition] :global(#timeline > div:first-of-type p:not(:first-of-type)) { grid-column: 2; max-width: none; margin: 0; font-size: 21px; line-height: 1.5; letter-spacing: -.025em; }
+.page[data-composition] :global(#process > div > p:first-of-type) { grid-row: 1; font-size: 30px; line-height: 1.375; letter-spacing: -.035em; }
+.page[data-composition] :global(#process strong) { color: var(--text); font-weight: 400; }
+.page[data-composition] :global(#process > div > p:last-child) { margin-bottom: 0; }
+.page[data-composition] :global(#timeline) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 64px; }
+.page[data-composition] :global(#timeline > div:first-of-type) { display: contents; }
+.page[data-composition] :global(#timeline h2) { grid-column: 1; grid-row: 1; margin: 0; }
+.page[data-composition] :global(#timeline > div:first-of-type p) { grid-column: 2; grid-row: auto; max-width: none; margin: 0; font-size: 30px; line-height: 1.375; letter-spacing: -.035em; }
+.page[data-composition] :global(#timeline > div:first-of-type > p:first-of-type) { color: var(--text); }
+.page[data-composition] :global(#timeline > div:last-child) { grid-column: 1 / -1; }
+.page[data-composition] :global(#timeline > div:last-child) { margin-top: 56px; }
+.page[data-composition] :global(#equipment-and-sites > header) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; align-items: start; margin-bottom: 64px; }
+.page[data-composition] :global(#equipment-and-sites > header h2) { margin: 0; }
+.page[data-composition] :global(#equipment-and-sites > header p) { max-width: none; margin: 0; font-size: 30px; line-height: 1.375; letter-spacing: -.035em; }
+.page[data-composition] :global(#equipment-and-sites > div:first-of-type) { grid-template-columns: 1fr 1fr; }
+.page[data-composition] :global(#equipment-and-sites > div:first-of-type > div) { padding: 48px; }
+.page[data-composition] :global(#equipment-and-sites fieldset > div) { gap: 10px; }
+.page[data-composition] :global(#equipment-and-sites label[for=estimate-quantity]) { margin-bottom: 22px; }
+.page[data-composition] :global(#equipment-and-sites div:has(> label[for=estimate-quantity])) { margin-top: 52px; max-width: 320px; }
+.page[data-composition] :global(#equipment-and-sites dl > div) { margin-top: 16px; }
+.page[data-composition] :global(#equipment-and-sites div[aria-label="Your deployment estimate"] div:has(> span):has(> strong)) { margin-top: 32px; padding-top: 28px; }
+.page[data-composition] :global(#equipment-and-sites a[href^="/contact"]) { margin-top: 32px; }
+.page[data-composition] :global(#equipment-and-sites details summary) { min-height: 68px; }
+.page[data-composition] :global(#equipment-and-sites legend), .page[data-composition] :global(#equipment-and-sites label[for=estimate-quantity]) { font-size: 16px; line-height: 1.5; }
+.page[data-composition] :global(#equipment-and-sites div[aria-label="Your deployment estimate"] p[title]) { font-size: 42px; letter-spacing: -.04em; }
+.page[data-composition] :global(#faq) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; align-items: start; }
+.page[data-composition] :global(#faq h2) { margin: 0; }
+.page[data-composition] :global(#faq [data-slot=accordion-trigger]) { min-height: 92px; padding-block: 28px; font-size: 17px; line-height: 1.5; }
+.page[data-composition] :global(#faq [data-slot=accordion-content] > div) { padding-bottom: 28px; font-size: 16px; line-height: 1.8; }
+.page[data-composition] :global(.site-footer) {
+  width: 100%; max-width: none; margin-inline: 0; border-inline: 0;
+  padding: var(--section-padding-top) max(var(--shell-gutter), calc((100% - var(--content-width)) / 2 + var(--shell-gutter))) var(--section-padding-bottom);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); column-gap: 100px; row-gap: 80px;
+}
+.page[data-composition] :global(.footer-identity > p) { margin-top: 24px; line-height: 1.8; }
+.page[data-composition] :global(.footer-navigation) { gap: 40px; }
+.page[data-composition] :global(.footer-group h2) { margin-bottom: 22px; }
+.page[data-composition] :global(.footer-group ul) { display: grid; gap: 12px; }
+.page[data-composition] :global(.footer-group a) { display: inline-flex; align-items: center; min-height: 32px; line-height: 1.6; }
+.page[data-composition] :global(.footer-information) { padding-top: 40px; }
+.page[data-composition] :global(.footer-disclaimer) { line-height: 1.9; }
+.page[data-composition] :global(.footer-bottom) { margin-top: 40px; }
+@media (hover: hover) and (pointer: fine) {
+  .page[data-composition] :global(.enterprise-hero-cta:hover) { background: rgb(255 255 255 / 12%); border-color: #ffffffb3; color: #fff; }
+  .page[data-composition] :global(.enterprise-hero-cta:hover .arrow) { transform: translateY(2px); }
+}
+@media (max-width: 1100px) {
+  .page[data-composition] { --section-padding-top: 96px; --section-padding-bottom: 96px; }
+  .page[data-composition] :global(#process) { gap: 24px 40px; }
+  .page[data-composition] :global(:is(#timeline, #faq)), .page[data-composition] :global(#equipment-and-sites > header) { column-gap: 40px; }
+  .page[data-composition] :global(#equipment-and-sites > div:first-of-type > div) { padding: 36px; }
+  .page[data-composition] :global(.site-footer) { column-gap: 56px; }
+  .page[data-composition] :global(.footer-navigation) { gap: 28px; }
+}
+@media (max-width: 850px) {
+  .page[data-composition] :global(#equipment-and-sites > div:first-of-type) { grid-template-columns: 1fr; }
+  .page[data-composition] :global(.site-footer) { grid-template-columns: 1fr; row-gap: 56px; }
+  .page[data-composition] :global(.footer-information) { grid-column: 1; }
+}
+@media (max-width: 760px) {
+  .page[data-composition] { --section-padding-top: 80px; --section-padding-bottom: 88px; }
+  .page[data-composition] :global(.enterprise-immersive-hero .hero-copy) { padding: 136px calc(var(--hybrid-inset) + 1px) 80px; }
+  .page[data-composition] :global(.enterprise-immersive-hero h1) { font-size: clamp(40px, 11.8vw, 52px); line-height: 1.06; }
+  .page[data-composition] :global(.enterprise-immersive-hero .hero-description) { max-width: 440px; margin-top: 24px; font-size: 16px; }
+  .page[data-composition] :global(.enterprise-immersive-hero .hero-visual img) { object-position: 63% center; }
+  .page[data-composition] :global(:is(#process, #timeline, #equipment-and-sites, #faq) h2) { font-size: 26px; }
+  .page[data-composition] :global(#process) { grid-template-columns: 1fr; gap: 24px; }
+  .page[data-composition] :global(#process h2) { grid-column: 1; grid-row: auto; margin-bottom: 8px; }
+  .page[data-composition] :global(#process > div > p),
+  .page[data-composition] :global(#timeline > div:first-of-type p:not(:first-of-type)) { grid-column: 1; font-size: 18px; line-height: 1.55; }
+  .page[data-composition] :global(#process > div > p:first-of-type) { grid-row: auto; font-size: 26px; line-height: 1.375; }
+  .page[data-composition] :global(:is(#timeline, #faq)) { grid-template-columns: 1fr; gap: 28px; }
+  .page[data-composition] :global(#timeline h2), .page[data-composition] :global(#timeline > div:first-of-type p) { grid-column: 1; grid-row: auto; }
+  .page[data-composition] :global(#timeline > div:first-of-type p), .page[data-composition] :global(#equipment-and-sites > header p) { font-size: 26px; line-height: 1.4; }
+  .page[data-composition] :global(#timeline > div:last-child) { margin-top: 40px; }
+  .page[data-composition] :global(#equipment-and-sites > header) { grid-template-columns: 1fr; gap: 28px; margin-bottom: 40px; }
+  .page[data-composition] :global(#equipment-and-sites > div:first-of-type > div) { padding: 28px 24px; }
+  .page[data-composition] :global(#equipment-and-sites div:has(> label[for=estimate-quantity])) { margin-top: 40px; }
+  .page[data-composition] :global(#equipment-and-sites div[aria-label="Your deployment estimate"] p[title]) { font-size: 34px; }
+  .page[data-composition] :global(#faq h2) { margin: 0 0 8px; }
+  .page[data-composition] :global(#faq [data-slot=accordion-trigger]) { min-height: 88px; padding-block: 25px; }
+  .page[data-composition] :global(.site-footer) { row-gap: 48px; }
+  .page[data-composition] :global(.footer-navigation) { gap: 36px 24px; }
+  .page[data-composition] :global(.footer-group a) { min-height: 36px; }
+  .page[data-composition] :global(.footer-information) { padding-top: 32px; }
+}
+@media (max-width: 480px) {
+}
+@media (max-width: 380px) {
+  .page[data-composition] :global(.enterprise-immersive-hero h1) { font-size: 40px; }
+  .page[data-composition] :global(#equipment-and-sites > div:first-of-type > div) { padding-inline: 20px; }
+  .page[data-composition] :global(#equipment-and-sites div[aria-label="Your deployment estimate"] p[title]) { font-size: 29px; }
+  .page[data-composition] :global(.footer-navigation) { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page[data-composition] :global(.enterprise-hero-cta) { transition: none; }
+  .page[data-composition] :global(.enterprise-hero-cta .arrow) { transform: none; }
+}
+:global(html):has(.page) { scroll-padding-top: 0; }
+:global(html):has(.page[data-input=keyboard]) { scroll-behavior: auto; }
+.page :global(section[id]) { scroll-margin-top: calc(var(--marketing-header-height) + 24px); }
+@media (prefers-reduced-motion: reduce) {
+  :global(html):has(.page) { scroll-behavior: auto; }
+}
+
+/* Shared full-width gray bands; each band owns its two single-pixel dividers. */
+.page .shadedBand {
+  width: 100%; margin: 0; background: var(--surface);
+  border-block: 1px solid var(--line);
+}
+.page[data-composition] .shadedBand :global(#equipment-and-sites),
+.page[data-composition] .shadedBand + .body :global(:is(#timeline, #faq)) { border-top: 0; }
+.page .diagramSection :global(#parties) {
+  --diagram-accent: #404040;
+  width: min(var(--content-width), 100%);
+  max-width: none; margin: 0 auto; padding: var(--section-padding-top) var(--hybrid-inset) var(--section-padding-bottom);
+  border-inline: 1px solid var(--line);
+}
+.page .diagramSection :global(.diagram-stage) {
+  width: 100%; max-width: 1200px; margin: 0 auto; padding-right: 320px;
+}
+.page .diagramSection :global(.scene-viewport) { aspect-ratio: 560 / 440; }
+.page .diagramSection :global(.diagram-stage > div:last-child) { width: 320px; }
+.page .diagramSection :global(.layer-control > span:last-child > span:last-child) { max-width: 300px; }
+.page .diagramSection :global(.layer-control) { color: #686868; }
+.page .diagramSection :global(.layer-control[aria-pressed=true]) { color: #303030; }
+.page .diagramSection :global(.layer-control small) { color: #777; }
+.page .diagramSection :global(.layer-control[aria-pressed=true] > span:first-child::before) { background: #999; }
+.page .diagramSection :global(img) { filter: grayscale(1); }
+@media (max-width: 1100px) {
+  .page .diagramSection :global(.diagram-stage) { padding-right: 0; }
+  .page .diagramSection :global(.scene-viewport) { max-height: 590px; }
+  .page .diagramSection :global(.diagram-stage > div:last-child) { position: relative; inset: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; width: 100%; margin-top: 24px; border-top: 1px solid var(--line); }
+  .page .diagramSection :global(.layer-control) { position: static; transform: none; align-items: flex-start; min-height: 0; padding: 16px 0; border-bottom: 1px solid var(--line); color: #303030; }
+  .page .diagramSection :global(.layer-control > span:first-child) { margin-top: 5px; }
+  .page .diagramSection :global(.layer-control > span:first-child::before) { display: none; }
+  .page .diagramSection :global(.layer-control > span:last-child > span:first-child) { display: block; font-size: 14px; font-weight: 500; line-height: 1.45; }
+  .page .diagramSection :global(.layer-control > span:last-child > span:last-child) { display: block; position: static; width: 100%; max-width: none; margin-top: 6px; opacity: 1; transform: none; transition: none; font-size: 13px; line-height: 1.5; }
+}
+@media (max-width: 760px) {
+  .page .diagramSection :global(#parties) { padding-block: 40px 48px; }
+  .page .diagramSection :global(.diagram-stage > div:last-child) { grid-template-columns: 1fr; gap: 0; margin-top: 16px; }
+  .page .diagramSection :global(.layer-control) { padding-block: 14px; }
+  .page .diagramSection :global(.scene-viewport) { aspect-ratio: 560 / 480; max-height: 360px; }
+}
+@media (max-width: 480px) {
+  .page .diagramSection :global(.diagram-stage) { padding-right: 0; }
+  .page .diagramSection :global(.diagram-stage > div:last-child) { width: 100%; }
+  .page .diagramSection :global(.scene-viewport) { aspect-ratio: 560 / 480; }
+}
+
+
+.page[data-composition] :global(#equipment-and-sites [data-financing] dd) { color: var(--text); }
