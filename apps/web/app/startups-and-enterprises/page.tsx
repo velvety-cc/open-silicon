@@ -19,8 +19,8 @@ export default function StartupsAndEnterprises() {
         <div className={styles.body}>
           <EnterpriseProcess withDiagram={false} />
         </div>
-        <section id="deployment-layers" className={`${styles.shadedBand} ${styles.diagramSection}`} aria-label="Deployment layers">
-          <DeploymentDiagram theme="neutral" />
+        <section data-scroll-track id="deployment-layers" className={`${styles.shadedBand} ${styles.diagramSection}`} aria-label="Deployment layers">
+          <DeploymentDiagram theme="neutral" scrollExpand />
         </section>
         <div className={styles.body}>
           <DeploymentPreparation />

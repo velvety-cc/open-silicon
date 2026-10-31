@@ -268,3 +268,18 @@
 }
 
 .page[data-composition] :global(#equipment-and-sites [data-financing] dd) { color: var(--text); }
+
+/* Scroll-driven layer tour. Compact layouts retain their natural document flow. */
+@media (min-width: 1101px) and (prefers-reduced-motion: no-preference) {
+  .page .diagramSection[data-scroll-track] { height: 200svh; }
+  .page .diagramSection[data-scroll-track] :global(#parties) {
+    position: sticky; top: var(--marketing-header-height, 89px);
+    display: flex; align-items: center;
+    height: calc(100svh - var(--marketing-header-height, 89px));
+    padding-block: clamp(24px, 5svh, 48px);
+  }
+  .page .diagramSection[data-scroll-track] :global(.scene-viewport) {
+    aspect-ratio: auto;
+    height: min(640px, calc(100svh - var(--marketing-header-height, 89px) - 2 * clamp(24px, 5svh, 48px)));
+  }
+}

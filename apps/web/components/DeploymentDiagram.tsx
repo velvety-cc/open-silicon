@@ -10,7 +10,7 @@ const layers = [
   ["capital", "Capital", "Finances the equipment within a structure aligned with your deployment."],
 ] as const;
 
-export default function DeploymentDiagram({ theme = "brand" }: { theme?: "brand" | "neutral" }) {
+export default function DeploymentDiagram({ theme = "brand", scrollExpand = false }: { theme?: "brand" | "neutral"; scrollExpand?: boolean }) {
   const figure = useRef<HTMLElement>(null);
   const descriptionId = useId();
 
@@ -36,7 +36,7 @@ export default function DeploymentDiagram({ theme = "brand" }: { theme?: "brand"
     return () => { controller.abort(); observer.disconnect(); };
   }, []);
 
-  return <figure ref={figure} id="parties" data-diagram-theme={theme} className={styles.figure} aria-label="Parties Involved" aria-describedby="parties-description">
+  return <figure ref={figure} id="parties" data-scroll-expand={scrollExpand || undefined} data-diagram-theme={theme} className={styles.figure} aria-label="Parties Involved" aria-describedby="parties-description">
     <div className={`diagram-stage ${styles.stage}`} data-input="pointer" data-view="stack">
       <div className={`scene-viewport ${styles.viewport}`}>
         <canvas aria-hidden="true" />
@@ -52,7 +52,7 @@ export default function DeploymentDiagram({ theme = "brand" }: { theme?: "brand"
         </button>)}
       </div>
     </div>
-    <figcaption id="parties-description" className="sr-only">You are the customer at the top of the deployment stack, supported by GPU equipment, operator and site, and capital. OpenSilicon aligns the four layers. Hover over a card or select its name to expand it. Arrow keys move between layers; Escape collapses the stack.</figcaption>
+    <figcaption id="parties-description" className="sr-only">You are the customer at the top of the deployment stack, supported by GPU equipment, operator and site, and capital. OpenSilicon aligns the four layers. {scrollExpand && "Scroll through this section to expand each layer automatically. "}Hover over a card or select its name to expand it. Arrow keys move between layers; Escape collapses the stack.</figcaption>
     <span className="sr-only" role="status" aria-live="polite" />
   </figure>;
 }

@@ -3,6 +3,7 @@ import {createDeploymentLayers,layerKeys,layerNames} from './scene-models.mjs';
 import {layoutFor} from './layer-layout.mjs';
 import {motion,createSpring,stepSpring,modelPresentation,blendedLayout} from './layer-motion.mjs';
 import {batchLines} from './batch-lines.mjs';
+import {scrollLayerState} from './scroll-state.mjs';
 
 // The caller owns this instance through its AbortSignal, including route changes.
 export async function mountDeploymentDiagram(root, signal) {
@@ -14,6 +15,8 @@ const controls=[...stage.querySelectorAll('.layer-control')];
 const status=root.querySelector('[role=status]');
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const fine=matchMedia('(hover: hover) and (pointer: fine)');
+const compact=matchMedia('(max-width: 1100px)');
+const scrollTrack=root.dataset.scrollExpand==='true'?root.closest('[data-scroll-track]'):null;
 const scene=new THREE.Scene();
 const camera=new THREE.OrthographicCamera(-4,4,5,-5,.1,100);
 const layers=createDeploymentLayers();
@@ -49,6 +52,7 @@ const raycaster=new THREE.Raycaster();
 const pointer=new THREE.Vector2();
 let selected=null,preview=null,keyboard=null,view='stack',active=null,frame=0,animation=null;
 let inView=true,width=1,height=1;
+let scrollActive=null,selectionOverride=false,scrollFrame=0,lastScrollY=window.scrollY,scrollMoved=false;
 let hoverExitTimer;
 let lastMotionTime=performance.now();
 let initialized=false,disposed=false,resizeObserver,intersectionObserver,pixelRatioQuery;
@@ -66,6 +70,7 @@ function dispose() {
   if(disposed)return;
   disposed=true;clearTimeout(hoverExitTimer);
   if(frame)cancelAnimationFrame(frame);
+  if(scrollFrame)cancelAnimationFrame(scrollFrame);
   resizeObserver?.disconnect();intersectionObserver?.disconnect();
   ownedGeometries.forEach(geometry=>geometry.dispose());
   ownedMaterials.forEach(material=>material.dispose());
@@ -73,7 +78,7 @@ function dispose() {
   renderer.dispose();
 }
 signal.addEventListener('abort',()=>{if(initialized)dispose();},{once:true});
-const listen=(target,event,callback)=>target.addEventListener(event,callback,{signal});
+const listen=(target,event,callback,options={})=>target.addEventListener(event,callback,{...options,signal});
 try {
 
 function applyReveal(layer,value,index) {
@@ -227,7 +232,7 @@ function tick(now) {
 }
 
 function render(source='pointer',announce=false) {
-  const next=keyboard??preview??selected;
+  const next=keyboard??preview??(selectionOverride?selected:scrollActive);
   if(announce)status.textContent=next?`${layerNames[next]} ${view==='single'?'shown':'expanded'}`:'Cards stacked';
   stage.dataset.input=source;
   if(next===active&&stage.dataset.ready==='true'&&source!=='keyboard')return;
@@ -254,11 +259,38 @@ function render(source='pointer',announce=false) {
   }
 }
 
+function updateScroll() {
+  scrollFrame=0;
+  if(!scrollTrack)return;
+  const rect=scrollTrack.getBoundingClientRect();
+  const headerHeight=document.querySelector('.site-header')?.getBoundingClientRect().height||0;
+  const state=reduced.matches?{index:-1,progress:0}:scrollLayerState({top:rect.top,height:rect.height,viewportHeight:window.innerHeight,headerHeight,compact:compact.matches});
+  scrollActive=layerKeys[state.index]??null;
+  stage.dataset.scrollLayer=scrollActive||'none';
+  stage.dataset.scrollProgress=state.progress.toFixed(4);
+  if(scrollMoved) {
+    clearHoverExit();
+    selected=preview=keyboard=null;
+    selectionOverride=false;
+    hoverOrigin=null;
+  }
+  scrollMoved=false;
+  render('scroll');
+}
+
+function scheduleScroll(fromScroll=false) {
+  if(!scrollTrack||disposed)return;
+  if(fromScroll&&window.scrollY!==lastScrollY)scrollMoved=true;
+  lastScrollY=window.scrollY;
+  if(!scrollFrame)scrollFrame=requestAnimationFrame(updateScroll);
+}
+
 function clearHoverExit() {clearTimeout(hoverExitTimer);}
 
 function reset(source='keyboard') {
   clearHoverExit();
-  selected=preview=keyboard=null;
+  selected=preview=keyboard=scrollActive=null;
+  selectionOverride=true;
   // Force the palette to reset even if a previous hover already left the scene.
   active=undefined;
   render(source,true);
@@ -312,7 +344,7 @@ listen(canvas,'pointerdown',event=>{down={x:event.clientX,y:event.clientY};});
 listen(canvas,'click',event=>{
   if(down&&Math.hypot(event.clientX-down.x,event.clientY-down.y)>8)return;
   const key=pick(event);if(!key)return;
-  selected=selected===key?null:key;preview=keyboard=null;render('pointer',true);
+  selected=selected===key?null:key;selectionOverride=true;preview=keyboard=null;render('pointer',true);
 });
 
 controls.forEach((button,index)=>{
@@ -334,6 +366,7 @@ controls.forEach((button,index)=>{
   });
   listen(button,'click',event=>{
     selected=selected===button.dataset.layer?null:button.dataset.layer;
+    selectionOverride=true;
     preview=keyboard=null;render(event.detail===0?'keyboard':'pointer',true);
   });
   listen(button,'keydown',event=>{
@@ -353,7 +386,7 @@ listen(canvas,'webglcontextlost',event=>{
   controls.forEach(button=>button.disabled=true);
 });
 listen(canvas,'webglcontextrestored',()=>{stage.dataset.engine='webgl';controls.forEach(button=>button.disabled=false);resize();});
-listen(reduced,'change',()=>{active=undefined;render('keyboard');});
+listen(reduced,'change',()=>{active=undefined;render('keyboard');scheduleScroll();});
 listen(document,'visibilitychange',()=>{
   if(document.hidden){if(frame)cancelAnimationFrame(frame);frame=0;finishAnimation();}
   else draw();
@@ -364,9 +397,10 @@ intersectionObserver=new IntersectionObserver(entries=>{
   else draw();
 },{rootMargin:'100px'});
 intersectionObserver.observe(viewport);
-listen(window,'resize',resize);
+listen(window,'resize',()=>{resize();scheduleScroll();});
+if(scrollTrack)listen(window,'scroll',()=>scheduleScroll(true),{passive:true});
 watchPixelRatio();
-resizeObserver=new ResizeObserver(resize);resizeObserver.observe(viewport);
+resizeObserver=new ResizeObserver(()=>{resize();scheduleScroll();});resizeObserver.observe(viewport);
 stage.dataset.engine='webgl';stage.dataset.view='stack';
 stage.dataset.models=layers.map(layer=>layer.name).join(',');
 stage.dataset.ready='true';stage.dataset.renderState='idle';
@@ -375,6 +409,7 @@ stage.dataset.presentation='collapsed';
 let meshCount=0;scene.traverse(object=>{if(object.isMesh)meshCount++;});
 stage.dataset.meshes=meshCount;
 resize();
+scheduleScroll();
 
 } catch(error) {
   initialized=true;dispose();throw error;
